@@ -870,7 +870,7 @@ describe("Paragraph", () => {
                     {
                         "hp:paraPr": [
                             {
-                                "w:shd": {
+                                "hp:shd": {
                                     _attr: {
                                         "hp:color": "00FFFF",
                                         "hp:fill": "FF0000",
@@ -952,7 +952,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "w:hyperlink": [
+                        "hp:hyperlink": [
                             {
                                 _attr: {
                                     "r:id": "rIdtest-unique-id",

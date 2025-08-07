@@ -14,7 +14,7 @@ describe("SymbolRun", () => {
             run = new SymbolRun("F071");
             const f = new Formatter().format(run);
             expect(f).to.deep.equal({
-                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "w:font": "Wingdings" } } }],
+                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "hh:font": "Wingdings" } } }],
             });
         });
 
@@ -22,7 +22,7 @@ describe("SymbolRun", () => {
             run = new SymbolRun({ char: "F071" });
             const f = new Formatter().format(run);
             expect(f).to.deep.equal({
-                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "w:font": "Wingdings" } } }],
+                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "hh:font": "Wingdings" } } }],
             });
         });
 
@@ -30,7 +30,7 @@ describe("SymbolRun", () => {
             run = new SymbolRun({ char: "F071", symbolfont: "Arial" });
             const f = new Formatter().format(run);
             expect(f).to.deep.equal({
-                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "w:font": "Arial" } } }],
+                "hp:run": [{ "w:sym": { _attr: { "w:char": "F071", "hh:font": "Arial" } } }],
             });
         });
 
@@ -64,14 +64,14 @@ describe("SymbolRun", () => {
                             { "hp:color": { _attr: { "hp:val": "00FF00" } } },
                             { "hp:sz": { _attr: { "hp:val": 40 } } },
                             { "w:szCs": { _attr: { "hp:val": 40 } } },
-                            { "w:highlight": { _attr: { "hp:val": "yellow" } } },
+                            { "hp:highlight": { _attr: { "hp:val": "yellow" } } },
                             { "w:highlightCs": { _attr: { "hp:val": "yellow" } } },
                             { "hp:underline": { _attr: { "hp:val": "double", "hp:color": "ff0000" } } },
                             { "w:em": { _attr: { "hp:val": "dot" } } },
                         ],
                     },
                     {
-                        "w:sym": { _attr: { "w:char": "F071", "w:font": "Arial" } },
+                        "w:sym": { _attr: { "w:char": "F071", "hh:font": "Arial" } },
                     },
                 ],
             });

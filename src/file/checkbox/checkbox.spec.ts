@@ -12,9 +12,9 @@ describe("CheckBox", () => {
             const tree = new Formatter().format(checkBox);
 
             expect(tree).to.deep.equal({
-                "w:sdt": [
+                "hp:ctrl": [
                     {
-                        "w:sdtPr": [
+                        "hp:ctrlPr": [
                             {
                                 "w14:checkbox": [
                                     {
@@ -45,14 +45,14 @@ describe("CheckBox", () => {
                         ],
                     },
                     {
-                        "w:sdtContent": [
+                        "hp:ctrlContent": [
                             {
                                 "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {
                                                 "w:char": "2610",
-                                                "w:font": "MS Gothic",
+                                                "hh:font": "MS Gothic",
                                             },
                                         },
                                     },
@@ -84,9 +84,9 @@ describe("CheckBox", () => {
             const tree = new Formatter().format(checkBox);
 
             expect(tree).to.deep.equal({
-                "w:sdt": [
+                "hp:ctrl": [
                     {
-                        "w:sdtPr": [
+                        "hp:ctrlPr": [
                             {
                                 "w:alias": {
                                     _attr: {
@@ -124,14 +124,14 @@ describe("CheckBox", () => {
                         ],
                     },
                     {
-                        "w:sdtContent": [
+                        "hp:ctrlContent": [
                             {
                                 "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {
                                                 "w:char": actualChar,
-                                                "w:font": actualFont,
+                                                "hh:font": actualFont,
                                             },
                                         },
                                     },
@@ -159,9 +159,9 @@ describe("CheckBox", () => {
             const tree = new Formatter().format(checkBox);
 
             expect(tree).to.deep.equal({
-                "w:sdt": [
+                "hp:ctrl": [
                     {
-                        "w:sdtPr": [
+                        "hp:ctrlPr": [
                             {
                                 "w14:checkbox": [
                                     {
@@ -192,14 +192,14 @@ describe("CheckBox", () => {
                         ],
                     },
                     {
-                        "w:sdtContent": [
+                        "hp:ctrlContent": [
                             {
                                 "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {
                                                 "w:char": "2705",
-                                                "w:font": "Segoe UI Symbol",
+                                                "hh:font": "Segoe UI Symbol",
                                             },
                                         },
                                     },

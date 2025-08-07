@@ -473,7 +473,7 @@ describe("ParagraphStyle", () => {
                 "hh:style": [
                     { _attr: { "hp:type": "paragraph", "hh:styleId": "myStyleId" } },
                     {
-                        "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "subscript" } } }],
+                        "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "subscript" } } }],
                     },
                 ],
             });
@@ -491,7 +491,7 @@ describe("ParagraphStyle", () => {
                 "hh:style": [
                     { _attr: { "hp:type": "paragraph", "hh:styleId": "myStyleId" } },
                     {
-                        "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "superscript" } } }],
+                        "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "superscript" } } }],
                     },
                 ],
             });
@@ -617,22 +617,22 @@ describe("ParagraphStyle", () => {
         const highlightTests = [
             {
                 highlight: HighlightColor.YELLOW,
-                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: true,
-                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: false,
-                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }],
+                expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: "550099",
-                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
+                expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
             },
         ];
         highlightTests.forEach(({ highlight, highlightComplexScript, expected }) => {
@@ -655,7 +655,7 @@ describe("ParagraphStyle", () => {
                     fill: "00FFFF",
                     color: "FF0000",
                 },
-                expected: [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
+                expected: [{ "hp:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
             },
             {
                 shading: {
@@ -663,7 +663,7 @@ describe("ParagraphStyle", () => {
                     fill: "0066FF",
                     color: "0000FF",
                 },
-                expected: [{ "w:shd": { _attr: { "hp:val": "diagCross", "hp:fill": "0066FF", "hp:color": "0000FF" } } }],
+                expected: [{ "hp:shd": { _attr: { "hp:val": "diagCross", "hp:fill": "0066FF", "hp:color": "0000FF" } } }],
             },
         ];
         shadingTests.forEach(({ shading, expected }) => {

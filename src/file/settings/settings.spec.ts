@@ -11,7 +11,7 @@ describe("Settings", () => {
             const tree = new Formatter().format(settings);
 
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
         });
 
         it("should add updateFields setting", () => {
@@ -21,9 +21,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:updateFields": {},
             });
         });
@@ -33,9 +33,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            const compat = tree["hp:settings"][2];
+            const compat = tree["ha:settings"][2];
             expect(compat).to.be.an("object").with.keys("ha:compat");
             expect(compat["ha:compat"]).to.deep.include({
                 "ha:compatSetting": {
@@ -55,9 +55,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:trackRevisions": {},
             });
         });
@@ -69,9 +69,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:compat": [
                     {
                         "ha:compatSetting": {
@@ -95,9 +95,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:compat": [
                     {
                         "ha:compatSetting": {
@@ -119,8 +119,8 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:defaultTabStop": {
                     _attr: {
                         "hp:val": 100,
@@ -138,8 +138,8 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:autoHyphenation": {},
             });
         });
@@ -153,8 +153,8 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:doNotHyphenateCaps": {},
             });
         });
@@ -168,8 +168,8 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:hyphenationZone": {
                     _attr: {
                         "hp:val": 200,
@@ -187,8 +187,8 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:consecutiveHyphenLimit": {
                     _attr: {
                         "hp:val": 3,
@@ -205,9 +205,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["ha:settings"]).to.be.an("array");
 
-            expect(tree["hp:settings"]).to.deep.include({
+            expect(tree["ha:settings"]).to.deep.include({
                 "ha:compat": [
                     {
                         "ha:compatSetting": {

@@ -22,7 +22,7 @@ describe("SubScript", () => {
 
         it("should create a Sub Script with correct root key", () => {
             const newJson = Utility.jsonify(subScript);
-            assert.equal(newJson.rootKey, "w:vertAlign");
+            assert.equal(newJson.rootKey, "hp:vertAlign");
         });
     });
 });
@@ -45,7 +45,7 @@ describe("SuperScript", () => {
 
         it("should create a Super Script with correct root key", () => {
             const newJson = Utility.jsonify(superScript);
-            assert.equal(newJson.rootKey, "w:vertAlign");
+            assert.equal(newJson.rootKey, "hp:vertAlign");
         });
     });
 });

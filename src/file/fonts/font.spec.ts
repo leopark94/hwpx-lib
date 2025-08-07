@@ -22,7 +22,7 @@ describe("font", () => {
         );
 
         expect(tree).to.deep.equal({
-            "w:font": [
+            "hh:font": [
                 {
                     _attr: {
                         "hh:name": "Times New Roman",
@@ -87,7 +87,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:embedBold": {
                         _attr: {
@@ -112,7 +112,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:embedBoldItalic": {
                         _attr: {
@@ -137,7 +137,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:embedItalic": {
                         _attr: {
@@ -163,7 +163,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:embedRegular": [
                         {
@@ -190,7 +190,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:notTrueType": {},
                 },
@@ -209,7 +209,7 @@ describe("font", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:font": expect.arrayContaining([
+            "hh:font": expect.arrayContaining([
                 {
                     "w:embedItalic": {
                         _attr: {

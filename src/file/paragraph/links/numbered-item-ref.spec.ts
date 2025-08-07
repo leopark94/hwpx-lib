@@ -10,7 +10,7 @@ describe("NumberedItemReference", () => {
             const ref = new NumberedItemReference("some_bookmark");
             const tree = new Formatter().format(ref);
             expect(tree).to.deep.equal({
-                "w:fldSimple": {
+                "hp:fldSimple": {
                     _attr: {
                         "w:instr": "REF some_bookmark \\h \\w",
                     },
@@ -22,7 +22,7 @@ describe("NumberedItemReference", () => {
             const ref = new NumberedItemReference("some_bookmark", "1", { hyperlink: false });
             const tree = new Formatter().format(ref);
             expect(tree).to.deep.equal({
-                "w:fldSimple": [
+                "hp:fldSimple": [
                     {
                         _attr: {
                             "w:instr": "REF some_bookmark \\w",
@@ -50,7 +50,7 @@ describe("NumberedItemReference", () => {
             const ref = new NumberedItemReference("some_bookmark", "1", { referenceFormat: NumberedItemReferenceFormat.RELATIVE });
             const tree = new Formatter().format(ref);
             expect(tree).to.deep.equal({
-                "w:fldSimple": [
+                "hp:fldSimple": [
                     {
                         _attr: {
                             "w:instr": "REF some_bookmark \\h \\r",
@@ -78,7 +78,7 @@ describe("NumberedItemReference", () => {
             const ref = new NumberedItemReference("some_bookmark", "1", { referenceFormat: NumberedItemReferenceFormat.NONE });
             const tree = new Formatter().format(ref);
             expect(tree).to.deep.equal({
-                "w:fldSimple": [
+                "hp:fldSimple": [
                     {
                         _attr: {
                             "w:instr": "REF some_bookmark \\h",
@@ -106,7 +106,7 @@ describe("NumberedItemReference", () => {
             const ref = new NumberedItemReference("some_bookmark", "1", { referenceFormat: NumberedItemReferenceFormat.NO_CONTEXT });
             const tree = new Formatter().format(ref);
             expect(tree).to.deep.equal({
-                "w:fldSimple": [
+                "hp:fldSimple": [
                     {
                         _attr: {
                             "w:instr": "REF some_bookmark \\h \\n",

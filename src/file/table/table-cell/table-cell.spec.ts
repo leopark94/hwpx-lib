@@ -446,7 +446,7 @@ describe("TableCell", () => {
                     {
                         "hp:tcPr": [
                             {
-                                "w:shd": {
+                                "hp:shd": {
                                     _attr: {
                                         "hp:color": "0000ff",
                                         "hp:fill": "FF0000",

@@ -24,7 +24,7 @@ describe("ConcreteHyperlink", () => {
         it("should create a hyperlink with correct root key", () => {
             const tree = new Formatter().format(hyperlink);
             expect(tree).to.deep.equal({
-                "w:hyperlink": [
+                "hp:hyperlink": [
                     {
                         _attr: {
                             "w:history": 1,
@@ -58,7 +58,7 @@ describe("ConcreteHyperlink", () => {
             it("should create an internal link with anchor tag", () => {
                 const tree = new Formatter().format(hyperlink);
                 expect(tree).to.deep.equal({
-                    "w:hyperlink": [
+                    "hp:hyperlink": [
                         {
                             _attr: {
                                 "w:history": 1,
@@ -102,7 +102,7 @@ describe("InternalHyperlink", () => {
             const tree = new Formatter().format(internalHyperlink);
 
             expect(tree).to.deep.equal({
-                "w:hyperlink": [
+                "hp:hyperlink": [
                     {
                         _attr: {
                             "w:anchor": "test-id",

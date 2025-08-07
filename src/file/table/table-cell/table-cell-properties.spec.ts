@@ -66,7 +66,7 @@ describe("TableCellProperties", () => {
                 },
             });
             const tree = new Formatter().format(properties);
-            expect(tree).to.deep.equal({ "hp:tcPr": [{ "w:shd": { _attr: { "hp:fill": "ffffff", "hp:color": "000000" } } }] });
+            expect(tree).to.deep.equal({ "hp:tcPr": [{ "hp:shd": { _attr: { "hp:fill": "ffffff", "hp:color": "000000" } } }] });
         });
 
         it("should set the TableCellBorders", () => {

@@ -102,7 +102,7 @@ describe("SectionProperties", () => {
             expect(tree["hp:sectPr"][4]).to.deep.equal({ "hs:pageNumbers": { _attr: { "w:fmt": "cardinalText", "w:start": 10 } } });
             expect(tree["hp:sectPr"][5]).to.deep.equal({ "w:cols": { _attr: { "hp:space": 208, "w:sep": true, "w:num": 2 } } });
             expect(tree["hp:sectPr"][6]).to.deep.equal({ "w:vAlign": { _attr: { "hp:val": "top" } } });
-            expect(tree["hp:sectPr"][7]).to.deep.equal({ "w:titlePg": {} });
+            expect(tree["hp:sectPr"][7]).to.deep.equal({ "hs:titlePg": {} });
             expect(tree["hp:sectPr"][8]).to.deep.equal({ "hs:docGrid": { _attr: { "hp:linePitch": 360, "hp:type": "lines" } } });
         });
 

@@ -151,7 +151,7 @@ describe("TableProperties", () => {
             expect(tree).to.deep.equal({
                 "hp:tblPr": [
                     {
-                        "w:shd": {
+                        "hp:shd": {
                             _attr: {
                                 "hp:color": "auto",
                                 "hp:fill": "b79c2f",

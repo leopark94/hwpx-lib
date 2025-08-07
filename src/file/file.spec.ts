@@ -385,7 +385,7 @@ describe("File", () => {
 
         const tree = new Formatter().format(doc.Settings);
 
-        expect(tree["hp:settings"][2]).to.deep.equal({ "ha:evenAndOddHeaders": {} });
+        expect(tree["ha:settings"][2]).to.deep.equal({ "ha:evenAndOddHeaders": {} });
     });
 
     describe("#comments", () => {

@@ -196,7 +196,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "hp:run": [{ "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "subscript" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "subscript" } } }] }],
             });
         });
     });
@@ -208,7 +208,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "hp:run": [{ "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "superscript" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "superscript" } } }] }],
             });
         });
     });
@@ -223,7 +223,7 @@ describe("Run", () => {
                 "hp:run": [
                     {
                         "hp:charPr": [
-                            { "w:highlight": { _attr: { "hp:val": "yellow" } } },
+                            { "hp:highlight": { _attr: { "hp:val": "yellow" } } },
                             {
                                 "w:highlightCs": {
                                     _attr: {
@@ -251,7 +251,7 @@ describe("Run", () => {
             expect(tree).to.deep.equal({
                 "hp:run": [
                     {
-                        "hp:charPr": [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
+                        "hp:charPr": [{ "hp:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
                     },
                 ],
             });

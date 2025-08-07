@@ -208,7 +208,35 @@ const DOCX_TO_HWPX_MAPPINGS = {
     // More elements found in failing tests
     '"w:uri"': '"ha:uri"',
     '"w:overrideTableStyleFontSizeAndJustification"': '"ha:overrideTableStyleFontSizeAndJustification"',
-    '"w:compatSetting"': '"ha:compatSetting"'
+    '"w:compatSetting"': '"ha:compatSetting"',
+    
+    // Font and document structure
+    '"w:font"': '"hh:font"',
+    '"w:sdt"': '"hp:ctrl"', // Structured Document Tag -> Control
+    '"w:sdtPr"': '"hp:ctrlPr"',
+    '"w:sdtContent"': '"hp:ctrlContent"',
+    
+    // Additional border and formatting attributes that were wrong
+    '"w:width"': '"hp:sz"', // Border width should be hp:sz not hp:width
+    '"w:type"': '"hp:val"',  // Border type should be hp:val not hp:type
+    
+    // More missing elements from error analysis
+    '"w:document"': '"hml:document"', // Already defined but ensuring consistency
+    '"w:hyperlink"': '"hp:hyperlink"',
+    '"w:fldSimple"': '"hp:fldSimple"',
+    
+    // Settings-related missing mappings
+    '"hp:settings"': '"ha:settings"', // Fix inconsistent mapping
+    
+    // Additional section/document structure
+    '"w:titlePg"': '"hs:titlePg"',
+    '"w:textDirection"': '"hs:textDirection"',
+    
+    // Additional run/text formatting
+    '"w:color"': '"hp:color"',
+    '"w:highlight"': '"hp:highlight"',
+    '"w:shd"': '"hp:shd"',
+    '"w:vertAlign"': '"hp:vertAlign"'
 };
 
 // Additional regex patterns for more complex replacements

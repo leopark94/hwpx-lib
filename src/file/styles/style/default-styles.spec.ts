@@ -229,7 +229,7 @@ describe("Default Styles", () => {
                 {
                     "hp:charPr": [
                         {
-                            "w:vertAlign": {
+                            "hp:vertAlign": {
                                 _attr: {
                                     "hp:val": "superscript",
                                 },

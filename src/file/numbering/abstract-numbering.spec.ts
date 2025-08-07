@@ -1608,7 +1608,7 @@ describe("AbstractNumbering", () => {
                                     },
                                 },
                                 {
-                                    "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "subscript" } } }],
+                                    "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "subscript" } } }],
                                 },
                                 {
                                     _attr: {
@@ -1682,7 +1682,7 @@ describe("AbstractNumbering", () => {
                                     },
                                 },
                                 {
-                                    "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "superscript" } } }],
+                                    "hp:charPr": [{ "hp:vertAlign": { _attr: { "hp:val": "superscript" } } }],
                                 },
                                 {
                                     _attr: {
@@ -2050,22 +2050,22 @@ describe("AbstractNumbering", () => {
             const highlightTests = [
                 {
                     highlight: HighlightColor.YELLOW,
-                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: true,
-                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: false,
-                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }],
+                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: "550099",
-                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
+                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
                 },
             ];
             highlightTests.forEach(({ highlight, highlightComplexScript, expected }) => {
@@ -2149,7 +2149,7 @@ describe("AbstractNumbering", () => {
                         fill: "006622",
                         color: "0000FF",
                     },
-                    expected: [{ "w:shd": { _attr: { "hp:val": "diagStripe", "hp:fill": "006622", "hp:color": "0000FF" } } }],
+                    expected: [{ "hp:shd": { _attr: { "hp:val": "diagStripe", "hp:fill": "006622", "hp:color": "0000FF" } } }],
                 },
                 {
                     shading: {
@@ -2157,7 +2157,7 @@ describe("AbstractNumbering", () => {
                         fill: "00FFFF",
                         color: "FF0000",
                     },
-                    expected: [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
+                    expected: [{ "hp:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
                 },
             ];
             shadingTests.forEach(({ shading, expected }) => {

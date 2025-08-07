@@ -43,9 +43,9 @@ describe("Table of Contents", () => {
 });
 
 const DEFAULT_TOC = {
-    "w:sdt": [
+    "hp:ctrl": [
         {
-            "w:sdtPr": [
+            "hp:ctrlPr": [
                 {
                     "w:alias": {
                         _attr: {
@@ -56,7 +56,7 @@ const DEFAULT_TOC = {
             ],
         },
         {
-            "w:sdtContent": [
+            "hp:ctrlContent": [
                 {
                     "hp:p": [
                         {
@@ -111,9 +111,9 @@ const DEFAULT_TOC = {
 };
 
 const COMPLETE_TOC = {
-    "w:sdt": [
+    "hp:ctrl": [
         {
-            "w:sdtPr": [
+            "hp:ctrlPr": [
                 {
                     "w:alias": {
                         _attr: {
@@ -124,7 +124,7 @@ const COMPLETE_TOC = {
             ],
         },
         {
-            "w:sdtContent": [
+            "hp:ctrlContent": [
                 {
                     "hp:p": [
                         {
