@@ -1,0 +1,36 @@
+import { DocumentWrapper } from "@file/document-wrapper";
+import { Paragraph } from "@file/paragraph";
+import { Table } from "@file/table";
+import { File } from "@file/file";
+export declare class HwpxCompilerBase {
+    protected nextElementId: number;
+    protected nextCharPrId: number;
+    protected nextParaPrId: number;
+    protected nextBorderFillId: number;
+    protected readonly namespaces = "xmlns:ha=\"http://www.hancom.co.kr/hwpml/2011/app\" xmlns:hp=\"http://www.hancom.co.kr/hwpml/2011/paragraph\" xmlns:hp10=\"http://www.hancom.co.kr/hwpml/2016/paragraph\" xmlns:hs=\"http://www.hancom.co.kr/hwpml/2011/section\" xmlns:hc=\"http://www.hancom.co.kr/hwpml/2011/core\" xmlns:hh=\"http://www.hancom.co.kr/hwpml/2011/head\" xmlns:hhs=\"http://www.hancom.co.kr/hwpml/2011/history\" xmlns:hm=\"http://www.hancom.co.kr/hwpml/2011/master-page\" xmlns:hpf=\"http://www.hancom.co.kr/schema/2011/hpf\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:opf=\"http://www.idpf.org/2007/opf/\" xmlns:ooxmlchart=\"http://www.hancom.co.kr/hwpml/2016/ooxmlchart\" xmlns:hwpunitchar=\"http://www.hancom.co.kr/hwpml/2016/HwpUnitChar\" xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns:config=\"urn:oasis:names:tc:opendocument:xmlns:config:1.0\"";
+    compileHeader(file: File): string;
+    compileSection(document: DocumentWrapper): string;
+    protected _generateDocInfo(): string;
+    protected _generateDocumentProperties(): string;
+    protected _generateCompatibleDocument(): string;
+    protected _generateLayoutCompatibility(): string;
+    protected _generateDocData(): string;
+    protected _generateForbidden(): string;
+    protected _generateFontFaceList(file: File): string;
+    protected _generateBorderFillList(): string;
+    protected _generateCharPrList(): string;
+    protected _generateTabPrList(): string;
+    protected _generateNumberingList(file: File): string;
+    protected _generateBulletList(): string;
+    protected _generateParaPrList(): string;
+    protected _generateStyleList(file: File): string;
+    protected _generateMemoShapeList(): string;
+    protected _generateTrackChangeList(): string;
+    protected _generateTrackChangeAuthorList(): string;
+    protected _generateFirstParagraph(): string;
+    protected _compileBody(documentWrapper: DocumentWrapper): string;
+    protected _compileParagraph(paragraph: Paragraph): string;
+    protected _compileTable(table: Table): string;
+    protected _generateSettings(): string;
+    protected _extractPreviewText(document: DocumentWrapper): string;
+}

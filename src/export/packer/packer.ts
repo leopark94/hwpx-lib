@@ -3,7 +3,7 @@ import { Stream } from "stream";
 import { File } from "@file/file";
 import { OutputByType, OutputType } from "@util/output-type";
 
-import { HwpxCompiler } from "./hwpx-compiler";
+import { HwpxMainCompiler } from "./hwpx-main-compiler";
 import { IXmlifyedFile } from "./next-compiler";
 
 /**
@@ -98,5 +98,5 @@ export class Packer {
         return stream;
     }
 
-    private static readonly compiler = new HwpxCompiler();
+    private static readonly compiler = new HwpxMainCompiler();
 }

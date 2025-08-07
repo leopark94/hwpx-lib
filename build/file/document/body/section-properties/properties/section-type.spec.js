@@ -1,0 +1,28 @@
+import { describe, expect, it } from "vitest";
+import { Formatter } from "@export/formatter";
+import { SectionType, Type } from "./section-type";
+describe("Type", () => {
+    it("should create with even page section type", () => {
+        const sectionType = new Type(SectionType.EVEN_PAGE);
+        const tree = new Formatter().format(sectionType);
+        expect(tree).to.deep.equal({
+            "hp:type": {
+                _attr: {
+                    "hp:val": "evenPage",
+                },
+            },
+        });
+    });
+    it("should create with continuous section type", () => {
+        const sectionType = new Type(SectionType.CONTINUOUS);
+        const tree = new Formatter().format(sectionType);
+        expect(tree).to.deep.equal({
+            "hp:type": {
+                _attr: {
+                    "hp:val": "continuous",
+                },
+            },
+        });
+    });
+});
+//# sourceMappingURL=section-type.spec.js.map

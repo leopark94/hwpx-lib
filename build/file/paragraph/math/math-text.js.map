@@ -1,0 +1,1 @@
+{"version":3,"file":"math-text.js","sourceRoot":"","sources":["../../../../src/file/paragraph/math/math-text.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,sBAAsB,CAAC;AAEpD,MAAM,OAAO,QAAS,SAAQ,YAAY;IACtC,YAAmB,IAAY;QAC3B,KAAK,CAAC,KAAK,CAAC,CAAC;QAEb,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;IACzB,CAAC;CACJ"}

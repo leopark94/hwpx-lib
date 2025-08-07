@@ -1,0 +1,1 @@
+{"version":3,"file":"text-run.js","sourceRoot":"","sources":["../../../../src/file/paragraph/run/text-run.ts"],"names":[],"mappings":"AAAA,OAAO,EAAe,GAAG,EAAE,MAAM,OAAO,CAAC;AAEzC,MAAM,OAAO,OAAQ,SAAQ,GAAG;IAC5B,YAAmB,OAA6B;QAC5C,KAAK,CAAC,OAAO,OAAO,KAAK,QAAQ,CAAC,CAAC,CAAC,EAAE,IAAI,EAAE,OAAO,EAAE,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC;IACrE,CAAC;CACJ"}

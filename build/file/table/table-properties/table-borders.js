@@ -1,0 +1,67 @@
+import { BorderElement, BorderStyle } from "@file/border";
+import { XmlComponent } from "@file/xml-components";
+const NONE_BORDER = {
+    style: BorderStyle.NONE,
+    size: 0,
+    color: "auto",
+};
+const DEFAULT_BORDER = {
+    style: BorderStyle.SINGLE,
+    size: 4,
+    color: "auto",
+};
+export class TableBorders extends XmlComponent {
+    constructor(options) {
+        super("hp:tblBorders");
+        if (options.top) {
+            this.root.push(new BorderElement("hp:top", options.top));
+        }
+        else {
+            this.root.push(new BorderElement("hp:top", DEFAULT_BORDER));
+        }
+        if (options.left) {
+            this.root.push(new BorderElement("hp:left", options.left));
+        }
+        else {
+            this.root.push(new BorderElement("hp:left", DEFAULT_BORDER));
+        }
+        if (options.bottom) {
+            this.root.push(new BorderElement("hp:bottom", options.bottom));
+        }
+        else {
+            this.root.push(new BorderElement("hp:bottom", DEFAULT_BORDER));
+        }
+        if (options.right) {
+            this.root.push(new BorderElement("hp:right", options.right));
+        }
+        else {
+            this.root.push(new BorderElement("hp:right", DEFAULT_BORDER));
+        }
+        if (options.insideHorizontal) {
+            this.root.push(new BorderElement("hp:insideH", options.insideHorizontal));
+        }
+        else {
+            this.root.push(new BorderElement("hp:insideH", DEFAULT_BORDER));
+        }
+        if (options.insideVertical) {
+            this.root.push(new BorderElement("hp:insideV", options.insideVertical));
+        }
+        else {
+            this.root.push(new BorderElement("hp:insideV", DEFAULT_BORDER));
+        }
+    }
+}
+Object.defineProperty(TableBorders, "NONE", {
+    enumerable: true,
+    configurable: true,
+    writable: true,
+    value: {
+        top: NONE_BORDER,
+        bottom: NONE_BORDER,
+        left: NONE_BORDER,
+        right: NONE_BORDER,
+        insideHorizontal: NONE_BORDER,
+        insideVertical: NONE_BORDER,
+    }
+});
+//# sourceMappingURL=table-borders.js.map

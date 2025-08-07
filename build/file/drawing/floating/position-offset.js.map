@@ -1,0 +1,1 @@
+{"version":3,"file":"position-offset.js","sourceRoot":"","sources":["../../../../src/file/drawing/floating/position-offset.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAgB,MAAM,sBAAsB,CAAC;AAWpE,MAAM,CAAC,MAAM,oBAAoB,GAAG,CAAC,WAAmB,EAAgB,EAAE,CACtE,IAAI,cAAc,CAAC;IACf,IAAI,EAAE,cAAc;IAEpB,QAAQ,EAAE,CAAC,WAAW,CAAC,QAAQ,EAAS,CAAC;CAC5C,CAAC,CAAC"}

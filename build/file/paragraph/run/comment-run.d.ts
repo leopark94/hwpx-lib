@@ -1,0 +1,30 @@
+import { FileChild } from "@file/file-child";
+import { Relationships } from "@file/relationships";
+import { XmlComponent } from "@file/xml-components";
+export type ICommentOptions = {
+    readonly id: number;
+    readonly children: readonly FileChild[];
+    readonly initials?: string;
+    readonly author?: string;
+    readonly date?: Date;
+};
+export type ICommentsOptions = {
+    readonly children: readonly ICommentOptions[];
+};
+export declare class CommentRangeStart extends XmlComponent {
+    constructor(id: number);
+}
+export declare class CommentRangeEnd extends XmlComponent {
+    constructor(id: number);
+}
+export declare class CommentReference extends XmlComponent {
+    constructor(id: number);
+}
+export declare class Comment extends XmlComponent {
+    constructor({ id, initials, author, date, children }: ICommentOptions);
+}
+export declare class Comments extends XmlComponent {
+    private readonly relationships;
+    constructor({ children }: ICommentsOptions);
+    get Relationships(): Relationships;
+}
