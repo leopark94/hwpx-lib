@@ -1,6 +1,6 @@
 // Example demonstrating page borders with style, colors and size
 
-import { BorderStyle, Document, Packer, PageBorderDisplay, PageBorderOffsetFrom, PageBorderZOrder, Paragraph, TextRun } from "docx";
+import { BorderStyle, Document, Packer, PageBorderDisplay, PageBorderOffsetFrom, PageBorderZOrder, Paragraph, TextRun } from "hwpx";
 import * as fs from "fs";
 
 const doc = new Document({
@@ -59,5 +59,6 @@ const doc = new Document({
 
 // Used to export the file into a .docx file
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/71-page-borders-2.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/71-page-borders-2.hwpx");
 });

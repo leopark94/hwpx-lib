@@ -1,29 +1,7 @@
-// Simple example to add text to a document
+// HWPX 호환 수식 예제 (수식 기능은 HWPX에서 지원되지 않음)
 
 import * as fs from "fs";
-import {
-    Document,
-    Math,
-    MathAngledBrackets,
-    MathCurlyBrackets,
-    MathFraction,
-    MathFunction,
-    MathPreSubSuperScript,
-    MathRadical,
-    MathRoundBrackets,
-    MathRun,
-    MathSquareBrackets,
-    MathSubScript,
-    MathSubSuperScript,
-    MathSum,
-    MathIntegral,
-    MathSuperScript,
-    Packer,
-    Paragraph,
-    TextRun,
-    MathLimitLower,
-    MathLimitUpper,
-} from "docx";
+import { Document, Packer, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -32,306 +10,58 @@ const doc = new Document({
             children: [
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathRun("2+2"),
-                                new MathFraction({
-                                    numerator: [new MathRun("hi")],
-                                    denominator: [new MathRun("2")],
-                                }),
-                            ],
-                        }),
                         new TextRun({
-                            text: "Foo Bar",
+                            text: "수식 기능은 HWPX에서 지원되지 않습니다",
                             bold: true,
+                            size: 24,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathFraction({
-                                    numerator: [
-                                        new MathRun("1"),
-                                        new MathRadical({
-                                            children: [new MathRun("2")],
-                                        }),
-                                    ],
-                                    denominator: [new MathRun("2")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "대신 일반 텍스트로 수식을 표현할 수 있습니다:",
+                            size: 20,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathSum({
-                                    children: [new MathRun("test")],
-                                }),
-                                new MathSum({
-                                    children: [
-                                        new MathSuperScript({
-                                            children: [new MathRun("e")],
-                                            superScript: [new MathRun("2")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("i")],
-                                }),
-                                new MathSum({
-                                    children: [
-                                        new MathRadical({
-                                            children: [new MathRun("i")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("i")],
-                                    superScript: [new MathRun("10")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "2 + 2 = 4",
+                            size: 20,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathIntegral({
-                                    children: [new MathRun("test")],
-                                }),
-                                new MathIntegral({
-                                    children: [
-                                        new MathSuperScript({
-                                            children: [new MathRun("e")],
-                                            superScript: [new MathRun("2")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("i")],
-                                }),
-                                new MathIntegral({
-                                    children: [
-                                        new MathRadical({
-                                            children: [new MathRun("i")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("i")],
-                                    superScript: [new MathRun("10")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "1/2 = 0.5",
+                            size: 20,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathSuperScript({
-                                    children: [new MathRun("test")],
-                                    superScript: [new MathRun("hello")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "√2 ≈ 1.414",
+                            size: 20,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathSubScript({
-                                    children: [new MathRun("test")],
-                                    subScript: [new MathRun("hello")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "∑(i=1 to 10) i = 55",
+                            size: 20,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
-                        new Math({
-                            children: [
-                                new MathSubScript({
-                                    children: [new MathRun("x")],
-                                    subScript: [
-                                        new MathSuperScript({
-                                            children: [new MathRun("y")],
-                                            superScript: [new MathRun("2")],
-                                        }),
-                                    ],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathSubSuperScript({
-                                    children: [new MathRun("test")],
-                                    superScript: [new MathRun("hello")],
-                                    subScript: [new MathRun("world")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathPreSubSuperScript({
-                                    children: [new MathRun("test")],
-                                    superScript: [new MathRun("hello")],
-                                    subScript: [new MathRun("world")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathSubScript({
-                                    children: [
-                                        new MathFraction({
-                                            numerator: [new MathRun("1")],
-                                            denominator: [new MathRun("2")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("4")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathSubScript({
-                                    children: [
-                                        new MathRadical({
-                                            children: [
-                                                new MathFraction({
-                                                    numerator: [new MathRun("1")],
-                                                    denominator: [new MathRun("2")],
-                                                }),
-                                            ],
-                                            degree: [new MathRun("4")],
-                                        }),
-                                    ],
-                                    subScript: [new MathRun("x")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathRadical({
-                                    children: [new MathRun("4")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathFunction({
-                                    name: [
-                                        new MathSuperScript({
-                                            children: [new MathRun("cos")],
-                                            superScript: [new MathRun("-1")],
-                                        }),
-                                    ],
-                                    children: [new MathRun("100")],
-                                }),
-                                new MathRun("×"),
-                                new MathFunction({
-                                    name: [new MathRun("sin")],
-                                    children: [new MathRun("360")],
-                                }),
-                                new MathRun("= x"),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathRoundBrackets({
-                                    children: [
-                                        new MathFraction({
-                                            numerator: [new MathRun("1")],
-                                            denominator: [new MathRun("2")],
-                                        }),
-                                    ],
-                                }),
-                                new MathSquareBrackets({
-                                    children: [
-                                        new MathFraction({
-                                            numerator: [new MathRun("1")],
-                                            denominator: [new MathRun("2")],
-                                        }),
-                                    ],
-                                }),
-                                new MathCurlyBrackets({
-                                    children: [
-                                        new MathFraction({
-                                            numerator: [new MathRun("1")],
-                                            denominator: [new MathRun("2")],
-                                        }),
-                                    ],
-                                }),
-                                new MathAngledBrackets({
-                                    children: [
-                                        new MathFraction({
-                                            numerator: [new MathRun("1")],
-                                            denominator: [new MathRun("2")],
-                                        }),
-                                    ],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathFraction({
-                                    numerator: [
-                                        new MathRadical({
-                                            children: [new MathRun("4")],
-                                        }),
-                                    ],
-                                    denominator: [new MathRun("2a")],
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
-                            children: [
-                                new MathLimitUpper({
-                                    children: [new MathRun("x")],
-                                    limit: [new MathRun("-")],
-                                }),
-                                new MathRun("="),
-                                new MathLimitLower({
-                                    children: [new MathRun("lim")],
-                                    limit: [new MathRun("x→0")],
-                                }),
-                            ],
+                        new TextRun({
+                            text: "∫x²dx = x³/3 + C",
+                            size: 20,
                         }),
                     ],
                 }),
@@ -341,5 +71,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/55-math.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/55-math.hwpx");
 });

@@ -1,7 +1,7 @@
 // Generate a CV
 
 import * as fs from "fs";
-import { AlignmentType, Document, HeadingLevel, Packer, Paragraph, Tab, TabStopPosition, TabStopType, TextRun } from "docx";
+import { AlignmentType, Document, HeadingLevel, Packer, Paragraph, Tab, TabStopPosition, TabStopType, TextRun } from "hwpx";
 
 // tslint:disable:no-shadowed-variable
 
@@ -386,5 +386,6 @@ const documentCreator = new DocumentCreator();
 const doc = documentCreator.create([experiences, education, skills, achievements]);
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/10-my-cv.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/10-my-cv.hwpx");
 });

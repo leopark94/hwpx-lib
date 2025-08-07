@@ -1,7 +1,7 @@
 // Creates two paragraphs, one with a border and one without
 
 import * as fs from "fs";
-import { BorderStyle, Document, Packer, Paragraph, TextRun } from "docx";
+import { BorderStyle, Document, Packer, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -61,5 +61,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/26-paragraph-borders.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/26-paragraph-borders.hwpx");
 });

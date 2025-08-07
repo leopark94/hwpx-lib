@@ -15,7 +15,7 @@ import {
     TableCell,
     TableRow,
     WidthType,
-} from "docx";
+} from "hwpx";
 
 const table = new Table({
     rows: [
@@ -405,5 +405,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/32-merge-and-shade-table-cells.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/32-merge-and-shade-table-cells.hwpx");
 });

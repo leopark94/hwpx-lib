@@ -1,7 +1,7 @@
 // The demo on the README.md
 
 import * as fs from "fs";
-import { Document, HeadingLevel, ImageRun, Packer, Paragraph, Table, TableCell, TableRow, VerticalAlignTable } from "docx";
+import { Document, HeadingLevel, ImageRun, Packer, Paragraph, Table, TableCell, TableRow, VerticalAlignTable } from "hwpx";
 
 const table = new Table({
     rows: [
@@ -93,5 +93,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/50-readme-demo.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/50-readme-demo.hwpx");
 });

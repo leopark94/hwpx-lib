@@ -1,7 +1,7 @@
 // Numbered lists - Add parent number in sub number
 
 import * as fs from "fs";
-import { AlignmentType, convertInchesToTwip, Document, HeadingLevel, LevelFormat, Packer, Paragraph } from "docx";
+import { AlignmentType, convertInchesToTwip, Document, HeadingLevel, LevelFormat, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     numbering: {
@@ -85,5 +85,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/57-add-parent-numbered-lists.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/57-add-parent-numbered-lists.hwpx");
 });

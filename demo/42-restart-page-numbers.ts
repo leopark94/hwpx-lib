@@ -1,7 +1,7 @@
 // Page numbers - Start from 0 on a new section
 
 import * as fs from "fs";
-import { AlignmentType, Document, Header, Packer, PageBreak, PageNumber, PageNumberSeparator, Paragraph, TextRun } from "docx";
+import { AlignmentType, Document, Header, Packer, PageBreak, PageNumber, PageNumberSeparator, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -89,5 +89,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/42-restart-page-numbers.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/42-restart-page-numbers.hwpx");
 });

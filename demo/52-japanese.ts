@@ -1,7 +1,7 @@
 // Japanese text - Need to use a Japanese font
 
 import * as fs from "fs";
-import { Document, HeadingLevel, Packer, Paragraph } from "docx";
+import { Document, HeadingLevel, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     styles: {
@@ -34,5 +34,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/52-japanese.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/52-japanese.hwpx");
 });

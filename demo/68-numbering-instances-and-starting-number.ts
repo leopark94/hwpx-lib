@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { Document, Packer, Paragraph, LevelFormat } from "docx";
+import { Document, Packer, Paragraph, LevelFormat } from "hwpx";
 
 const doc = new Document({
     numbering: {
@@ -84,5 +84,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/68-numbering-instances-and-starting-number.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/68-numbering-instances-and-starting-number.hwpx");
 });

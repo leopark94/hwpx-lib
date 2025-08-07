@@ -1,20 +1,7 @@
 // Patch a document with patches
 
 import * as fs from "fs";
-import {
-    ExternalHyperlink,
-    HeadingLevel,
-    ImageRun,
-    Paragraph,
-    patchDocument,
-    PatchType,
-    Table,
-    TableCell,
-    TableRow,
-    TextDirection,
-    TextRun,
-    VerticalAlignTable,
-} from "docx";
+import { Document, Packer, Paragraph, TextRun } from "hwpx";
 
 patchDocument({
     outputType: "nodebuffer",
@@ -32,14 +19,11 @@ patchDocument({
             type: PatchType.PARAGRAPH,
             children: [
                 new TextRun("#657"),
-                new ExternalHyperlink({
-                    children: [
+                
                         new TextRun({
                             text: "BBC News Link",
                         }),
-                    ],
-                    link: "https://www.bbc.co.uk/news",
-                }),
+                    ,
             ],
         },
         paragraph_replace: {
@@ -50,19 +34,12 @@ patchDocument({
                 new Paragraph({
                     children: [
                         new TextRun("This is a "),
-                        new ExternalHyperlink({
-                            children: [
+                        
                                 new TextRun({
                                     text: "Google Link",
                                 }),
-                            ],
-                            link: "https://www.google.co.uk",
-                        }),
-                        new ImageRun({
-                            type: "png",
-                            data: fs.readFileSync("./demo/images/dog.png"),
-                            transformation: { width: 100, height: 100 },
-                        }),
+                            ,
+                        new TextRun("[이미지]"),
                     ],
                 }),
             ],
@@ -76,24 +53,17 @@ patchDocument({
             children: [
                 new TextRun("replaced just as"),
                 new TextRun(" well"),
-                new ExternalHyperlink({
-                    children: [
+                
                         new TextRun({
                             text: "BBC News Link",
                         }),
-                    ],
-                    link: "https://www.bbc.co.uk/news",
-                }),
+                    ,
             ],
         },
         image_test: {
             type: PatchType.PARAGRAPH,
             children: [
-                new ImageRun({
-                    type: "jpg",
-                    data: fs.readFileSync("./demo/images/image1.jpeg"),
-                    transformation: { width: 100, height: 100 },
-                }),
+                new TextRun("[이미지]"),
             ],
         },
         table: {

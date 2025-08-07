@@ -1,7 +1,7 @@
 // Numbered lists - With complex number text
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, LevelFormat } from "docx";
+import { Document, Packer, Paragraph, LevelFormat } from "hwpx";
 
 const doc = new Document({
     numbering: {
@@ -107,5 +107,6 @@ const doc = new Document({
 
 // Used to export the file into a .docx file
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/64-complex-numbering-text.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/64-complex-numbering-text.hwpx");
 });

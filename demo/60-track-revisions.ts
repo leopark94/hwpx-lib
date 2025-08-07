@@ -14,7 +14,7 @@ import {
     ShadingType,
     Tab,
     TextRun,
-} from "docx";
+} from "hwpx";
 
 /*
     For reference, see
@@ -160,5 +160,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/60-track-revisions.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/60-track-revisions.hwpx");
 });

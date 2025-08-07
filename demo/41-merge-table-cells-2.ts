@@ -1,7 +1,7 @@
 // Multiple cells merging in the same table - Rows and Columns
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, Table, TableCell, TableRow } from "docx";
+import { Document, Packer, Paragraph, Table, TableCell, TableRow } from "hwpx";
 
 const table = new Table({
     rows: [
@@ -259,5 +259,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/41-merge-table-cells-2.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/41-merge-table-cells-2.hwpx");
 });

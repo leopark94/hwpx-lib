@@ -4,7 +4,7 @@
 // and subject) cover typical use cases, but sometimes custom properties are required.
 
 import * as fs from "fs";
-import { Document, Packer } from "docx";
+import { Document, Packer } from "hwpx";
 
 const doc = new Document(
     // Standard properties
@@ -22,5 +22,6 @@ const doc = new Document(
 );
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/54-custom-properties.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/54-custom-properties.hwpx");
 });

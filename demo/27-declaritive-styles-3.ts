@@ -1,7 +1,7 @@
 // Custom styles using JavaScript configuration
 
 import * as fs from "fs";
-import { Document, convertInchesToTwip, HeadingLevel, Packer, Paragraph, UnderlineType } from "docx";
+import { Document, convertInchesToTwip, HeadingLevel, Packer, Paragraph, UnderlineType } from "hwpx";
 
 const doc = new Document({
     styles: {
@@ -64,5 +64,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/27-declaritive-styles-3.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/27-declaritive-styles-3.hwpx");
 });

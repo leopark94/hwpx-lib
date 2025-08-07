@@ -1,7 +1,7 @@
 // Add image to table cell
 
 import * as fs from "fs";
-import { Document, ImageRun, Packer, Paragraph, Table, TableCell, TableRow } from "docx";
+import { Document, ImageRun, Packer, Paragraph, Table, TableCell, TableRow } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -93,5 +93,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/24-images-to-table-cell.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/24-images-to-table-cell.hwpx");
 });

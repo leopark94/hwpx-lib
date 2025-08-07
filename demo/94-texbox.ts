@@ -1,5 +1,5 @@
 // Simple example to add textbox to a document
-import { Document, Packer, Paragraph, Textbox, TextRun } from "docx";
+import { Document, Packer, Paragraph, Textbox, TextRun } from "hwpx";
 import * as fs from "fs";
 
 const doc = new Document({
@@ -39,5 +39,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/94-texbox.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/94-texbox.hwpx");
 });

@@ -1,0 +1,38 @@
+import fs from 'fs';
+import { execSync } from 'child_process';
+
+// 모든 .ts 파일 찾기
+const demoFiles = execSync('find demo -name "*.ts"', { encoding: 'utf8' })
+    .trim()
+    .split('\n')
+    .filter(f => f);
+
+console.log(`총 ${demoFiles.length}개의 데모 파일의 import를 hwpx로 변경합니다...`);
+
+let successCount = 0;
+let errorCount = 0;
+
+for (const file of demoFiles) {
+    try {
+        const content = fs.readFileSync(file, 'utf8');
+        
+        // "../lib"를 "hwpx"로 변경
+        let newContent = content
+            .replace(/from "\.\.\/lib"/g, 'from "hwpx"')
+            .replace(/import \{.*\} from "\.\.\/lib";/g, 'import { Document, Paragraph, TextRun, Table, TableRow, TableCell, Packer } from "hwpx";');
+        
+        // 기존 파일 덮어쓰기
+        fs.writeFileSync(file, newContent);
+        
+        console.log(`✅ ${file} import 변경 완료`);
+        successCount++;
+        
+    } catch (error) {
+        console.error(`❌ ${file} 변경 실패:`, error.message);
+        errorCount++;
+    }
+}
+
+console.log(`\n변경 완료!`);
+console.log(`✅ 성공: ${successCount}개`);
+console.log(`❌ 실패: ${errorCount}개`);

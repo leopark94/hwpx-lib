@@ -1,7 +1,7 @@
 // Add custom borders to table cell
 
 import * as fs from "fs";
-import { BorderStyle, Document, Packer, Paragraph, Table, TableCell, TableRow } from "docx";
+import { BorderStyle, Document, Packer, Paragraph, Table, TableCell, TableRow } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -103,5 +103,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/20-table-cell-borders.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/20-table-cell-borders.hwpx");
 });

@@ -1,7 +1,7 @@
 // Use fields to include dynamic text
 
 import * as fs from "fs";
-import { Bookmark, Document, Packer, Paragraph, SimpleField, TextRun } from "docx";
+import { Bookmark, Document, Packer, Paragraph, SimpleField, TextRun } from "hwpx";
 
 const doc = new Document({
     creator: "Me",
@@ -39,5 +39,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/66-fields.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/66-fields.hwpx");
 });

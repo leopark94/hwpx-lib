@@ -1,7 +1,7 @@
 // Change background colour of whole document
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, Tab, TextRun } from "docx";
+import { Document, Packer, Paragraph, Tab, TextRun } from "hwpx";
 
 const doc = new Document({
     background: {
@@ -30,5 +30,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/56-background-color.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/56-background-color.hwpx");
 });

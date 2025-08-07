@@ -1,155 +1,51 @@
-// Example on how to add hyperlinks to websites
+// HWPX 호환 하이퍼링크 예제 (하이퍼링크 기능은 HWPX에서 지원되지 않음)
 
 import * as fs from "fs";
-import { Document, ExternalHyperlink, Footer, FootnoteReferenceRun, ImageRun, Packer, Paragraph, TextRun } from "docx";
+import { Document, Packer, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
-    styles: {
-        default: {
-            hyperlink: {
-                run: {
-                    color: "FF0000",
-                    underline: {
-                        color: "0000FF",
-                    },
-                },
-            },
-        },
-    },
-    footnotes: {
-        1: {
-            children: [
-                new Paragraph({
-                    children: [
-                        new TextRun("Click here for the "),
-                        new ExternalHyperlink({
-                            children: [
-                                new TextRun({
-                                    text: "Footnotes external hyperlink",
-                                    style: "Hyperlink",
-                                }),
-                            ],
-                            link: "http://www.example.com",
-                        }),
-                    ],
-                }),
-            ],
-        },
-    },
     sections: [
         {
-            footers: {
-                default: new Footer({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun("Click here for the "),
-                                new ExternalHyperlink({
-                                    children: [
-                                        new TextRun({
-                                            text: "Footer external hyperlink",
-                                            style: "Hyperlink",
-                                        }),
-                                    ],
-                                    link: "http://www.example.com",
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-            },
-            headers: {
-                default: new Footer({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun("Click here for the "),
-                                new ExternalHyperlink({
-                                    children: [
-                                        new TextRun({
-                                            text: "Header external hyperlink",
-                                            style: "Hyperlink",
-                                        }),
-                                    ],
-                                    link: "http://www.google.com",
-                                }),
-                            ],
-                        }),
-                    ],
-                }),
-            },
+            properties: {},
             children: [
                 new Paragraph({
                     children: [
-                        new ExternalHyperlink({
-                            children: [
-                                new TextRun({
-                                    text: "Anchor Text",
-                                    style: "Hyperlink",
-                                }),
-                            ],
-                            link: "http://www.example.com",
-                        }),
-                        new FootnoteReferenceRun(1),
-                    ],
-                }),
-                new Paragraph({
-                    children: [
-                        new ExternalHyperlink({
-                            children: [
-                                new ImageRun({
-                                    data: fs.readFileSync("./demo/images/image1.jpeg"),
-                                    transformation: {
-                                        width: 100,
-                                        height: 100,
-                                    },
-                                }),
-                            ],
-                            link: "http://www.google.com",
-                        }),
-                        new ExternalHyperlink({
-                            children: [
-                                new TextRun({
-                                    text: "BBC News Link",
-                                    style: "Hyperlink",
-                                }),
-                            ],
-                            link: "https://www.bbc.co.uk/news",
+                        new TextRun({
+                            text: "하이퍼링크 기능은 HWPX에서 지원되지 않습니다",
+                            bold: true,
+                            size: 24,
                         }),
                     ],
                 }),
                 new Paragraph({
                     children: [
                         new TextRun({
-                            text: "This is a hyperlink with formatting: ",
+                            text: "대신 일반 텍스트로 링크를 표현할 수 있습니다:",
+                            size: 20,
                         }),
-                        new ExternalHyperlink({
-                            children: [
-                                new TextRun({
-                                    text: "A ",
-                                    style: "Hyperlink",
-                                }),
-                                new TextRun({
-                                    text: "single ",
-                                    bold: true,
-                                    style: "Hyperlink",
-                                }),
-                                new TextRun({
-                                    text: "link",
-                                    doubleStrike: true,
-                                    style: "Hyperlink",
-                                }),
-                                new TextRun({
-                                    text: "1",
-                                    superScript: true,
-                                    style: "Hyperlink",
-                                }),
-                                new TextRun({
-                                    text: "!",
-                                    style: "Hyperlink",
-                                }),
-                            ],
-                            link: "http://www.example.com",
+                    ],
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "웹사이트: http://www.example.com",
+                            size: 20,
+                        }),
+                    ],
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "구글: http://www.google.com",
+                            size: 20,
+                        }),
+                    ],
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "참고: HWPX에서는 하이퍼링크 대신 일반 텍스트로 URL을 표시합니다.",
+                            size: 16,
                         }),
                     ],
                 }),
@@ -159,5 +55,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/35-hyperlinks.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/35-hyperlinks.hwpx");
 });

@@ -1,7 +1,7 @@
 // Move + offset header and footer
 
 import * as fs from "fs";
-import { Document, Footer, Header, Packer, PageBreak, Paragraph, TextRun } from "docx";
+import { Document, Footer, Header, Packer, PageBreak, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
     evenAndOddHeaderAndFooters: true,
@@ -67,5 +67,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/63-odd-even-header-footer.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/63-odd-even-header-footer.hwpx");
 });

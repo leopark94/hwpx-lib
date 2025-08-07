@@ -1,7 +1,7 @@
 // This demo shows how to create bookmarks then link to them with internal hyperlinks
 
 import * as fs from "fs";
-import { Bookmark, Document, Footer, HeadingLevel, InternalHyperlink, Packer, PageBreak, Paragraph, TextRun, PageReference } from "docx";
+import { Bookmark, Document, Footer, HeadingLevel, InternalHyperlink, Packer, PageBreak, Paragraph, TextRun, PageReference } from "hwpx";
 
 const LOREM_IPSUM =
     /* cspell:disable-next-line */
@@ -74,5 +74,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/21-bookmarks.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/21-bookmarks.hwpx");
 });

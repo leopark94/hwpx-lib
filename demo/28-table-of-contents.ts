@@ -1,7 +1,7 @@
 // Table of contents
 
 import * as fs from "fs";
-import { File, HeadingLevel, Packer, Paragraph, StyleLevel, TableOfContents } from "docx";
+import { File, HeadingLevel, Packer, Paragraph, StyleLevel, TableOfContents } from "hwpx";
 
 // WordprocessingML docs for TableOfContents can be found here:
 // http://officeopenxml.com/WPtableOfContents.php
@@ -63,5 +63,6 @@ const doc = new File({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/28-table-of-contents.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/28-table-of-contents.hwpx");
 });

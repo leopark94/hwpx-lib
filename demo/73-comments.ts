@@ -1,7 +1,7 @@
 // Simple example to add comments to a document
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, TextRun, CommentRangeStart, CommentRangeEnd, CommentReference, ImageRun } from "docx";
+import { Document, Packer, Paragraph, TextRun, CommentRangeStart, CommentRangeEnd, CommentReference, ImageRun } from "hwpx";
 
 const doc = new Document({
     comments: {
@@ -142,5 +142,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/73-comments.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/73-comments.hwpx");
 });

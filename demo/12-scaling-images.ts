@@ -1,7 +1,7 @@
 // Scaling images
 
 import * as fs from "fs";
-import { Document, ImageRun, Packer, Paragraph } from "docx";
+import { Document, ImageRun, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -58,5 +58,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/12-scaling-images.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/12-scaling-images.hwpx");
 });

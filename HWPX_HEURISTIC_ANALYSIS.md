@@ -1,0 +1,1 @@
+# HWPX 휴리스틱 분석 보고서\n\n총 202개의 HWPX 파일을 분석했습니다.\n\n## Contents/section0.xml 분석\n* **루트 태그**: `<hs:sec>`가 가장 많이 사용됩니다.\n* **secPr 위치**: 96.04%의 파일에서 첫 번째 문단(`<hp:p>`) 내에 \`<hp:secPr>\`이 존재합니다.\n\n## Contents/header.xml 분석\n* **스타일 목록 태그**: \`<hh:charProperties>\`, \`<hh:paraProperties>\`, \`<hh:borderFills>\`가 일관적으로 사용됩니다. (기존에 사용하던 'List' 접미사가 붙은 태그가 아님)\n

@@ -1,7 +1,7 @@
 // Example demonstrating line numbers.
 
 import * as fs from "fs";
-import { Document, HeadingLevel, LineNumberRestartFormat, Packer, Paragraph } from "docx";
+import { Document, HeadingLevel, LineNumberRestartFormat, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -29,5 +29,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/40-line-numbers.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/40-line-numbers.hwpx");
 });

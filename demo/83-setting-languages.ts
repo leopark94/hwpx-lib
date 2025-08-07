@@ -1,7 +1,7 @@
 // Simple example to add text to a document
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph } from "docx";
+import { Document, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     styles: {
@@ -65,5 +65,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/83-setting-languages.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/83-setting-languages.hwpx");
 });

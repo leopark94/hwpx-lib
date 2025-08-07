@@ -1,7 +1,7 @@
 // Sections with multiple columns
 
 import * as fs from "fs";
-import { Column, Document, Packer, Paragraph } from "docx";
+import { Column, Document, Packer, Paragraph } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -27,5 +27,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/69-different-width-columns.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/69-different-width-columns.hwpx");
 });

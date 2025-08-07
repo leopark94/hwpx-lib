@@ -1,7 +1,7 @@
 // Simple example to add text to a document
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, Tab, TextRun } from "docx";
+import { Document, Packer, Paragraph, Tab, TextRun } from "hwpx";
 
 const font = fs.readFileSync("./demo/assets/Pacifico.ttf");
 
@@ -40,5 +40,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/92-declarative-custom-fonts.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/92-declarative-custom-fonts.hwpx");
 });

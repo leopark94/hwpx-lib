@@ -1,7 +1,7 @@
 // Example of how you would create a table and add data to it
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, Table, TableCell, TableRow, WidthType } from "docx";
+import { Document, Packer, Paragraph, Table, TableCell, TableRow, WidthType } from "hwpx";
 
 const table = new Table({
     columnWidths: [3505, 5505],
@@ -128,5 +128,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/4-basic-table.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/4-basic-table.hwpx");
 });

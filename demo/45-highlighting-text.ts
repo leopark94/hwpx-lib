@@ -1,7 +1,7 @@
 // Highlighting text
 
 import * as fs from "fs";
-import { AlignmentType, Document, Header, Packer, Paragraph, TextRun } from "docx";
+import { AlignmentType, Document, Header, Packer, Paragraph, TextRun } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -33,5 +33,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/45-highlighting-text.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/45-highlighting-text.hwpx");
 });

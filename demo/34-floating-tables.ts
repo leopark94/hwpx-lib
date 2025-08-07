@@ -14,7 +14,7 @@ import {
     TableLayoutType,
     TableRow,
     WidthType,
-} from "docx";
+} from "hwpx";
 
 const table = new Table({
     rows: [
@@ -64,5 +64,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/34-floating-tables.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/34-floating-tables.hwpx");
 });

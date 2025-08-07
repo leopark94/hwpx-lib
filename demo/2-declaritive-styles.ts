@@ -1,7 +1,7 @@
 // Example on how to customize the look at feel using Styles
 
 import * as fs from "fs";
-import { AlignmentType, convertInchesToTwip, Document, HeadingLevel, LevelFormat, Packer, Paragraph, TextRun, UnderlineType } from "docx";
+import { AlignmentType, convertInchesToTwip, Document, HeadingLevel, LevelFormat, Packer, Paragraph, TextRun, UnderlineType } from "hwpx";
 
 const doc = new Document({
     creator: "Clippy",
@@ -264,5 +264,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/2-declaritive-styles.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/2-declaritive-styles.hwpx");
 });

@@ -1,7 +1,7 @@
 // This example shows 3 styles using XML styles
 
 import * as fs from "fs";
-import { Document, HeadingLevel, Packer, Paragraph } from "docx";
+import { Document, HeadingLevel, Packer, Paragraph } from "hwpx";
 
 const styles = fs.readFileSync("./demo/assets/custom-styles.xml", "utf-8");
 const doc = new Document({
@@ -29,5 +29,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/13-xml-styles.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/13-xml-styles.hwpx");
 });

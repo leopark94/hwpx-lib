@@ -1,7 +1,7 @@
 // This demo shows right to left for special languages
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, Table, TableCell, TableRow, TextRun } from "docx";
+import { Document, Packer, Paragraph, Table, TableCell, TableRow, TextRun } from "hwpx";
 
 const doc = new Document({
     sections: [
@@ -67,5 +67,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync("My Document.docx", buffer);
+    fs.writeFileSync("demo/22-right-to-left-text.hwpx", buffer);
+    console.log("✅ HWPX 파일 생성 완료: demo/22-right-to-left-text.hwpx");
 });
