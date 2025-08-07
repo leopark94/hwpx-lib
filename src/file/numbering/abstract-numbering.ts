@@ -20,12 +20,12 @@ import { MultiLevelType } from "./multi-level-type";
 // <xsd:attribute name="restartNumberingAfterBreak" type="w12:ST_OnOff"/>
 // https://docs.microsoft.com/en-us/openspecs/office_standards/ms-docx/cbddeff8-01aa-4486-a48e-6a83dede4f13
 class AbstractNumberingAttributes extends XmlAttributeComponent<{
-    readonly abstractNumId: number;
-    readonly restartNumberingAfterBreak: number;
+    readonly id: string;
+    readonly type?: string;
 }> {
     protected readonly xmlKeys = {
-        abstractNumId: "w:abstractNumId",
-        restartNumberingAfterBreak: "w15:restartNumberingAfterBreak",
+        id: "id",
+        type: "type",
     };
 }
 
@@ -33,14 +33,14 @@ export class AbstractNumbering extends XmlComponent {
     public readonly id: number;
 
     public constructor(id: number, levelOptions: readonly ILevelsOptions[]) {
-        super("w:abstractNum");
+        super("hh:numbering");
         this.root.push(
             new AbstractNumberingAttributes({
-                abstractNumId: decimalNumber(id),
-                restartNumberingAfterBreak: 0,
+                id: id.toString(),
+                type: "bullet", // HWPX default
             }),
         );
-        this.root.push(new MultiLevelType("hybridMultilevel"));
+        // HWPX에서는 MultiLevelType 대신 type 속성 사용
         this.id = id;
 
         for (const option of levelOptions) {

@@ -1,7 +1,8 @@
 import { AttributeMap, XmlAttributeComponent } from "@file/xml-components";
 
 /* cSpell:disable */
-export const DocumentAttributeNamespaces = {
+// DOCX 네임스페이스 (HWPX 변환 시 사용 안 함)
+export const DocxAttributeNamespaces = {
     wpc: "http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas",
     mc: "http://schemas.openxmlformats.org/markup-compatibility/2006",
     o: "urn:schemas-microsoft-com:office:office",
@@ -39,6 +40,18 @@ export const DocumentAttributeNamespaces = {
     w16: "http://schemas.microsoft.com/office/word/2018/wordml",
     w16sdtdh: "http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash",
     w16se: "http://schemas.microsoft.com/office/word/2015/wordml/symex",
+};
+
+// HWPX 네임스페이스
+export const DocumentAttributeNamespaces = {
+    ha: "http://www.hancom.co.kr/hwpml/2011/app",
+    hp: "http://www.hancom.co.kr/hwpml/2011/paragraph", 
+    hp10: "http://www.hancom.co.kr/hwpml/2016/paragraph",
+    hs: "http://www.hancom.co.kr/hwpml/2011/section",
+    hc: "http://www.hancom.co.kr/hwpml/2011/core",
+    hh: "http://www.hancom.co.kr/hwpml/2011/head",
+    hm: "http://www.hancom.co.kr/hwpml/2011/master-page",
+    hml: "http://www.hancom.co.kr/hwpml/2011/root",
 };
 /* cSpell:enable */
 

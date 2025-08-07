@@ -123,10 +123,11 @@ export const createPageSize = ({ width, height, orientation, code }: IPageSizeAt
     return new BuilderElement<IPageSizeAttributes>({
         name: "hs:pageSize",
         attributes: {
-            width: { key: "hp:w", value: orientation === PageOrientation.LANDSCAPE ? heightTwips : widthTwips },
-            height: { key: "hp:h", value: orientation === PageOrientation.LANDSCAPE ? widthTwips : heightTwips },
-            orientation: { key: "w:orient", value: orientation },
-            code: { key: "w:code", value: code },
+            width: { key: "width", value: orientation === PageOrientation.LANDSCAPE ? heightTwips : widthTwips },
+            height: { key: "height", value: orientation === PageOrientation.LANDSCAPE ? widthTwips : heightTwips },
+            // DOCX 전용: orientation, code
+            orientation: { key: "orientation", value: orientation },
+            code: { key: "code", value: code },
         },
     });
 };

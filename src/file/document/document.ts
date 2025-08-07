@@ -36,43 +36,20 @@ export class Document extends XmlComponent {
 
     public constructor(options: IDocumentOptions) {
         super("hml:document");
+        // HWPX 네임스페이스 설정
         this.root.push(
             new DocumentAttributes(
                 [
-                    "wpc",
-                    "mc",
-                    "o",
-                    "r",
-                    "m",
-                    "v",
-                    "wp14",
-                    "wp",
-                    "w10",
-                    "w",
-                    "w14",
-                    "w15",
-                    "wpg",
-                    "wpi",
-                    "wne",
-                    "wps",
-                    "cx",
-                    "cx1",
-                    "cx2",
-                    "cx3",
-                    "cx4",
-                    "cx5",
-                    "cx6",
-                    "cx7",
-                    "cx8",
-                    "aink",
-                    "am3d",
-                    "w16cex",
-                    "w16cid",
-                    "w16",
-                    "w16sdtdh",
-                    "w16se",
+                    "ha",
+                    "hp",
+                    "hp10",
+                    "hs",
+                    "hc",
+                    "hh",
+                    "hm",
+                    "hml",
                 ],
-                "w14 w15 wp14",
+                undefined,
             ),
         );
         this.body = new Body();

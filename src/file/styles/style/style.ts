@@ -60,10 +60,10 @@ export type IStyleOptions = {
 
 class StyleAttributes extends XmlAttributeComponent<IStyleAttributes> {
     protected readonly xmlKeys = {
-        type: "hs:type",
-        styleId: "hh:styleId",
-        default: "hh:default",
-        customStyle: "hh:customStyle",
+        type: "type",
+        styleId: "id",
+        default: "default",
+        customStyle: "customStyle",
     };
 }
 

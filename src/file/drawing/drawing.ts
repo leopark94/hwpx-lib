@@ -29,7 +29,8 @@ export type IDrawingOptions = {
 
 export class Drawing extends XmlComponent {
     public constructor(imageData: IMediaData, drawingOptions: IDrawingOptions = {}) {
-        super("hp:drawing");
+        // HWPX에서는 drawing이 아닌 pic 또는 container로 처리
+        super("hp:pic");
 
         if (!drawingOptions.floating) {
             this.root.push(

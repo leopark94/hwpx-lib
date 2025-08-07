@@ -33,13 +33,13 @@ export class PageMargin extends XmlComponent {
         super("hs:pageMargin");
         this.root.push(
             new NextAttributeComponent<IPageMarginAttributes>({
-                top: { key: "hp:top", value: signedTwipsMeasureValue(top) },
-                right: { key: "hp:right", value: twipsMeasureValue(right) },
-                bottom: { key: "hp:bottom", value: signedTwipsMeasureValue(bottom) },
-                left: { key: "hp:left", value: twipsMeasureValue(left) },
-                header: { key: "hp:header", value: twipsMeasureValue(header) },
-                footer: { key: "hp:footer", value: twipsMeasureValue(footer) },
-                gutter: { key: "hp:gutter", value: twipsMeasureValue(gutter) },
+                top: { key: "top", value: signedTwipsMeasureValue(top) },
+                right: { key: "right", value: twipsMeasureValue(right) },
+                bottom: { key: "bottom", value: signedTwipsMeasureValue(bottom) },
+                left: { key: "left", value: twipsMeasureValue(left) },
+                header: { key: "header", value: twipsMeasureValue(header) },
+                footer: { key: "footer", value: twipsMeasureValue(footer) },
+                gutter: { key: "gutter", value: twipsMeasureValue(gutter) },
             }),
         );
     }

@@ -35,13 +35,9 @@ export class Numbering extends XmlComponent {
     private readonly concreteNumUniqueNumericId = concreteNumUniqueNumericIdGen();
 
     public constructor(options: INumberingOptions) {
-        super("w:numbering");
-        this.root.push(
-            new DocumentAttributes(
-                ["wpc", "mc", "o", "r", "m", "v", "wp14", "wp", "w10", "w", "w14", "w15", "wpg", "wpi", "wne", "wps"],
-                "w14 w15 wp14",
-            ),
-        );
+        // HWPX에서는 numbering이 head.xml에 포함됨
+        super("hh:numberings");
+        // HWPX에서는 네임스페이스 선언 불필요
 
         const abstractNumbering = new AbstractNumbering(this.abstractNumUniqueNumericId(), [
             {

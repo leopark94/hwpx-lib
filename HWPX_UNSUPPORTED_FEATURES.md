@@ -157,6 +157,87 @@
    - 기본 너비 설정 지원
    - 복잡한 너비 계산은 제한적
 
+## Document 구조 미지원 기능
+
+### 1. DOCX 전용 속성들 (HWPX에서 지원 안 됨)
+- **DOCX 네임스페이스들** - HWPX는 완전히 다른 네임스페이스 체계 사용
+- **w:conformance** - 호환성 수준
+- **mc:Ignorable** - 무시 가능한 네임스페이스
+- **w:rsidR, w:rsidRPr** - 리비전 식별자
+
+### 2. HWPX 전용 속성들 (DOCX에서 대응 안 됨)
+- **hml:version** - HWPX 버전
+- **hml:hasProgramData** - 프로그램 데이터 포함 여부
+- **hh:head** - 문서 헤더 정보 (스타일, 번호 등)
+- **hc:binData** - 바이너리 데이터 저장
+
+## Numbering 시스템 미지원 기능
+
+### 1. DOCX 전용 속성들 (HWPX에서 지원 안 됨)
+- **w:numIdMacAtCleanup** - Mac 정리 시 번호 ID
+- **w:tmpl** - 템플릿 ID
+- **w:tplc** - 템플릿 코드
+- **w:lvlRestart** - 레벨 재시작
+- **w:isLgl** - 법적 번호 스타일
+
+### 2. HWPX 전용 속성들 (DOCX에서 대응 안 됨)
+- **hh:paraHead** - 단락 머리말 형식
+- **hh:useInstWidth** - 인스턴스 너비 사용
+- **hh:autoTabStop** - 자동 탭 정지
+- **hh:autoTabLeft** - 자동 탭 왼쪽
+
+## Styles 시스템 미지원 기능
+
+### 1. DOCX 전용 속성들 (HWPX에서 지원 안 됨)
+- **w:locked** - 스타일 잠금
+- **w:personal** - 개인 스타일
+- **w:personalCompose** - 개인 작성 스타일
+- **w:personalReply** - 개인 답변 스타일
+- **w:rsid** - 리비전 식별자
+
+### 2. HWPX 전용 속성들 (DOCX에서 대응 안 됨)
+- **hh:langInfo** - 언어 정보
+- **hh:lockForm** - 양식 잠금
+- **hh:charShape** - 문자 모양 참조
+
+## Drawing/Media 미지원 기능
+
+### 1. DOCX와 HWPX의 근본적 차이
+- **구조 차이**: DOCX는 DrawingML 사용, HWPX는 자체 그래픽 형식
+- **w:drawing** → **hp:pic** 또는 **hp:container**
+- **wp:inline/wp:anchor** → HWPX의 배치 속성
+- **a:graphic** → HWPX의 binData 참조
+
+### 2. DOCX 전용 기능 (HWPX에서 제한적 지원)
+- **효과**: 그림자, 반사, 3D 효과 등
+- **SmartArt**: 다이어그램 객체
+- **차트**: 차트 객체
+- **복잡한 변형**: 회전, 기울이기 등
+
+### 3. HWPX 전용 기능 (DOCX에서 대응 안 됨)
+- **hp:shapeObject** - 도형 객체
+- **hp:lineShape** - 선 도형
+- **hp:connectLine** - 연결선
+- **hp:picture** - 그림 객체
+
+## 기타 미지원 기능
+
+### 1. Header/Footer
+- DOCX: 여러 유형 (first, even, default)
+- HWPX: 단순화된 구조
+
+### 2. Footnotes/Endnotes
+- DOCX: 복잡한 참조 시스템
+- HWPX: 단순화된 각주 시스템
+
+### 3. Track Changes
+- DOCX: 상세한 변경 추적
+- HWPX: 제한적 지원
+
+### 4. Content Controls
+- DOCX: 풍부한 콘텐츠 컨트롤
+- HWPX: 미지원
+
 ## 테스트 필요 항목
 
 1. 다양한 폰트 사용 시 인덱스 매핑
@@ -169,3 +250,7 @@
 8. 들여쓰기 및 내어쓰기
 9. 줄 간격 설정
 10. 테이블 셀 병합 및 분할
+11. 번호 매기기 시스템
+12. 스타일 상속 및 적용
+13. 이미지 삽입 및 배치
+14. 섹션 나누기 및 페이지 설정

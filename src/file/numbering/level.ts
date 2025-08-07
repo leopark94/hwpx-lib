@@ -146,12 +146,12 @@ export const LevelFormat = {
 /* eslint-enable */
 
 class LevelAttributes extends XmlAttributeComponent<{
-    readonly ilvl?: number;
-    readonly tentative?: number;
+    readonly level?: number;
+    readonly start?: number;
 }> {
     protected readonly xmlKeys = {
-        ilvl: "hp:level",
-        tentative: "w15:tentative",
+        level: "level",
+        start: "start",
     };
 }
 
@@ -161,10 +161,10 @@ class LevelAttributes extends XmlAttributeComponent<{
 // </xsd:complexType>
 class NumberFormat extends XmlComponent {
     public constructor(value: string) {
-        super("hp:numFmt");
+        super("hh:format");
         this.root.push(
             new Attributes({
-                val: value,
+                type: value, // HWPX에서는 type 속성 사용
             }),
         );
     }
@@ -176,10 +176,10 @@ class NumberFormat extends XmlComponent {
 // </xsd:complexType>
 class LevelText extends XmlComponent {
     public constructor(value: string) {
-        super("hp:lvlText");
+        super("hh:textRef");
         this.root.push(
             new Attributes({
-                val: value,
+                text: value, // HWPX에서는 text 속성 사용
             }),
         );
     }
@@ -187,10 +187,19 @@ class LevelText extends XmlComponent {
 
 class LevelJc extends XmlComponent {
     public constructor(value: (typeof AlignmentType)[keyof typeof AlignmentType]) {
-        super("hp:lvlJc");
+        super("hh:align");
+        let alignValue = value;
+        // HWPX 형식으로 변환
+        if (value === AlignmentType.LEFT || value === AlignmentType.START) {
+            alignValue = "LEFT" as any;
+        } else if (value === AlignmentType.RIGHT || value === AlignmentType.END) {
+            alignValue = "RIGHT" as any;  
+        } else if (value === AlignmentType.CENTER) {
+            alignValue = "CENTER" as any;
+        }
         this.root.push(
             new Attributes({
-                val: value,
+                horizontal: alignValue,
             }),
         );
     }
@@ -278,7 +287,7 @@ export class LevelBase extends XmlComponent {
         suffix,
         isLegalNumberingStyle,
     }: ILevelsOptions) {
-        super("w:lvl");
+        super("hh:paraHead");
 
         this.root.push(new NumberValueElement("w:start", decimalNumber(start)));
 
@@ -314,8 +323,8 @@ export class LevelBase extends XmlComponent {
 
         this.root.push(
             new LevelAttributes({
-                ilvl: decimalNumber(level),
-                tentative: 1,
+                level: decimalNumber(level),
+                start: start,
             }),
         );
     }
