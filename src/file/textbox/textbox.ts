@@ -11,7 +11,7 @@ type ITextboxOptions = Omit<IParagraphOptions, "style"> & {
 
 export class Textbox extends FileChild {
     public constructor({ style, children, ...rest }: ITextboxOptions) {
-        super("w:p");
+        super("hp:p");
         this.root.push(new ParagraphProperties(rest));
 
         this.root.push(

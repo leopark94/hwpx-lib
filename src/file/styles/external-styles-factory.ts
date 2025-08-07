@@ -33,7 +33,7 @@ export class ExternalStylesFactory {
 
         let stylesXmlElement: XMLElement | undefined;
         for (const xmlElm of xmlObj.elements || []) {
-            if (xmlElm.name === "w:styles") {
+            if (xmlElm.name === "hh:styles") {
                 stylesXmlElement = xmlElm;
             }
         }

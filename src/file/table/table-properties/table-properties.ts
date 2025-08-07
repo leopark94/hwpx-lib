@@ -48,7 +48,7 @@ export type ITablePropertiesOptions = {
 
 export class TableProperties extends IgnoreIfEmptyXmlComponent {
     public constructor(options: ITablePropertiesOptions) {
-        super("w:tblPr");
+        super("hp:tblPr");
 
         if (options.style) {
             this.root.push(new StringValueElement("w:tblStyle", options.style));

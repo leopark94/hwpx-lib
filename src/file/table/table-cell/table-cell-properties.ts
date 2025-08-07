@@ -28,7 +28,7 @@ export type ITableCellPropertiesOptions = {
 
 export class TableCellProperties extends IgnoreIfEmptyXmlComponent {
     public constructor(options: ITableCellPropertiesOptions) {
-        super("w:tcPr");
+        super("hp:tcPr");
 
         if (options.width) {
             this.root.push(new TableWidthElement("w:tcW", options.width));

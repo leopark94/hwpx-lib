@@ -169,7 +169,7 @@ export type IHyphenationOptions = {
 
 export class Settings extends XmlComponent {
     public constructor(options: ISettingsOptions) {
-        super("w:settings");
+        super("ha:settings");
         this.root.push(
             new SettingsAttributes({
                 wpc: "http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas",

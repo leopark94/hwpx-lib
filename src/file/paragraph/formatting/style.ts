@@ -12,7 +12,7 @@ export const HeadingLevel = {
 
 export class Style extends XmlComponent {
     public constructor(styleId: string) {
-        super("w:pStyle");
+        super("hp:styleRef");
         this.root.push(
             new Attributes({
                 val: styleId,

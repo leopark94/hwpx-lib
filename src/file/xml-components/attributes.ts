@@ -24,10 +24,10 @@ export class Attributes extends XmlAttributeComponent<{
 }> {
     protected readonly xmlKeys = {
         val: "w:val",
-        color: "w:color",
+        color: "hp:textColor",
         fill: "w:fill",
         space: "w:space",
-        sz: "w:sz",
+        sz: "hp:height",
         type: "w:type",
         rsidR: "w:rsidR",
         rsidRPr: "w:rsidRPr",

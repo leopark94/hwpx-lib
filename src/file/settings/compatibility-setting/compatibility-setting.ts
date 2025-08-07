@@ -26,7 +26,7 @@ export class CompatibilitySettingAttributes extends XmlAttributeComponent<{
 
 export class CompatibilitySetting extends XmlComponent {
     public constructor(version: number) {
-        super("w:compatSetting");
+        super("ha:compatSetting");
 
         this.root.push(
             new CompatibilitySettingAttributes({

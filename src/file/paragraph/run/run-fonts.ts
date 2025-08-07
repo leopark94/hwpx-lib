@@ -22,7 +22,7 @@ export class RunFonts extends XmlComponent {
     public constructor(name: string, hint?: string);
     public constructor(attrs: string | IFontAttributesProperties);
     public constructor(nameOrAttrs: string | IFontAttributesProperties, hint?: string) {
-        super("w:rFonts");
+        super("hp:fontRef");
         if (typeof nameOrAttrs === "string") {
             // use public constructor(name: string, hint?: string);
             const name = nameOrAttrs;

@@ -22,7 +22,7 @@ export type IColumnsAttributes = {
 
 export class Columns extends XmlComponent {
     public constructor({ space, count, separate, equalWidth, children }: IColumnsAttributes) {
-        super("w:cols");
+        super("hs:columns");
         this.root.push(
             new NextAttributeComponent<Omit<IColumnsAttributes, "children">>({
                 space: { key: "w:space", value: space === undefined ? undefined : twipsMeasureValue(space) },

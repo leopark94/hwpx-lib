@@ -45,7 +45,7 @@ export type ITableRowPropertiesOptions = {
 
 export class TableRowProperties extends IgnoreIfEmptyXmlComponent {
     public constructor(options: ITableRowPropertiesOptions) {
-        super("w:trPr");
+        super("hp:trPr");
 
         if (options.cantSplit !== undefined) {
             this.root.push(new OnOffElement("w:cantSplit", options.cantSplit));

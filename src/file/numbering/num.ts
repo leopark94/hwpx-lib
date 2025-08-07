@@ -15,7 +15,7 @@ class AbstractNumId extends XmlComponent {
 class NumAttributes extends XmlAttributeComponent<{
     readonly numId: number;
 }> {
-    protected readonly xmlKeys = { numId: "w:numId" };
+    protected readonly xmlKeys = { numId: "hp:numId" };
 }
 
 type IOverrideLevel = {
@@ -71,7 +71,7 @@ export class ConcreteNumbering extends XmlComponent {
 }
 
 class LevelOverrideAttributes extends XmlAttributeComponent<{ readonly ilvl: number }> {
-    protected readonly xmlKeys = { ilvl: "w:ilvl" };
+    protected readonly xmlKeys = { ilvl: "hp:level" };
 }
 
 export class LevelOverride extends XmlComponent {

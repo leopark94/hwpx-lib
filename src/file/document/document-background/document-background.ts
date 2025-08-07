@@ -32,7 +32,7 @@ export class DocumentBackgroundAttributes extends XmlAttributeComponent<{
     readonly themeTint?: string;
 }> {
     protected readonly xmlKeys = {
-        color: "w:color",
+        color: "hp:textColor",
         themeColor: "w:themeColor",
         themeShade: "w:themeShade",
         themeTint: "w:themeTint",
@@ -64,7 +64,7 @@ export type IDocumentBackgroundOptions = {
 
 export class DocumentBackground extends XmlComponent {
     public constructor(options: IDocumentBackgroundOptions) {
-        super("w:background");
+        super("ha:background");
 
         this.root.push(
             new DocumentBackgroundAttributes({

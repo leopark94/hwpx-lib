@@ -9,7 +9,7 @@ export class Footer extends InitializableXmlComponent {
     private readonly refId: number;
 
     public constructor(referenceNumber: number, initContent?: XmlComponent) {
-        super("w:ftr", initContent);
+        super("hh:footer", initContent);
         this.refId = referenceNumber;
         if (!initContent) {
             this.root.push(

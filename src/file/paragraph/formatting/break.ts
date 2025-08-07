@@ -11,7 +11,7 @@ const BreakType = {
 
 class Break extends XmlComponent {
     public constructor(type: (typeof BreakType)[keyof typeof BreakType]) {
-        super("w:br");
+        super("hp:br");
         this.root.push(
             new Attributes({
                 type,
@@ -39,6 +39,6 @@ export class ColumnBreak extends Run {
  */
 export class PageBreakBefore extends XmlComponent {
     public constructor() {
-        super("w:pageBreakBefore");
+        super("hp:pageBreakBefore");
     }
 }

@@ -14,7 +14,7 @@ import { PositiveUniversalMeasure, twipsMeasureValue } from "@util/values";
 
 export class TableGrid extends XmlComponent {
     public constructor(widths: readonly number[] | readonly PositiveUniversalMeasure[]) {
-        super("w:tblGrid");
+        super("hp:tblGrid");
         for (const width of widths) {
             this.root.push(new GridCol(width));
         }
@@ -23,7 +23,7 @@ export class TableGrid extends XmlComponent {
 
 export class GridCol extends XmlComponent {
     public constructor(width?: number | PositiveUniversalMeasure) {
-        super("w:gridCol");
+        super("hp:gridCol");
         if (width !== undefined) {
             this.root.push(
                 new NextAttributeComponent<{ readonly width: number | PositiveUniversalMeasure }>({

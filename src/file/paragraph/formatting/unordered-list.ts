@@ -2,7 +2,7 @@ import { Attributes, XmlComponent } from "@file/xml-components";
 
 export class NumberProperties extends XmlComponent {
     public constructor(numberId: number | string, indentLevel: number) {
-        super("w:numPr");
+        super("hp:numbering");
         this.root.push(new IndentLevel(indentLevel));
         this.root.push(new NumberId(numberId));
     }
@@ -10,7 +10,7 @@ export class NumberProperties extends XmlComponent {
 
 class IndentLevel extends XmlComponent {
     public constructor(level: number) {
-        super("w:ilvl");
+        super("hp:level");
 
         if (level > 9) {
             throw new Error(
@@ -28,7 +28,7 @@ class IndentLevel extends XmlComponent {
 
 class NumberId extends XmlComponent {
     public constructor(id: number | string) {
-        super("w:numId");
+        super("hp:numId");
         this.root.push(
             new Attributes({
                 val: typeof id === "string" ? `{${id}}` : id,

@@ -17,7 +17,7 @@ export const createLanguageComponent = (options: ILanguageOptions): XmlComponent
         readonly eastAsia?: string;
         readonly bidirectional?: string;
     }>({
-        name: "w:lang",
+        name: "hp:language",
         attributes: {
             value: {
                 key: "w:val",

@@ -9,7 +9,7 @@ export class FieldInstruction extends XmlComponent {
     private readonly properties: ITableOfContentsOptions;
 
     public constructor(properties: ITableOfContentsOptions = {}) {
-        super("w:instrText");
+        super("hp:instrText");
 
         this.properties = properties;
 

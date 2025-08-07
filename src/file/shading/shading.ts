@@ -29,14 +29,14 @@ export type IShadingAttributesProperties = {
 class ShadingAttributes extends XmlAttributeComponent<IShadingAttributesProperties> {
     protected readonly xmlKeys = {
         fill: "w:fill",
-        color: "w:color",
+        color: "hp:textColor",
         type: "w:val",
     };
 }
 
 export class Shading extends XmlComponent {
     public constructor({ fill, color, type }: IShadingAttributesProperties) {
-        super("w:shd");
+        super("hp:shading");
         this.root.push(
             new ShadingAttributes({
                 fill: fill === undefined ? undefined : hexColorValue(fill),

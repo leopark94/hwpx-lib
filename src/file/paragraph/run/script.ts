@@ -2,7 +2,7 @@ import { Attributes, XmlComponent } from "@file/xml-components";
 
 export abstract class VerticalAlign extends XmlComponent {
     public constructor(type: string) {
-        super("w:vertAlign");
+        super("hp:vertAlign");
         this.root.push(
             new Attributes({
                 val: type,

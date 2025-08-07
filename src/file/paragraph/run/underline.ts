@@ -24,7 +24,7 @@ export const UnderlineType = {
 
 export class Underline extends XmlComponent {
     public constructor(underlineType: (typeof UnderlineType)[keyof typeof UnderlineType] = UnderlineType.SINGLE, color?: string) {
-        super("w:u");
+        super("hp:underline");
         this.root.push(
             new Attributes({
                 val: underlineType,

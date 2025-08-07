@@ -22,7 +22,7 @@ export type IStylesOptions = {
 // </xsd:complexType>
 export class Styles extends XmlComponent {
     public constructor(options: IStylesOptions) {
-        super("w:styles");
+        super("hh:styles");
 
         if (options.initialStyles) {
             this.root.push(options.initialStyles);

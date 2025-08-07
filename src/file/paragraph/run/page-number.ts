@@ -5,7 +5,7 @@ import { TextAttributes } from "./text-attributes";
 
 export class Page extends XmlComponent {
     public constructor() {
-        super("w:instrText");
+        super("hp:instrText");
         this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
         this.root.push("PAGE");
     }
@@ -13,7 +13,7 @@ export class Page extends XmlComponent {
 
 export class NumberOfPages extends XmlComponent {
     public constructor() {
-        super("w:instrText");
+        super("hp:instrText");
         this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
         this.root.push("NUMPAGES");
     }
@@ -21,7 +21,7 @@ export class NumberOfPages extends XmlComponent {
 
 export class NumberOfPagesSection extends XmlComponent {
     public constructor() {
-        super("w:instrText");
+        super("hp:instrText");
         this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
         this.root.push("SECTIONPAGES");
     }
@@ -29,7 +29,7 @@ export class NumberOfPagesSection extends XmlComponent {
 
 export class CurrentSection extends XmlComponent {
     public constructor() {
-        super("w:instrText");
+        super("hp:instrText");
         this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
         this.root.push("SECTION");
     }

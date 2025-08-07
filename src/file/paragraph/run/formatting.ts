@@ -3,7 +3,7 @@ import { UniversalMeasure, hexColorValue, signedTwipsMeasureValue } from "@util/
 
 export class CharacterSpacing extends XmlComponent {
     public constructor(value: number | UniversalMeasure) {
-        super("w:spacing");
+        super("hp:lineSpacing");
         this.root.push(
             new Attributes({
                 val: signedTwipsMeasureValue(value),
@@ -20,7 +20,7 @@ export class CharacterSpacing extends XmlComponent {
 // </xsd:complexType>
 export class Color extends XmlComponent {
     public constructor(color: string) {
-        super("w:color");
+        super("hp:textColor");
         this.root.push(
             new Attributes({
                 val: hexColorValue(color),

@@ -55,7 +55,7 @@ export class Bookmark {
 
 export class BookmarkStart extends XmlComponent {
     public constructor(id: string, linkId: number) {
-        super("w:bookmarkStart");
+        super("hp:bookmarkStart");
 
         const attributes = new BookmarkStartAttributes({
             name: id,
@@ -67,7 +67,7 @@ export class BookmarkStart extends XmlComponent {
 
 export class BookmarkEnd extends XmlComponent {
     public constructor(linkId: number) {
-        super("w:bookmarkEnd");
+        super("hp:bookmarkEnd");
 
         const attributes = new BookmarkEndAttributes({
             id: linkId,

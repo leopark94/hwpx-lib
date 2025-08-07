@@ -57,7 +57,7 @@ export class AlignmentAttributes extends XmlAttributeComponent<{
 
 export class Alignment extends XmlComponent {
     public constructor(type: (typeof AlignmentType)[keyof typeof AlignmentType]) {
-        super("w:jc");
+        super("hp:align");
         this.root.push(new AlignmentAttributes({ val: type }));
     }
 }

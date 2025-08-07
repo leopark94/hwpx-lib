@@ -121,7 +121,7 @@ export const createPageSize = ({ width, height, orientation, code }: IPageSizeAt
     const widthTwips = twipsMeasureValue(width);
     const heightTwips = twipsMeasureValue(height);
     return new BuilderElement<IPageSizeAttributes>({
-        name: "w:pgSz",
+        name: "hs:pageSize",
         attributes: {
             width: { key: "w:w", value: orientation === PageOrientation.LANDSCAPE ? heightTwips : widthTwips },
             height: { key: "w:h", value: orientation === PageOrientation.LANDSCAPE ? widthTwips : heightTwips },

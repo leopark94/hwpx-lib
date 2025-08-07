@@ -14,7 +14,7 @@ export class ConcreteHyperlink extends XmlComponent {
     public readonly linkId: string;
 
     public constructor(children: readonly ParagraphChild[], relationshipId: string, anchor?: string) {
-        super("w:hyperlink");
+        super("hp:hyperlink");
 
         this.linkId = relationshipId;
 

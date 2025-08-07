@@ -11,7 +11,7 @@ export type IBordersOptions = {
 
 export class Border extends IgnoreIfEmptyXmlComponent {
     public constructor(options: IBordersOptions) {
-        super("w:pBdr");
+        super("hp:border");
 
         if (options.top) {
             this.root.push(new BorderElement("w:top", options.top));
@@ -33,7 +33,7 @@ export class Border extends IgnoreIfEmptyXmlComponent {
 
 export class ThematicBreak extends XmlComponent {
     public constructor() {
-        super("w:pBdr");
+        super("hp:border");
         const bottom = new BorderElement("w:bottom", {
             color: "auto",
             space: 1,

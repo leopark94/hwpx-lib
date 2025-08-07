@@ -9,7 +9,7 @@ export class Header extends InitializableXmlComponent {
     private readonly refId: number;
 
     public constructor(referenceNumber: number, initContent?: XmlComponent) {
-        super("w:hdr", initContent);
+        super("hh:header", initContent);
 
         this.refId = referenceNumber;
         if (!initContent) {

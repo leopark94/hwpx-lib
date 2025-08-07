@@ -29,7 +29,7 @@ export type IDrawingOptions = {
 
 export class Drawing extends XmlComponent {
     public constructor(imageData: IMediaData, drawingOptions: IDrawingOptions = {}) {
-        super("w:drawing");
+        super("hp:ctrl");
 
         if (!drawingOptions.floating) {
             this.root.push(

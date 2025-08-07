@@ -211,7 +211,7 @@ export type ICompatibilityOptions = {
 
 export class Compatibility extends XmlComponent {
     public constructor(options: ICompatibilityOptions) {
-        super("w:compat");
+        super("ha:compat");
 
         if (options.version) {
             this.root.push(new CompatibilitySetting(options.version));

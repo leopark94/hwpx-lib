@@ -110,13 +110,13 @@ export class PageNumberElement extends EmptyElement {
 
 export class CarriageReturn extends EmptyElement {
     public constructor() {
-        super("w:cr");
+        super("hp:cr");
     }
 }
 
 export class Tab extends EmptyElement {
     public constructor() {
-        super("w:tab");
+        super("hp:tab");
     }
 }
 

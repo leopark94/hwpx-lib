@@ -30,7 +30,7 @@ class SpacingAttributes extends XmlAttributeComponent<ISpacingProperties> {
 
 export class Spacing extends XmlComponent {
     public constructor(options: ISpacingProperties) {
-        super("w:spacing");
+        super("hp:lineSpacing");
         this.root.push(new SpacingAttributes(options));
     }
 }

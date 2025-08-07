@@ -17,7 +17,7 @@ export type IIndentAttributesProperties = {
 //     <xsd:element name="ind" type="CT_Ind" minOccurs="0"/>
 export class Indent extends XmlComponent {
     public constructor({ start, end, left, right, hanging, firstLine }: IIndentAttributesProperties) {
-        super("w:ind");
+        super("hp:margin");
         // <xsd:complexType name="CT_Ind">
         //     <xsd:attribute name="start" type="ST_SignedTwipsMeasure" use="optional"/>
         //     <xsd:attribute name="startChars" type="ST_DecimalNumber" use="optional"/>

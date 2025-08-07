@@ -23,7 +23,7 @@ const createLsdException = (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const DefaultStyle = (): Record<string, any> => {
     const style = {
-        "w:styles": [
+        "hh:styles": [
             {
                 _attr: {
                     "xmlns:mc": "http://schemas.openxmlformats.org/markup-compatibility/2006",
@@ -35,13 +35,13 @@ export const DefaultStyle = (): Record<string, any> => {
                 },
             },
             {
-                "w:docDefaults": [
+                "hh:docDefaults": [
                     {
-                        "w:rPrDefault": [
+                        "hh:rPrDefault": [
                             {
-                                "w:rPr": [
+                                "hp:charPr": [
                                     {
-                                        "w:rFonts": [
+                                        "hp:fontRef": [
                                             {
                                                 _attr: {
                                                     "w:asciiTheme": "minorHAnsi",
@@ -53,7 +53,7 @@ export const DefaultStyle = (): Record<string, any> => {
                                         ],
                                     },
                                     {
-                                        "w:sz": [
+                                        "hp:height": [
                                             {
                                                 _attr: {
                                                     "w:val": "22",
@@ -71,7 +71,7 @@ export const DefaultStyle = (): Record<string, any> => {
                                         ],
                                     },
                                     {
-                                        "w:lang": [
+                                        "hp:language": [
                                             {
                                                 _attr: {
                                                     "w:val": "en-GB",
@@ -86,11 +86,11 @@ export const DefaultStyle = (): Record<string, any> => {
                         ],
                     },
                     {
-                        "w:pPrDefault": [
+                        "hh:pPrDefault": [
                             {
-                                "w:pPr": [
+                                "hp:paraPr": [
                                     {
-                                        "w:spacing": [
+                                        "hp:lineSpacing": [
                                             {
                                                 _attr: {
                                                     "w:after": "160",

@@ -35,7 +35,7 @@ export class Document extends XmlComponent {
     private readonly body: Body;
 
     public constructor(options: IDocumentOptions) {
-        super("w:document");
+        super("hml:document");
         this.root.push(
             new DocumentAttributes(
                 [

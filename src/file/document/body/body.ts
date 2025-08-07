@@ -8,7 +8,7 @@ export class Body extends XmlComponent {
     private readonly sections: SectionProperties[] = [];
 
     public constructor() {
-        super("w:body");
+        super("hs:sec");
     }
 
     /**

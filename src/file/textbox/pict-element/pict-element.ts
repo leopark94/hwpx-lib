@@ -6,6 +6,6 @@ export type IPictElement = {
 
 export const createPictElement = ({ shape }: IPictElement): XmlComponent =>
     new BuilderElement<{ readonly style?: string }>({
-        name: "w:pict",
+        name: "hp:ctrl",
         children: [shape],
     });

@@ -15,21 +15,21 @@ class FidCharAttrs extends XmlAttributeComponent<{
 
 export class Begin extends XmlComponent {
     public constructor(dirty?: boolean) {
-        super("w:fldChar");
+        super("hp:fldChar");
         this.root.push(new FidCharAttrs({ type: FieldCharacterType.BEGIN, dirty }));
     }
 }
 
 export class Separate extends XmlComponent {
     public constructor(dirty?: boolean) {
-        super("w:fldChar");
+        super("hp:fldChar");
         this.root.push(new FidCharAttrs({ type: FieldCharacterType.SEPARATE, dirty }));
     }
 }
 
 export class End extends XmlComponent {
     public constructor(dirty?: boolean) {
-        super("w:fldChar");
+        super("hp:fldChar");
         this.root.push(new FidCharAttrs({ type: FieldCharacterType.END, dirty }));
     }
 }

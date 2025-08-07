@@ -81,7 +81,7 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
     private readonly numberingReferences: { readonly reference: string; readonly instance: number }[] = [];
 
     public constructor(options?: IParagraphPropertiesOptions) {
-        super("w:pPr");
+        super("hp:paraPr");
 
         if (!options) {
             return this;

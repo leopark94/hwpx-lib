@@ -69,7 +69,7 @@ class StyleAttributes extends XmlAttributeComponent<IStyleAttributes> {
 
 export class Style extends XmlComponent {
     public constructor(attributes: IStyleAttributes, options: IStyleOptions) {
-        super("w:style");
+        super("hh:style");
         this.root.push(new StyleAttributes(attributes));
         if (options.name) {
             this.root.push(new Name(options.name));

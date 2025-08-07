@@ -9,7 +9,7 @@ export type TabStopDefinition = {
 
 export class TabStop extends XmlComponent {
     public constructor(tabDefinitions: readonly TabStopDefinition[]) {
-        super("w:tabs");
+        super("hp:tabs");
 
         for (const tabDefinition of tabDefinitions) {
             this.root.push(new TabStopItem(tabDefinition));
@@ -52,7 +52,7 @@ export class TabAttributes extends XmlAttributeComponent<{
 
 export class TabStopItem extends XmlComponent {
     public constructor({ type, position, leader }: TabStopDefinition) {
-        super("w:tab");
+        super("hp:tab");
         this.root.push(
             new TabAttributes({
                 val: type,

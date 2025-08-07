@@ -119,7 +119,7 @@ export class SectionProperties extends XmlComponent {
         column,
         type,
     }: ISectionPropertiesOptions = {}) {
-        super("w:sectPr");
+        super("hs:sectPr");
 
         this.addHeaderFooterGroup(HeaderFooterType.HEADER, headerWrapperGroup);
         this.addHeaderFooterGroup(HeaderFooterType.FOOTER, footerWrapperGroup);

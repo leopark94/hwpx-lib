@@ -157,14 +157,14 @@ export type IRunPropertiesChangeOptions = {} & IRunPropertiesOptions & IChangedA
 
 export class RunProperties extends IgnoreIfEmptyXmlComponent {
     public constructor(options?: IRunPropertiesOptions) {
-        super("w:rPr");
+        super("hp:charPr");
 
         if (!options) {
             return;
         }
 
         if (options.style) {
-            this.push(new StringValueElement("w:rStyle", options.style));
+            this.push(new StringValueElement("hp:styleRef", options.style));
         }
 
         if (options.font) {
@@ -178,7 +178,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.bold !== undefined) {
-            this.push(new OnOffElement("w:b", options.bold));
+            this.push(new OnOffElement("hp:bold", options.bold));
         }
 
         if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
@@ -186,7 +186,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.italics !== undefined) {
-            this.push(new OnOffElement("w:i", options.italics));
+            this.push(new OnOffElement("hp:italic", options.italics));
         }
 
         if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
@@ -251,7 +251,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.size !== undefined) {
-            this.push(new HpsMeasureElement("w:sz", options.size));
+            this.push(new HpsMeasureElement("hp:height", options.size));
         }
         const szCs =
             options.sizeComplexScript === undefined || options.sizeComplexScript === true ? options.size : options.sizeComplexScript;

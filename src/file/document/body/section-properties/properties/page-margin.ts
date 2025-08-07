@@ -30,7 +30,7 @@ export class PageMargin extends XmlComponent {
         footer: number | PositiveUniversalMeasure,
         gutter: number | PositiveUniversalMeasure,
     ) {
-        super("w:pgMar");
+        super("hs:pageMargin");
         this.root.push(
             new NextAttributeComponent<IPageMarginAttributes>({
                 top: { key: "w:top", value: signedTwipsMeasureValue(top) },

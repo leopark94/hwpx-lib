@@ -3,7 +3,7 @@ import { XmlComponent } from "@file/xml-components";
 
 export class RunPropertiesDefaults extends XmlComponent {
     public constructor(options?: IRunStylePropertiesOptions) {
-        super("w:rPrDefault");
+        super("hh:rPrDefault");
 
         this.root.push(new RunProperties(options));
     }

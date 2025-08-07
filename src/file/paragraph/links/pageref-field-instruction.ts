@@ -6,7 +6,7 @@ import { TextAttributes } from "../run/text-attributes";
 
 export class PageReferenceFieldInstruction extends XmlComponent {
     public constructor(bookmarkId: string, options: IPageReferenceOptions = {}) {
-        super("w:instrText");
+        super("hp:instrText");
         this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
 
         let instruction = `PAGEREF ${bookmarkId}`;

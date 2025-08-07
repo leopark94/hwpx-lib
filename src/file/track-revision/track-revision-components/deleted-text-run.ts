@@ -29,7 +29,7 @@ export class DeletedTextRun extends XmlComponent {
 
 class DeletedTextRunWrapper extends XmlComponent {
     public constructor(options: IRunOptions) {
-        super("w:r");
+        super("hp:run");
         this.root.push(new RunProperties(options));
 
         if (options.children) {

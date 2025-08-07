@@ -15,7 +15,7 @@ export class DocumentDefaults extends XmlComponent {
     private readonly paragraphPropertiesDefaults: ParagraphPropertiesDefaults;
 
     public constructor(options: IDocumentDefaultsOptions) {
-        super("w:docDefaults");
+        super("hh:docDefaults");
 
         this.runPropertiesDefaults = new RunPropertiesDefaults(options.run);
         this.paragraphPropertiesDefaults = new ParagraphPropertiesDefaults(options.paragraph);

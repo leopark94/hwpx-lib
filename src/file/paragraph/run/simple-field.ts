@@ -9,7 +9,7 @@ class FldSimpleAttrs extends XmlAttributeComponent<{ readonly instr: string }> {
 
 export class SimpleField extends XmlComponent {
     public constructor(instruction: string, cachedValue?: string) {
-        super("w:fldSimple");
+        super("hp:field");
         this.root.push(new FldSimpleAttrs({ instr: instruction }));
         if (cachedValue !== undefined) {
             this.root.push(new TextRun(cachedValue));

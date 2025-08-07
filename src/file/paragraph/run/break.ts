@@ -27,6 +27,6 @@ import { XmlComponent } from "@file/xml-components";
 // </xsd:simpleType>
 export class Break extends XmlComponent {
     public constructor() {
-        super("w:br");
+        super("hp:br");
     }
 }
