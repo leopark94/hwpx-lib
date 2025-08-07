@@ -120,14 +120,14 @@ export const createFont = ({
             // http://www.datypic.com/sc/ooxml/e-w_altName-1.html
             ...(altName ? [createStringElement("w:altName", altName)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_panose1-1.html
-            ...(panose1 ? [createStringElement("hh:panose1", panose1)] : []),
+            ...(panose1 ? [createStringElement("w:panose1", panose1)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_charset-1.html
-            ...(charset ? [createStringElement("hh:charset", charset)] : []),
+            ...(charset ? [createStringElement("w:charset", charset)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_family-1.html
-            ...(family ? [createStringElement("hh:family", family)] : []),
+            ...(family ? [createStringElement("w:family", family)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_notTrueType-1.html
             ...(notTrueType ? [new OnOffElement("w:notTrueType", notTrueType)] : []),
-            ...(pitch ? [createStringElement("hh:pitch", pitch)] : []),
+            ...(pitch ? [createStringElement("w:pitch", pitch)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_sig-1.html
             ...(sig
                 ? [
@@ -145,12 +145,12 @@ export const createFont = ({
                   ]
                 : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedRegular-1.html
-            ...(embedRegular ? [createFontRelationship(embedRegular, "hh:embedRegular")] : []),
+            ...(embedRegular ? [createFontRelationship(embedRegular, "w:embedRegular")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedBold-1.html
-            ...(embedBold ? [createFontRelationship(embedBold, "hh:embedBold")] : []),
+            ...(embedBold ? [createFontRelationship(embedBold, "w:embedBold")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedItalic-1.html
-            ...(embedItalic ? [createFontRelationship(embedItalic, "hh:embedItalic")] : []),
+            ...(embedItalic ? [createFontRelationship(embedItalic, "w:embedItalic")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedBoldItalic-1.html
-            ...(embedBoldItalic ? [createFontRelationship(embedBoldItalic, "hh:embedBoldItalic")] : []),
+            ...(embedBoldItalic ? [createFontRelationship(embedBoldItalic, "w:embedBoldItalic")] : []),
         ],
     });

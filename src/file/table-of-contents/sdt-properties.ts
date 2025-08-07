@@ -6,7 +6,7 @@ export class StructuredDocumentTagProperties extends XmlComponent {
         super("hp:ctrlPr");
 
         if (alias) {
-            this.root.push(new StringValueElement("hp:alias", alias));
+            this.root.push(new StringValueElement("w:alias", alias));
         }
     }
 }

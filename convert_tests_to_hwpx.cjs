@@ -236,7 +236,18 @@ const DOCX_TO_HWPX_MAPPINGS = {
     '"w:color"': '"hp:color"',
     '"w:highlight"': '"hp:highlight"',
     '"w:shd"': '"hp:shd"',
-    '"w:vertAlign"': '"hp:vertAlign"'
+    '"w:vertAlign"': '"hp:vertAlign"',
+    
+    // Font-related elements that should remain w: (not converted to hh:)
+    '"hh:panose1"': '"w:panose1"',
+    '"hh:charset"': '"w:charset"', 
+    '"hh:family"': '"w:family"',
+    '"hh:pitch"': '"w:pitch"',
+    '"hh:embedRegular"': '"w:embedRegular"',
+    '"hh:embedBold"': '"w:embedBold"',
+    '"hh:embedBoldItalic"': '"w:embedBoldItalic"',
+    '"hh:embedItalic"': '"w:embedItalic"',
+    '"hh:notTrueType"': '"w:notTrueType"'
 };
 
 // Additional regex patterns for more complex replacements
