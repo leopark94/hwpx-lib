@@ -31,11 +31,11 @@ describe("TableCellBorders", () => {
             expect(tree).to.deep.equal({
                 "w:tcBorders": [
                     {
-                        "w:top": {
+                        "hp:top": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 1,
-                                "w:val": "dotted",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 1,
+                                "hp:val": "dotted",
                             },
                         },
                     },
@@ -58,9 +58,9 @@ describe("TableCellBorders", () => {
                     {
                         "w:start": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 2,
-                                "w:val": "single",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 2,
+                                "hp:val": "single",
                             },
                         },
                     },
@@ -81,11 +81,11 @@ describe("TableCellBorders", () => {
             expect(tree).to.deep.equal({
                 "w:tcBorders": [
                     {
-                        "w:bottom": {
+                        "hp:bottom": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 1,
-                                "w:val": "double",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 1,
+                                "hp:val": "double",
                             },
                         },
                     },
@@ -108,9 +108,9 @@ describe("TableCellBorders", () => {
                     {
                         "w:end": {
                             _attr: {
-                                "w:color": "FF0000",
-                                "w:sz": 3,
-                                "w:val": "thick",
+                                "hp:color": "FF0000",
+                                "hp:sz": 3,
+                                "hp:val": "thick",
                             },
                         },
                     },
@@ -131,11 +131,11 @@ describe("TableCellBorders", () => {
             expect(tree).to.deep.equal({
                 "w:tcBorders": [
                     {
-                        "w:left": {
+                        "hp:left": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 3,
-                                "w:val": "thick",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 3,
+                                "hp:val": "thick",
                             },
                         },
                     },
@@ -156,11 +156,11 @@ describe("TableCellBorders", () => {
             expect(tree).to.deep.equal({
                 "w:tcBorders": [
                     {
-                        "w:right": {
+                        "hp:right": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 3,
-                                "w:val": "thick",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 3,
+                                "hp:val": "thick",
                             },
                         },
                     },
@@ -206,56 +206,56 @@ describe("TableCellBorders", () => {
             expect(tree).to.deep.equal({
                 "w:tcBorders": [
                     {
-                        "w:top": {
+                        "hp:top": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 1,
-                                "w:val": "dotted",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 1,
+                                "hp:val": "dotted",
                             },
                         },
                     },
                     {
                         "w:start": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 2,
-                                "w:val": "single",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 2,
+                                "hp:val": "single",
                             },
                         },
                     },
                     {
-                        "w:left": {
+                        "hp:left": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 2,
-                                "w:val": "single",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 2,
+                                "hp:val": "single",
                             },
                         },
                     },
                     {
-                        "w:bottom": {
+                        "hp:bottom": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 1,
-                                "w:val": "double",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 1,
+                                "hp:val": "double",
                             },
                         },
                     },
                     {
                         "w:end": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 3,
-                                "w:val": "thick",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 3,
+                                "hp:val": "thick",
                             },
                         },
                     },
                     {
-                        "w:right": {
+                        "hp:right": {
                             _attr: {
-                                "w:color": "FF00FF",
-                                "w:sz": 2,
-                                "w:val": "single",
+                                "hp:color": "FF00FF",
+                                "hp:sz": 2,
+                                "hp:val": "single",
                             },
                         },
                     },
@@ -275,9 +275,9 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -292,20 +292,20 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:vAlign": {
                                     _attr: {
-                                        "w:val": "center",
+                                        "hp:val": "center",
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -320,20 +320,20 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
-                                "w:textDirection": {
+                                "hs:textDirection": {
                                     _attr: {
-                                        "w:val": "btLr",
+                                        "hp:val": "btLr",
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -348,20 +348,20 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:vMerge": {
                                     _attr: {
-                                        "w:val": "restart",
+                                        "hp:val": "restart",
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -381,40 +381,40 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:tcMar": [
                                     {
-                                        "w:top": {
+                                        "hp:top": {
                                             _attr: {
-                                                "w:type": "dxa",
-                                                "w:w": 1,
+                                                "hp:type": "dxa",
+                                                "hp:w": 1,
                                             },
                                         },
                                     },
                                     {
-                                        "w:left": {
+                                        "hp:left": {
                                             _attr: {
-                                                "w:type": "dxa",
-                                                "w:w": 1,
+                                                "hp:type": "dxa",
+                                                "hp:w": 1,
                                             },
                                         },
                                     },
                                     {
-                                        "w:bottom": {
+                                        "hp:bottom": {
                                             _attr: {
-                                                "w:type": "dxa",
-                                                "w:w": 1,
+                                                "hp:type": "dxa",
+                                                "hp:w": 1,
                                             },
                                         },
                                     },
                                     {
-                                        "w:right": {
+                                        "hp:right": {
                                             _attr: {
-                                                "w:type": "dxa",
-                                                "w:w": 1,
+                                                "hp:type": "dxa",
+                                                "hp:w": 1,
                                             },
                                         },
                                     },
@@ -423,7 +423,7 @@ describe("TableCell", () => {
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -442,22 +442,22 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:shd": {
                                     _attr: {
-                                        "w:color": "0000ff",
-                                        "w:fill": "FF0000",
-                                        "w:val": "pct10",
+                                        "hp:color": "0000ff",
+                                        "hp:fill": "FF0000",
+                                        "hp:val": "pct10",
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -470,21 +470,21 @@ describe("TableCell", () => {
             });
             const tree = new Formatter().format(cell);
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:tcW": {
                                     _attr: {
-                                        "w:type": "dxa",
-                                        "w:w": 100,
+                                        "hp:type": "dxa",
+                                        "hp:w": 100,
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -499,20 +499,20 @@ describe("TableCell", () => {
             const tree = new Formatter().format(cell);
 
             expect(tree).to.deep.equal({
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:tcPr": [
+                        "hp:tcPr": [
                             {
                                 "w:gridSpan": {
                                     _attr: {
-                                        "w:val": 2,
+                                        "hp:val": 2,
                                     },
                                 },
                             },
                         ],
                     },
                     {
-                        "w:p": {},
+                        "hp:p": {},
                     },
                 ],
             });
@@ -528,9 +528,9 @@ describe("TableCell", () => {
                 const tree = new Formatter().format(cell);
 
                 expect(tree).to.deep.equal({
-                    "w:tc": [
+                    "hp:tc": [
                         {
-                            "w:p": {},
+                            "hp:p": {},
                         },
                     ],
                 });
@@ -545,20 +545,20 @@ describe("TableCell", () => {
                 const tree = new Formatter().format(cell);
 
                 expect(tree).to.deep.equal({
-                    "w:tc": [
+                    "hp:tc": [
                         {
-                            "w:tcPr": [
+                            "hp:tcPr": [
                                 {
                                     "w:vMerge": {
                                         _attr: {
-                                            "w:val": "restart",
+                                            "hp:val": "restart",
                                         },
                                     },
                                 },
                             ],
                         },
                         {
-                            "w:p": {},
+                            "hp:p": {},
                         },
                     ],
                 });
@@ -594,44 +594,44 @@ describe("TableCell", () => {
                 const tree = new Formatter().format(cell);
 
                 expect(tree).to.deep.equal({
-                    "w:tc": [
+                    "hp:tc": [
                         {
-                            "w:tcPr": [
+                            "hp:tcPr": [
                                 {
                                     "w:tcBorders": [
                                         {
-                                            "w:top": {
+                                            "hp:top": {
                                                 _attr: {
-                                                    "w:color": "FF0000",
-                                                    "w:sz": 3,
-                                                    "w:val": "dashDotStroked",
+                                                    "hp:color": "FF0000",
+                                                    "hp:sz": 3,
+                                                    "hp:val": "dashDotStroked",
                                                 },
                                             },
                                         },
                                         {
-                                            "w:left": {
+                                            "hp:left": {
                                                 _attr: {
-                                                    "w:color": "00ff00",
-                                                    "w:sz": 3,
-                                                    "w:val": "dashDotStroked",
+                                                    "hp:color": "00ff00",
+                                                    "hp:sz": 3,
+                                                    "hp:val": "dashDotStroked",
                                                 },
                                             },
                                         },
                                         {
-                                            "w:bottom": {
+                                            "hp:bottom": {
                                                 _attr: {
-                                                    "w:color": "0000ff",
-                                                    "w:sz": 3,
-                                                    "w:val": "double",
+                                                    "hp:color": "0000ff",
+                                                    "hp:sz": 3,
+                                                    "hp:val": "double",
                                                 },
                                             },
                                         },
                                         {
-                                            "w:right": {
+                                            "hp:right": {
                                                 _attr: {
-                                                    "w:color": "ff8000",
-                                                    "w:sz": 3,
-                                                    "w:val": "dashDotStroked",
+                                                    "hp:color": "ff8000",
+                                                    "hp:sz": 3,
+                                                    "hp:val": "dashDotStroked",
                                                 },
                                             },
                                         },
@@ -640,7 +640,7 @@ describe("TableCell", () => {
                             ],
                         },
                         {
-                            "w:p": {},
+                            "hp:p": {},
                         },
                     ],
                 });

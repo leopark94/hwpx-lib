@@ -29,9 +29,9 @@ describe("NumberedItemReference", () => {
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",
@@ -57,9 +57,9 @@ describe("NumberedItemReference", () => {
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",
@@ -85,9 +85,9 @@ describe("NumberedItemReference", () => {
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",
@@ -113,9 +113,9 @@ describe("NumberedItemReference", () => {
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",

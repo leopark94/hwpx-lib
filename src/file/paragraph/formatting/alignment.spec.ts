@@ -10,9 +10,9 @@ describe("Alignment", () => {
         const tree = new Formatter().format(alignment);
 
         expect(tree).to.deep.equal({
-            "w:jc": {
+            "hp:align": {
                 _attr: {
-                    "w:val": "both",
+                    "hp:val": "both",
                 },
             },
         });

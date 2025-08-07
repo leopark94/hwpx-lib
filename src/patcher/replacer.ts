@@ -69,7 +69,7 @@ export const replacer = ({
 
                 if (keepOriginalStyles) {
                     const runElementNonTextualElements = runElementToBeReplaced.elements!.filter(
-                        (e) => e.type === "element" && e.name === "w:rPr",
+                        (e) => e.type === "element" && e.name === "hp:charPr",
                     );
 
                     newRunElements = textJson.map((e) => ({

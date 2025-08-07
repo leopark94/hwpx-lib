@@ -35,7 +35,7 @@ describe("XmlComponent", () => {
                 "w:test": [
                     {
                         _attr: {
-                            "w:val": "test",
+                            "hp:val": "test",
                         },
                     },
                     {
@@ -57,7 +57,7 @@ describe("XmlComponent", () => {
             expect(tree).to.deep.equal({
                 "w:test": {
                     _attr: {
-                        "w:val": "test",
+                        "hp:val": "test",
                     },
                 },
             });

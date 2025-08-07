@@ -3,7 +3,7 @@
 import { XmlAttributeComponent, XmlComponent } from "@file/xml-components";
 
 export class WordWrapAttributes extends XmlAttributeComponent<{ readonly val: 0 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 export class WordWrap extends XmlComponent {

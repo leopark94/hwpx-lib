@@ -38,7 +38,7 @@ describe("ImageRun", () => {
                 stack: [],
             });
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:drawing": [
                             {
@@ -291,7 +291,7 @@ describe("ImageRun", () => {
                 stack: [],
             });
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:drawing": [
                             {
@@ -547,7 +547,7 @@ describe("ImageRun", () => {
             });
 
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:drawing": [
                             {
@@ -803,7 +803,7 @@ describe("ImageRun", () => {
             });
 
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:drawing": [
                             {
@@ -1067,7 +1067,7 @@ describe("ImageRun", () => {
             });
 
             expect(tree).toStrictEqual({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:drawing": [
                             {

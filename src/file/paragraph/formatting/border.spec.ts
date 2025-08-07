@@ -40,42 +40,42 @@ describe("Border", () => {
             expect(tree).to.deep.equal({
                 "w:pBdr": [
                     {
-                        "w:top": {
+                        "hp:top": {
                             _attr: {
-                                "w:color": "FF0000",
-                                "w:space": 1,
-                                "w:sz": 2,
-                                "w:val": "wave",
+                                "hp:color": "FF0000",
+                                "hp:space": 1,
+                                "hp:sz": 2,
+                                "hp:val": "wave",
                             },
                         },
                     },
                     {
-                        "w:bottom": {
+                        "hp:bottom": {
                             _attr: {
-                                "w:color": "FF0000",
-                                "w:space": 3,
-                                "w:sz": 4,
-                                "w:val": "wave",
+                                "hp:color": "FF0000",
+                                "hp:space": 3,
+                                "hp:sz": 4,
+                                "hp:val": "wave",
                             },
                         },
                     },
                     {
-                        "w:left": {
+                        "hp:left": {
                             _attr: {
-                                "w:color": "FF0000",
-                                "w:space": 5,
-                                "w:sz": 6,
-                                "w:val": "wave",
+                                "hp:color": "FF0000",
+                                "hp:space": 5,
+                                "hp:sz": 6,
+                                "hp:val": "wave",
                             },
                         },
                     },
                     {
-                        "w:right": {
+                        "hp:right": {
                             _attr: {
-                                "w:color": "FF0000",
-                                "w:space": 7,
-                                "w:sz": 8,
-                                "w:val": "wave",
+                                "hp:color": "FF0000",
+                                "hp:space": 7,
+                                "hp:sz": 8,
+                                "hp:val": "wave",
                             },
                         },
                     },
@@ -103,12 +103,12 @@ describe("ThematicBreak", () => {
             expect(tree).to.deep.equal({
                 "w:pBdr": [
                     {
-                        "w:bottom": {
+                        "hp:bottom": {
                             _attr: {
-                                "w:color": "auto",
-                                "w:space": 1,
-                                "w:sz": 6,
-                                "w:val": "single",
+                                "hp:color": "auto",
+                                "hp:space": 1,
+                                "hp:sz": 6,
+                                "hp:val": "single",
                             },
                         },
                     },

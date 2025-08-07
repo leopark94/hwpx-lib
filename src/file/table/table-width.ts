@@ -43,7 +43,7 @@ export class TableWidthElement extends XmlComponent {
         this.root.push(
             new NextAttributeComponent<ITableWidthProperties>({
                 type: { key: "hs:type", value: type },
-                size: { key: "w:w", value: measurementOrPercentValue(tableWidthValue) },
+                size: { key: "hp:w", value: measurementOrPercentValue(tableWidthValue) },
             }),
         );
     }

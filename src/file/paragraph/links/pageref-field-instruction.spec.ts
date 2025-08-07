@@ -11,7 +11,7 @@ describe("PageReference field instruction", () => {
             const tree = new Formatter().format(instruction);
 
             expect(tree).to.be.deep.equal({
-                "w:instrText": [
+                "hp:instrText": [
                     {
                         _attr: {
                             "xml:space": "preserve",

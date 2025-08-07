@@ -85,7 +85,7 @@ export class LevelOverride extends XmlComponent {
 }
 
 class StartOverrideAttributes extends XmlAttributeComponent<{ readonly val: number }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 class StartOverride extends XmlComponent {

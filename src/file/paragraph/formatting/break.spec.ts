@@ -15,11 +15,11 @@ describe("PageBreak", () => {
         it("should create a Page Break with correct attributes", () => {
             const tree = new Formatter().format(pageBreak);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:br": {
+                        "hp:br": {
                             _attr: {
-                                "w:type": "page",
+                                "hp:type": "page",
                             },
                         },
                     },
@@ -40,11 +40,11 @@ describe("ColumnBreak", () => {
         it("should create a Column Break with correct attributes", () => {
             const tree = new Formatter().format(columnBreak);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:br": {
+                        "hp:br": {
                             _attr: {
-                                "w:type": "column",
+                                "hp:type": "column",
                             },
                         },
                     },

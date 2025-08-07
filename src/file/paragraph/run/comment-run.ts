@@ -20,11 +20,11 @@ class CommentAttributes extends XmlAttributeComponent<{
     readonly author?: string;
     readonly date?: string;
 }> {
-    protected readonly xmlKeys = { id: "w:id", initials: "w:initials", author: "w:author", date: "w:date" };
+    protected readonly xmlKeys = { id: "hp:id", initials: "hp:initials", author: "hp:author", date: "hp:date" };
 }
 
 class CommentRangeAttributes extends XmlAttributeComponent<{ readonly id: number }> {
-    protected readonly xmlKeys = { id: "w:id" };
+    protected readonly xmlKeys = { id: "hp:id" };
 }
 class RootCommentsAttributes extends XmlAttributeComponent<{
     readonly "xmlns:cx"?: string;

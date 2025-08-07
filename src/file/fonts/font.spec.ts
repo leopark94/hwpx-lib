@@ -25,41 +25,41 @@ describe("font", () => {
             "w:font": [
                 {
                     _attr: {
-                        "w:name": "Times New Roman",
+                        "hh:name": "Times New Roman",
                     },
                 },
                 {
                     "w:altName": {
                         _attr: {
-                            "w:val": "Times New Roman",
+                            "hp:val": "Times New Roman",
                         },
                     },
                 },
                 {
                     "w:panose1": {
                         _attr: {
-                            "w:val": "02020603050405020304",
+                            "hp:val": "02020603050405020304",
                         },
                     },
                 },
                 {
                     "w:charset": {
                         _attr: {
-                            "w:val": "00",
+                            "hp:val": "00",
                         },
                     },
                 },
                 {
                     "w:family": {
                         _attr: {
-                            "w:val": "roman",
+                            "hp:val": "roman",
                         },
                     },
                 },
                 {
                     "w:pitch": {
                         _attr: {
-                            "w:val": "variable",
+                            "hp:val": "variable",
                         },
                     },
                 },

@@ -10,7 +10,7 @@ describe("EmphasisMark", () => {
             const emphasisMark = new em.EmphasisMark();
             const tree = new Formatter().format(emphasisMark);
             expect(tree).to.deep.equal({
-                "w:em": { _attr: { "w:val": "dot" } },
+                "w:em": { _attr: { "hp:val": "dot" } },
             });
         });
     });
@@ -22,7 +22,7 @@ describe("DotEmphasisMark", () => {
             const emphasisMark = new em.DotEmphasisMark();
             const tree = new Formatter().format(emphasisMark);
             expect(tree).to.deep.equal({
-                "w:em": { _attr: { "w:val": "dot" } },
+                "w:em": { _attr: { "hp:val": "dot" } },
             });
         });
     });

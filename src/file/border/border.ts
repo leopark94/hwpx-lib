@@ -48,10 +48,10 @@ export class BorderElement extends XmlComponent {
 
 class BordersAttributes extends XmlAttributeComponent<IBorderOptions> {
     protected readonly xmlKeys = {
-        style: "w:val",
-        color: "hp:textColor",
-        size: "hp:height",
-        space: "w:space",
+        style: "hp:type",
+        color: "hp:color",
+        size: "hp:width",
+        space: "hp:space",
     };
 }
 

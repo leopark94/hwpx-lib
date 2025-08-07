@@ -6,7 +6,7 @@ const MOCK_JSON = {
     elements: [
         {
             type: "element",
-            name: "w:document",
+            name: "hml:document",
             attributes: {
                 "xmlns:wpc": "http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas",
                 "xmlns:cx": "http://schemas.microsoft.com/office/drawing/2014/chartex",
@@ -45,64 +45,64 @@ const MOCK_JSON = {
             elements: [
                 {
                     type: "element",
-                    name: "w:body",
+                    name: "hs:sec",
                     elements: [
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "2499FE9F",
                                 "w14:textId": "0A3D130F",
-                                "w:rsidR": "00B51233",
+                                "hp:rsidR": "00B51233",
                                 "w:rsidRDefault": "007B52ED",
                                 "w:rsidP": "007B52ED",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:pPr",
-                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "w:val": "Title" } }],
+                                    name: "hp:paraPr",
+                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Title" } }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "Hello World" }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "Hello World" }] }],
                                 },
                             ],
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "6410D9A0",
                                 "w14:textId": "7579AB49",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "57ACF964",
                                 "w14:textId": "315D7A05",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "Hello {{name}}," }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "Hello {{name}}," }] }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    attributes: { "w:rsidR": "008126CB" },
+                                    name: "hp:run",
+                                    attributes: { "hp:rsidR": "008126CB" },
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:t",
+                                            name: "hp:t",
                                             attributes: { "xml:space": "preserve" },
                                             elements: [{ type: "text", text: " how are you?" }],
                                         },
@@ -112,49 +112,49 @@ const MOCK_JSON = {
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "38C7DF4A",
                                 "w14:textId": "66CDEC9A",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "04FABE2B",
                                 "w14:textId": "3DACA001",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
+                                    name: "hp:run",
                                     elements: [
-                                        { type: "element", name: "w:t", elements: [{ type: "text", text: "{{paragraph_replace}}" }] },
+                                        { type: "element", name: "hp:t", elements: [{ type: "text", text: "{{paragraph_replace}}" }] },
                                     ],
                                 },
                             ],
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
+                                    name: "hp:run",
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:rPr",
-                                            elements: [{ type: "element", name: "w:b", attributes: { "w:val": "1" } }],
+                                            name: "hp:charPr",
+                                            elements: [{ type: "element", name: "hp:bold", attributes: { "hp:val": "1" } }],
                                         },
                                         {
                                             type: "element",
-                                            name: "w:t",
+                                            name: "hp:t",
                                             elements: [{ type: "text", text: "What a {{bold}} text!" }],
                                         },
                                     ],
@@ -163,56 +163,56 @@ const MOCK_JSON = {
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "7AD7975D",
                                 "w14:textId": "77777777",
-                                "w:rsidR": "00EF161F",
+                                "hp:rsidR": "00EF161F",
                                 "w:rsidRDefault": "00EF161F",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "3BD6D75A",
                                 "w14:textId": "19AE3121",
-                                "w:rsidR": "00EF161F",
+                                "hp:rsidR": "00EF161F",
                                 "w:rsidRDefault": "00EF161F",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "{{table}}" }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "{{table}}" }] }],
                                 },
                             ],
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "76023962",
                                 "w14:textId": "4E606AB9",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:tbl",
+                            name: "hp:tbl",
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:tblPr",
+                                    name: "hp:tblPr",
                                     elements: [
-                                        { type: "element", name: "w:tblStyle", attributes: { "w:val": "TableGrid" } },
-                                        { type: "element", name: "w:tblW", attributes: { "w:w": "0", "w:type": "auto" } },
+                                        { type: "element", name: "w:tblStyle", attributes: { "hp:val": "TableGrid" } },
+                                        { type: "element", name: "w:tblW", attributes: { "hp:w": "0", "hp:type": "auto" } },
                                         {
                                             type: "element",
                                             name: "w:tblLook",
                                             attributes: {
-                                                "w:val": "04A0",
+                                                "hp:val": "04A0",
                                                 "w:firstRow": "1",
                                                 "w:lastRow": "0",
                                                 "w:firstColumn": "1",
@@ -227,16 +227,16 @@ const MOCK_JSON = {
                                     type: "element",
                                     name: "w:tblGrid",
                                     elements: [
-                                        { type: "element", name: "w:gridCol", attributes: { "w:w": "3003" } },
-                                        { type: "element", name: "w:gridCol", attributes: { "w:w": "3003" } },
-                                        { type: "element", name: "w:gridCol", attributes: { "w:w": "3004" } },
+                                        { type: "element", name: "w:gridCol", attributes: { "hp:w": "3003" } },
+                                        { type: "element", name: "w:gridCol", attributes: { "hp:w": "3003" } },
+                                        { type: "element", name: "w:gridCol", attributes: { "hp:w": "3004" } },
                                     ],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:tr",
+                                    name: "hp:tr",
                                     attributes: {
-                                        "w:rsidR": "00EF161F",
+                                        "hp:rsidR": "00EF161F",
                                         "w14:paraId": "1DEC5955",
                                         "w14:textId": "77777777",
                                         "w:rsidTr": "00EF161F",
@@ -244,32 +244,32 @@ const MOCK_JSON = {
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "54DA5587",
                                                         "w14:textId": "625BAC60",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                     elements: [
                                                         {
                                                             type: "element",
-                                                            name: "w:r",
+                                                            name: "hp:run",
                                                             elements: [
                                                                 {
                                                                     type: "element",
-                                                                    name: "w:t",
+                                                                    name: "hp:t",
                                                                     elements: [{ type: "text", text: "{{table_heading_1}}" }],
                                                                 },
                                                             ],
@@ -280,22 +280,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "57100910",
                                                         "w14:textId": "71FD5616",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -303,22 +303,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3004", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "1D388FAB",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -328,9 +328,9 @@ const MOCK_JSON = {
                                 },
                                 {
                                     type: "element",
-                                    name: "w:tr",
+                                    name: "hp:tr",
                                     attributes: {
-                                        "w:rsidR": "00EF161F",
+                                        "hp:rsidR": "00EF161F",
                                         "w14:paraId": "0F53D2DC",
                                         "w14:textId": "77777777",
                                         "w:rsidTr": "00EF161F",
@@ -338,32 +338,32 @@ const MOCK_JSON = {
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "0F2BCCED",
                                                         "w14:textId": "3C3B6706",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                     elements: [
                                                         {
                                                             type: "element",
-                                                            name: "w:r",
+                                                            name: "hp:run",
                                                             elements: [
                                                                 {
                                                                     type: "element",
-                                                                    name: "w:t",
+                                                                    name: "hp:t",
                                                                     elements: [{ type: "text", text: "Item: {{item_1}}" }],
                                                                 },
                                                             ],
@@ -374,22 +374,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "1E6158AC",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -397,22 +397,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3004", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "17937748",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -422,9 +422,9 @@ const MOCK_JSON = {
                                 },
                                 {
                                     type: "element",
-                                    name: "w:tr",
+                                    name: "hp:tr",
                                     attributes: {
-                                        "w:rsidR": "00EF161F",
+                                        "hp:rsidR": "00EF161F",
                                         "w14:paraId": "781DAC1A",
                                         "w14:textId": "77777777",
                                         "w:rsidTr": "00EF161F",
@@ -432,22 +432,22 @@ const MOCK_JSON = {
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "1DCD0343",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -455,22 +455,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3003", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "5D02E3CD",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -478,22 +478,22 @@ const MOCK_JSON = {
                                         },
                                         {
                                             type: "element",
-                                            name: "w:tc",
+                                            name: "hp:tc",
                                             elements: [
                                                 {
                                                     type: "element",
-                                                    name: "w:tcPr",
+                                                    name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "w:w": "3004", "w:type": "dxa" } },
+                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
                                                     ],
                                                 },
                                                 {
                                                     type: "element",
-                                                    name: "w:p",
+                                                    name: "hp:p",
                                                     attributes: {
                                                         "w14:paraId": "52EA0DBB",
                                                         "w14:textId": "77777777",
-                                                        "w:rsidR": "00EF161F",
+                                                        "hp:rsidR": "00EF161F",
                                                         "w:rsidRDefault": "00EF161F",
                                                     },
                                                 },
@@ -505,91 +505,91 @@ const MOCK_JSON = {
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "47CD1FBC",
                                 "w14:textId": "23474CBC",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "0ACCEE90",
                                 "w14:textId": "67907499",
-                                "w:rsidR": "00EF161F",
+                                "hp:rsidR": "00EF161F",
                                 "w:rsidRDefault": "0077578F",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "{{image_test}}" }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "{{image_test}}" }] }],
                                 },
                             ],
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "23FA9862",
                                 "w14:textId": "77777777",
-                                "w:rsidR": "0077578F",
+                                "hp:rsidR": "0077578F",
                                 "w:rsidRDefault": "0077578F",
                             },
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "01578F2F",
                                 "w14:textId": "3BDC6C85",
-                                "w:rsidR": "007B52ED",
+                                "hp:rsidR": "007B52ED",
                                 "w:rsidRDefault": "007B52ED",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "Thank you" }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "Thank you" }] }],
                                 },
                             ],
                         },
                         {
                             type: "element",
-                            name: "w:p",
+                            name: "hp:p",
                             attributes: {
                                 "w14:paraId": "3BE1A671",
                                 "w14:textId": "74E856C4",
-                                "w:rsidR": "000D38A7",
+                                "hp:rsidR": "000D38A7",
                                 "w:rsidRDefault": "000D38A7",
                             },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:pPr",
-                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "w:val": "Header" } }],
+                                    name: "hp:paraPr",
+                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Header" } }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "This is a {{head" }] }],
+                                    name: "hp:run",
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "This is a {{head" }] }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:r",
-                                    attributes: { "w:rsidR": "004A3A99" },
-                                    elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "er" }] }],
+                                    name: "hp:run",
+                                    attributes: { "hp:rsidR": "004A3A99" },
+                                    elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "er" }] }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:r",
+                                    name: "hp:run",
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:t",
+                                            name: "hp:t",
                                             elements: [{ type: "text", text: "_adjective}} don’t you think?" }],
                                         },
                                     ],
@@ -598,27 +598,27 @@ const MOCK_JSON = {
                         },
                         {
                             type: "element",
-                            name: "w:sectPr",
-                            attributes: { "w:rsidR": "007B52ED", "w:rsidSect": "0072043F" },
+                            name: "hs:sectPr",
+                            attributes: { "hp:rsidR": "007B52ED", "hp:rsidSect": "0072043F" },
                             elements: [
-                                { type: "element", name: "w:headerReference", attributes: { "w:type": "default", "r:id": "rId6" } },
-                                { type: "element", name: "w:footerReference", attributes: { "w:type": "default", "r:id": "rId7" } },
-                                { type: "element", name: "w:pgSz", attributes: { "w:w": "11900", "w:h": "16840" } },
+                                { type: "element", name: "w:headerReference", attributes: { "hp:type": "default", "r:id": "rId6" } },
+                                { type: "element", name: "w:footerReference", attributes: { "hp:type": "default", "r:id": "rId7" } },
+                                { type: "element", name: "hs:pageSize", attributes: { "hp:w": "11900", "hp:h": "16840" } },
                                 {
                                     type: "element",
-                                    name: "w:pgMar",
+                                    name: "hs:pageMargin",
                                     attributes: {
-                                        "w:top": "1440",
-                                        "w:right": "1440",
-                                        "w:bottom": "1440",
-                                        "w:left": "1440",
-                                        "w:header": "708",
-                                        "w:footer": "708",
-                                        "w:gutter": "0",
+                                        "hp:top": "1440",
+                                        "hp:right": "1440",
+                                        "hp:bottom": "1440",
+                                        "hp:left": "1440",
+                                        "hp:header": "708",
+                                        "hp:footer": "708",
+                                        "hp:gutter": "0",
                                     },
                                 },
-                                { type: "element", name: "w:cols", attributes: { "w:space": "708" } },
-                                { type: "element", name: "w:docGrid", attributes: { "w:linePitch": "360" } },
+                                { type: "element", name: "w:cols", attributes: { "hp:space": "708" } },
+                                { type: "element", name: "hs:docGrid", attributes: { "hp:linePitch": "360" } },
                             ],
                         },
                     ],

@@ -10,9 +10,9 @@ describe("WordWrap", () => {
         const tree = new Formatter().format(wordWrap);
 
         expect(tree).to.deep.equal({
-            "w:wordWrap": {
+            "hp:wordWrap": {
                 _attr: {
-                    "w:val": 0,
+                    "hp:val": 0,
                 },
             },
         });

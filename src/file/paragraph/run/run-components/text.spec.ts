@@ -11,7 +11,7 @@ describe("Text", () => {
             const t = new Text(" this is\n text");
             const f = new Formatter().format(t);
             expect(f).to.deep.equal({
-                "w:t": [{ _attr: { "xml:space": "preserve" } }, " this is\n text"],
+                "hp:t": [{ _attr: { "xml:space": "preserve" } }, " this is\n text"],
             });
         });
 
@@ -22,7 +22,7 @@ describe("Text", () => {
             });
             const f = new Formatter().format(t);
             expect(f).to.deep.equal({
-                "w:t": [{ _attr: { "xml:space": "preserve" } }, " this is\n text"],
+                "hp:t": [{ _attr: { "xml:space": "preserve" } }, " this is\n text"],
             });
         });
 
@@ -32,7 +32,7 @@ describe("Text", () => {
             });
             const f = new Formatter().format(t);
             expect(f).to.deep.equal({
-                "w:t": [{ _attr: { "xml:space": "default" } }, " this is\n text"],
+                "hp:t": [{ _attr: { "xml:space": "default" } }, " this is\n text"],
             });
         });
     });

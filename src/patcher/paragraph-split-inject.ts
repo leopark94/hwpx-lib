@@ -5,8 +5,8 @@ import { createTextElementContents, patchSpaceAttribute } from "./util";
 export const findRunElementIndexWithToken = (paragraphElement: Element, token: string): number => {
     for (let i = 0; i < (paragraphElement.elements ?? []).length; i++) {
         const element = paragraphElement.elements![i];
-        if (element.type === "element" && element.name === "w:r") {
-            const textElement = (element.elements ?? []).filter((e) => e.type === "element" && e.name === "w:t");
+        if (element.type === "element" && element.name === "hp:run") {
+            const textElement = (element.elements ?? []).filter((e) => e.type === "element" && e.name === "hp:t");
 
             for (const text of textElement) {
                 if (!text.elements?.[0]) {
@@ -29,7 +29,7 @@ export const splitRunElement = (runElement: Element, token: string): { readonly 
     const splitElements =
         runElement.elements
             ?.map((e, i) => {
-                if (e.type === "element" && e.name === "w:t") {
+                if (e.type === "element" && e.name === "hp:t") {
                     const text = (e.elements?.[0]?.text as string) ?? "";
                     const splitText = text.split(token);
                     const newElements = splitText.map((t) => ({

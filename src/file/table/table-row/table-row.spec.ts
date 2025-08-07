@@ -16,7 +16,7 @@ describe("TableRow", () => {
             });
             const tree = new Formatter().format(tableRow);
             expect(tree).to.deep.equal({
-                "w:tr": EMPTY_OBJECT,
+                "hp:tr": EMPTY_OBJECT,
             });
         });
 
@@ -30,11 +30,11 @@ describe("TableRow", () => {
             });
             const tree = new Formatter().format(tableRow);
             expect(tree).to.deep.equal({
-                "w:tr": [
+                "hp:tr": [
                     {
-                        "w:tc": [
+                        "hp:tc": [
                             {
-                                "w:p": EMPTY_OBJECT,
+                                "hp:p": EMPTY_OBJECT,
                             },
                         ],
                     },
@@ -49,9 +49,9 @@ describe("TableRow", () => {
             });
             const tree = new Formatter().format(tableRow);
             expect(tree).to.deep.equal({
-                "w:tr": [
+                "hp:tr": [
                     {
-                        "w:trPr": [
+                        "hp:trPr": [
                             {
                                 "w:cantSplit": {},
                             },
@@ -68,9 +68,9 @@ describe("TableRow", () => {
             });
             const tree = new Formatter().format(tableRow);
             expect(tree).to.deep.equal({
-                "w:tr": [
+                "hp:tr": [
                     {
-                        "w:trPr": [
+                        "hp:trPr": [
                             {
                                 "w:tblHeader": {},
                             },
@@ -90,14 +90,14 @@ describe("TableRow", () => {
             });
             const tree = new Formatter().format(tableRow);
             expect(tree).to.deep.equal({
-                "w:tr": [
+                "hp:tr": [
                     {
-                        "w:trPr": [
+                        "hp:trPr": [
                             {
                                 "w:trHeight": {
                                     _attr: {
                                         "w:hRule": "exact",
-                                        "w:val": 100,
+                                        "hp:val": 100,
                                     },
                                 },
                             },
@@ -129,29 +129,29 @@ describe("TableRow", () => {
             const tree = new Formatter().format(tableRow);
 
             expect(tree).to.deep.equal({
-                "w:tr": [
+                "hp:tr": [
                     {
-                        "w:trPr": [
+                        "hp:trPr": [
                             {
                                 "w:tblHeader": {},
                             },
                         ],
                     },
                     {
-                        "w:tc": [
+                        "hp:tc": [
                             {
-                                "w:p": {},
+                                "hp:p": {},
                             },
                         ],
                     },
                     {
-                        "w:tc": [
+                        "hp:tc": [
                             {
-                                "w:p": [
+                                "hp:p": [
                                     {
-                                        "w:r": [
+                                        "hp:run": [
                                             {
-                                                "w:t": [
+                                                "hp:t": [
                                                     {
                                                         _attr: {
                                                             "xml:space": "preserve",

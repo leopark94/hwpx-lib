@@ -15,56 +15,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -87,56 +87,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "FF0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "FF0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -159,56 +159,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "ff0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "ff0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -231,56 +231,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "ff0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "ff0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -303,56 +303,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "ff0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "ff0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -375,56 +375,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "ff0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "ff0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
@@ -447,56 +447,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 4,
-                                    "w:val": "single",
+                                    "hp:color": "auto",
+                                    "hp:sz": 4,
+                                    "hp:val": "single",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "ff0000",
-                                    "w:sz": 1,
-                                    "w:val": "double",
+                                    "hp:color": "ff0000",
+                                    "hp:sz": 1,
+                                    "hp:val": "double",
                                 },
                             },
                         },
@@ -513,56 +513,56 @@ describe("TableBorders", () => {
                 expect(tree).to.deep.equal({
                     "w:tblBorders": [
                         {
-                            "w:top": {
+                            "hp:top": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },
                         {
-                            "w:left": {
+                            "hp:left": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },
                         {
-                            "w:bottom": {
+                            "hp:bottom": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },
                         {
-                            "w:right": {
+                            "hp:right": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },
                         {
                             "w:insideH": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },
                         {
                             "w:insideV": {
                                 _attr: {
-                                    "w:color": "auto",
-                                    "w:sz": 0,
-                                    "w:val": "none",
+                                    "hp:color": "auto",
+                                    "hp:sz": 0,
+                                    "hp:val": "none",
                                 },
                             },
                         },

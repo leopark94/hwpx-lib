@@ -15,14 +15,14 @@ describe("NumberProperties", () => {
                     {
                         "w:ilvl": {
                             _attr: {
-                                "w:val": 9,
+                                "hp:val": 9,
                             },
                         },
                     },
                     {
                         "w:numId": {
                             _attr: {
-                                "w:val": 5,
+                                "hp:val": 5,
                             },
                         },
                     },

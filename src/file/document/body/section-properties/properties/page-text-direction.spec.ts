@@ -12,9 +12,9 @@ describe("PageTextDirection", () => {
             const tree = new Formatter().format(textDirection);
 
             expect(tree).to.deep.equal({
-                "w:textDirection": {
+                "hs:textDirection": {
                     _attr: {
-                        "w:val": "tbRl",
+                        "hp:val": "tbRl",
                     },
                 },
             });

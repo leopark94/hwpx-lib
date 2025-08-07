@@ -31,22 +31,22 @@ export class TableCellBorders extends IgnoreIfEmptyXmlComponent {
         super("hp:borders");
 
         if (options.top) {
-            this.root.push(new BorderElement("w:top", options.top));
+            this.root.push(new BorderElement("hp:top", options.top));
         }
         if (options.start) {
             this.root.push(new BorderElement("w:start", options.start));
         }
         if (options.left) {
-            this.root.push(new BorderElement("w:left", options.left));
+            this.root.push(new BorderElement("hp:left", options.left));
         }
         if (options.bottom) {
-            this.root.push(new BorderElement("w:bottom", options.bottom));
+            this.root.push(new BorderElement("hp:bottom", options.bottom));
         }
         if (options.end) {
             this.root.push(new BorderElement("w:end", options.end));
         }
         if (options.right) {
-            this.root.push(new BorderElement("w:right", options.right));
+            this.root.push(new BorderElement("hp:right", options.right));
         }
     }
 }
@@ -55,7 +55,7 @@ export class TableCellBorders extends IgnoreIfEmptyXmlComponent {
  * Attributes fot the GridSpan element.
  */
 class GridSpanAttributes extends XmlAttributeComponent<{ readonly val: number }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 // <xsd:complexType name="CT_TcPrBase">
@@ -94,7 +94,7 @@ export const VerticalMergeType = {
 class VerticalMergeAttributes extends XmlAttributeComponent<{
     readonly val: (typeof VerticalMergeType)[keyof typeof VerticalMergeType];
 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 /**
@@ -121,7 +121,7 @@ export const TextDirection = {
 class TDirectionAttributes extends XmlAttributeComponent<{
     readonly val: (typeof TextDirection)[keyof typeof TextDirection];
 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 /**

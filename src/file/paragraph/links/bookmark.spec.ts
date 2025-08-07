@@ -19,7 +19,7 @@ describe("Bookmark", () => {
         const newJson = Utility.jsonify(bookmark);
         assert.equal(newJson.rootKey, undefined);
         assert.equal(newJson.start.rootKey, "w:bookmarkStart");
-        assert.equal(newJson.children[0].rootKey, "w:r");
+        assert.equal(newJson.children[0].rootKey, "hp:run");
         assert.equal(newJson.end.rootKey, "w:bookmarkEnd");
     });
 

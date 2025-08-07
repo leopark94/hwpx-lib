@@ -17,7 +17,7 @@ describe("VmlTextbox", () => {
         expect(tree).toStrictEqual({
             "v:textbox": [
                 { _attr: { insetmode: "auto", style: "test-style" } },
-                { "w:txbxContent": [{ "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] }] },
+                { "w:txbxContent": [{ "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] }] },
             ],
         });
     });
@@ -39,7 +39,7 @@ describe("VmlTextbox", () => {
         expect(tree).toStrictEqual({
             "v:textbox": [
                 { _attr: { insetmode: "custom", style: "test-style", inset: "0, 0, 0, 0" } },
-                { "w:txbxContent": [{ "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] }] },
+                { "w:txbxContent": [{ "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] }] },
             ],
         });
     });

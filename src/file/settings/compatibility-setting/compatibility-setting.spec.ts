@@ -11,11 +11,11 @@ describe("CompatibilitySetting", () => {
 
             const tree = new Formatter().format(compatibilitySetting);
             expect(tree).to.deep.equal({
-                "w:compatSetting": {
+                "ha:compatSetting": {
                     _attr: {
-                        "w:name": "compatibilityMode",
+                        "hh:name": "compatibilityMode",
                         "w:uri": "http://schemas.microsoft.com/office/word",
-                        "w:val": 15,
+                        "hp:val": 15,
                     },
                 },
             });

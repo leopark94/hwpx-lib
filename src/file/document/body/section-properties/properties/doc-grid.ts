@@ -107,7 +107,7 @@ export const createDocumentGrid = ({ type, linePitch, charSpace }: IDocGridAttri
         name: "hs:docGrid",
         attributes: {
             type: { key: "hs:type", value: type },
-            linePitch: { key: "w:linePitch", value: decimalNumber(linePitch) },
+            linePitch: { key: "hp:linePitch", value: decimalNumber(linePitch) },
             charSpace: { key: "w:charSpace", value: charSpace ? decimalNumber(charSpace) : undefined },
         },
     });

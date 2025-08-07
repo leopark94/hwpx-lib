@@ -13,47 +13,47 @@ import { WidthType } from "./table-width";
 
 const BORDERS = {
     "w:tblBorders": [
-        { "w:top": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
-        { "w:left": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
-        { "w:bottom": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
-        { "w:right": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
-        { "w:insideH": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
-        { "w:insideV": { _attr: { "w:val": "single", "w:sz": 4, "w:color": "auto" } } },
+        { "hp:top": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
+        { "hp:left": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
+        { "hp:bottom": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
+        { "hp:right": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
+        { "w:insideH": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
+        { "w:insideV": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:color": "auto" } } },
     ],
 };
 
 const WIDTHS = {
     "w:tblW": {
         _attr: {
-            "w:type": "auto",
-            "w:w": 100,
+            "hp:type": "auto",
+            "hp:w": 100,
         },
     },
 };
 
 // const f = {
-//     "w:tbl": [
+//     "hp:tbl": [
 //         {
-//             "w:tblPr": [
+//             "hp:tblPr": [
 //                 {
 //                     "w:tblCellMar": [
-//                         { "w:bottom": { _attr: { "w:type": "auto", "w:w": 0 } } },
-//                         { "w:top": { _attr: { "w:type": "auto", "w:w": 0 } } },
-//                         { "w:left": { _attr: { "w:type": "auto", "w:w": 0 } } },
-//                         { "w:right": { _attr: { "w:type": "auto", "w:w": 0 } } },
+//                         { "hp:bottom": { _attr: { "hp:type": "auto", "hp:w": 0 } } },
+//                         { "hp:top": { _attr: { "hp:type": "auto", "hp:w": 0 } } },
+//                         { "hp:left": { _attr: { "hp:type": "auto", "hp:w": 0 } } },
+//                         { "hp:right": { _attr: { "hp:type": "auto", "hp:w": 0 } } },
 //                     ],
 //                 },
 //                 {
 //                     "w:tblBorders": [
-//                         { "w:top": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
-//                         { "w:left": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
-//                         { "w:bottom": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
-//                         { "w:right": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
-//                         { "w:insideH": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
-//                         { "w:insideV": { _attr: { "w:val": "single", "w:sz": 4, "w:space": 0, "w:color": "auto" } } },
+//                         { "hp:top": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
+//                         { "hp:left": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
+//                         { "hp:bottom": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
+//                         { "hp:right": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
+//                         { "w:insideH": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
+//                         { "w:insideV": { _attr: { "hp:val": "single", "hp:sz": 4, "hp:space": 0, "hp:color": "auto" } } },
 //                     ],
 //                 },
-//                 { "w:tblW": { _attr: { "w:type": "auto", "w:w": 100 } } },
+//                 { "w:tblW": { _attr: { "hp:type": "auto", "hp:w": 100 } } },
 //                 {
 //                     "w:tblpPr": {
 //                         _attr: {
@@ -72,8 +72,8 @@ const WIDTHS = {
 //                 },
 //             ],
 //         },
-//         { "w:tblGrid": [{ "w:gridCol": { _attr: { "w:w": 100 } } }] },
-//         { "w:tr": [{ "w:tc": [{ "w:p": EMPTY_OBJECT }] }] },
+//         { "w:tblGrid": [{ "w:gridCol": { _attr: { "hp:w": 100 } } }] },
+//         { "hp:tr": [{ "hp:tc": [{ "hp:p": EMPTY_OBJECT }] }] },
 //     ],
 // };
 
@@ -116,13 +116,13 @@ describe("Table", () => {
             });
             const tree = new Formatter().format(table);
             const cell = {
-                "w:tc": [
+                "hp:tc": [
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",
@@ -138,14 +138,14 @@ describe("Table", () => {
                 ],
             };
             expect(tree).to.deep.equal({
-                "w:tbl": [
-                    { "w:tblPr": [WIDTHS, BORDERS] },
+                "hp:tbl": [
+                    { "hp:tblPr": [WIDTHS, BORDERS] },
                     {
-                        "w:tblGrid": [{ "w:gridCol": { _attr: { "w:w": 100 } } }, { "w:gridCol": { _attr: { "w:w": 100 } } }],
+                        "w:tblGrid": [{ "w:gridCol": { _attr: { "hp:w": 100 } } }, { "w:gridCol": { _attr: { "hp:w": 100 } } }],
                     },
-                    { "w:tr": [cell, cell] },
-                    { "w:tr": [cell, cell] },
-                    { "w:tr": [cell, cell] },
+                    { "hp:tr": [cell, cell] },
+                    { "hp:tr": [cell, cell] },
+                    { "hp:tr": [cell, cell] },
                 ],
             });
         });
@@ -182,34 +182,34 @@ describe("Table", () => {
                 ],
             });
             const tree = new Formatter().format(table);
-            const cellP = { "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "hello"] }] }] };
+            const cellP = { "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "hello"] }] }] };
             expect(tree).to.deep.equal({
-                "w:tbl": [
-                    { "w:tblPr": [WIDTHS, BORDERS] },
+                "hp:tbl": [
+                    { "hp:tblPr": [WIDTHS, BORDERS] },
                     {
-                        "w:tblGrid": [{ "w:gridCol": { _attr: { "w:w": 100 } } }, { "w:gridCol": { _attr: { "w:w": 100 } } }],
+                        "w:tblGrid": [{ "w:gridCol": { _attr: { "hp:w": 100 } } }, { "w:gridCol": { _attr: { "hp:w": 100 } } }],
                     },
                     {
-                        "w:tr": [
+                        "hp:tr": [
                             {
-                                "w:tc": [{ "w:tcPr": [{ "w:gridSpan": { _attr: { "w:val": 2 } } }] }, cellP],
+                                "hp:tc": [{ "hp:tcPr": [{ "w:gridSpan": { _attr: { "hp:val": 2 } } }] }, cellP],
                             },
                         ],
                     },
                     {
-                        "w:tr": [
+                        "hp:tr": [
                             {
-                                "w:tc": [{ "w:tcPr": [{ "w:vMerge": { _attr: { "w:val": "restart" } } }] }, cellP],
+                                "hp:tc": [{ "hp:tcPr": [{ "w:vMerge": { _attr: { "hp:val": "restart" } } }] }, cellP],
                             },
-                            { "w:tc": [cellP] },
+                            { "hp:tc": [cellP] },
                         ],
                     },
                     {
-                        "w:tr": [
+                        "hp:tr": [
                             {
-                                "w:tc": [{ "w:tcPr": [{ "w:vMerge": { _attr: { "w:val": "continue" } } }] }, { "w:p": {} }],
+                                "hp:tc": [{ "hp:tcPr": [{ "w:vMerge": { _attr: { "hp:val": "continue" } } }] }, { "hp:p": {} }],
                             },
-                            { "w:tc": [cellP] },
+                            { "hp:tc": [cellP] },
                         ],
                     },
                 ],
@@ -230,9 +230,9 @@ describe("Table", () => {
                 layout: TableLayoutType.FIXED,
             });
             const tree = new Formatter().format(table);
-            expect(tree).to.have.property("w:tbl").which.is.an("array").with.has.length.at.least(1);
-            expect(tree["w:tbl"][0]).to.deep.equal({
-                "w:tblPr": [WIDTHS, BORDERS, { "w:tblLayout": { _attr: { "w:type": "fixed" } } }],
+            expect(tree).to.have.property("hp:tbl").which.is.an("array").with.has.length.at.least(1);
+            expect(tree["hp:tbl"][0]).to.deep.equal({
+                "hp:tblPr": [WIDTHS, BORDERS, { "w:tblLayout": { _attr: { "hp:type": "fixed" } } }],
             });
         });
 
@@ -250,9 +250,9 @@ describe("Table", () => {
                 alignment: AlignmentType.CENTER,
             });
             const tree = new Formatter().format(table);
-            expect(tree).to.have.property("w:tbl").which.is.an("array").with.has.length.at.least(1);
-            expect(tree["w:tbl"][0]).to.deep.equal({
-                "w:tblPr": [WIDTHS, { "w:jc": { _attr: { "w:val": "center" } } }, BORDERS],
+            expect(tree).to.have.property("hp:tbl").which.is.an("array").with.has.length.at.least(1);
+            expect(tree["hp:tbl"][0]).to.deep.equal({
+                "hp:tblPr": [WIDTHS, { "hp:align": { _attr: { "hp:val": "center" } } }, BORDERS],
             });
         });
 
@@ -274,19 +274,19 @@ describe("Table", () => {
                 layout: TableLayoutType.FIXED,
             });
             const tree = new Formatter().format(table);
-            expect(tree).to.have.property("w:tbl").which.is.an("array").with.has.length.at.least(1);
-            expect(tree["w:tbl"][0]).to.deep.equal({
-                "w:tblPr": [
+            expect(tree).to.have.property("hp:tbl").which.is.an("array").with.has.length.at.least(1);
+            expect(tree["hp:tbl"][0]).to.deep.equal({
+                "hp:tblPr": [
                     {
                         "w:tblW": {
                             _attr: {
-                                "w:type": "pct",
-                                "w:w": "100%",
+                                "hp:type": "pct",
+                                "hp:w": "100%",
                             },
                         },
                     },
                     BORDERS,
-                    { "w:tblLayout": { _attr: { "w:type": "fixed" } } },
+                    { "w:tblLayout": { _attr: { "hp:type": "fixed" } } },
                 ],
             });
         });
@@ -309,19 +309,19 @@ describe("Table", () => {
                 layout: TableLayoutType.FIXED,
             });
             const tree = new Formatter().format(table);
-            expect(tree).to.have.property("w:tbl").which.is.an("array").with.has.length.at.least(1);
-            expect(tree["w:tbl"][0]).to.deep.equal({
-                "w:tblPr": [
+            expect(tree).to.have.property("hp:tbl").which.is.an("array").with.has.length.at.least(1);
+            expect(tree["hp:tbl"][0]).to.deep.equal({
+                "hp:tblPr": [
                     {
                         "w:tblW": {
                             _attr: {
-                                "w:type": "dxa",
-                                "w:w": 1000,
+                                "hp:type": "dxa",
+                                "hp:w": 1000,
                             },
                         },
                     },
                     BORDERS,
-                    { "w:tblLayout": { _attr: { "w:type": "fixed" } } },
+                    { "w:tblLayout": { _attr: { "hp:type": "fixed" } } },
                 ],
             });
         });
@@ -342,18 +342,18 @@ describe("Table", () => {
                     ],
                 });
                 const tree = new Formatter().format(table);
-                expect(tree).to.have.property("w:tbl").which.is.an("array");
-                const row = tree["w:tbl"].find((x: any) => x["w:tr"]);
+                expect(tree).to.have.property("hp:tbl").which.is.an("array");
+                const row = tree["hp:tbl"].find((x: any) => x["hp:tr"]);
                 expect(row).not.to.be.undefined;
-                expect(row["w:tr"]).to.be.an("array").which.has.length.at.least(1);
-                expect(row["w:tr"].find((x: any) => x["w:tc"])).to.deep.equal({
-                    "w:tc": [
+                expect(row["hp:tr"]).to.be.an("array").which.has.length.at.least(1);
+                expect(row["hp:tr"].find((x: any) => x["hp:tc"])).to.deep.equal({
+                    "hp:tc": [
                         {
-                            "w:p": [
+                            "hp:p": [
                                 {
-                                    "w:r": [
+                                    "hp:run": [
                                         {
-                                            "w:t": [
+                                            "hp:t": [
                                                 {
                                                     _attr: {
                                                         "xml:space": "preserve",
@@ -397,17 +397,17 @@ describe("Table", () => {
             //     );
             //     const tree = new Formatter().format(table);
             //     expect(tree)
-            //         .to.have.property("w:tbl")
+            //         .to.have.property("hp:tbl")
             //         .which.is.an("array");
-            //     const row = tree["w:tbl"].find((x) => x["w:tr"]);
+            //     const row = tree["hp:tbl"].find((x) => x["hp:tr"]);
             //     expect(row).not.to.be.undefined;
-            //     expect(row["w:tr"])
+            //     expect(row["hp:tr"])
             //         .to.be.an("array")
             //         .which.has.length.at.least(1);
-            //     const cell = row["w:tr"].find((x) => x["w:tc"]);
+            //     const cell = row["hp:tr"].find((x) => x["hp:tc"]);
             //     expect(cell).not.to.be.undefined;
-            //     expect(cell["w:tc"][cell["w:tc"].length - 1]).to.deep.equal({
-            //         "w:p": EMPTY_OBJECT,
+            //     expect(cell["hp:tc"][cell["hp:tc"].length - 1]).to.deep.equal({
+            //         "hp:p": EMPTY_OBJECT,
             //     });
             // });
 
@@ -426,17 +426,17 @@ describe("Table", () => {
             //     table.getCell(0, 0).add(new Paragraph("Hello"));
             //     const tree = new Formatter().format(table);
             //     expect(tree)
-            //         .to.have.property("w:tbl")
+            //         .to.have.property("hp:tbl")
             //         .which.is.an("array");
-            //     const row = tree["w:tbl"].find((x) => x["w:tr"]);
+            //     const row = tree["hp:tbl"].find((x) => x["hp:tr"]);
             //     expect(row).not.to.be.undefined;
-            //     expect(row["w:tr"])
+            //     expect(row["hp:tr"])
             //         .to.be.an("array")
             //         .which.has.length.at.least(1);
-            //     expect(row["w:tr"].find((x) => x["w:tc"])).to.deep.equal({
-            //         "w:tc": [
+            //     expect(row["hp:tr"].find((x) => x["hp:tc"])).to.deep.equal({
+            //         "hp:tc": [
             //             {
-            //                 "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "Hello"] }] }],
+            //                 "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "Hello"] }] }],
             //             },
             //         ],
             //     });
@@ -470,9 +470,9 @@ describe("Table", () => {
                 },
             });
             const tree = new Formatter().format(table);
-            expect(tree).to.have.property("w:tbl").which.is.an("array").with.has.length.at.least(1);
-            expect(tree["w:tbl"][0]).to.deep.equal({
-                "w:tblPr": [
+            expect(tree).to.have.property("hp:tbl").which.is.an("array").with.has.length.at.least(1);
+            expect(tree["hp:tbl"][0]).to.deep.equal({
+                "hp:tblPr": [
                     {
                         "w:tblpPr": {
                             _attr: {

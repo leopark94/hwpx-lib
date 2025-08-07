@@ -11,7 +11,7 @@ describe("Settings", () => {
             const tree = new Formatter().format(settings);
 
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
         });
 
         it("should add updateFields setting", () => {
@@ -21,10 +21,10 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            expect(tree["w:settings"]).to.deep.include({
-                "w:updateFields": {},
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:updateFields": {},
             });
         });
 
@@ -33,16 +33,16 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            const compat = tree["w:settings"][2];
-            expect(compat).to.be.an("object").with.keys("w:compat");
-            expect(compat["w:compat"]).to.deep.include({
-                "w:compatSetting": {
+            const compat = tree["hp:settings"][2];
+            expect(compat).to.be.an("object").with.keys("ha:compat");
+            expect(compat["ha:compat"]).to.deep.include({
+                "ha:compatSetting": {
                     _attr: {
-                        "w:val": 15,
+                        "hp:val": 15,
                         "w:uri": "http://schemas.microsoft.com/office/word",
-                        "w:name": "compatibilityMode",
+                        "hh:name": "compatibilityMode",
                     },
                 },
             });
@@ -55,10 +55,10 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            expect(tree["w:settings"]).to.deep.include({
-                "w:trackRevisions": {},
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:trackRevisions": {},
             });
         });
 
@@ -69,16 +69,16 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            expect(tree["w:settings"]).to.deep.include({
-                "w:compat": [
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:compat": [
                     {
-                        "w:compatSetting": {
+                        "ha:compatSetting": {
                             _attr: {
-                                "w:name": "compatibilityMode",
+                                "hh:name": "compatibilityMode",
                                 "w:uri": "http://schemas.microsoft.com/office/word",
-                                "w:val": 15,
+                                "hp:val": 15,
                             },
                         },
                     },
@@ -95,16 +95,16 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            expect(tree["w:settings"]).to.deep.include({
-                "w:compat": [
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:compat": [
                     {
-                        "w:compatSetting": {
+                        "ha:compatSetting": {
                             _attr: {
-                                "w:name": "compatibilityMode",
+                                "hh:name": "compatibilityMode",
                                 "w:uri": "http://schemas.microsoft.com/office/word",
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -119,11 +119,11 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
-            expect(tree["w:settings"]).to.deep.include({
-                "w:defaultTabStop": {
+            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:defaultTabStop": {
                     _attr: {
-                        "w:val": 100,
+                        "hp:val": 100,
                     },
                 },
             });
@@ -138,9 +138,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
-            expect(tree["w:settings"]).to.deep.include({
-                "w:autoHyphenation": {},
+            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:autoHyphenation": {},
             });
         });
 
@@ -153,9 +153,9 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
-            expect(tree["w:settings"]).to.deep.include({
-                "w:doNotHyphenateCaps": {},
+            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:doNotHyphenateCaps": {},
             });
         });
 
@@ -168,11 +168,11 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
-            expect(tree["w:settings"]).to.deep.include({
-                "w:hyphenationZone": {
+            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:hyphenationZone": {
                     _attr: {
-                        "w:val": 200,
+                        "hp:val": 200,
                     },
                 },
             });
@@ -187,11 +187,11 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(new Settings(options));
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
-            expect(tree["w:settings"]).to.deep.include({
-                "w:consecutiveHyphenLimit": {
+            expect(tree["hp:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:consecutiveHyphenLimit": {
                     _attr: {
-                        "w:val": 3,
+                        "hp:val": 3,
                     },
                 },
             });
@@ -205,16 +205,16 @@ describe("Settings", () => {
 
             const tree = new Formatter().format(settings);
             expect(Object.keys(tree)).has.length(1);
-            expect(tree["w:settings"]).to.be.an("array");
+            expect(tree["hp:settings"]).to.be.an("array");
 
-            expect(tree["w:settings"]).to.deep.include({
-                "w:compat": [
+            expect(tree["hp:settings"]).to.deep.include({
+                "ha:compat": [
                     {
-                        "w:compatSetting": {
+                        "ha:compatSetting": {
                             _attr: {
-                                "w:name": "compatibilityMode",
+                                "hh:name": "compatibilityMode",
                                 "w:uri": "http://schemas.microsoft.com/office/word",
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },

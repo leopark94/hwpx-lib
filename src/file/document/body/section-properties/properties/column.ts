@@ -16,8 +16,8 @@ export class Column extends XmlComponent {
         super("hs:column");
         this.root.push(
             new NextAttributeComponent<IColumnAttributes>({
-                width: { key: "w:w", value: twipsMeasureValue(width) },
-                space: { key: "w:space", value: space === undefined ? undefined : twipsMeasureValue(space) },
+                width: { key: "hp:w", value: twipsMeasureValue(width) },
+                space: { key: "hp:space", value: space === undefined ? undefined : twipsMeasureValue(space) },
             }),
         );
     }

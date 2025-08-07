@@ -26,7 +26,7 @@ export class SectionTypeAttributes extends XmlAttributeComponent<{
     readonly val: (typeof SectionType)[keyof typeof SectionType];
 }> {
     protected readonly xmlKeys = {
-        val: "w:val",
+        val: "hp:val",
     };
 }
 

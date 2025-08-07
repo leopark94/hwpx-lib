@@ -37,27 +37,27 @@ export class TableBorders extends XmlComponent {
         super("hp:borders");
 
         if (options.top) {
-            this.root.push(new BorderElement("w:top", options.top));
+            this.root.push(new BorderElement("hp:top", options.top));
         } else {
-            this.root.push(new BorderElement("w:top", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:top", DEFAULT_BORDER));
         }
 
         if (options.left) {
-            this.root.push(new BorderElement("w:left", options.left));
+            this.root.push(new BorderElement("hp:left", options.left));
         } else {
-            this.root.push(new BorderElement("w:left", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:left", DEFAULT_BORDER));
         }
 
         if (options.bottom) {
-            this.root.push(new BorderElement("w:bottom", options.bottom));
+            this.root.push(new BorderElement("hp:bottom", options.bottom));
         } else {
-            this.root.push(new BorderElement("w:bottom", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:bottom", DEFAULT_BORDER));
         }
 
         if (options.right) {
-            this.root.push(new BorderElement("w:right", options.right));
+            this.root.push(new BorderElement("hp:right", options.right));
         } else {
-            this.root.push(new BorderElement("w:right", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:right", DEFAULT_BORDER));
         }
 
         if (options.insideHorizontal) {

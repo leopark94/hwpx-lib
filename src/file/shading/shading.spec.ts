@@ -22,9 +22,9 @@ describe("Shading", () => {
             expect(tree).to.deep.equal({
                 "w:shd": {
                     _attr: {
-                        "w:color": "FF0000",
-                        "w:fill": "555555",
-                        "w:val": "pct40",
+                        "hp:color": "FF0000",
+                        "hp:fill": "555555",
+                        "hp:val": "pct40",
                     },
                 },
             });

@@ -22,7 +22,7 @@ describe("DocumentBackground", () => {
             expect(tree).to.deep.equal({
                 "w:background": {
                     _attr: {
-                        "w:color": "ffff00",
+                        "hp:color": "ffff00",
                     },
                 },
             });
@@ -39,7 +39,7 @@ describe("DocumentBackground", () => {
             expect(tree).to.deep.equal({
                 "w:background": {
                     _attr: {
-                        "w:color": "ffff00",
+                        "hp:color": "ffff00",
                         "w:themeColor": "test",
                         "w:themeShade": "0A",
                         "w:themeTint": "0B",

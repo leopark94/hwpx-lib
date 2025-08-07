@@ -31,7 +31,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -67,7 +67,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -113,7 +113,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -127,7 +127,7 @@ describe("ConcreteNumbering", () => {
                             {
                                 "w:startOverride": {
                                     _attr: {
-                                        "w:val": 9,
+                                        "hp:val": 9,
                                     },
                                 },
                             },
@@ -165,7 +165,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -179,7 +179,7 @@ describe("ConcreteNumbering", () => {
                             {
                                 "w:startOverride": {
                                     _attr: {
-                                        "w:val": 9,
+                                        "hp:val": 9,
                                     },
                                 },
                             },
@@ -195,7 +195,7 @@ describe("ConcreteNumbering", () => {
                             {
                                 "w:startOverride": {
                                     _attr: {
-                                        "w:val": 10,
+                                        "hp:val": 10,
                                     },
                                 },
                             },
@@ -232,7 +232,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -246,7 +246,7 @@ describe("ConcreteNumbering", () => {
                             {
                                 "w:startOverride": {
                                     _attr: {
-                                        "w:val": 9,
+                                        "hp:val": 9,
                                     },
                                 },
                             },
@@ -286,7 +286,7 @@ describe("ConcreteNumbering", () => {
                     {
                         "w:abstractNumId": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },

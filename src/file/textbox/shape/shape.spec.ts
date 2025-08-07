@@ -25,7 +25,7 @@ describe("createShape", () => {
                         { _attr: { insetmode: "auto", style: "mso-fit-shape-to-text:t;" } },
                         {
                             "w:txbxContent": [
-                                { "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] },
+                                { "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] }] },
                             ],
                         },
                     ],

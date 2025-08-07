@@ -23,7 +23,7 @@ describe("LeftTabStop", () => {
 
         it("should create a Tab Stop with w:tab", () => {
             const newJson = Utility.jsonify(tabStop);
-            assert.equal(newJson.root[0].rootKey, "w:tab");
+            assert.equal(newJson.root[0].rootKey, "hp:tab");
         });
     });
 });
@@ -48,7 +48,7 @@ describe("RightTabStop", () => {
 
         it("should create a Tab Stop with w:tab", () => {
             const newJson = Utility.jsonify(tabStop);
-            assert.equal(newJson.root[0].rootKey, "w:tab");
+            assert.equal(newJson.root[0].rootKey, "hp:tab");
         });
     });
 });

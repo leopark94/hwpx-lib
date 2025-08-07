@@ -26,7 +26,7 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblStyle": { _attr: { "w:val": "TableNormal" } } }],
+                "hp:tblPr": [{ "w:tblStyle": { _attr: { "hp:val": "TableNormal" } } }],
             });
         });
 
@@ -39,7 +39,7 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblW": { _attr: { "w:type": "dxa", "w:w": 1234 } } }],
+                "hp:tblPr": [{ "w:tblW": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }],
             });
         });
 
@@ -52,7 +52,7 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblW": { _attr: { "w:type": "auto", "w:w": 1234 } } }],
+                "hp:tblPr": [{ "w:tblW": { _attr: { "hp:type": "auto", "hp:w": 1234 } } }],
             });
         });
 
@@ -65,7 +65,7 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblInd": { _attr: { "w:type": "dxa", "w:w": 1234 } } }],
+                "hp:tblPr": [{ "w:tblInd": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }],
             });
         });
 
@@ -78,7 +78,7 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblInd": { _attr: { "w:type": "auto", "w:w": 1234 } } }],
+                "hp:tblPr": [{ "w:tblInd": { _attr: { "hp:type": "auto", "hp:w": 1234 } } }],
             });
         });
 
@@ -89,7 +89,7 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblLayout": { _attr: { "w:type": "fixed" } } }],
+                "hp:tblPr": [{ "w:tblLayout": { _attr: { "hp:type": "fixed" } } }],
             });
         });
 
@@ -102,7 +102,7 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblCellSpacing": { _attr: { "w:type": "dxa", "w:w": 1234 } } }],
+                "hp:tblPr": [{ "w:tblCellSpacing": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }],
             });
         });
     });
@@ -118,7 +118,7 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblCellMar": [{ "w:top": { _attr: { "w:type": "dxa", "w:w": 1234 } } }] }],
+                "hp:tblPr": [{ "w:tblCellMar": [{ "hp:top": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }] }],
             });
         });
 
@@ -132,7 +132,7 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [{ "w:tblCellMar": [{ "w:left": { _attr: { "w:type": "dxa", "w:w": 1234 } } }] }],
+                "hp:tblPr": [{ "w:tblCellMar": [{ "hp:left": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }] }],
             });
         });
     });
@@ -149,13 +149,13 @@ describe("TableProperties", () => {
 
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [
+                "hp:tblPr": [
                     {
                         "w:shd": {
                             _attr: {
-                                "w:color": "auto",
-                                "w:fill": "b79c2f",
-                                "w:val": "reverseDiagStripe",
+                                "hp:color": "auto",
+                                "hp:fill": "b79c2f",
+                                "hp:val": "reverseDiagStripe",
                             },
                         },
                     },
@@ -171,11 +171,11 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [
+                "hp:tblPr": [
                     {
-                        "w:jc": {
+                        "hp:align": {
                             _attr: {
-                                "w:val": "center",
+                                "hp:val": "center",
                             },
                         },
                     },
@@ -191,7 +191,7 @@ describe("TableProperties", () => {
             });
             const tree = new Formatter().format(tp);
             expect(tree).to.deep.equal({
-                "w:tblPr": [
+                "hp:tblPr": [
                     {
                         "w:bidiVisual": {},
                     },

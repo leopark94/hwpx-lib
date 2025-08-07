@@ -49,7 +49,7 @@ const DEFAULT_TOC = {
                 {
                     "w:alias": {
                         _attr: {
-                            "w:val": "Table of Contents",
+                            "hp:val": "Table of Contents",
                         },
                     },
                 },
@@ -58,9 +58,9 @@ const DEFAULT_TOC = {
         {
             "w:sdtContent": [
                 {
-                    "w:p": [
+                    "hp:p": [
                         {
-                            "w:r": [
+                            "hp:run": [
                                 {
                                     "w:fldChar": {
                                         _attr: {
@@ -70,7 +70,7 @@ const DEFAULT_TOC = {
                                     },
                                 },
                                 {
-                                    "w:instrText": [
+                                    "hp:instrText": [
                                         {
                                             _attr: {
                                                 "xml:space": "preserve",
@@ -91,9 +91,9 @@ const DEFAULT_TOC = {
                     ],
                 },
                 {
-                    "w:p": [
+                    "hp:p": [
                         {
-                            "w:r": [
+                            "hp:run": [
                                 {
                                     "w:fldChar": {
                                         _attr: {
@@ -117,7 +117,7 @@ const COMPLETE_TOC = {
                 {
                     "w:alias": {
                         _attr: {
-                            "w:val": "Summary",
+                            "hp:val": "Summary",
                         },
                     },
                 },
@@ -126,9 +126,9 @@ const COMPLETE_TOC = {
         {
             "w:sdtContent": [
                 {
-                    "w:p": [
+                    "hp:p": [
                         {
-                            "w:r": [
+                            "hp:run": [
                                 {
                                     "w:fldChar": {
                                         _attr: {
@@ -138,7 +138,7 @@ const COMPLETE_TOC = {
                                     },
                                 },
                                 {
-                                    "w:instrText": [
+                                    "hp:instrText": [
                                         {
                                             _attr: {
                                                 "xml:space": "preserve",
@@ -159,9 +159,9 @@ const COMPLETE_TOC = {
                     ],
                 },
                 {
-                    "w:p": [
+                    "hp:p": [
                         {
-                            "w:r": [
+                            "hp:run": [
                                 {
                                     "w:fldChar": {
                                         _attr: {

@@ -15,8 +15,8 @@ describe("Footnote", () => {
             });
             const tree = new Formatter().format(footnote);
 
-            expect(Object.keys(tree)).to.deep.equal(["w:footnote"]);
-            expect(tree["w:footnote"]).to.deep.equal({ _attr: { "w:type": "separator", "w:id": 1 } });
+            expect(Object.keys(tree)).to.deep.equal(["hh:footnote"]);
+            expect(tree["hp:footnote"]).to.deep.equal({ _attr: { "hp:type": "separator", "hp:id": 1 } });
         });
 
         it("should create a footnote without a footnote type", () => {
@@ -26,8 +26,8 @@ describe("Footnote", () => {
             });
             const tree = new Formatter().format(footnote);
 
-            expect(Object.keys(tree)).to.deep.equal(["w:footnote"]);
-            expect(tree["w:footnote"]).to.deep.equal({ _attr: { "w:id": 1 } });
+            expect(Object.keys(tree)).to.deep.equal(["hh:footnote"]);
+            expect(tree["hp:footnote"]).to.deep.equal({ _attr: { "hp:id": 1 } });
         });
 
         it("should append footnote ref run on the first footnote paragraph", () => {
@@ -38,36 +38,36 @@ describe("Footnote", () => {
             const tree = new Formatter().format(footnote);
 
             expect(tree).to.deep.equal({
-                "w:footnote": [
+                "hh:footnote": [
                     {
                         _attr: {
-                            "w:id": 1,
+                            "hp:id": 1,
                         },
                     },
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:rPr": [
+                                        "hp:charPr": [
                                             {
-                                                "w:rStyle": {
+                                                "hp:styleRef": {
                                                     _attr: {
-                                                        "w:val": "FootnoteReference",
+                                                        "hp:val": "FootnoteReference",
                                                     },
                                                 },
                                             },
                                         ],
                                     },
                                     {
-                                        "w:footnoteRef": {},
+                                        "hp:footnoteRef": {},
                                     },
                                 ],
                             },
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",
@@ -95,36 +95,36 @@ describe("Footnote", () => {
             const tree = new Formatter().format(footnote);
 
             expect(tree).to.deep.equal({
-                "w:footnote": [
+                "hh:footnote": [
                     {
                         _attr: {
-                            "w:id": 1,
+                            "hp:id": 1,
                         },
                     },
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:rPr": [
+                                        "hp:charPr": [
                                             {
-                                                "w:rStyle": {
+                                                "hp:styleRef": {
                                                     _attr: {
-                                                        "w:val": "FootnoteReference",
+                                                        "hp:val": "FootnoteReference",
                                                     },
                                                 },
                                             },
                                         ],
                                     },
                                     {
-                                        "w:footnoteRef": {},
+                                        "hp:footnoteRef": {},
                                     },
                                 ],
                             },
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",
@@ -138,11 +138,11 @@ describe("Footnote", () => {
                         ],
                     },
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",

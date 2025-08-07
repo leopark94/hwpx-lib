@@ -7,6 +7,6 @@ export const createMathBarPos = ({ val }: MathBarPosOptions): XmlComponent =>
     new BuilderElement<MathBarPosOptions>({
         name: "m:pos",
         attributes: {
-            val: { key: "w:val", value: val },
+            val: { key: "hp:val", value: val },
         },
     });

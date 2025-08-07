@@ -7,13 +7,13 @@ describe("paragraph-token-replacer", () => {
         it("should replace token in paragraph", () => {
             const output = replaceTokenInParagraphElement({
                 paragraphElement: {
-                    name: "w:p",
+                    name: "hp:p",
                     elements: [
                         {
-                            name: "w:r",
+                            name: "hp:run",
                             elements: [
                                 {
-                                    name: "w:t",
+                                    name: "hp:t",
                                     elements: [
                                         {
                                             type: "text",
@@ -61,40 +61,40 @@ describe("paragraph-token-replacer", () => {
                                         type: "text",
                                     },
                                 ],
-                                name: "w:t",
+                                name: "hp:t",
                             },
                         ],
-                        name: "w:r",
+                        name: "hp:run",
                     },
                 ],
-                name: "w:p",
+                name: "hp:p",
             });
         });
 
         it("should handle case where it cannot find any text to replace", () => {
             const output = replaceTokenInParagraphElement({
                 paragraphElement: {
-                    name: "w:p",
+                    name: "hp:p",
                     attributes: {
                         "w14:paraId": "2499FE9F",
                         "w14:textId": "27B4FBC2",
-                        "w:rsidR": "00B51233",
+                        "hp:rsidR": "00B51233",
                         "w:rsidRDefault": "007B52ED",
                         "w:rsidP": "007B52ED",
                     },
                     elements: [
                         {
                             type: "element",
-                            name: "w:pPr",
-                            elements: [{ type: "element", name: "w:pStyle", attributes: { "w:val": "Title" } }],
+                            name: "hp:paraPr",
+                            elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Title" } }],
                         },
                         {
                             type: "element",
-                            name: "w:r",
+                            name: "hp:run",
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:t",
+                                    name: "hp:t",
                                     attributes: { "xml:space": "preserve" },
                                     elements: [{ type: "text", text: "Hello " }],
                                 },
@@ -102,12 +102,12 @@ describe("paragraph-token-replacer", () => {
                         },
                         {
                             type: "element",
-                            name: "w:r",
-                            attributes: { "w:rsidR": "007F116B" },
+                            name: "hp:run",
+                            attributes: { "hp:rsidR": "007F116B" },
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:t",
+                                    name: "hp:t",
                                     attributes: { "xml:space": "preserve" },
                                     elements: [{ type: "text", text: "{{name}} " }],
                                 },
@@ -115,8 +115,8 @@ describe("paragraph-token-replacer", () => {
                         },
                         {
                             type: "element",
-                            name: "w:r",
-                            elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "World" }] }],
+                            name: "hp:run",
+                            elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "World" }] }],
                         },
                     ],
                 },
@@ -139,7 +139,7 @@ describe("paragraph-token-replacer", () => {
                     "w14:paraId": "2499FE9F",
                     "w14:textId": "27B4FBC2",
                     "w:rsidP": "007B52ED",
-                    "w:rsidR": "00B51233",
+                    "hp:rsidR": "00B51233",
                     "w:rsidRDefault": "007B52ED",
                 },
                 elements: [
@@ -147,13 +147,13 @@ describe("paragraph-token-replacer", () => {
                         elements: [
                             {
                                 attributes: {
-                                    "w:val": "Title",
+                                    "hp:val": "Title",
                                 },
                                 name: "w:pStyle",
                                 type: "element",
                             },
                         ],
-                        name: "w:pPr",
+                        name: "hp:paraPr",
                         type: "element",
                     },
                     {
@@ -168,16 +168,16 @@ describe("paragraph-token-replacer", () => {
                                         type: "text",
                                     },
                                 ],
-                                name: "w:t",
+                                name: "hp:t",
                                 type: "element",
                             },
                         ],
-                        name: "w:r",
+                        name: "hp:run",
                         type: "element",
                     },
                     {
                         attributes: {
-                            "w:rsidR": "007F116B",
+                            "hp:rsidR": "007F116B",
                         },
                         elements: [
                             {
@@ -190,11 +190,11 @@ describe("paragraph-token-replacer", () => {
                                         type: "text",
                                     },
                                 ],
-                                name: "w:t",
+                                name: "hp:t",
                                 type: "element",
                             },
                         ],
-                        name: "w:r",
+                        name: "hp:run",
                         type: "element",
                     },
                     {
@@ -209,15 +209,15 @@ describe("paragraph-token-replacer", () => {
                                         type: "text",
                                     },
                                 ],
-                                name: "w:t",
+                                name: "hp:t",
                                 type: "element",
                             },
                         ],
-                        name: "w:r",
+                        name: "hp:run",
                         type: "element",
                     },
                 ],
-                name: "w:p",
+                name: "hp:p",
             });
         });
 
@@ -225,13 +225,13 @@ describe("paragraph-token-replacer", () => {
         // it("should replace token in paragraph", () => {
         //     const output = replaceTokenInParagraphElement({
         //         paragraphElement: {
-        //             name: "w:p",
+        //             name: "hp:p",
         //             elements: [
         //                 {
-        //                     name: "w:r",
+        //                     name: "hp:run",
         //                     elements: [
         //                         {
-        //                             name: "w:t",
+        //                             name: "hp:t",
         //                             elements: [
         //                                 {
         //                                     type: "text",
@@ -240,7 +240,7 @@ describe("paragraph-token-replacer", () => {
         //                             ],
         //                         },
         //                         {
-        //                             name: "w:t",
+        //                             name: "hp:t",
         //                             elements: [
         //                                 {
         //                                     type: "text",
@@ -302,13 +302,13 @@ describe("paragraph-token-replacer", () => {
         //                                 type: "text",
         //                             },
         //                         ],
-        //                         name: "w:t",
+        //                         name: "hp:t",
         //                     },
         //                 ],
-        //                 name: "w:r",
+        //                 name: "hp:run",
         //             },
         //         ],
-        //         name: "w:p",
+        //         name: "hp:p",
         //     });
         // });
     });

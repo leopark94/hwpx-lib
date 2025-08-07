@@ -10,7 +10,7 @@ describe("Compatibility", () => {
             const compatibility = new Compatibility({});
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": {} });
+            expect(tree).to.deep.equal({ "ha:compat": {} });
         });
     });
 
@@ -22,13 +22,13 @@ describe("Compatibility", () => {
 
             const tree = new Formatter().format(compatibility);
             expect(tree).to.deep.equal({
-                "w:compat": [
+                "ha:compat": [
                     {
-                        "w:compatSetting": {
+                        "ha:compatSetting": {
                             _attr: {
-                                "w:name": "compatibilityMode",
+                                "hh:name": "compatibilityMode",
                                 "w:uri": "http://schemas.microsoft.com/office/word",
-                                "w:val": 10,
+                                "hp:val": 10,
                             },
                         },
                     },
@@ -44,7 +44,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useSingleBorderforContiguousCells": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useSingleBorderforContiguousCells": {} }] });
         });
     });
 
@@ -55,7 +55,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:wpJustification": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:wpJustification": {} }] });
         });
     });
 
@@ -66,7 +66,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:noTabHangInd": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:noTabHangInd": {} }] });
         });
     });
 
@@ -77,7 +77,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:noLeading": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:noLeading": {} }] });
         });
     });
 
@@ -88,7 +88,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:spaceForUL": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:spaceForUL": {} }] });
         });
     });
 
@@ -99,7 +99,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:noColumnBalance": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:noColumnBalance": {} }] });
         });
     });
 
@@ -110,7 +110,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:balanceSingleByteDoubleByteWidth": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:balanceSingleByteDoubleByteWidth": {} }] });
         });
     });
 
@@ -121,7 +121,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:noExtraLineSpacing": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:noExtraLineSpacing": {} }] });
         });
     });
 
@@ -132,7 +132,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotLeaveBackslashAlone": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotLeaveBackslashAlone": {} }] });
         });
     });
 
@@ -143,7 +143,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:ulTrailSpace": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:ulTrailSpace": {} }] });
         });
     });
 
@@ -154,7 +154,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotExpandShiftReturn": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotExpandShiftReturn": {} }] });
         });
     });
 
@@ -165,7 +165,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:spacingInWholePoints": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:spacingInWholePoints": {} }] });
         });
     });
 
@@ -176,7 +176,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:lineWrapLikeWord6": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:lineWrapLikeWord6": {} }] });
         });
     });
 
@@ -187,7 +187,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:printBodyTextBeforeHeader": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:printBodyTextBeforeHeader": {} }] });
         });
     });
 
@@ -198,7 +198,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:printColBlack": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:printColBlack": {} }] });
         });
     });
 
@@ -209,7 +209,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:wpSpaceWidth": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:wpSpaceWidth": {} }] });
         });
     });
 
@@ -220,7 +220,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:showBreaksInFrames": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:showBreaksInFrames": {} }] });
         });
     });
 
@@ -231,7 +231,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:subFontBySize": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:subFontBySize": {} }] });
         });
     });
 
@@ -242,7 +242,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:suppressBottomSpacing": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:suppressBottomSpacing": {} }] });
         });
     });
 
@@ -253,7 +253,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:suppressTopSpacing": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:suppressTopSpacing": {} }] });
         });
     });
 
@@ -264,7 +264,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:suppressSpacingAtTopOfPage": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:suppressSpacingAtTopOfPage": {} }] });
         });
     });
 
@@ -275,7 +275,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:suppressTopSpacingWP": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:suppressTopSpacingWP": {} }] });
         });
     });
 
@@ -286,7 +286,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:suppressSpBfAfterPgBrk": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:suppressSpBfAfterPgBrk": {} }] });
         });
     });
 
@@ -297,7 +297,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:swapBordersFacingPages": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:swapBordersFacingPages": {} }] });
         });
     });
 
@@ -308,7 +308,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:convMailMergeEsc": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:convMailMergeEsc": {} }] });
         });
     });
 
@@ -319,7 +319,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:truncateFontHeightsLikeWP6": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:truncateFontHeightsLikeWP6": {} }] });
         });
     });
 
@@ -330,7 +330,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:mwSmallCaps": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:mwSmallCaps": {} }] });
         });
     });
 
@@ -341,7 +341,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:usePrinterMetrics": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:usePrinterMetrics": {} }] });
         });
     });
 
@@ -352,7 +352,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotSuppressParagraphBorders": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotSuppressParagraphBorders": {} }] });
         });
     });
 
@@ -363,7 +363,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:wrapTrailSpaces": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:wrapTrailSpaces": {} }] });
         });
     });
 
@@ -374,7 +374,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:footnoteLayoutLikeWW8": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:footnoteLayoutLikeWW8": {} }] });
         });
     });
 
@@ -385,7 +385,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:shapeLayoutLikeWW8": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:shapeLayoutLikeWW8": {} }] });
         });
     });
 
@@ -396,7 +396,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:alignTablesRowByRow": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:alignTablesRowByRow": {} }] });
         });
     });
 
@@ -407,7 +407,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:forgetLastTabAlignment": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:forgetLastTabAlignment": {} }] });
         });
     });
 
@@ -418,7 +418,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:adjustLineHeightInTable": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:adjustLineHeightInTable": {} }] });
         });
     });
 
@@ -429,7 +429,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:autoSpaceLikeWord95": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:autoSpaceLikeWord95": {} }] });
         });
     });
 
@@ -440,7 +440,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:noSpaceRaiseLower": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:noSpaceRaiseLower": {} }] });
         });
     });
 
@@ -451,7 +451,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotUseHTMLParagraphAutoSpacing": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotUseHTMLParagraphAutoSpacing": {} }] });
         });
     });
 
@@ -462,7 +462,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:layoutRawTableWidth": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:layoutRawTableWidth": {} }] });
         });
     });
 
@@ -473,7 +473,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:layoutTableRowsApart": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:layoutTableRowsApart": {} }] });
         });
     });
 
@@ -484,7 +484,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useWord97LineBreakRules": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useWord97LineBreakRules": {} }] });
         });
     });
 
@@ -495,7 +495,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotBreakWrappedTables": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotBreakWrappedTables": {} }] });
         });
     });
 
@@ -506,7 +506,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotSnapToGridInCell": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotSnapToGridInCell": {} }] });
         });
     });
 
@@ -517,7 +517,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:selectFldWithFirstOrLastChar": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:selectFldWithFirstOrLastChar": {} }] });
         });
     });
 
@@ -528,7 +528,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:applyBreakingRules": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:applyBreakingRules": {} }] });
         });
     });
 
@@ -539,7 +539,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotWrapTextWithPunct": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotWrapTextWithPunct": {} }] });
         });
     });
 
@@ -550,7 +550,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotUseEastAsianBreakRules": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotUseEastAsianBreakRules": {} }] });
         });
     });
 
@@ -561,7 +561,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useWord2002TableStyleRules": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useWord2002TableStyleRules": {} }] });
         });
     });
 
@@ -572,7 +572,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:growAutofit": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:growAutofit": {} }] });
         });
     });
 
@@ -583,7 +583,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useFELayout": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useFELayout": {} }] });
         });
     });
 
@@ -594,7 +594,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useNormalStyleForList": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useNormalStyleForList": {} }] });
         });
     });
 
@@ -605,7 +605,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotUseIndentAsNumberingTabStop": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotUseIndentAsNumberingTabStop": {} }] });
         });
     });
 
@@ -616,7 +616,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useAltKinsokuLineBreakRules": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useAltKinsokuLineBreakRules": {} }] });
         });
     });
 
@@ -627,7 +627,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:allowSpaceOfSameStyleInTable": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:allowSpaceOfSameStyleInTable": {} }] });
         });
     });
 
@@ -638,7 +638,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotSuppressIndentation": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotSuppressIndentation": {} }] });
         });
     });
 
@@ -649,7 +649,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotAutofitConstrainedTables": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotAutofitConstrainedTables": {} }] });
         });
     });
 
@@ -660,7 +660,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:autofitToFirstFixedWidthCell": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:autofitToFirstFixedWidthCell": {} }] });
         });
     });
 
@@ -671,7 +671,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:underlineTabInNumList": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:underlineTabInNumList": {} }] });
         });
     });
 
@@ -682,7 +682,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:displayHangulFixedWidth": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:displayHangulFixedWidth": {} }] });
         });
     });
 
@@ -693,7 +693,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:splitPgBreakAndParaMark": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:splitPgBreakAndParaMark": {} }] });
         });
     });
 
@@ -704,7 +704,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotVertAlignCellWithSp": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotVertAlignCellWithSp": {} }] });
         });
     });
 
@@ -715,7 +715,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotBreakConstrainedForcedTable": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotBreakConstrainedForcedTable": {} }] });
         });
     });
 
@@ -726,7 +726,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:doNotVertAlignInTxbx": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:doNotVertAlignInTxbx": {} }] });
         });
     });
 
@@ -737,7 +737,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:useAnsiKerningPairs": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:useAnsiKerningPairs": {} }] });
         });
     });
 
@@ -748,7 +748,7 @@ describe("Compatibility", () => {
             });
 
             const tree = new Formatter().format(compatibility);
-            expect(tree).to.deep.equal({ "w:compat": [{ "w:cachedColBalance": {} }] });
+            expect(tree).to.deep.equal({ "ha:compat": [{ "ha:cachedColBalance": {} }] });
         });
     });
 });

@@ -47,7 +47,7 @@ export class TabAttributes extends XmlAttributeComponent<{
     readonly pos: string | number;
     readonly leader?: (typeof LeaderType)[keyof typeof LeaderType];
 }> {
-    protected readonly xmlKeys = { val: "w:val", pos: "w:pos", leader: "w:leader" };
+    protected readonly xmlKeys = { val: "hp:val", pos: "hp:pos", leader: "w:leader" };
 }
 
 export class TabStopItem extends XmlComponent {

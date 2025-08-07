@@ -16,7 +16,7 @@ describe("SimpleField", () => {
             expect(tree).to.deep.equal({
                 "w:fldSimple": [
                     { _attr: { "w:instr": "FILENAME" } },
-                    { "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "ExampleDoc.docx"] }] },
+                    { "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "ExampleDoc.docx"] }] },
                 ],
             });
         });
@@ -30,7 +30,7 @@ describe("SimpleMailMergeField", () => {
             expect(tree).to.deep.equal({
                 "w:fldSimple": [
                     { _attr: { "w:instr": " MERGEFIELD Name " } },
-                    { "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "«Name»"] }] },
+                    { "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "«Name»"] }] },
                 ],
             });
         });

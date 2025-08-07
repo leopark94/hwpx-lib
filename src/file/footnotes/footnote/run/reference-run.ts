@@ -5,7 +5,7 @@ export class FootNoteReferenceRunAttributes extends XmlAttributeComponent<{
     readonly id: number;
 }> {
     protected readonly xmlKeys = {
-        id: "w:id",
+        id: "hp:id",
     };
 }
 

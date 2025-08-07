@@ -26,7 +26,7 @@ export type IRenderedRunNode = {
 } & StartAndEnd;
 
 export const renderParagraphNode = (node: ElementWrapper): IRenderedParagraphNode => {
-    if (node.element.name !== "w:p") {
+    if (node.element.name !== "hp:p" && node.element.name !== "hp:p") {
         throw new Error(`Invalid node type: ${node.element.name}`);
     }
 
@@ -43,7 +43,7 @@ export const renderParagraphNode = (node: ElementWrapper): IRenderedParagraphNod
 
     const runs = node.element.elements
         .map((element, i) => ({ element, i }))
-        .filter(({ element }) => element.name === "w:r")
+        .filter(({ element }) => element.name === "hp:run")
         .map(({ element, i }) => {
             const renderedRunNode = renderRunNode(element, i, currentRunStringLength);
             currentRunStringLength += renderedRunNode.text.length;
@@ -77,7 +77,7 @@ const renderRunNode = (node: Element, index: number, currentRunStringIndex: numb
 
     const parts = node.elements
         .map((element, i: number) =>
-            element.name === "w:t" && element.elements && element.elements.length > 0
+            element.name === "hp:t" && element.elements && element.elements.length > 0
                 ? {
                       text: element.elements[0].text?.toString() ?? "",
                       index: i,

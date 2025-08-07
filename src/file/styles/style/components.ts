@@ -5,7 +5,7 @@ import { decimalNumber } from "@util/values";
 class ComponentAttributes extends XmlAttributeComponent<{
     readonly val: string | number;
 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 export class Name extends XmlComponent {

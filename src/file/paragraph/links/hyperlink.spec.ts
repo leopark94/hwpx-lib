@@ -32,9 +32,9 @@ describe("ConcreteHyperlink", () => {
                         },
                     },
                     {
-                        "w:r": [
-                            { "w:rPr": [{ "w:rStyle": { _attr: { "w:val": "Hyperlink" } } }] },
-                            { "w:t": [{ _attr: { "xml:space": "preserve" } }, "https://example.com"] },
+                        "hp:run": [
+                            { "hp:charPr": [{ "hp:styleRef": { _attr: { "hp:val": "Hyperlink" } } }] },
+                            { "hp:t": [{ _attr: { "xml:space": "preserve" } }, "https://example.com"] },
                         ],
                     },
                 ],
@@ -66,9 +66,9 @@ describe("ConcreteHyperlink", () => {
                             },
                         },
                         {
-                            "w:r": [
-                                { "w:rPr": [{ "w:rStyle": { _attr: { "w:val": "Hyperlink" } } }] },
-                                { "w:t": [{ _attr: { "xml:space": "preserve" } }, "Anchor Text"] },
+                            "hp:run": [
+                                { "hp:charPr": [{ "hp:styleRef": { _attr: { "hp:val": "Hyperlink" } } }] },
+                                { "hp:t": [{ _attr: { "xml:space": "preserve" } }, "Anchor Text"] },
                             ],
                         },
                     ],
@@ -110,9 +110,9 @@ describe("InternalHyperlink", () => {
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",

@@ -13,11 +13,11 @@ describe("Default Styles", () => {
         });
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading1" } },
-                { "w:name": { _attr: { "w:val": "Heading 1" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading1" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 1" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -27,11 +27,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.TitleStyle({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Title" } },
-                { "w:name": { _attr: { "w:val": "Title" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Title" } },
+                { "hh:name": { _attr: { "hp:val": "Title" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -41,11 +41,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading1Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading1" } },
-                { "w:name": { _attr: { "w:val": "Heading 1" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading1" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 1" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -55,11 +55,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading2Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading2" } },
-                { "w:name": { _attr: { "w:val": "Heading 2" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading2" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 2" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -69,11 +69,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading3Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading3" } },
-                { "w:name": { _attr: { "w:val": "Heading 3" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading3" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 3" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -83,11 +83,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading4Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading4" } },
-                { "w:name": { _attr: { "w:val": "Heading 4" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading4" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 4" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -97,11 +97,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading5Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading5" } },
-                { "w:name": { _attr: { "w:val": "Heading 5" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading5" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 5" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -111,11 +111,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.Heading6Style({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Heading6" } },
-                { "w:name": { _attr: { "w:val": "Heading 6" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading6" } },
+                { "hh:name": { _attr: { "hp:val": "Heading 6" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -125,11 +125,11 @@ describe("Default Styles", () => {
         const style = new defaultStyles.StrongStyle({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "Strong" } },
-                { "w:name": { _attr: { "w:val": "Strong" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:next": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "Strong" } },
+                { "hh:name": { _attr: { "hp:val": "Strong" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:next": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -139,10 +139,10 @@ describe("Default Styles", () => {
         const style = new defaultStyles.ListParagraph({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "ListParagraph" } },
-                { "w:name": { _attr: { "w:val": "List Paragraph" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "ListParagraph" } },
+                { "hh:name": { _attr: { "hp:val": "List Paragraph" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
                 { "w:qFormat": EMPTY_OBJECT },
             ],
         });
@@ -152,15 +152,15 @@ describe("Default Styles", () => {
         const style = new defaultStyles.FootnoteText({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "paragraph", "w:styleId": "FootnoteText" } },
-                { "w:name": { _attr: { "w:val": "footnote text" } } },
-                { "w:basedOn": { _attr: { "w:val": "Normal" } } },
-                { "w:link": { _attr: { "w:val": "FootnoteTextChar" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "paragraph", "w:styleId": "FootnoteText" } },
+                { "hh:name": { _attr: { "hp:val": "footnote text" } } },
+                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "w:link": { _attr: { "hp:val": "FootnoteTextChar" } } },
                 {
-                    "w:uiPriority": {
+                    "hh:uiPriority": {
                         _attr: {
-                            "w:val": 99,
+                            "hp:val": 99,
                         },
                     },
                 },
@@ -171,9 +171,9 @@ describe("Default Styles", () => {
                     "w:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
-                    "w:pPr": [
+                    "hp:paraPr": [
                         {
-                            "w:spacing": {
+                            "hp:lineSpacing": {
                                 _attr: {
                                     "w:after": 0,
                                     "w:line": 240,
@@ -184,18 +184,18 @@ describe("Default Styles", () => {
                     ],
                 },
                 {
-                    "w:rPr": [
+                    "hp:charPr": [
                         {
-                            "w:sz": {
+                            "hp:sz": {
                                 _attr: {
-                                    "w:val": 20,
+                                    "hp:val": 20,
                                 },
                             },
                         },
                         {
                             "w:szCs": {
                                 _attr: {
-                                    "w:val": 20,
+                                    "hp:val": 20,
                                 },
                             },
                         },
@@ -209,14 +209,14 @@ describe("Default Styles", () => {
         const style = new defaultStyles.FootnoteReferenceStyle({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "character", "w:styleId": "FootnoteReference" } },
-                { "w:name": { _attr: { "w:val": "footnote reference" } } },
-                { "w:basedOn": { _attr: { "w:val": "DefaultParagraphFont" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "character", "w:styleId": "FootnoteReference" } },
+                { "hh:name": { _attr: { "hp:val": "footnote reference" } } },
+                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
-                    "w:uiPriority": {
+                    "hh:uiPriority": {
                         _attr: {
-                            "w:val": 99,
+                            "hp:val": 99,
                         },
                     },
                 },
@@ -227,11 +227,11 @@ describe("Default Styles", () => {
                     "w:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
-                    "w:rPr": [
+                    "hp:charPr": [
                         {
                             "w:vertAlign": {
                                 _attr: {
-                                    "w:val": "superscript",
+                                    "hp:val": "superscript",
                                 },
                             },
                         },
@@ -245,15 +245,15 @@ describe("Default Styles", () => {
         const style = new defaultStyles.FootnoteTextChar({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "character", "w:styleId": "FootnoteTextChar" } },
-                { "w:name": { _attr: { "w:val": "Footnote Text Char" } } },
-                { "w:basedOn": { _attr: { "w:val": "DefaultParagraphFont" } } },
-                { "w:link": { _attr: { "w:val": "FootnoteText" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "character", "w:styleId": "FootnoteTextChar" } },
+                { "hh:name": { _attr: { "hp:val": "Footnote Text Char" } } },
+                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
+                { "w:link": { _attr: { "hp:val": "FootnoteText" } } },
                 {
-                    "w:uiPriority": {
+                    "hh:uiPriority": {
                         _attr: {
-                            "w:val": 99,
+                            "hp:val": 99,
                         },
                     },
                 },
@@ -264,18 +264,18 @@ describe("Default Styles", () => {
                     "w:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
-                    "w:rPr": [
+                    "hp:charPr": [
                         {
-                            "w:sz": {
+                            "hp:sz": {
                                 _attr: {
-                                    "w:val": 20,
+                                    "hp:val": 20,
                                 },
                             },
                         },
                         {
                             "w:szCs": {
                                 _attr: {
-                                    "w:val": 20,
+                                    "hp:val": 20,
                                 },
                             },
                         },
@@ -289,14 +289,14 @@ describe("Default Styles", () => {
         const style = new defaultStyles.HyperlinkStyle({});
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "character", "w:styleId": "Hyperlink" } },
-                { "w:name": { _attr: { "w:val": "Hyperlink" } } },
-                { "w:basedOn": { _attr: { "w:val": "DefaultParagraphFont" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "character", "w:styleId": "Hyperlink" } },
+                { "hh:name": { _attr: { "hp:val": "Hyperlink" } } },
+                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
-                    "w:uiPriority": {
+                    "hh:uiPriority": {
                         _attr: {
-                            "w:val": 99,
+                            "hp:val": 99,
                         },
                     },
                 },
@@ -304,15 +304,15 @@ describe("Default Styles", () => {
                     "w:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
-                    "w:rPr": [
+                    "hp:charPr": [
                         {
-                            "w:color": {
+                            "hp:color": {
                                 _attr: {
-                                    "w:val": "0563C1",
+                                    "hp:val": "0563C1",
                                 },
                             },
                         },
-                        { "w:u": { _attr: { "w:val": "single" } } },
+                        { "hp:underline": { _attr: { "hp:val": "single" } } },
                     ],
                 },
             ],
@@ -330,14 +330,14 @@ describe("Default Styles", () => {
         });
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
-            "w:style": [
-                { _attr: { "w:type": "character", "w:styleId": "Hyperlink" } },
-                { "w:name": { _attr: { "w:val": "Hyperlink" } } },
-                { "w:basedOn": { _attr: { "w:val": "DefaultParagraphFont" } } },
+            "hh:style": [
+                { _attr: { "hp:type": "character", "w:styleId": "Hyperlink" } },
+                { "hh:name": { _attr: { "hp:val": "Hyperlink" } } },
+                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
-                    "w:uiPriority": {
+                    "hh:uiPriority": {
                         _attr: {
-                            "w:val": 99,
+                            "hp:val": 99,
                         },
                     },
                 },
@@ -345,15 +345,15 @@ describe("Default Styles", () => {
                     "w:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
-                    "w:rPr": [
+                    "hp:charPr": [
                         {
-                            "w:color": {
+                            "hp:color": {
                                 _attr: {
-                                    "w:val": "FF0000",
+                                    "hp:val": "FF0000",
                                 },
                             },
                         },
-                        { "w:u": { _attr: { "w:color": "0000FF", "w:val": "single" } } },
+                        { "hp:underline": { _attr: { "hp:color": "0000FF", "hp:val": "single" } } },
                     ],
                 },
             ],

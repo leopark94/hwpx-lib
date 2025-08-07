@@ -46,19 +46,19 @@ export class TableCellMargin extends IgnoreIfEmptyXmlComponent {
         super(type);
 
         if (top !== undefined) {
-            this.root.push(new TableWidthElement("w:top", { type: marginUnitType, size: top }));
+            this.root.push(new TableWidthElement("hp:top", { type: marginUnitType, size: top }));
         }
 
         if (left !== undefined) {
-            this.root.push(new TableWidthElement("w:left", { type: marginUnitType, size: left }));
+            this.root.push(new TableWidthElement("hp:left", { type: marginUnitType, size: left }));
         }
 
         if (bottom !== undefined) {
-            this.root.push(new TableWidthElement("w:bottom", { type: marginUnitType, size: bottom }));
+            this.root.push(new TableWidthElement("hp:bottom", { type: marginUnitType, size: bottom }));
         }
 
         if (right !== undefined) {
-            this.root.push(new TableWidthElement("w:right", { type: marginUnitType, size: right }));
+            this.root.push(new TableWidthElement("hp:right", { type: marginUnitType, size: right }));
         }
     }
 }

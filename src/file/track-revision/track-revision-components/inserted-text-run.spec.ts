@@ -15,13 +15,13 @@ describe("InsertedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",

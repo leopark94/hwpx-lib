@@ -51,7 +51,7 @@ describe("External styles factory", () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const importedStyle = new ExternalStylesFactory().newInstance(externalStyles) as any;
 
-            expect(importedStyle.rootKey).to.equal("w:styles");
+            expect(importedStyle.rootKey).to.equal("hh:styles");
             expect(importedStyle.root[0]._attr).to.deep.equal({
                 "xmlns:mc": "first",
                 "xmlns:r": "second",
@@ -79,26 +79,26 @@ describe("External styles factory", () => {
                                                 rootKey: "_attr",
                                             },
                                         ],
-                                        rootKey: "w:rFonts",
+                                        rootKey: "hp:rFonts",
                                     },
                                     {
                                         root: [
                                             {
                                                 root: {
-                                                    "w:bidi": "ar-SA",
-                                                    "w:eastAsia": "en-US",
-                                                    "w:val": "en-US",
+                                                    "hp:bidi": "ar-SA",
+                                                    "hp:eastAsia": "en-US",
+                                                    "hp:val": "en-US",
                                                 },
                                                 rootKey: "_attr",
                                             },
                                         ],
-                                        rootKey: "w:lang",
+                                        rootKey: "hp:language",
                                     },
                                 ],
-                                rootKey: "w:rPr",
+                                rootKey: "hp:charPr",
                             },
                         ],
-                        rootKey: "w:rPrDefault",
+                        rootKey: "hh:rPrDefault",
                     },
                     {
                         root: [
@@ -115,16 +115,16 @@ describe("External styles factory", () => {
                                                 rootKey: "_attr",
                                             },
                                         ],
-                                        rootKey: "w:spacing",
+                                        rootKey: "hp:lineSpacing",
                                     },
                                 ],
-                                rootKey: "w:pPr",
+                                rootKey: "hp:paraPr",
                             },
                         ],
-                        rootKey: "w:pPrDefault",
+                        rootKey: "hh:pPrDefault",
                     },
                 ],
-                rootKey: "w:docDefaults",
+                rootKey: "hh:docDefaults",
             });
             expect(JSON.parse(JSON.stringify(importedStyle.root[2]))).to.deep.equal({
                 root: [
@@ -161,7 +161,7 @@ describe("External styles factory", () => {
                         root: {
                             "w:default": "1",
                             "w:styleId": "Normal",
-                            "w:type": "paragraph",
+                            "hp:type": "paragraph",
                         },
                         rootKey: "_attr",
                     },
@@ -169,19 +169,19 @@ describe("External styles factory", () => {
                         root: [
                             {
                                 root: {
-                                    "w:val": "Normal",
+                                    "hp:val": "Normal",
                                 },
                                 rootKey: "_attr",
                             },
                         ],
-                        rootKey: "w:name",
+                        rootKey: "hh:name",
                     },
                     {
                         root: [],
                         rootKey: "w:qFormat",
                     },
                 ],
-                rootKey: "w:style",
+                rootKey: "hh:style",
             });
 
             expect(JSON.parse(JSON.stringify(importedStyle.root[4]))).to.deep.equal({
@@ -189,7 +189,7 @@ describe("External styles factory", () => {
                     {
                         root: {
                             "w:styleId": "Heading1",
-                            "w:type": "paragraph",
+                            "hp:type": "paragraph",
                         },
                         rootKey: "_attr",
                     },
@@ -197,18 +197,18 @@ describe("External styles factory", () => {
                         root: [
                             {
                                 root: {
-                                    "w:val": "heading 1",
+                                    "hp:val": "heading 1",
                                 },
                                 rootKey: "_attr",
                             },
                         ],
-                        rootKey: "w:name",
+                        rootKey: "hh:name",
                     },
                     {
                         root: [
                             {
                                 root: {
-                                    "w:val": "Normal",
+                                    "hp:val": "Normal",
                                 },
                                 rootKey: "_attr",
                             },
@@ -231,24 +231,24 @@ describe("External styles factory", () => {
                                         root: [
                                             {
                                                 root: {
-                                                    "w:color": "auto",
-                                                    "w:space": "1",
-                                                    "w:sz": "4",
-                                                    "w:val": "single",
+                                                    "hp:color": "auto",
+                                                    "hp:space": "1",
+                                                    "hp:sz": "4",
+                                                    "hp:val": "single",
                                                 },
                                                 rootKey: "_attr",
                                             },
                                         ],
-                                        rootKey: "w:bottom",
+                                        rootKey: "hp:bottom",
                                     },
                                 ],
                                 rootKey: "w:pBdr",
                             },
                         ],
-                        rootKey: "w:pPr",
+                        rootKey: "hp:paraPr",
                     },
                 ],
-                rootKey: "w:style",
+                rootKey: "hh:style",
             });
         });
     });

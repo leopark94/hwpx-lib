@@ -21,7 +21,7 @@ describe("PageBorders", () => {
             const tree = new Formatter().format(properties);
 
             expect(Object.keys(tree)).to.deep.equal(["w:pgBorders"]);
-            expect(tree["w:pgBorders"]).to.deep.equal({ _attr: { "w:display": "firstPage" } });
+            expect(tree["hp:pgBorders"]).to.deep.equal({ _attr: { "w:display": "firstPage" } });
         });
 
         it("should create page borders with default configuration", () => {
@@ -66,26 +66,26 @@ describe("PageBorders", () => {
             const tree = new Formatter().format(properties);
 
             expect(Object.keys(tree)).to.deep.equal(["w:pgBorders"]);
-            expect(tree["w:pgBorders"]).to.be.an.instanceof(Array);
-            expect(tree["w:pgBorders"][0]).to.deep.equal({ _attr: { "w:display": "firstPage", "w:zOrder": "back" } });
-            expect(tree["w:pgBorders"][1]).to.deep.equal({
-                "w:top": {
-                    _attr: { "w:color": "001122", "w:sz": 10, "w:val": "doubleWave" },
+            expect(tree["hp:pgBorders"]).to.be.an.instanceof(Array);
+            expect(tree["hp:pgBorders"][0]).to.deep.equal({ _attr: { "w:display": "firstPage", "w:zOrder": "back" } });
+            expect(tree["hp:pgBorders"][1]).to.deep.equal({
+                "hp:top": {
+                    _attr: { "hp:color": "001122", "hp:sz": 10, "hp:val": "doubleWave" },
                 },
             });
-            expect(tree["w:pgBorders"][2]).to.deep.equal({
-                "w:left": {
-                    _attr: { "w:color": "889900", "w:sz": 40, "w:val": "dotted" },
+            expect(tree["hp:pgBorders"][2]).to.deep.equal({
+                "hp:left": {
+                    _attr: { "hp:color": "889900", "hp:sz": 40, "hp:val": "dotted" },
                 },
             });
-            expect(tree["w:pgBorders"][3]).to.deep.equal({
-                "w:bottom": {
-                    _attr: { "w:color": "556677", "w:sz": 30, "w:val": "single" },
+            expect(tree["hp:pgBorders"][3]).to.deep.equal({
+                "hp:bottom": {
+                    _attr: { "hp:color": "556677", "hp:sz": 30, "hp:val": "single" },
                 },
             });
-            expect(tree["w:pgBorders"][4]).to.deep.equal({
-                "w:right": {
-                    _attr: { "w:color": "223344", "w:sz": 20, "w:val": "double" },
+            expect(tree["hp:pgBorders"][4]).to.deep.equal({
+                "hp:right": {
+                    _attr: { "hp:color": "223344", "hp:sz": 20, "hp:val": "double" },
                 },
             });
         });

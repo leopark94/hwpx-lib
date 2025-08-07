@@ -28,9 +28,9 @@ export type IShadingAttributesProperties = {
 
 class ShadingAttributes extends XmlAttributeComponent<IShadingAttributesProperties> {
     protected readonly xmlKeys = {
-        fill: "w:fill",
-        color: "hp:textColor",
-        type: "w:val",
+        fill: "hp:fill",
+        color: "hp:color",
+        type: "hp:val",
     };
 }
 

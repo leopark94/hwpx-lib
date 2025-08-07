@@ -50,11 +50,11 @@ export class Indent extends XmlComponent {
                     value: end === undefined ? undefined : signedTwipsMeasureValue(end),
                 },
                 left: {
-                    key: "w:left",
+                    key: "hp:left",
                     value: left === undefined ? undefined : signedTwipsMeasureValue(left),
                 },
                 right: {
-                    key: "w:right",
+                    key: "hp:right",
                     value: right === undefined ? undefined : signedTwipsMeasureValue(right),
                 },
                 hanging: {

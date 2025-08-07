@@ -17,9 +17,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [{ "w:noProof": {} }],
+                        "hp:charPr": [{ "w:noProof": {} }],
                     },
                 ],
             });
@@ -33,10 +33,10 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
-                            { "w:b": {} },
+                        "hp:charPr": [
+                            { "hp:bold": {} },
                             {
                                 "w:bCs": {},
                             },
@@ -54,10 +54,10 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
-                            { "w:i": {} },
+                        "hp:charPr": [
+                            { "hp:italic": {} },
                             {
                                 "w:iCs": {},
                             },
@@ -75,7 +75,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:u": { _attr: { "w:val": "single" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "single" } } }] }],
             });
         });
 
@@ -88,7 +88,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:u": { _attr: { "w:val": "double", "w:color": "990011" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "double", "hp:color": "990011" } } }] }],
             });
         });
     });
@@ -100,7 +100,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }] }],
             });
         });
 
@@ -112,7 +112,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }] }],
             });
         });
     });
@@ -124,7 +124,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:smallCaps": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:smallCaps": {} }] }],
             });
         });
     });
@@ -136,7 +136,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:caps": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:caps": {} }] }],
             });
         });
     });
@@ -148,7 +148,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:strike": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:strikeout": {} }] }],
             });
         });
     });
@@ -160,7 +160,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:dstrike": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:dstrike": {} }] }],
             });
         });
     });
@@ -172,7 +172,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:emboss": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:emboss": {} }] }],
             });
         });
     });
@@ -184,7 +184,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:imprint": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:imprint": {} }] }],
             });
         });
     });
@@ -196,7 +196,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:vertAlign": { _attr: { "w:val": "subscript" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "subscript" } } }] }],
             });
         });
     });
@@ -208,7 +208,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:vertAlign": { _attr: { "w:val": "superscript" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "superscript" } } }] }],
             });
         });
     });
@@ -220,14 +220,14 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
-                            { "w:highlight": { _attr: { "w:val": "yellow" } } },
+                        "hp:charPr": [
+                            { "w:highlight": { _attr: { "hp:val": "yellow" } } },
                             {
                                 "w:highlightCs": {
                                     _attr: {
-                                        "w:val": "yellow",
+                                        "hp:val": "yellow",
                                     },
                                 },
                             },
@@ -249,9 +249,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [{ "w:shd": { _attr: { "w:val": "pct10", "w:fill": "00FFFF", "w:color": "FF0000" } } }],
+                        "hp:charPr": [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
                     },
                 ],
             });
@@ -265,7 +265,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:br": {} }],
+                "hp:run": [{ "hp:br": {} }],
             });
         });
 
@@ -275,10 +275,10 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
-                    { "w:br": {} },
+                "hp:run": [
+                    { "hp:br": {} },
                     {
-                        "w:br": {},
+                        "hp:br": {},
                     },
                 ],
             });
@@ -294,15 +294,15 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
-                                "w:rFonts": {
+                                "hp:rFonts": {
                                     _attr: {
                                         "w:ascii": "Times",
                                         "w:cs": "Times",
-                                        "w:eastAsia": "Times",
+                                        "hp:eastAsia": "Times",
                                         "w:hAnsi": "Times",
                                     },
                                 },
@@ -322,14 +322,14 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
-                                "w:rFonts": {
+                                "hp:rFonts": {
                                     _attr: {
                                         "w:ascii": "Times",
-                                        "w:eastAsia": "KaiTi",
+                                        "hp:eastAsia": "KaiTi",
                                     },
                                 },
                             },
@@ -347,7 +347,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:color": { _attr: { "w:val": "001122" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:color": { _attr: { "hp:val": "001122" } } }] }],
             });
         });
     });
@@ -359,9 +359,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 24 } } }],
+                        "hp:charPr": [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 24 } } }],
                     },
                 ],
             });
@@ -375,7 +375,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:rtl": {} }] }],
+                "hp:run": [{ "hp:charPr": [{ "w:rtl": {} }] }],
             });
         });
     });
@@ -388,9 +388,9 @@ describe("Run", () => {
 
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     { "w:fldChar": { _attr: { "w:fldCharType": "begin" } } },
-                    { "w:instrText": [{ _attr: { "xml:space": "preserve" } }, "NUMPAGES"] },
+                    { "hp:instrText": [{ _attr: { "xml:space": "preserve" } }, "NUMPAGES"] },
                     { "w:fldChar": { _attr: { "w:fldCharType": "separate" } } },
                     { "w:fldChar": { _attr: { "w:fldCharType": "end" } } },
                 ],
@@ -406,9 +406,9 @@ describe("Run", () => {
 
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     { "w:fldChar": { _attr: { "w:fldCharType": "begin" } } },
-                    { "w:instrText": [{ _attr: { "xml:space": "preserve" } }, "SECTIONPAGES"] },
+                    { "hp:instrText": [{ _attr: { "xml:space": "preserve" } }, "SECTIONPAGES"] },
                     { "w:fldChar": { _attr: { "w:fldCharType": "separate" } } },
                     { "w:fldChar": { _attr: { "w:fldCharType": "end" } } },
                 ],
@@ -423,9 +423,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     { "w:fldChar": { _attr: { "w:fldCharType": "begin" } } },
-                    { "w:instrText": [{ _attr: { "xml:space": "preserve" } }, "PAGE"] },
+                    { "hp:instrText": [{ _attr: { "xml:space": "preserve" } }, "PAGE"] },
                     { "w:fldChar": { _attr: { "w:fldCharType": "separate" } } },
                     { "w:fldChar": { _attr: { "w:fldCharType": "end" } } },
                 ],
@@ -440,9 +440,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     { "w:fldChar": { _attr: { "w:fldCharType": "begin" } } },
-                    { "w:instrText": [{ _attr: { "xml:space": "preserve" } }, "SECTION"] },
+                    { "hp:instrText": [{ _attr: { "xml:space": "preserve" } }, "SECTION"] },
                     { "w:fldChar": { _attr: { "w:fldCharType": "separate" } } },
                     { "w:fldChar": { _attr: { "w:fldCharType": "end" } } },
                 ],
@@ -457,7 +457,7 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [{ "w:rPr": [{ "w:rStyle": { _attr: { "w:val": "myRunStyle" } } }] }],
+                "hp:run": [{ "hp:charPr": [{ "hp:styleRef": { _attr: { "hp:val": "myRunStyle" } } }] }],
             });
         });
     });
@@ -477,14 +477,14 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
-                            { "w:b": {} },
+                        "hp:charPr": [
+                            { "hp:bold": {} },
                             {
                                 "w:bCs": {},
                             },
-                            { "w:i": {} },
+                            { "hp:italic": {} },
                             {
                                 "w:iCs": {},
                             },
@@ -494,20 +494,20 @@ describe("Run", () => {
                                         _attr: {
                                             "w:author": "Firstname Lastname",
                                             "w:date": "123",
-                                            "w:id": 0,
+                                            "hp:id": 0,
                                         },
                                     },
                                     {
-                                        "w:rPr": [
-                                            { "w:b": { _attr: { "w:val": false } } },
+                                        "hp:charPr": [
+                                            { "hp:bold": { _attr: { "hp:val": false } } },
                                             {
                                                 "w:bCs": {
                                                     _attr: {
-                                                        "w:val": false,
+                                                        "hp:val": false,
                                                     },
                                                 },
                                             },
-                                            { "w:i": {} },
+                                            { "hp:italic": {} },
                                             {
                                                 "w:iCs": {},
                                             },
@@ -534,16 +534,16 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
                                 "w:bdr": {
                                     _attr: {
-                                        "w:color": "auto",
-                                        "w:space": 1,
-                                        "w:sz": 6,
-                                        "w:val": "single",
+                                        "hp:color": "auto",
+                                        "hp:space": 1,
+                                        "hp:sz": 6,
+                                        "hp:val": "single",
                                     },
                                 },
                             },
@@ -561,9 +561,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
                                 "w:vanish": {},
                             },
@@ -579,9 +579,9 @@ describe("Run", () => {
             });
             const tree = new Formatter().format(run);
             expect(tree).to.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
                                 "w:specVanish": {},
                             },
@@ -598,13 +598,13 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
-                                    "w:w": {
+                                    "hp:w": {
                                         _attr: {
-                                            "w:val": 200,
+                                            "hp:val": 200,
                                         },
                                     },
                                 },
@@ -626,15 +626,15 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
-                                    "w:lang": {
+                                    "hp:language": {
                                         _attr: {
-                                            "w:val": "en-US",
-                                            "w:eastAsia": "zh-CN",
-                                            "w:bidi": "ar-SA",
+                                            "hp:val": "en-US",
+                                            "hp:eastAsia": "zh-CN",
+                                            "hp:bidi": "ar-SA",
                                         },
                                     },
                                 },
@@ -652,13 +652,13 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
                                     "w:position": {
                                         _attr: {
-                                            "w:val": "2mm",
+                                            "hp:val": "2mm",
                                         },
                                     },
                                 },
@@ -676,13 +676,13 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
                                     "w:effect": {
                                         _attr: {
-                                            "w:val": "antsBlack",
+                                            "hp:val": "antsBlack",
                                         },
                                     },
                                 },
@@ -700,9 +700,9 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
                                     "w:oMath": {},
                                 },
@@ -720,13 +720,13 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
-                                    "w:kern": {
+                                    "hp:kern": {
                                         _attr: {
-                                            "w:val": "2mm",
+                                            "hp:val": "2mm",
                                         },
                                     },
                                 },
@@ -744,9 +744,9 @@ describe("Run", () => {
                 });
                 const tree = new Formatter().format(run);
                 expect(tree).to.deep.equal({
-                    "w:r": [
+                    "hp:run": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
                                     "w:snapToGrid": {},
                                 },

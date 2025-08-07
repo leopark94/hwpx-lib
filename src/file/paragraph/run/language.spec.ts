@@ -16,11 +16,11 @@ describe("Language", () => {
             );
 
             expect(tree).to.deep.equal({
-                "w:lang": {
+                "hp:language": {
                     _attr: {
-                        "w:bidi": "ar-SA",
-                        "w:eastAsia": "zh-CN",
-                        "w:val": "en-US",
+                        "hp:bidi": "ar-SA",
+                        "hp:eastAsia": "zh-CN",
+                        "hp:val": "en-US",
                     },
                 },
             });

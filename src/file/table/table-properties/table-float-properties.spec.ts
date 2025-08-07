@@ -43,7 +43,7 @@ describe("Table Float Properties", () => {
                     {
                         "w:tblOverlap": {
                             _attr: {
-                                "w:val": "never",
+                                "hp:val": "never",
                             },
                         },
                     },

@@ -32,7 +32,7 @@ export class TableCellSpacingElement extends XmlComponent {
         this.root.push(
             new NextAttributeComponent<ITableCellSpacingProperties>({
                 type: { key: "hs:type", value: type },
-                value: { key: "w:w", value: measurementOrPercentValue(value) },
+                value: { key: "hp:w", value: measurementOrPercentValue(value) },
             }),
         );
     }

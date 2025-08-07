@@ -8,8 +8,8 @@ export type IChangedAttributesProperties = {
 
 export class ChangeAttributes extends XmlAttributeComponent<IChangedAttributesProperties> {
     protected readonly xmlKeys = {
-        id: "w:id",
-        author: "w:author",
-        date: "w:date",
+        id: "hp:id",
+        author: "hp:author",
+        date: "hp:date",
     };
 }

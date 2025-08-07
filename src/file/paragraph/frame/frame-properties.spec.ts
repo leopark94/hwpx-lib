@@ -25,11 +25,11 @@ describe("createFrameProperties", () => {
         expect(tree).to.deep.equal({
             "w:framePr": {
                 _attr: {
-                    "w:h": 1000,
+                    "hp:h": 1000,
                     "w:hAnchor": "margin",
                     "w:vAnchor": "margin",
-                    "w:w": 4000,
-                    "w:x": 1000,
+                    "hp:w": 4000,
+                    "hp:x": 1000,
                     "w:y": 3000,
                 },
             },
@@ -59,11 +59,11 @@ describe("createFrameProperties", () => {
         expect(tree).to.deep.equal({
             "w:framePr": {
                 _attr: {
-                    "w:h": 1000,
+                    "hp:h": 1000,
                     "w:hAnchor": "margin",
                     "w:vAnchor": "margin",
-                    "w:w": 4000,
-                    "w:x": 1000,
+                    "hp:w": 4000,
+                    "hp:x": 1000,
                     "w:y": 3000,
                     "w:hSpace": 100,
                     "w:vSpace": 200,
@@ -95,10 +95,10 @@ describe("createFrameProperties", () => {
         expect(tree).to.deep.equal({
             "w:framePr": {
                 _attr: {
-                    "w:h": 1000,
+                    "hp:h": 1000,
                     "w:hAnchor": "margin",
                     "w:vAnchor": "margin",
-                    "w:w": 4000,
+                    "hp:w": 4000,
                     "w:xAlign": "center",
                     "w:yAlign": "top",
                     "w:hSpace": 100,
@@ -131,11 +131,11 @@ describe("createFrameProperties", () => {
         expect(tree).to.deep.equal({
             "w:framePr": {
                 _attr: {
-                    "w:h": 1000,
+                    "hp:h": 1000,
                     "w:hAnchor": "margin",
                     "w:vAnchor": "margin",
-                    "w:w": 4000,
-                    "w:x": 1000,
+                    "hp:w": 4000,
+                    "hp:x": 1000,
                     "w:y": 3000,
                     "w:hSpace": 100,
                     "w:vSpace": 200,

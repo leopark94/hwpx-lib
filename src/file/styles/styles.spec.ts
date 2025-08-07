@@ -16,10 +16,10 @@ describe("Styles", () => {
                     },
                 ],
             });
-            const tree = new Formatter().format(styles)["w:styles"].filter((x: any) => !x._attr);
+            const tree = new Formatter().format(styles)["hh:styles"].filter((x: any) => !x._attr);
             expect(tree).to.deep.equal([
                 {
-                    "w:style": { _attr: { "w:type": "paragraph", "w:styleId": "pStyleId" } },
+                    "hh:style": { _attr: { "hp:type": "paragraph", "w:styleId": "pStyleId" } },
                 },
             ]);
         });
@@ -33,12 +33,12 @@ describe("Styles", () => {
                     },
                 ],
             });
-            const tree = new Formatter().format(styles)["w:styles"].filter((x: any) => !x._attr);
+            const tree = new Formatter().format(styles)["hh:styles"].filter((x: any) => !x._attr);
             expect(tree).to.deep.equal([
                 {
-                    "w:style": [
-                        { _attr: { "w:type": "paragraph", "w:styleId": "pStyleId" } },
-                        { "w:name": { _attr: { "w:val": "Paragraph Style" } } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "paragraph", "w:styleId": "pStyleId" } },
+                        { "hh:name": { _attr: { "hp:val": "Paragraph Style" } } },
                     ],
                 },
             ]);
@@ -54,15 +54,15 @@ describe("Styles", () => {
                     },
                 ],
             });
-            const tree = new Formatter().format(styles)["w:styles"].filter((x: any) => !x._attr);
+            const tree = new Formatter().format(styles)["hh:styles"].filter((x: any) => !x._attr);
             expect(tree).to.deep.equal([
                 {
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "pStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "pStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -83,16 +83,16 @@ describe("Styles", () => {
                     },
                 ],
             });
-            const tree = new Formatter().format(styles)["w:styles"].filter((x: any) => !x._attr);
+            const tree = new Formatter().format(styles)["hh:styles"].filter((x: any) => !x._attr);
             expect(tree).to.deep.equal([
                 {
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "pStyleId" } },
-                        { "w:name": { _attr: { "w:val": "Character Style" } } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "pStyleId" } },
+                        { "hh:name": { _attr: { "hp:val": "Character Style" } } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },

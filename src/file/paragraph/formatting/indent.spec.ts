@@ -22,8 +22,8 @@ describe("Indent", () => {
                     "w:end": 10,
                     "w:firstLine": 10,
                     "w:hanging": 10,
-                    "w:left": 10,
-                    "w:right": 10,
+                    "hp:left": 10,
+                    "hp:right": 10,
                 },
             },
         });

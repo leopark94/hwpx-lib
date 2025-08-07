@@ -20,13 +20,13 @@ describe("TableRowProperties", () => {
         it("sets cantSplit to avoid row been paginated", () => {
             const rowProperties = new TableRowProperties({ cantSplit: true });
             const tree = new Formatter().format(rowProperties);
-            expect(tree).to.deep.equal({ "w:trPr": [{ "w:cantSplit": {} }] });
+            expect(tree).to.deep.equal({ "hp:trPr": [{ "w:cantSplit": {} }] });
         });
 
         it("sets row as table header (repeat row on each page of table)", () => {
             const rowProperties = new TableRowProperties({ tableHeader: true });
             const tree = new Formatter().format(rowProperties);
-            expect(tree).to.deep.equal({ "w:trPr": [{ "w:tblHeader": {} }] });
+            expect(tree).to.deep.equal({ "hp:trPr": [{ "w:tblHeader": {} }] });
         });
 
         it("sets row height exact", () => {
@@ -37,7 +37,7 @@ describe("TableRowProperties", () => {
                 },
             });
             const tree = new Formatter().format(rowProperties);
-            expect(tree).to.deep.equal({ "w:trPr": [{ "w:trHeight": { _attr: { "w:val": 100, "w:hRule": "exact" } } }] });
+            expect(tree).to.deep.equal({ "hp:trPr": [{ "w:trHeight": { _attr: { "hp:val": 100, "w:hRule": "exact" } } }] });
         });
 
         it("sets row height auto", () => {
@@ -48,7 +48,7 @@ describe("TableRowProperties", () => {
                 },
             });
             const tree = new Formatter().format(rowProperties);
-            expect(tree).to.deep.equal({ "w:trPr": [{ "w:trHeight": { _attr: { "w:val": 100, "w:hRule": "auto" } } }] });
+            expect(tree).to.deep.equal({ "hp:trPr": [{ "w:trHeight": { _attr: { "hp:val": 100, "w:hRule": "auto" } } }] });
         });
 
         it("sets row height at least", () => {
@@ -59,7 +59,7 @@ describe("TableRowProperties", () => {
                 },
             });
             const tree = new Formatter().format(rowProperties);
-            expect(tree).to.deep.equal({ "w:trPr": [{ "w:trHeight": { _attr: { "w:val": 100, "w:hRule": "atLeast" } } }] });
+            expect(tree).to.deep.equal({ "hp:trPr": [{ "w:trHeight": { _attr: { "hp:val": 100, "w:hRule": "atLeast" } } }] });
         });
 
         it("should add a table cell spacing property", () => {
@@ -71,7 +71,7 @@ describe("TableRowProperties", () => {
             });
             const tree = new Formatter().format(rowProperties);
             expect(tree).to.deep.equal({
-                "w:trPr": [{ "w:tblCellSpacing": { _attr: { "w:type": "dxa", "w:w": 1234 } } }],
+                "hp:trPr": [{ "w:tblCellSpacing": { _attr: { "hp:type": "dxa", "hp:w": 1234 } } }],
             });
         });
     });

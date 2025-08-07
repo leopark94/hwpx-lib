@@ -15,7 +15,7 @@ describe("Sequential Identifier", () => {
 });
 
 const DEFAULT_SEQ = {
-    "w:r": [
+    "hp:run": [
         {
             "w:fldChar": {
                 _attr: {
@@ -25,7 +25,7 @@ const DEFAULT_SEQ = {
             },
         },
         {
-            "w:instrText": [
+            "hp:instrText": [
                 {
                     _attr: {
                         "xml:space": "preserve",

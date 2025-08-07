@@ -47,7 +47,7 @@ export class VerticalAlignAttributes extends XmlAttributeComponent<{
     readonly verticalAlign?: (typeof VerticalAlign)[keyof typeof VerticalAlign];
 }> {
     protected readonly xmlKeys = {
-        verticalAlign: "w:val",
+        verticalAlign: "hp:val",
     };
 }
 

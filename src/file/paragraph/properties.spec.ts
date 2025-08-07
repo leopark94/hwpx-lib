@@ -33,11 +33,11 @@ describe("ParagraphProperties", () => {
             });
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:pStyle": {
                             _attr: {
-                                "w:val": "ListParagraph",
+                                "hp:val": "ListParagraph",
                             },
                         },
                     },
@@ -46,14 +46,14 @@ describe("ParagraphProperties", () => {
                             {
                                 "w:ilvl": {
                                     _attr: {
-                                        "w:val": 0,
+                                        "hp:val": 0,
                                     },
                                 },
                             },
                             {
                                 "w:numId": {
                                     _attr: {
-                                        "w:val": "{test-reference-0}",
+                                        "hp:val": "{test-reference-0}",
                                     },
                                 },
                             },
@@ -70,20 +70,20 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:numPr": [
                             {
                                 "w:ilvl": {
                                     _attr: {
-                                        "w:val": 0,
+                                        "hp:val": 0,
                                     },
                                 },
                             },
                             {
                                 "w:numId": {
                                     _attr: {
-                                        "w:val": 0,
+                                        "hp:val": 0,
                                     },
                                 },
                             },
@@ -100,7 +100,7 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:widowControl": {},
                     },
@@ -115,9 +115,9 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
-                        "w:bidi": {},
+                        "hp:bidi": {},
                     },
                 ],
             });
@@ -130,7 +130,7 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:contextualSpacing": {},
                     },
@@ -145,7 +145,7 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:suppressLineNumbers": {},
                     },
@@ -160,7 +160,7 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:autoSpaceDN": {},
                     },
@@ -175,11 +175,11 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
-                        "w:wordWrap": {
+                        "hp:wordWrap": {
                             _attr: {
-                                "w:val": 0,
+                                "hp:val": 0,
                             },
                         },
                     },
@@ -194,7 +194,7 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
                         "w:overflowPunct": {},
                     },
@@ -211,20 +211,20 @@ describe("ParagraphProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree).to.deep.equal({
-                "w:pPr": [
+                "hp:paraPr": [
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
-                                "w:sz": {
+                                "hp:sz": {
                                     _attr: {
-                                        "w:val": "10pt",
+                                        "hp:val": "10pt",
                                     },
                                 },
                             },
                             {
                                 "w:szCs": {
                                     _attr: {
-                                        "w:val": "10pt",
+                                        "hp:val": "10pt",
                                     },
                                 },
                             },

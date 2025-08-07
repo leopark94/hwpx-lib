@@ -47,7 +47,7 @@ describe("CheckBox", () => {
                     {
                         "w:sdtContent": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {
@@ -90,7 +90,7 @@ describe("CheckBox", () => {
                             {
                                 "w:alias": {
                                     _attr: {
-                                        "w:val": "Custom Checkbox",
+                                        "hp:val": "Custom Checkbox",
                                     },
                                 },
                             },
@@ -126,7 +126,7 @@ describe("CheckBox", () => {
                     {
                         "w:sdtContent": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {
@@ -194,7 +194,7 @@ describe("CheckBox", () => {
                     {
                         "w:sdtContent": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
                                         "w:sym": {
                                             _attr: {

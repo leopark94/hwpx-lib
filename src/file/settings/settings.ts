@@ -194,7 +194,7 @@ export class Settings extends XmlComponent {
 
         // http://officeopenxml.com/WPdocument.php
         // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_displayBackgroundSha_topic_ID0ET4SX.html
-        this.root.push(new OnOffElement("w:displayBackgroundShape", true));
+        this.root.push(new OnOffElement("ha:displayBackgroundShape", true));
 
         // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_trackRevisions_topic_ID0EKXKY.html
         if (options.trackRevisions !== undefined) {
@@ -204,36 +204,36 @@ export class Settings extends XmlComponent {
         // http://officeopenxml.com/WPSectionFooterReference.php
         // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_evenAndOddHeaders_topic_ID0ET1WU.html
         if (options.evenAndOddHeaders !== undefined) {
-            this.root.push(new OnOffElement("w:evenAndOddHeaders", options.evenAndOddHeaders));
+            this.root.push(new OnOffElement("ha:evenAndOddHeaders", options.evenAndOddHeaders));
         }
 
         if (options.updateFields !== undefined) {
-            this.root.push(new OnOffElement("w:updateFields", options.updateFields));
+            this.root.push(new OnOffElement("ha:updateFields", options.updateFields));
         }
 
         // https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_defaultTabStop_topic_ID0EIXSX.html
         if (options.defaultTabStop !== undefined) {
-            this.root.push(new NumberValueElement("w:defaultTabStop", options.defaultTabStop));
+            this.root.push(new NumberValueElement("ha:defaultTabStop", options.defaultTabStop));
         }
 
         // https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_autoHyphenation_topic_ID0EFUMX.html
         if (options.hyphenation?.autoHyphenation !== undefined) {
-            this.root.push(new OnOffElement("w:autoHyphenation", options.hyphenation.autoHyphenation));
+            this.root.push(new OnOffElement("ha:autoHyphenation", options.hyphenation.autoHyphenation));
         }
 
         // https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_hyphenationZone_topic_ID0ERI3X.html
         if (options.hyphenation?.hyphenationZone !== undefined) {
-            this.root.push(new NumberValueElement("w:hyphenationZone", options.hyphenation.hyphenationZone));
+            this.root.push(new NumberValueElement("ha:hyphenationZone", options.hyphenation.hyphenationZone));
         }
 
         // https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_consecutiveHyphenLim_topic_ID0EQ6RX.html
         if (options.hyphenation?.consecutiveHyphenLimit !== undefined) {
-            this.root.push(new NumberValueElement("w:consecutiveHyphenLimit", options.hyphenation.consecutiveHyphenLimit));
+            this.root.push(new NumberValueElement("ha:consecutiveHyphenLimit", options.hyphenation.consecutiveHyphenLimit));
         }
 
         // https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_doNotHyphenateCaps_topic_ID0EW4XX.html
         if (options.hyphenation?.doNotHyphenateCaps !== undefined) {
-            this.root.push(new OnOffElement("w:doNotHyphenateCaps", options.hyphenation.doNotHyphenateCaps));
+            this.root.push(new OnOffElement("ha:doNotHyphenateCaps", options.hyphenation.doNotHyphenateCaps));
         }
 
         this.root.push(

@@ -16,9 +16,9 @@ export class CompatibilitySettingAttributes extends XmlAttributeComponent<{
     readonly uri: string;
 }> {
     protected readonly xmlKeys = {
-        version: "w:val",
-        name: "hh:name",
-        uri: "w:uri",
+        version: "ha:version",
+        name: "ha:name",
+        uri: "ha:uri",
     };
 }
 

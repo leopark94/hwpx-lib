@@ -17,11 +17,11 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
                                 "w:delText": [
                                     {
@@ -49,15 +49,15 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:rPr": [
+                                "hp:charPr": [
                                     {
-                                        "w:b": {},
+                                        "hp:bold": {},
                                     },
                                     {
                                         "w:bCs": {},
@@ -97,13 +97,13 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:br": {},
+                                "hp:br": {},
                             },
                             {
                                 "w:delText": [
@@ -137,11 +137,11 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
                                 "w:delText": [
                                     {
@@ -203,11 +203,11 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
                                 "w:delText": [
                                     {
@@ -269,11 +269,11 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
                                 "w:delText": [
                                     {
@@ -337,11 +337,11 @@ describe("DeletedTextRun", () => {
                         _attr: {
                             "w:author": "Author",
                             "w:date": "123",
-                            "w:id": 0,
+                            "hp:id": 0,
                         },
                     },
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
                                 "w:delText": [
                                     {
@@ -353,9 +353,9 @@ describe("DeletedTextRun", () => {
                                 ],
                             },
                             {
-                                "w:r": [
-                                    { "w:rPr": [{ "w:rStyle": { _attr: { "w:val": "FootnoteReference" } } }] },
-                                    { "w:footnoteReference": { _attr: { "w:id": 1 } } },
+                                "hp:run": [
+                                    { "hp:charPr": [{ "hp:styleRef": { _attr: { "hp:val": "FootnoteReference" } } }] },
+                                    { "hp:footnoteRef": { _attr: { "hp:id": 1 } } },
                                 ],
                             },
                         ],

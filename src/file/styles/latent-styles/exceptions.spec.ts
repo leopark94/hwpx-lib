@@ -19,10 +19,10 @@ describe("LatentStyleException", () => {
             expect(tree).to.deep.equal({
                 "w:lsdException": {
                     _attr: {
-                        "w:name": "test-name",
+                        "hh:name": "test-name",
                         "w:qFormat": "test-qFormat",
                         "w:semiHidden": "test-semiHidden",
-                        "w:uiPriority": "test-uiPriority",
+                        "hh:uiPriority": "test-uiPriority",
                         "w:unhideWhenUsed": "test-unhideWhenUsed",
                     },
                 },

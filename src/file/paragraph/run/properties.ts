@@ -239,11 +239,11 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.scale !== undefined) {
-            this.push(new NumberValueElement("w:w", options.scale));
+            this.push(new NumberValueElement("hp:w", options.scale));
         }
 
         if (options.kern) {
-            this.push(new HpsMeasureElement("w:kern", options.kern));
+            this.push(new HpsMeasureElement("hp:kern", options.kern));
         }
 
         if (options.position) {

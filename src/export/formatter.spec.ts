@@ -16,7 +16,7 @@ describe("Formatter", () => {
         it("should format simple paragraph", () => {
             const paragraph = new Paragraph("");
             const newJson = formatter.format(paragraph);
-            assert.isDefined(newJson["w:p"]);
+            assert.isDefined(newJson["hp:p"]);
         });
 
         it("should remove xmlKeys", () => {
@@ -38,13 +38,13 @@ describe("Formatter", () => {
 
             const tree = formatter.format(paragraph);
             expect(tree).to.deep.equal({
-                "w:p": [
+                "hp:p": [
                     {
-                        "w:r": [
+                        "hp:run": [
                             {
-                                "w:rPr": [
+                                "hp:charPr": [
                                     {
-                                        "w:b": {},
+                                        "hp:bold": {},
                                     },
                                     {
                                         "w:bCs": {},
@@ -52,7 +52,7 @@ describe("Formatter", () => {
                                 ],
                             },
                             {
-                                "w:t": [
+                                "hp:t": [
                                     {
                                         _attr: {
                                             "xml:space": "preserve",
@@ -74,7 +74,7 @@ describe("Formatter", () => {
             const tree = formatter.format(attributes);
             expect(tree).to.deep.equal({
                 _attr: {
-                    "w:rsidSect": "test2",
+                    "hp:rsidSect": "test2",
                 },
             });
         });
@@ -86,15 +86,15 @@ describe("Formatter", () => {
             const tree = formatter.format(attributes);
             expect(tree).to.deep.equal({
                 _attr: {
-                    "w:val": "test",
+                    "hp:val": "test",
                 },
             });
         });
 
-        it("should should change 'p' tag into 'w:p' tag", () => {
+        it("should should change 'p' tag into 'hp:p' tag", () => {
             const paragraph = new Paragraph("");
             const newJson = formatter.format(paragraph);
-            assert.isDefined(newJson["w:p"]);
+            assert.isDefined(newJson["hp:p"]);
         });
 
         it("should format Properties object correctly", () => {

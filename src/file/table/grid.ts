@@ -27,7 +27,7 @@ export class GridCol extends XmlComponent {
         if (width !== undefined) {
             this.root.push(
                 new NextAttributeComponent<{ readonly width: number | PositiveUniversalMeasure }>({
-                    width: { key: "w:w", value: twipsMeasureValue(width) },
+                    width: { key: "hp:w", value: twipsMeasureValue(width) },
                 }),
             );
         }

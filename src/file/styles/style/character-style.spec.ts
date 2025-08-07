@@ -15,12 +15,12 @@ describe("CharacterStyle", () => {
             const style = new StyleForCharacter({ id: "myStyleId" });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -38,13 +38,13 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
-                    { "w:name": { _attr: { "w:val": "Style Name" } } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
+                    { "hh:name": { _attr: { "hp:val": "Style Name" } } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -64,12 +64,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -77,7 +77,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:smallCaps": {} }],
+                        "hp:charPr": [{ "w:smallCaps": {} }],
                     },
                 ],
             });
@@ -92,12 +92,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -105,7 +105,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:caps": {} }],
+                        "hp:charPr": [{ "w:caps": {} }],
                     },
                 ],
             });
@@ -120,12 +120,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -133,7 +133,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:strike": {} }],
+                        "hp:charPr": [{ "hp:strikeout": {} }],
                     },
                 ],
             });
@@ -148,12 +148,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -161,7 +161,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:dstrike": {} }],
+                        "hp:charPr": [{ "w:dstrike": {} }],
                     },
                 ],
             });
@@ -176,12 +176,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -189,11 +189,11 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
                                 "w:vertAlign": {
                                     _attr: {
-                                        "w:val": "subscript",
+                                        "hp:val": "subscript",
                                     },
                                 },
                             },
@@ -212,12 +212,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -225,13 +225,13 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
-                                "w:rFonts": {
+                                "hp:rFonts": {
                                     _attr: {
                                         "w:ascii": "test font",
                                         "w:cs": "test font",
-                                        "w:eastAsia": "test font",
+                                        "hp:eastAsia": "test font",
                                         "w:hAnsi": "test font",
                                     },
                                 },
@@ -254,12 +254,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -267,12 +267,12 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
-                                "w:rFonts": {
+                                "hp:rFonts": {
                                     _attr: {
                                         "w:ascii": "test font ascii",
-                                        "w:eastAsia": "test font eastAsia",
+                                        "hp:eastAsia": "test font eastAsia",
                                     },
                                 },
                             },
@@ -291,12 +291,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -304,7 +304,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:spacing": { _attr: { "w:val": 100 } } }],
+                        "hp:charPr": [{ "hp:lineSpacing": { _attr: { "hp:val": 100 } } }],
                     },
                 ],
             });
@@ -316,13 +316,13 @@ describe("CharacterStyle", () => {
             const style = new StyleForCharacter({ id: "myStyleId", basedOn: "otherId" });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
-                    { "w:basedOn": { _attr: { "w:val": "otherId" } } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
+                    { "w:basedOn": { _attr: { "hp:val": "otherId" } } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -338,22 +338,22 @@ describe("CharacterStyle", () => {
         const sizeTests = [
             {
                 size: 24,
-                expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 24 } } }],
+                expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 24 } } }],
             },
             {
                 size: 24,
                 sizeComplexScript: true,
-                expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 24 } } }],
+                expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 24 } } }],
             },
             {
                 size: 24,
                 sizeComplexScript: false,
-                expected: [{ "w:sz": { _attr: { "w:val": 24 } } }],
+                expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }],
             },
             {
                 size: 24,
                 sizeComplexScript: 26,
-                expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 26 } } }],
+                expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 26 } } }],
             },
         ];
         sizeTests.forEach(({ size, sizeComplexScript, expected }) => {
@@ -364,12 +364,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -377,7 +377,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": expected,
+                            "hp:charPr": expected,
                         },
                     ],
                 });
@@ -394,12 +394,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -407,7 +407,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": [{ "w:u": { _attr: { "w:val": "single" } } }],
+                            "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "single" } } }],
                         },
                     ],
                 });
@@ -424,12 +424,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -437,7 +437,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": [{ "w:u": { _attr: { "w:val": "double" } } }],
+                            "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "double" } } }],
                         },
                     ],
                 });
@@ -455,12 +455,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -468,7 +468,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": [{ "w:u": { _attr: { "w:val": "double", "w:color": "005599" } } }],
+                            "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "double", "hp:color": "005599" } } }],
                         },
                     ],
                 });
@@ -485,12 +485,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -498,7 +498,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }],
+                            "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }],
                         },
                     ],
                 });
@@ -515,12 +515,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -528,7 +528,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }],
+                            "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }],
                         },
                     ],
                 });
@@ -544,12 +544,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -557,11 +557,11 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [
+                        "hp:charPr": [
                             {
                                 "w:vertAlign": {
                                     _attr: {
-                                        "w:val": "superscript",
+                                        "hp:val": "superscript",
                                     },
                                 },
                             },
@@ -580,12 +580,12 @@ describe("CharacterStyle", () => {
             });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -593,7 +593,7 @@ describe("CharacterStyle", () => {
                         "w:unhideWhenUsed": EMPTY_OBJECT,
                     },
                     {
-                        "w:rPr": [{ "w:color": { _attr: { "w:val": "123456" } } }],
+                        "hp:charPr": [{ "hp:color": { _attr: { "hp:val": "123456" } } }],
                     },
                 ],
             });
@@ -602,17 +602,17 @@ describe("CharacterStyle", () => {
         const boldTests = [
             {
                 bold: true,
-                expected: [{ "w:b": {} }, { "w:bCs": {} }],
+                expected: [{ "hp:bold": {} }, { "w:bCs": {} }],
             },
             {
                 bold: true,
                 boldComplexScript: true,
-                expected: [{ "w:b": {} }, { "w:bCs": {} }],
+                expected: [{ "hp:bold": {} }, { "w:bCs": {} }],
             },
             {
                 bold: true,
                 boldComplexScript: false,
-                expected: [{ "w:b": {} }],
+                expected: [{ "hp:bold": {} }],
             },
         ];
         boldTests.forEach(({ bold, boldComplexScript, expected }) => {
@@ -623,12 +623,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -636,7 +636,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": expected,
+                            "hp:charPr": expected,
                         },
                     ],
                 });
@@ -646,17 +646,17 @@ describe("CharacterStyle", () => {
         const italicsTests = [
             {
                 italics: true,
-                expected: [{ "w:i": {} }, { "w:iCs": {} }],
+                expected: [{ "hp:italic": {} }, { "w:iCs": {} }],
             },
             {
                 italics: true,
                 italicsComplexScript: true,
-                expected: [{ "w:i": {} }, { "w:iCs": {} }],
+                expected: [{ "hp:italic": {} }, { "w:iCs": {} }],
             },
             {
                 italics: true,
                 italicsComplexScript: false,
-                expected: [{ "w:i": {} }],
+                expected: [{ "hp:italic": {} }],
             },
         ];
         italicsTests.forEach(({ italics, italicsComplexScript, expected }) => {
@@ -667,12 +667,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -680,7 +680,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": expected,
+                            "hp:charPr": expected,
                         },
                     ],
                 });
@@ -691,13 +691,13 @@ describe("CharacterStyle", () => {
             const style = new StyleForCharacter({ id: "myStyleId", link: "MyLink" });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
-                    { "w:link": { _attr: { "w:val": "MyLink" } } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
+                    { "w:link": { _attr: { "hp:val": "MyLink" } } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -712,12 +712,12 @@ describe("CharacterStyle", () => {
             const style = new StyleForCharacter({ id: "myStyleId", semiHidden: true });
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:style": [
-                    { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                "hh:style": [
+                    { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                     {
-                        "w:uiPriority": {
+                        "hh:uiPriority": {
                             _attr: {
-                                "w:val": 99,
+                                "hp:val": 99,
                             },
                         },
                     },
@@ -730,22 +730,22 @@ describe("CharacterStyle", () => {
         const highlightTests = [
             {
                 highlight: HighlightColor.YELLOW,
-                expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "yellow" } } }],
+                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: true,
-                expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "yellow" } } }],
+                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: false,
-                expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }],
+                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }],
             },
             {
                 highlight: HighlightColor.YELLOW,
                 highlightComplexScript: "550099",
-                expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "550099" } } }],
+                expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
             },
         ];
         highlightTests.forEach(({ highlight, highlightComplexScript, expected }) => {
@@ -756,12 +756,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -769,7 +769,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": expected,
+                            "hp:charPr": expected,
                         },
                     ],
                 });
@@ -783,7 +783,7 @@ describe("CharacterStyle", () => {
                     fill: "00FFFF",
                     color: "FF0000",
                 },
-                expected: [{ "w:shd": { _attr: { "w:val": "pct10", "w:fill": "00FFFF", "w:color": "FF0000" } } }],
+                expected: [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
             },
             {
                 shading: {
@@ -791,7 +791,7 @@ describe("CharacterStyle", () => {
                     fill: "AA0000",
                     color: "DD0000",
                 },
-                expected: [{ "w:shd": { _attr: { "w:val": "solid", "w:fill": "AA0000", "w:color": "DD0000" } } }],
+                expected: [{ "w:shd": { _attr: { "hp:val": "solid", "hp:fill": "AA0000", "hp:color": "DD0000" } } }],
             },
         ];
         shadingTests.forEach(({ shading, expected }) => {
@@ -802,12 +802,12 @@ describe("CharacterStyle", () => {
                 });
                 const tree = new Formatter().format(style);
                 expect(tree).to.deep.equal({
-                    "w:style": [
-                        { _attr: { "w:type": "character", "w:styleId": "myStyleId" } },
+                    "hh:style": [
+                        { _attr: { "hp:type": "character", "w:styleId": "myStyleId" } },
                         {
-                            "w:uiPriority": {
+                            "hh:uiPriority": {
                                 _attr: {
-                                    "w:val": 99,
+                                    "hp:val": 99,
                                 },
                             },
                         },
@@ -815,7 +815,7 @@ describe("CharacterStyle", () => {
                             "w:unhideWhenUsed": EMPTY_OBJECT,
                         },
                         {
-                            "w:rPr": expected,
+                            "hp:charPr": expected,
                         },
                     ],
                 });

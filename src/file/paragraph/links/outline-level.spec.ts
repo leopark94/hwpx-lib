@@ -14,7 +14,7 @@ describe("ParagraphOutlineLevel", () => {
             expect(tree).to.deep.equal({
                 "w:outlineLvl": {
                     _attr: {
-                        "w:val": 0,
+                        "hp:val": 0,
                     },
                 },
             });

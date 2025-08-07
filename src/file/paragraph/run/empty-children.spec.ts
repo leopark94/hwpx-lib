@@ -146,7 +146,7 @@ describe("FootnoteReferenceElement", () => {
         it("should create a FootnoteReferenceElement with correct root key", () => {
             const tree = new Formatter().format(new FootnoteReferenceElement());
             expect(tree).to.deep.equal({
-                "w:footnoteRef": {},
+                "hp:footnoteRef": {},
             });
         });
     });
@@ -168,7 +168,7 @@ describe("Separator", () => {
         it("should create a Separator with correct root key", () => {
             const tree = new Formatter().format(new Separator());
             expect(tree).to.deep.equal({
-                "w:separator": {},
+                "hp:separator": {},
             });
         });
     });
@@ -179,7 +179,7 @@ describe("ContinuationSeparator", () => {
         it("should create a ContinuationSeparator with correct root key", () => {
             const tree = new Formatter().format(new ContinuationSeparator());
             expect(tree).to.deep.equal({
-                "w:continuationSeparator": {},
+                "hp:continuationSeparator": {},
             });
         });
     });
@@ -212,7 +212,7 @@ describe("Tab", () => {
         it("should create a Tab with correct root key", () => {
             const tree = new Formatter().format(new Tab());
             expect(tree).to.deep.equal({
-                "w:tab": {},
+                "hp:tab": {},
             });
         });
     });

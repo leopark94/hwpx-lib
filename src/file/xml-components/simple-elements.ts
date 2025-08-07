@@ -58,7 +58,7 @@ export const createStringElement = (name: string, value: string): XmlComponent =
     new BuilderElement({
         name,
         attributes: {
-            value: { key: "w:val", value },
+            value: { key: "hp:val", value },
         },
     });
 

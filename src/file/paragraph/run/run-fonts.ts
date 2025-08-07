@@ -12,7 +12,7 @@ class RunFontAttributes extends XmlAttributeComponent<IFontAttributesProperties>
     protected readonly xmlKeys = {
         ascii: "w:ascii",
         cs: "w:cs",
-        eastAsia: "w:eastAsia",
+        eastAsia: "hp:eastAsia",
         hAnsi: "w:hAnsi",
         hint: "w:hint",
     };

@@ -37,7 +37,7 @@ describe("AbstractNumbering", () => {
                     {
                         "w:multiLevelType": {
                             _attr: {
-                                "w:val": "hybridMultilevel",
+                                "hp:val": "hybridMultilevel",
                             },
                         },
                     },
@@ -46,28 +46,28 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:start": {
                                     _attr: {
-                                        "w:val": 1,
+                                        "hp:val": 1,
                                     },
                                 },
                             },
                             {
                                 "w:numFmt": {
                                     _attr: {
-                                        "w:val": LevelFormat.LOWER_LETTER,
+                                        "hp:val": LevelFormat.LOWER_LETTER,
                                     },
                                 },
                             },
                             {
                                 "w:lvlText": {
                                     _attr: {
-                                        "w:val": "%1)",
+                                        "hp:val": "%1)",
                                     },
                                 },
                             },
                             {
                                 "w:lvlJc": {
                                     _attr: {
-                                        "w:val": "end",
+                                        "hp:val": "end",
                                     },
                                 },
                             },
@@ -103,7 +103,7 @@ describe("AbstractNumbering", () => {
                     {
                         "w:multiLevelType": {
                             _attr: {
-                                "w:val": "hybridMultilevel",
+                                "hp:val": "hybridMultilevel",
                             },
                         },
                     },
@@ -112,28 +112,28 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:start": {
                                     _attr: {
-                                        "w:val": 1,
+                                        "hp:val": 1,
                                     },
                                 },
                             },
                             {
                                 "w:numFmt": {
                                     _attr: {
-                                        "w:val": LevelFormat.LOWER_LETTER,
+                                        "hp:val": LevelFormat.LOWER_LETTER,
                                     },
                                 },
                             },
                             {
                                 "w:lvlText": {
                                     _attr: {
-                                        "w:val": "%1)",
+                                        "hp:val": "%1)",
                                     },
                                 },
                             },
                             {
                                 "w:lvlJc": {
                                     _attr: {
-                                        "w:val": "start",
+                                        "hp:val": "start",
                                     },
                                 },
                             },
@@ -171,7 +171,7 @@ describe("AbstractNumbering", () => {
                     {
                         "w:multiLevelType": {
                             _attr: {
-                                "w:val": "hybridMultilevel",
+                                "hp:val": "hybridMultilevel",
                             },
                         },
                     },
@@ -180,35 +180,35 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:start": {
                                     _attr: {
-                                        "w:val": 1,
+                                        "hp:val": 1,
                                     },
                                 },
                             },
                             {
                                 "w:numFmt": {
                                     _attr: {
-                                        "w:val": "lowerLetter",
+                                        "hp:val": "lowerLetter",
                                     },
                                 },
                             },
                             {
                                 "w:suff": {
                                     _attr: {
-                                        "w:val": "space",
+                                        "hp:val": "space",
                                     },
                                 },
                             },
                             {
                                 "w:lvlText": {
                                     _attr: {
-                                        "w:val": "%1)",
+                                        "hp:val": "%1)",
                                     },
                                 },
                             },
                             {
                                 "w:lvlJc": {
                                     _attr: {
-                                        "w:val": "end",
+                                        "hp:val": "end",
                                     },
                                 },
                             },
@@ -222,7 +222,7 @@ describe("AbstractNumbering", () => {
                     },
                 ],
             });
-            // expect(tree["w:abstractNum"][2]["w:lvl"]).to.include({ "w:suff": { _attr: { "w:val": "space" } } });
+            // expect(tree["hp:abstractNum"][2]["w:lvl"]).to.include({ "w:suff": { _attr: { "hp:val": "space" } } });
         });
 
         describe("formatting methods: paragraph properties", () => {
@@ -251,7 +251,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -260,37 +260,37 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:ind": {
                                                 _attr: {
-                                                    "w:left": 720,
+                                                    "hp:left": 720,
                                                 },
                                             },
                                         },
@@ -333,7 +333,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -342,35 +342,35 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
-                                            "w:spacing": {
+                                            "hp:lineSpacing": {
                                                 _attr: {
                                                     "w:after": 150,
                                                     "w:before": 50,
@@ -416,7 +416,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -425,37 +425,37 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
-                                            "w:jc": {
+                                            "hp:align": {
                                                 _attr: {
-                                                    "w:val": "center",
+                                                    "hp:val": "center",
                                                 },
                                             },
                                         },
@@ -498,7 +498,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -507,37 +507,37 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
-                                            "w:jc": {
+                                            "hp:align": {
                                                 _attr: {
-                                                    "w:val": "left",
+                                                    "hp:val": "left",
                                                 },
                                             },
                                         },
@@ -580,7 +580,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -589,37 +589,37 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
-                                            "w:jc": {
+                                            "hp:align": {
                                                 _attr: {
-                                                    "w:val": "right",
+                                                    "hp:val": "right",
                                                 },
                                             },
                                         },
@@ -662,7 +662,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -671,37 +671,37 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
-                                            "w:jc": {
+                                            "hp:align": {
                                                 _attr: {
-                                                    "w:val": "both",
+                                                    "hp:val": "both",
                                                 },
                                             },
                                         },
@@ -744,7 +744,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -753,42 +753,42 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:pBdr": [
                                                 {
-                                                    "w:bottom": {
+                                                    "hp:bottom": {
                                                         _attr: {
-                                                            "w:color": "auto",
-                                                            "w:space": 1,
-                                                            "w:sz": 6,
-                                                            "w:val": "single",
+                                                            "hp:color": "auto",
+                                                            "hp:space": 1,
+                                                            "hp:sz": 6,
+                                                            "hp:val": "single",
                                                         },
                                                     },
                                                 },
@@ -833,7 +833,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -842,40 +842,40 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:tabs": [
                                                 {
-                                                    "w:tab": {
+                                                    "hp:tab": {
                                                         _attr: {
-                                                            "w:pos": 1200,
-                                                            "w:val": "left",
+                                                            "hp:pos": 1200,
+                                                            "hp:val": "left",
                                                         },
                                                     },
                                                 },
@@ -920,7 +920,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -929,40 +929,40 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:tabs": [
                                                 {
-                                                    "w:tab": {
+                                                    "hp:tab": {
                                                         _attr: {
-                                                            "w:pos": 9026,
-                                                            "w:val": "right",
+                                                            "hp:pos": 9026,
+                                                            "hp:val": "right",
                                                         },
                                                     },
                                                 },
@@ -1007,7 +1007,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1016,33 +1016,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:keepLines": {},
                                         },
@@ -1085,7 +1085,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1094,33 +1094,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:pPr": [
+                                    "hp:paraPr": [
                                         {
                                             "w:keepNext": {},
                                         },
@@ -1143,22 +1143,22 @@ describe("AbstractNumbering", () => {
             const sizeTests = [
                 {
                     size: 24,
-                    expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 24 } } }],
+                    expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 24 } } }],
                 },
                 {
                     size: 24,
                     sizeComplexScript: true,
-                    expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 24 } } }],
+                    expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 24 } } }],
                 },
                 {
                     size: 24,
                     sizeComplexScript: false,
-                    expected: [{ "w:sz": { _attr: { "w:val": 24 } } }],
+                    expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }],
                 },
                 {
                     size: 24,
                     sizeComplexScript: 26,
-                    expected: [{ "w:sz": { _attr: { "w:val": 24 } } }, { "w:szCs": { _attr: { "w:val": 26 } } }],
+                    expected: [{ "hp:sz": { _attr: { "hp:val": 24 } } }, { "w:szCs": { _attr: { "hp:val": 26 } } }],
                 },
             ];
             sizeTests.forEach(({ size, sizeComplexScript, expected }) => {
@@ -1185,7 +1185,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -1194,33 +1194,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": expected,
+                                        "hp:charPr": expected,
                                     },
                                     {
                                         _attr: {
@@ -1260,7 +1260,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1269,33 +1269,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
                                             "w:smallCaps": {},
                                         },
@@ -1338,7 +1338,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1347,33 +1347,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
                                             "w:caps": {},
                                         },
@@ -1417,7 +1417,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1426,35 +1426,35 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
-                                            "w:strike": {},
+                                            "hp:strikeout": {},
                                         },
                                     ],
                                 },
@@ -1495,7 +1495,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1504,33 +1504,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
                                             "w:dstrike": {},
                                         },
@@ -1573,7 +1573,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1582,33 +1582,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [{ "w:vertAlign": { _attr: { "w:val": "subscript" } } }],
+                                    "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "subscript" } } }],
                                 },
                                 {
                                     _attr: {
@@ -1647,7 +1647,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1656,33 +1656,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [{ "w:vertAlign": { _attr: { "w:val": "superscript" } } }],
+                                    "hp:charPr": [{ "w:vertAlign": { _attr: { "hp:val": "superscript" } } }],
                                 },
                                 {
                                     _attr: {
@@ -1721,7 +1721,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1730,39 +1730,39 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
-                                            "w:rFonts": {
+                                            "hp:rFonts": {
                                                 _attr: {
                                                     "w:ascii": "Times",
                                                     "w:cs": "Times",
-                                                    "w:eastAsia": "Times",
+                                                    "hp:eastAsia": "Times",
                                                     "w:hAnsi": "Times",
                                                 },
                                             },
@@ -1809,7 +1809,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -1818,38 +1818,38 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [
+                                    "hp:charPr": [
                                         {
-                                            "w:rFonts": {
+                                            "hp:rFonts": {
                                                 _attr: {
                                                     "w:ascii": "Times",
-                                                    "w:eastAsia": "KaiTi",
+                                                    "hp:eastAsia": "KaiTi",
                                                 },
                                             },
                                         },
@@ -1870,17 +1870,17 @@ describe("AbstractNumbering", () => {
             const boldTests = [
                 {
                     bold: true,
-                    expected: [{ "w:b": {} }, { "w:bCs": {} }],
+                    expected: [{ "hp:bold": {} }, { "w:bCs": {} }],
                 },
                 {
                     bold: true,
                     boldComplexScript: true,
-                    expected: [{ "w:b": {} }, { "w:bCs": {} }],
+                    expected: [{ "hp:bold": {} }, { "w:bCs": {} }],
                 },
                 {
                     bold: true,
                     boldComplexScript: false,
-                    expected: [{ "w:b": {} }],
+                    expected: [{ "hp:bold": {} }],
                 },
             ];
             boldTests.forEach(({ bold, boldComplexScript, expected }) => {
@@ -1907,7 +1907,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -1916,33 +1916,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": expected,
+                                        "hp:charPr": expected,
                                     },
                                     {
                                         _attr: {
@@ -1960,17 +1960,17 @@ describe("AbstractNumbering", () => {
             const italicsTests = [
                 {
                     italics: true,
-                    expected: [{ "w:i": {} }, { "w:iCs": {} }],
+                    expected: [{ "hp:italic": {} }, { "w:iCs": {} }],
                 },
                 {
                     italics: true,
                     italicsComplexScript: true,
-                    expected: [{ "w:i": {} }, { "w:iCs": {} }],
+                    expected: [{ "hp:italic": {} }, { "w:iCs": {} }],
                 },
                 {
                     italics: true,
                     italicsComplexScript: false,
-                    expected: [{ "w:i": {} }],
+                    expected: [{ "hp:italic": {} }],
                 },
             ];
             italicsTests.forEach(({ italics, italicsComplexScript, expected }) => {
@@ -1997,7 +1997,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2006,33 +2006,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": expected,
+                                        "hp:charPr": expected,
                                     },
                                     {
                                         _attr: {
@@ -2050,22 +2050,22 @@ describe("AbstractNumbering", () => {
             const highlightTests = [
                 {
                     highlight: HighlightColor.YELLOW,
-                    expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "yellow" } } }],
+                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: true,
-                    expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "yellow" } } }],
+                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: false,
-                    expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }],
+                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: "550099",
-                    expected: [{ "w:highlight": { _attr: { "w:val": "yellow" } } }, { "w:highlightCs": { _attr: { "w:val": "550099" } } }],
+                    expected: [{ "w:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
                 },
             ];
             highlightTests.forEach(({ highlight, highlightComplexScript, expected }) => {
@@ -2092,7 +2092,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2101,33 +2101,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": expected,
+                                        "hp:charPr": expected,
                                     },
                                     {
                                         _attr: {
@@ -2149,7 +2149,7 @@ describe("AbstractNumbering", () => {
                         fill: "006622",
                         color: "0000FF",
                     },
-                    expected: [{ "w:shd": { _attr: { "w:val": "diagStripe", "w:fill": "006622", "w:color": "0000FF" } } }],
+                    expected: [{ "w:shd": { _attr: { "hp:val": "diagStripe", "hp:fill": "006622", "hp:color": "0000FF" } } }],
                 },
                 {
                     shading: {
@@ -2157,7 +2157,7 @@ describe("AbstractNumbering", () => {
                         fill: "00FFFF",
                         color: "FF0000",
                     },
-                    expected: [{ "w:shd": { _attr: { "w:val": "pct10", "w:fill": "00FFFF", "w:color": "FF0000" } } }],
+                    expected: [{ "w:shd": { _attr: { "hp:val": "pct10", "hp:fill": "00FFFF", "hp:color": "FF0000" } } }],
                 },
             ];
             shadingTests.forEach(({ shading, expected }) => {
@@ -2184,7 +2184,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2193,33 +2193,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": expected,
+                                        "hp:charPr": expected,
                                     },
                                     {
                                         _attr: {
@@ -2260,7 +2260,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2269,33 +2269,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": [{ "w:u": { _attr: { "w:val": "single" } } }],
+                                        "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "single" } } }],
                                     },
                                     {
                                         _attr: {
@@ -2336,7 +2336,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2345,33 +2345,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": [{ "w:u": { _attr: { "w:val": "double" } } }],
+                                        "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "double" } } }],
                                     },
                                     {
                                         _attr: {
@@ -2413,7 +2413,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2422,33 +2422,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": [{ "w:u": { _attr: { "w:val": "double", "w:color": "005599" } } }],
+                                        "hp:charPr": [{ "hp:underline": { _attr: { "hp:val": "double", "hp:color": "005599" } } }],
                                     },
                                     {
                                         _attr: {
@@ -2489,7 +2489,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2498,33 +2498,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }],
+                                        "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }],
                                     },
                                     {
                                         _attr: {
@@ -2565,7 +2565,7 @@ describe("AbstractNumbering", () => {
                             {
                                 "w:multiLevelType": {
                                     _attr: {
-                                        "w:val": "hybridMultilevel",
+                                        "hp:val": "hybridMultilevel",
                                     },
                                 },
                             },
@@ -2574,33 +2574,33 @@ describe("AbstractNumbering", () => {
                                     {
                                         "w:start": {
                                             _attr: {
-                                                "w:val": 1,
+                                                "hp:val": 1,
                                             },
                                         },
                                     },
                                     {
                                         "w:numFmt": {
                                             _attr: {
-                                                "w:val": "lowerRoman",
+                                                "hp:val": "lowerRoman",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlText": {
                                             _attr: {
-                                                "w:val": "%0.",
+                                                "hp:val": "%0.",
                                             },
                                         },
                                     },
                                     {
                                         "w:lvlJc": {
                                             _attr: {
-                                                "w:val": "start",
+                                                "hp:val": "start",
                                             },
                                         },
                                     },
                                     {
-                                        "w:rPr": [{ "w:em": { _attr: { "w:val": "dot" } } }],
+                                        "hp:charPr": [{ "w:em": { _attr: { "hp:val": "dot" } } }],
                                     },
                                     {
                                         _attr: {
@@ -2640,7 +2640,7 @@ describe("AbstractNumbering", () => {
                         {
                             "w:multiLevelType": {
                                 _attr: {
-                                    "w:val": "hybridMultilevel",
+                                    "hp:val": "hybridMultilevel",
                                 },
                             },
                         },
@@ -2649,33 +2649,33 @@ describe("AbstractNumbering", () => {
                                 {
                                     "w:start": {
                                         _attr: {
-                                            "w:val": 1,
+                                            "hp:val": 1,
                                         },
                                     },
                                 },
                                 {
                                     "w:numFmt": {
                                         _attr: {
-                                            "w:val": "lowerRoman",
+                                            "hp:val": "lowerRoman",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlText": {
                                         _attr: {
-                                            "w:val": "%0.",
+                                            "hp:val": "%0.",
                                         },
                                     },
                                 },
                                 {
                                     "w:lvlJc": {
                                         _attr: {
-                                            "w:val": "start",
+                                            "hp:val": "start",
                                         },
                                     },
                                 },
                                 {
-                                    "w:rPr": [{ "w:color": { _attr: { "w:val": "123456" } } }],
+                                    "hp:charPr": [{ "hp:color": { _attr: { "hp:val": "123456" } } }],
                                 },
                                 {
                                     _attr: {

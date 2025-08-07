@@ -7,15 +7,15 @@ describe("paragraph-split-inject", () => {
         it("should find the index of a run element with a token", () => {
             const output = findRunElementIndexWithToken(
                 {
-                    name: "w:p",
+                    name: "hp:p",
                     type: "element",
                     elements: [
                         {
-                            name: "w:r",
+                            name: "hp:run",
                             type: "element",
                             elements: [
                                 {
-                                    name: "w:t",
+                                    name: "hp:t",
                                     type: "element",
                                     elements: [
                                         {
@@ -37,7 +37,7 @@ describe("paragraph-split-inject", () => {
             expect(() =>
                 findRunElementIndexWithToken(
                     {
-                        name: "w:p",
+                        name: "hp:p",
                         type: "element",
                     },
                     "hello",
@@ -49,11 +49,11 @@ describe("paragraph-split-inject", () => {
             expect(() =>
                 findRunElementIndexWithToken(
                     {
-                        name: "w:p",
+                        name: "hp:p",
                         type: "element",
                         elements: [
                             {
-                                name: "w:r",
+                                name: "hp:run",
                                 type: "element",
                             },
                         ],
@@ -67,15 +67,15 @@ describe("paragraph-split-inject", () => {
             expect(() =>
                 findRunElementIndexWithToken(
                     {
-                        name: "w:p",
+                        name: "hp:p",
                         type: "element",
                         elements: [
                             {
-                                name: "w:r",
+                                name: "hp:run",
                                 type: "element",
                                 elements: [
                                     {
-                                        name: "w:t",
+                                        name: "hp:t",
                                         type: "element",
                                     },
                                 ],
@@ -91,15 +91,15 @@ describe("paragraph-split-inject", () => {
             expect(() =>
                 findRunElementIndexWithToken(
                     {
-                        name: "w:p",
+                        name: "hp:p",
                         type: "element",
                         elements: [
                             {
-                                name: "w:r",
+                                name: "hp:run",
                                 type: "element",
                                 elements: [
                                     {
-                                        name: "w:t",
+                                        name: "hp:t",
                                         type: "element",
                                     },
                                 ],
@@ -115,15 +115,15 @@ describe("paragraph-split-inject", () => {
             expect(() =>
                 findRunElementIndexWithToken(
                     {
-                        name: "w:p",
+                        name: "hp:p",
                         type: "element",
                         elements: [
                             {
-                                name: "w:r",
+                                name: "hp:run",
                                 type: "element",
                                 elements: [
                                     {
-                                        name: "w:t",
+                                        name: "hp:t",
                                         type: "element",
                                         elements: [
                                             {
@@ -145,11 +145,11 @@ describe("paragraph-split-inject", () => {
         it("should split a run element", () => {
             const output = splitRunElement(
                 {
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                     elements: [
                         {
-                            name: "w:t",
+                            name: "hp:t",
                             type: "element",
                             elements: [
                                 {
@@ -159,7 +159,7 @@ describe("paragraph-split-inject", () => {
                             ],
                         },
                         {
-                            name: "w:x",
+                            name: "hp:x",
                             type: "element",
                         },
                     ],
@@ -180,11 +180,11 @@ describe("paragraph-split-inject", () => {
                                     type: "text",
                                 },
                             ],
-                            name: "w:t",
+                            name: "hp:t",
                             type: "element",
                         },
                     ],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
                 right: {
@@ -199,15 +199,15 @@ describe("paragraph-split-inject", () => {
                                     type: "text",
                                 },
                             ],
-                            name: "w:t",
+                            name: "hp:t",
                             type: "element",
                         },
                         {
-                            name: "w:x",
+                            name: "hp:x",
                             type: "element",
                         },
                     ],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
             });
@@ -216,11 +216,11 @@ describe("paragraph-split-inject", () => {
         it("should try to split even if elements is empty for text", () => {
             const output = splitRunElement(
                 {
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                     elements: [
                         {
-                            name: "w:t",
+                            name: "hp:t",
                             type: "element",
                         },
                     ],
@@ -236,16 +236,16 @@ describe("paragraph-split-inject", () => {
                                 "xml:space": "preserve",
                             },
                             elements: [],
-                            name: "w:t",
+                            name: "hp:t",
                             type: "element",
                         },
                     ],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
                 right: {
                     elements: [],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
             });
@@ -254,7 +254,7 @@ describe("paragraph-split-inject", () => {
         it("should return empty elements", () => {
             const output = splitRunElement(
                 {
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
                 "*",
@@ -263,12 +263,12 @@ describe("paragraph-split-inject", () => {
             expect(output).to.deep.equal({
                 left: {
                     elements: [],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
                 right: {
                     elements: [],
-                    name: "w:r",
+                    name: "hp:run",
                     type: "element",
                 },
             });
@@ -278,25 +278,25 @@ describe("paragraph-split-inject", () => {
             const output = splitRunElement(
                 {
                     type: "element",
-                    name: "w:r",
+                    name: "hp:run",
                     elements: [
                         {
                             type: "element",
-                            name: "w:rPr",
+                            name: "hp:charPr",
                             elements: [
-                                { type: "element", name: "w:rFonts", attributes: { "w:eastAsia": "Times New Roman" } },
-                                { type: "element", name: "w:kern", attributes: { "w:val": "0" } },
-                                { type: "element", name: "w:sz", attributes: { "w:val": "20" } },
+                                { type: "element", name: "hp:rFonts", attributes: { "hp:eastAsia": "Times New Roman" } },
+                                { type: "element", name: "hp:kern", attributes: { "hp:val": "0" } },
+                                { type: "element", name: "hp:sz", attributes: { "hp:val": "20" } },
                                 {
                                     type: "element",
-                                    name: "w:lang",
-                                    attributes: { "w:val": "en-US", "w:eastAsia": "en-US", "w:bidi": "ar-SA" },
+                                    name: "hp:language",
+                                    attributes: { "hp:val": "en-US", "hp:eastAsia": "en-US", "hp:bidi": "ar-SA" },
                                 },
                             ],
                         },
-                        { type: "element", name: "w:t", elements: [], attributes: { "xml:space": "preserve" } },
-                        { type: "element", name: "w:br" },
-                        { type: "element", name: "w:t", elements: [{ type: "text", text: "ɵ" }] },
+                        { type: "element", name: "hp:t", elements: [], attributes: { "xml:space": "preserve" } },
+                        { type: "element", name: "hp:br" },
+                        { type: "element", name: "hp:t", elements: [{ type: "text", text: "ɵ" }] },
                     ],
                 },
                 "ɵ",
@@ -305,31 +305,31 @@ describe("paragraph-split-inject", () => {
             expect(output).to.deep.equal({
                 left: {
                     type: "element",
-                    name: "w:r",
+                    name: "hp:run",
                     elements: [
                         {
                             type: "element",
-                            name: "w:rPr",
+                            name: "hp:charPr",
                             elements: [
-                                { type: "element", name: "w:rFonts", attributes: { "w:eastAsia": "Times New Roman" } },
-                                { type: "element", name: "w:kern", attributes: { "w:val": "0" } },
-                                { type: "element", name: "w:sz", attributes: { "w:val": "20" } },
+                                { type: "element", name: "hp:rFonts", attributes: { "hp:eastAsia": "Times New Roman" } },
+                                { type: "element", name: "hp:kern", attributes: { "hp:val": "0" } },
+                                { type: "element", name: "hp:sz", attributes: { "hp:val": "20" } },
                                 {
                                     type: "element",
-                                    name: "w:lang",
-                                    attributes: { "w:val": "en-US", "w:eastAsia": "en-US", "w:bidi": "ar-SA" },
+                                    name: "hp:language",
+                                    attributes: { "hp:val": "en-US", "hp:eastAsia": "en-US", "hp:bidi": "ar-SA" },
                                 },
                             ],
                         },
-                        { type: "element", name: "w:t", elements: [], attributes: { "xml:space": "preserve" } },
-                        { type: "element", name: "w:br" },
-                        { type: "element", name: "w:t", elements: [], attributes: { "xml:space": "preserve" } },
+                        { type: "element", name: "hp:t", elements: [], attributes: { "xml:space": "preserve" } },
+                        { type: "element", name: "hp:br" },
+                        { type: "element", name: "hp:t", elements: [], attributes: { "xml:space": "preserve" } },
                     ],
                 },
                 right: {
                     type: "element",
-                    name: "w:r",
-                    elements: [{ type: "element", name: "w:t", elements: [], attributes: { "xml:space": "preserve" } }],
+                    name: "hp:run",
+                    elements: [{ type: "element", name: "hp:t", elements: [], attributes: { "xml:space": "preserve" } }],
                 },
             });
         });

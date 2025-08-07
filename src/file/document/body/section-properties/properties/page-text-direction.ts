@@ -8,7 +8,7 @@ export const PageTextDirectionType = {
 class PageTextDirectionAttributes extends XmlAttributeComponent<{
     readonly val: (typeof PageTextDirectionType)[keyof typeof PageTextDirectionType];
 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 export class PageTextDirection extends XmlComponent {

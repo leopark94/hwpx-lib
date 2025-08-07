@@ -14,7 +14,7 @@ describe("ParagraphStyle", () => {
             expect(tree).to.deep.equal({
                 "w:pStyle": {
                     _attr: {
-                        "w:val": "test",
+                        "hp:val": "test",
                     },
                 },
             });
@@ -26,7 +26,7 @@ describe("ParagraphStyle", () => {
             expect(tree).to.deep.equal({
                 "w:pStyle": {
                     _attr: {
-                        "w:val": "",
+                        "hp:val": "",
                     },
                 },
             });

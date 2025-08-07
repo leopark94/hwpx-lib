@@ -20,11 +20,11 @@ export const createLanguageComponent = (options: ILanguageOptions): XmlComponent
         name: "hp:language",
         attributes: {
             value: {
-                key: "w:val",
+                key: "hp:val",
                 value: options.value,
             },
             eastAsia: {
-                key: "w:eastAsia",
+                key: "hp:eastAsia",
                 value: options.eastAsia,
             },
             bidirectional: {

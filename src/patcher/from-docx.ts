@@ -121,7 +121,7 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
         const json = toJson(await value.async("text"));
 
         if (key === "word/document.xml") {
-            const document = json.elements?.find((i) => i.name === "w:document");
+            const document = json.elements?.find((i) => i.name === "hml:document");
             if (document && document.attributes) {
                 // We could check all namespaces from Document, but we'll instead
                 // check only those that may be used by our element types.

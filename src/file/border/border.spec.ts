@@ -8,44 +8,44 @@ import { BorderElement } from "./border";
 describe("BorderElement", () => {
     describe("#constructor", () => {
         it("should create a simple border element", () => {
-            const border = new BorderElement("w:top", {
+            const border = new BorderElement("hp:top", {
                 style: BorderStyle.SINGLE,
             });
             const tree = new Formatter().format(border);
             expect(tree).to.deep.equal({
-                "w:top": {
+                "hp:top": {
                     _attr: {
-                        "w:val": "single",
+                        "hp:val": "single",
                     },
                 },
             });
         });
         it("should create a simple border element with a size", () => {
-            const border = new BorderElement("w:top", {
+            const border = new BorderElement("hp:top", {
                 style: BorderStyle.SINGLE,
                 size: 22,
             });
             const tree = new Formatter().format(border);
             expect(tree).to.deep.equal({
-                "w:top": {
+                "hp:top": {
                     _attr: {
-                        "w:val": "single",
-                        "w:sz": 22,
+                        "hp:val": "single",
+                        "hp:sz": 22,
                     },
                 },
             });
         });
         it("should create a simple border element with space", () => {
-            const border = new BorderElement("w:top", {
+            const border = new BorderElement("hp:top", {
                 style: BorderStyle.SINGLE,
                 space: 22,
             });
             const tree = new Formatter().format(border);
             expect(tree).to.deep.equal({
-                "w:top": {
+                "hp:top": {
                     _attr: {
-                        "w:val": "single",
-                        "w:space": 22,
+                        "hp:val": "single",
+                        "hp:space": 22,
                     },
                 },
             });

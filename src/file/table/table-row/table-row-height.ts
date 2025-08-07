@@ -26,7 +26,7 @@ export class TableRowHeightAttributes extends XmlAttributeComponent<{
     readonly value: number | string;
     readonly rule: (typeof HeightRule)[keyof typeof HeightRule];
 }> {
-    protected readonly xmlKeys = { value: "w:val", rule: "w:hRule" };
+    protected readonly xmlKeys = { value: "hp:val", rule: "w:hRule" };
 }
 
 export class TableRowHeight extends XmlComponent {

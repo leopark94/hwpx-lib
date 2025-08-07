@@ -32,7 +32,7 @@ export const traverse = (node: Element): readonly IRenderedParagraphNode[] => {
         // eslint-disable-next-line functional/immutable-data
         currentNode = queue.shift()!; // This is safe because we check the length of the queue
 
-        if (currentNode.element.name === "w:p") {
+        if (currentNode.element.name === "hp:p") {
             renderedParagraphs = [...renderedParagraphs, renderParagraphNode(currentNode)];
         }
         // eslint-disable-next-line functional/immutable-data

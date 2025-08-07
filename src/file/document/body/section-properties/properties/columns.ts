@@ -25,7 +25,7 @@ export class Columns extends XmlComponent {
         super("hs:columns");
         this.root.push(
             new NextAttributeComponent<Omit<IColumnsAttributes, "children">>({
-                space: { key: "w:space", value: space === undefined ? undefined : twipsMeasureValue(space) },
+                space: { key: "hp:space", value: space === undefined ? undefined : twipsMeasureValue(space) },
                 count: { key: "w:num", value: count === undefined ? undefined : decimalNumber(count) },
                 separate: { key: "w:sep", value: separate },
                 equalWidth: { key: "w:equalWidth", value: equalWidth },

@@ -11,7 +11,7 @@ describe("CommentRangeStart", () => {
             const component = new CommentRangeStart(0);
             const tree = new Formatter().format(component);
             expect(tree).to.deep.equal({
-                "w:commentRangeStart": { _attr: { "w:id": 0 } },
+                "w:commentRangeStart": { _attr: { "hp:id": 0 } },
             });
         });
     });
@@ -23,7 +23,7 @@ describe("CommentRangeEnd", () => {
             const component = new CommentRangeEnd(0);
             const tree = new Formatter().format(component);
             expect(tree).to.deep.equal({
-                "w:commentRangeEnd": { _attr: { "w:id": 0 } },
+                "w:commentRangeEnd": { _attr: { "hp:id": 0 } },
             });
         });
     });
@@ -35,7 +35,7 @@ describe("CommentReference", () => {
             const component = new CommentReference(0);
             const tree = new Formatter().format(component);
             expect(tree).to.deep.equal({
-                "w:commentReference": { _attr: { "w:id": 0 } },
+                "w:commentReference": { _attr: { "hp:id": 0 } },
             });
         });
     });
@@ -63,13 +63,13 @@ describe("Comment", () => {
             const tree = new Formatter().format(component);
             expect(tree).to.deep.equal({
                 "w:comment": [
-                    { _attr: { "w:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
+                    { _attr: { "hp:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",
@@ -94,13 +94,13 @@ describe("Comment", () => {
             const tree = new Formatter().format(component);
             expect(tree).to.deep.equal({
                 "w:comment": [
-                    { _attr: { "w:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
+                    { _attr: { "hp:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
                     {
-                        "w:p": [
+                        "hp:p": [
                             {
-                                "w:r": [
+                                "hp:run": [
                                     {
-                                        "w:t": [
+                                        "hp:t": [
                                             {
                                                 _attr: {
                                                     "xml:space": "preserve",
@@ -177,14 +177,14 @@ describe("Comments", () => {
                     },
                     {
                         "w:comment": [
-                            { _attr: { "w:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
-                            { "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-comment"] }] }] },
+                            { _attr: { "hp:id": 0, "w:date": "1999-01-01T00:00:00.000Z" } },
+                            { "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-comment"] }] }] },
                         ],
                     },
                     {
                         "w:comment": [
-                            { _attr: { "w:id": 1, "w:date": "1999-01-01T00:00:00.000Z" } },
-                            { "w:p": [{ "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-comment-2"] }] }] },
+                            { _attr: { "hp:id": 1, "w:date": "1999-01-01T00:00:00.000Z" } },
+                            { "hp:p": [{ "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-comment-2"] }] }] },
                         ],
                     },
                 ],

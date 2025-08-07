@@ -14,19 +14,19 @@ export class Border extends IgnoreIfEmptyXmlComponent {
         super("hp:border");
 
         if (options.top) {
-            this.root.push(new BorderElement("w:top", options.top));
+            this.root.push(new BorderElement("hp:top", options.top));
         }
 
         if (options.bottom) {
-            this.root.push(new BorderElement("w:bottom", options.bottom));
+            this.root.push(new BorderElement("hp:bottom", options.bottom));
         }
 
         if (options.left) {
-            this.root.push(new BorderElement("w:left", options.left));
+            this.root.push(new BorderElement("hp:left", options.left));
         }
 
         if (options.right) {
-            this.root.push(new BorderElement("w:right", options.right));
+            this.root.push(new BorderElement("hp:right", options.right));
         }
     }
 }
@@ -34,7 +34,7 @@ export class Border extends IgnoreIfEmptyXmlComponent {
 export class ThematicBreak extends XmlComponent {
     public constructor() {
         super("hp:border");
-        const bottom = new BorderElement("w:bottom", {
+        const bottom = new BorderElement("hp:bottom", {
             color: "auto",
             space: 1,
             style: BorderStyle.SINGLE,

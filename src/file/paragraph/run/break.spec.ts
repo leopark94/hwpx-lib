@@ -15,7 +15,7 @@ describe("Break", () => {
         it("should create a Break with correct root key", () => {
             const tree = new Formatter().format(currentBreak);
             expect(tree).to.deep.equal({
-                "w:br": {},
+                "hp:br": {},
             });
         });
     });

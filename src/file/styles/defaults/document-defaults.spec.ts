@@ -12,24 +12,24 @@ describe("DocumentDefaults", () => {
         });
         const tree = new Formatter().format(defaults);
         expect(tree).to.deep.equal({
-            "w:docDefaults": [
+            "hh:docDefaults": [
                 {
-                    "w:rPrDefault": [
+                    "hh:rPrDefault": [
                         {
-                            "w:rPr": [
+                            "hp:charPr": [
                                 {
-                                    "w:color": { _attr: { "w:val": "808080" } },
+                                    "hp:color": { _attr: { "hp:val": "808080" } },
                                 },
                             ],
                         },
                     ],
                 },
                 {
-                    "w:pPrDefault": [
+                    "hh:pPrDefault": [
                         {
-                            "w:pPr": [
+                            "hp:paraPr": [
                                 {
-                                    "w:spacing": {
+                                    "hp:lineSpacing": {
                                         _attr: {
                                             "w:line": 240,
                                         },

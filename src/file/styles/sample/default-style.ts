@@ -56,7 +56,7 @@ export const DefaultStyle = (): Record<string, any> => {
                                         "hp:height": [
                                             {
                                                 _attr: {
-                                                    "w:val": "22",
+                                                    "hp:val": "22",
                                                 },
                                             },
                                         ],
@@ -65,7 +65,7 @@ export const DefaultStyle = (): Record<string, any> => {
                                         "w:szCs": [
                                             {
                                                 _attr: {
-                                                    "w:val": "22",
+                                                    "hp:val": "22",
                                                 },
                                             },
                                         ],
@@ -74,8 +74,8 @@ export const DefaultStyle = (): Record<string, any> => {
                                         "hp:language": [
                                             {
                                                 _attr: {
-                                                    "w:val": "en-GB",
-                                                    "w:eastAsia": "en-US",
+                                                    "hp:val": "en-GB",
+                                                    "hp:eastAsia": "en-US",
                                                     "hs:bidi": "ar-SA",
                                                 },
                                             },

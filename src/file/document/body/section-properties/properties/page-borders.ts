@@ -92,16 +92,16 @@ export class PageBorders extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.pageBorderTop) {
-            this.root.push(new BorderElement("w:top", options.pageBorderTop));
+            this.root.push(new BorderElement("hp:top", options.pageBorderTop));
         }
         if (options.pageBorderLeft) {
-            this.root.push(new BorderElement("w:left", options.pageBorderLeft));
+            this.root.push(new BorderElement("hp:left", options.pageBorderLeft));
         }
         if (options.pageBorderBottom) {
-            this.root.push(new BorderElement("w:bottom", options.pageBorderBottom));
+            this.root.push(new BorderElement("hp:bottom", options.pageBorderBottom));
         }
         if (options.pageBorderRight) {
-            this.root.push(new BorderElement("w:right", options.pageBorderRight));
+            this.root.push(new BorderElement("hp:right", options.pageBorderRight));
         }
     }
 }

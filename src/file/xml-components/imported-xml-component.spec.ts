@@ -23,22 +23,22 @@ const xmlString = `
 const convertedXmlElement = {
     root: [
         {
-            rootKey: "w:p",
+            rootKey: "hp:p",
             root: [
                 { rootKey: "_attr", root: { "w:one": "value 1", "w:two": "value 2" } },
-                { rootKey: "w:rPr", root: [{ rootKey: "w:noProof", root: ["some value"] }] },
+                { rootKey: "hp:charPr", root: [{ rootKey: "w:noProof", root: ["some value"] }] },
                 {
-                    rootKey: "w:r",
+                    rootKey: "hp:run",
                     root: [
                         { rootKey: "_attr", root: { active: "true" } },
-                        { rootKey: "w:t", root: ["Text 1"] },
+                        { rootKey: "hp:t", root: ["Text 1"] },
                     ],
                 },
                 {
-                    rootKey: "w:r",
+                    rootKey: "hp:run",
                     root: [
                         { rootKey: "_attr", root: { active: "true" } },
-                        { rootKey: "w:t", root: ["Text 2"] },
+                        { rootKey: "hp:t", root: ["Text 2"] },
                     ],
                 },
             ],

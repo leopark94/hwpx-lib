@@ -5,7 +5,7 @@ import { renderParagraphNode } from "./run-renderer";
 describe("run-renderer", () => {
     describe("renderParagraphNode", () => {
         it("should return a rendered paragraph node if theres no elements", () => {
-            const output = renderParagraphNode({ element: { name: "w:p" }, index: 0, parent: undefined });
+            const output = renderParagraphNode({ element: { name: "hp:p" }, index: 0, parent: undefined });
             expect(output).to.deep.equal({
                 index: -1,
                 pathToParagraph: [],
@@ -17,13 +17,13 @@ describe("run-renderer", () => {
         it("should return a rendered paragraph node if there are elements", () => {
             const output = renderParagraphNode({
                 element: {
-                    name: "w:p",
+                    name: "hp:p",
                     elements: [
                         {
-                            name: "w:r",
+                            name: "hp:run",
                             elements: [
                                 {
-                                    name: "w:t",
+                                    name: "hp:t",
                                     elements: [
                                         {
                                             type: "text",
@@ -62,16 +62,16 @@ describe("run-renderer", () => {
         });
 
         it("should throw an error if the element is not a paragraph", () => {
-            expect(() => renderParagraphNode({ element: { name: "w:r" }, index: 0, parent: undefined })).to.throw();
+            expect(() => renderParagraphNode({ element: { name: "hp:run" }, index: 0, parent: undefined })).to.throw();
         });
 
         it("should return blank defaults if run is empty", () => {
             const output = renderParagraphNode({
                 element: {
-                    name: "w:p",
+                    name: "hp:p",
                     elements: [
                         {
-                            name: "w:r",
+                            name: "hp:run",
                         },
                     ],
                 },

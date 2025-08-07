@@ -16,7 +16,7 @@ describe("Document", () => {
             const tree = new Formatter().format(document);
 
             expect(tree).to.deep.equal({
-                "w:document": [
+                "hml:document": [
                     {
                         _attr: {
                             "xmlns:wpc": "http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas",
@@ -59,7 +59,7 @@ describe("Document", () => {
                             _attr: {},
                         },
                     },
-                    { "w:body": {} },
+                    { "hs:sec": {} },
                 ],
             });
         });

@@ -11,7 +11,7 @@ describe("GridCol", () => {
             const grid = new GridCol(1234);
             const tree = new Formatter().format(grid);
             expect(tree).to.deep.equal({
-                "w:gridCol": { _attr: { "w:w": 1234 } },
+                "w:gridCol": { _attr: { "hp:w": 1234 } },
             });
         });
 
@@ -30,9 +30,9 @@ describe("TableGrid", () => {
             const tree = new Formatter().format(grid);
             expect(tree).to.deep.equal({
                 "w:tblGrid": [
-                    { "w:gridCol": { _attr: { "w:w": 1234 } } },
-                    { "w:gridCol": { _attr: { "w:w": 321 } } },
-                    { "w:gridCol": { _attr: { "w:w": 123 } } },
+                    { "w:gridCol": { _attr: { "hp:w": 1234 } } },
+                    { "w:gridCol": { _attr: { "hp:w": 321 } } },
+                    { "w:gridCol": { _attr: { "hp:w": 123 } } },
                 ],
             });
         });

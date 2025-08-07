@@ -17,7 +17,7 @@ describe("VmlTextbox", () => {
         );
 
         expect(tree).toStrictEqual({
-            "w:p": [
+            "hp:p": [
                 {
                     "w:pict": [
                         {
@@ -29,8 +29,8 @@ describe("VmlTextbox", () => {
                                         {
                                             "w:txbxContent": [
                                                 {
-                                                    "w:p": [
-                                                        { "w:r": [{ "w:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] },
+                                                    "hp:p": [
+                                                        { "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] },
                                                     ],
                                                 },
                                             ],

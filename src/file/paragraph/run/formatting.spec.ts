@@ -11,9 +11,9 @@ describe("CharacterSpacing", () => {
 
             const tree = new Formatter().format(element);
             expect(tree).to.deep.equal({
-                "w:spacing": {
+                "hp:lineSpacing": {
                     _attr: {
-                        "w:val": 32,
+                        "hp:val": 32,
                     },
                 },
             });
@@ -28,9 +28,9 @@ describe("Color", () => {
 
             const tree = new Formatter().format(element);
             expect(tree).to.deep.equal({
-                "w:color": {
+                "hp:color": {
                     _attr: {
-                        "w:val": "FFFFFF",
+                        "hp:val": "FFFFFF",
                     },
                 },
             });

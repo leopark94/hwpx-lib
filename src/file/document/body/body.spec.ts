@@ -26,30 +26,30 @@ describe("Body", () => {
             const tree = new Formatter().format(body);
 
             expect(tree).to.deep.equal({
-                "w:body": [
+                "hs:sec": [
                     {
-                        "w:sectPr": [
-                            { "w:pgSz": { _attr: { "w:w": 10000, "w:h": 10000, "w:orient": "portrait" } } },
+                        "hs:sectPr": [
+                            { "hs:pageSize": { _attr: { "hp:w": 10000, "hp:h": 10000, "w:orient": "portrait" } } },
                             {
-                                "w:pgMar": {
+                                "hs:pageMargin": {
                                     _attr: {
-                                        "w:top": sectionMarginDefaults.TOP,
-                                        "w:right": sectionMarginDefaults.RIGHT,
-                                        "w:bottom": sectionMarginDefaults.BOTTOM,
-                                        "w:left": sectionMarginDefaults.LEFT,
-                                        "w:header": sectionMarginDefaults.HEADER,
-                                        "w:footer": sectionMarginDefaults.FOOTER,
-                                        "w:gutter": sectionMarginDefaults.GUTTER,
+                                        "hp:top": sectionMarginDefaults.TOP,
+                                        "hp:right": sectionMarginDefaults.RIGHT,
+                                        "hp:bottom": sectionMarginDefaults.BOTTOM,
+                                        "hp:left": sectionMarginDefaults.LEFT,
+                                        "hp:header": sectionMarginDefaults.HEADER,
+                                        "hp:footer": sectionMarginDefaults.FOOTER,
+                                        "hp:gutter": sectionMarginDefaults.GUTTER,
                                     },
                                 },
                             },
                             {
-                                "w:pgNumType": {
+                                "hs:pageNumbers": {
                                     _attr: {},
                                 },
                             },
-                            // { "w:cols": { _attr: { "w:space": 708, "w:sep": false, "w:num": 1 } } },
-                            { "w:docGrid": { _attr: { "w:linePitch": 360 } } },
+                            // { "w:cols": { _attr: { "hp:space": 708, "w:sep": false, "w:num": 1 } } },
+                            { "hs:docGrid": { _attr: { "hp:linePitch": 360 } } },
                         ],
                     },
                 ],

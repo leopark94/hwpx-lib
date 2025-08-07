@@ -11,9 +11,9 @@ describe("Type", () => {
         const tree = new Formatter().format(sectionType);
 
         expect(tree).to.deep.equal({
-            "w:type": {
+            "hp:type": {
                 _attr: {
-                    "w:val": "evenPage",
+                    "hp:val": "evenPage",
                 },
             },
         });
@@ -25,9 +25,9 @@ describe("Type", () => {
         const tree = new Formatter().format(sectionType);
 
         expect(tree).to.deep.equal({
-            "w:type": {
+            "hp:type": {
                 _attr: {
-                    "w:val": "continuous",
+                    "hp:val": "continuous",
                 },
             },
         });

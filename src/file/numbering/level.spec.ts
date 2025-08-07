@@ -35,7 +35,7 @@ describe("Level", () => {
                     {
                         "w:start": {
                             _attr: {
-                                "w:val": 1,
+                                "hp:val": 1,
                             },
                         },
                     },
@@ -45,7 +45,7 @@ describe("Level", () => {
                     {
                         "w:lvlJc": {
                             _attr: {
-                                "w:val": "start",
+                                "hp:val": "start",
                             },
                         },
                     },

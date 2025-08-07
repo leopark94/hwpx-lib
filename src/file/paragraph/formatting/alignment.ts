@@ -52,7 +52,7 @@ export const AlignmentType = {
 export class AlignmentAttributes extends XmlAttributeComponent<{
     readonly val: (typeof AlignmentType)[keyof typeof AlignmentType];
 }> {
-    protected readonly xmlKeys = { val: "w:val" };
+    protected readonly xmlKeys = { val: "hp:val" };
 }
 
 export class Alignment extends XmlComponent {

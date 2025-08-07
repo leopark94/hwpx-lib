@@ -10,7 +10,7 @@ describe("PageReference", () => {
             const pageref = new PageReference("some_bookmark");
             const tree = new Formatter().format(pageref);
             expect(tree).to.be.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:fldChar": {
                             _attr: {
@@ -20,7 +20,7 @@ describe("PageReference", () => {
                         },
                     },
                     {
-                        "w:instrText": [
+                        "hp:instrText": [
                             {
                                 _attr: {
                                     "xml:space": "preserve",
@@ -44,7 +44,7 @@ describe("PageReference", () => {
             const pageReference = new PageReference("some_bookmark", { hyperlink: true, useRelativePosition: true });
             const tree = new Formatter().format(pageReference);
             expect(tree).to.be.deep.equal({
-                "w:r": [
+                "hp:run": [
                     {
                         "w:fldChar": {
                             _attr: {
@@ -54,7 +54,7 @@ describe("PageReference", () => {
                         },
                     },
                     {
-                        "w:instrText": [
+                        "hp:instrText": [
                             {
                                 _attr: {
                                     "xml:space": "preserve",

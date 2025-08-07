@@ -111,15 +111,15 @@ export const createFrameProperties = (options: IFrameOptions): XmlComponent =>
                 value: options.dropCap,
             },
             width: {
-                key: "w:w",
+                key: "hp:w",
                 value: options.width,
             },
             height: {
-                key: "w:h",
+                key: "hp:h",
                 value: options.height,
             },
             x: {
-                key: "w:x",
+                key: "hp:x",
                 value: (options as IXYFrameOptions).position ? (options as IXYFrameOptions).position.x : undefined,
             },
             y: {

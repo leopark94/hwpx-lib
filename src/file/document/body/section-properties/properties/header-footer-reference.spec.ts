@@ -16,7 +16,7 @@ describe("HeaderFooterReference", () => {
             "w:footerReference": {
                 _attr: {
                     "r:id": "rId1",
-                    "w:type": "default",
+                    "hp:type": "default",
                 },
             },
         });
@@ -33,7 +33,7 @@ describe("HeaderFooterReference", () => {
             "w:headerReference": {
                 _attr: {
                     "r:id": "rId1",
-                    "w:type": "default",
+                    "hp:type": "default",
                 },
             },
         });
@@ -49,7 +49,7 @@ describe("HeaderFooterReference", () => {
             "w:footerReference": {
                 _attr: {
                     "r:id": "rId1",
-                    "w:type": "default",
+                    "hp:type": "default",
                 },
             },
         });

@@ -15,55 +15,55 @@ export const MOCK_JSON = {
             elements: [
                 {
                     type: "element",
-                    name: "w:p",
-                    attributes: { "w14:paraId": "3BE1A671", "w14:textId": "74E856C4", "w:rsidR": "000D38A7", "w:rsidRDefault": "000D38A7" },
+                    name: "hp:p",
+                    attributes: { "w14:paraId": "3BE1A671", "w14:textId": "74E856C4", "hp:rsidR": "000D38A7", "w:rsidRDefault": "000D38A7" },
                     elements: [
                         {
                             type: "element",
-                            name: "w:pPr",
-                            elements: [{ type: "element", name: "w:pStyle", attributes: { "w:val": "Header" } }],
+                            name: "hp:paraPr",
+                            elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Header" } }],
                         },
                         {
                             type: "element",
-                            name: "w:r",
-                            elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "This is a {{head" }] }],
+                            name: "hp:run",
+                            elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "This is a {{head" }] }],
                         },
                         {
                             type: "element",
-                            name: "w:r",
-                            attributes: { "w:rsidR": "004A3A99" },
-                            elements: [{ type: "element", name: "w:t", elements: [{ type: "text", text: "er" }] }],
+                            name: "hp:run",
+                            attributes: { "hp:rsidR": "004A3A99" },
+                            elements: [{ type: "element", name: "hp:t", elements: [{ type: "text", text: "er" }] }],
                         },
                         {
                             type: "element",
-                            name: "w:r",
+                            name: "hp:run",
                             elements: [
-                                { type: "element", name: "w:t", elements: [{ type: "text", text: "_adjective}} don’t you think?" }] },
+                                { type: "element", name: "hp:t", elements: [{ type: "text", text: "_adjective}} don’t you think?" }] },
                             ],
                         },
                     ],
                 },
                 {
                     type: "element",
-                    name: "w:p",
+                    name: "hp:p",
                     elements: [
                         {
                             type: "element",
-                            name: "w:r",
+                            name: "hp:run",
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:rPr",
-                                    elements: [{ type: "element", name: "w:b", attributes: { "w:val": "1" } }],
+                                    name: "hp:charPr",
+                                    elements: [{ type: "element", name: "hp:bold", attributes: { "hp:val": "1" } }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:t",
+                                    name: "hp:t",
                                     elements: [{ type: "text", text: "What a {{bold}} text!" }],
                                 },
                                 {
                                     type: "element",
-                                    name: "w:br",
+                                    name: "hp:br",
                                 },
                             ],
                         },
@@ -134,52 +134,52 @@ describe("replacer", () => {
             expect(element.elements![0].elements![1].elements).toMatchObject([
                 {
                     type: "element",
-                    name: "w:r",
+                    name: "hp:run",
                     elements: [
                         {
                             type: "element",
-                            name: "w:rPr",
-                            elements: [{ type: "element", name: "w:b", attributes: { "w:val": "1" } }],
+                            name: "hp:charPr",
+                            elements: [{ type: "element", name: "hp:bold", attributes: { "hp:val": "1" } }],
                         },
                         {
                             type: "element",
-                            name: "w:t",
+                            name: "hp:t",
                             elements: [{ type: "text", text: "What a " }],
                         },
                     ],
                 },
                 {
                     type: "element",
-                    name: "w:r",
+                    name: "hp:run",
                     elements: [
                         {
                             type: "element",
-                            name: "w:rPr",
-                            elements: [{ type: "element", name: "w:b", attributes: { "w:val": "1" } }],
+                            name: "hp:charPr",
+                            elements: [{ type: "element", name: "hp:bold", attributes: { "hp:val": "1" } }],
                         },
                         {
                             type: "element",
-                            name: "w:t",
+                            name: "hp:t",
                             elements: [{ type: "text", text: "sweet" }],
                         },
                     ],
                 },
                 {
                     type: "element",
-                    name: "w:r",
+                    name: "hp:run",
                     elements: [
                         {
                             type: "element",
-                            name: "w:rPr",
-                            elements: [{ type: "element", name: "w:b", attributes: { "w:val": "1" } }],
+                            name: "hp:charPr",
+                            elements: [{ type: "element", name: "hp:bold", attributes: { "hp:val": "1" } }],
                         },
                         {
                             type: "element",
-                            name: "w:t",
+                            name: "hp:t",
                             elements: [{ type: "text", text: " text!" }],
                         },
                         {
-                            name: "w:br",
+                            name: "hp:br",
                             type: "element",
                         },
                     ],
@@ -220,43 +220,43 @@ describe("replacer", () => {
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:p",
+                                    name: "hp:p",
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -265,7 +265,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "{{" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -274,39 +274,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n          " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -315,7 +315,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "s" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -324,39 +324,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n  " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n    " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -365,7 +365,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n      " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "chool_" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -374,39 +374,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -415,7 +415,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "n" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -424,12 +424,12 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "{{" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -438,39 +438,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -479,7 +479,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "a" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -488,39 +488,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -529,7 +529,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "ddr" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -538,39 +538,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -579,7 +579,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "ess" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
@@ -588,39 +588,39 @@ describe("replacer", () => {
                                         { type: "text", text: "\n                    " },
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n      " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:kern",
-                                                            attributes: { "w:val": "0" },
+                                                            name: "hp:kern",
+                                                            attributes: { "hp:val": "0" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:sz",
-                                                            attributes: { "w:val": "20" },
+                                                            name: "hp:sz",
+                                                            attributes: { "hp:val": "20" },
                                                         },
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:lang",
+                                                            name: "hp:language",
                                                             attributes: {
-                                                                "w:val": "en-US",
-                                                                "w:eastAsia": "en-US",
-                                                                "w:bidi": "ar-SA",
+                                                                "hp:val": "en-US",
+                                                                "hp:eastAsia": "en-US",
+                                                                "hp:bidi": "ar-SA",
                                                             },
                                                         },
                                                         { type: "text", text: "\n                        " },
@@ -629,7 +629,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "}}" }],
                                                 },
                                             ],
@@ -670,22 +670,22 @@ describe("replacer", () => {
                             elements: [
                                 {
                                     type: "element",
-                                    name: "w:p",
+                                    name: "hp:p",
                                     elements: [
                                         {
                                             type: "element",
-                                            name: "w:r",
+                                            name: "hp:run",
                                             elements: [
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:rPr",
+                                                    name: "hp:charPr",
                                                     elements: [
                                                         { type: "text", text: "\n                            " },
                                                         {
                                                             type: "element",
-                                                            name: "w:rFonts",
-                                                            attributes: { "w:eastAsia": "Times New Roman" },
+                                                            name: "hp:rFonts",
+                                                            attributes: { "hp:eastAsia": "Times New Roman" },
                                                         },
                                                         { type: "text", text: "\n                        " },
                                                     ],
@@ -693,7 +693,7 @@ describe("replacer", () => {
                                                 { type: "text", text: "\n                        " },
                                                 {
                                                     type: "element",
-                                                    name: "w:t",
+                                                    name: "hp:t",
                                                     elements: [{ type: "text", text: "{{empty}}" }],
                                                 },
                                                 { type: "text", text: "\n                    " },
