@@ -32,8 +32,8 @@ describe("File", () => {
 
             const tree = new Formatter().format(doc.Document.View.Body);
 
-            expect(tree["hs:sec"][0]["hs:sectPr"][0]["w:headerReference"]._attr["hp:type"]).to.equal("default");
-            expect(tree["hs:sec"][0]["hs:sectPr"][1]["w:footerReference"]._attr["hp:type"]).to.equal("default");
+            expect(tree["hs:sec"][0]["hs:sectPr"][0]["hs:headerReference"]._attr["hp:type"]).to.equal("default");
+            expect(tree["hs:sec"][0]["hs:sectPr"][1]["hs:footerReference"]._attr["hp:type"]).to.equal("default");
         });
 
         it("should create with first headers and footers", () => {
@@ -52,8 +52,8 @@ describe("File", () => {
             });
 
             const tree = new Formatter().format(doc.Document.View.Body);
-            expect(tree["hs:sec"][0]["hs:sectPr"][0]["w:headerReference"]._attr["hp:type"]).to.equal("first");
-            expect(tree["hs:sec"][0]["hs:sectPr"][1]["w:footerReference"]._attr["hp:type"]).to.equal("first");
+            expect(tree["hs:sec"][0]["hs:sectPr"][0]["hs:headerReference"]._attr["hp:type"]).to.equal("first");
+            expect(tree["hs:sec"][0]["hs:sectPr"][1]["hs:footerReference"]._attr["hp:type"]).to.equal("first");
         });
 
         it("should create with correct headers", () => {
@@ -77,13 +77,13 @@ describe("File", () => {
 
             const tree = new Formatter().format(doc.Document.View.Body);
 
-            expect(tree["hs:sec"][0]["hs:sectPr"][0]["w:headerReference"]._attr["hp:type"]).to.equal("default");
-            expect(tree["hs:sec"][0]["hs:sectPr"][1]["w:headerReference"]._attr["hp:type"]).to.equal("first");
-            expect(tree["hs:sec"][0]["hs:sectPr"][2]["w:headerReference"]._attr["hp:type"]).to.equal("even");
+            expect(tree["hs:sec"][0]["hs:sectPr"][0]["hs:headerReference"]._attr["hp:type"]).to.equal("default");
+            expect(tree["hs:sec"][0]["hs:sectPr"][1]["hs:headerReference"]._attr["hp:type"]).to.equal("first");
+            expect(tree["hs:sec"][0]["hs:sectPr"][2]["hs:headerReference"]._attr["hp:type"]).to.equal("even");
 
-            expect(tree["hs:sec"][0]["hs:sectPr"][3]["w:footerReference"]._attr["hp:type"]).to.equal("default");
-            expect(tree["hs:sec"][0]["hs:sectPr"][4]["w:footerReference"]._attr["hp:type"]).to.equal("first");
-            expect(tree["hs:sec"][0]["hs:sectPr"][5]["w:footerReference"]._attr["hp:type"]).to.equal("even");
+            expect(tree["hs:sec"][0]["hs:sectPr"][3]["hs:footerReference"]._attr["hp:type"]).to.equal("default");
+            expect(tree["hs:sec"][0]["hs:sectPr"][4]["hs:footerReference"]._attr["hp:type"]).to.equal("first");
+            expect(tree["hs:sec"][0]["hs:sectPr"][5]["hs:footerReference"]._attr["hp:type"]).to.equal("even");
         });
 
         it("should add child", () => {

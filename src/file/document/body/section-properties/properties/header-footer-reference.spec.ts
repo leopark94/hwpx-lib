@@ -13,7 +13,7 @@ describe("HeaderFooterReference", () => {
 
         const tree = new Formatter().format(footer);
         expect(tree).to.deep.equal({
-            "w:footerReference": {
+            "hs:footerReference": {
                 _attr: {
                     "r:id": "rId1",
                     "hp:type": "default",
@@ -30,7 +30,7 @@ describe("HeaderFooterReference", () => {
 
         const tree = new Formatter().format(header);
         expect(tree).to.deep.equal({
-            "w:headerReference": {
+            "hs:headerReference": {
                 _attr: {
                     "r:id": "rId1",
                     "hp:type": "default",
@@ -46,7 +46,7 @@ describe("HeaderFooterReference", () => {
 
         const tree = new Formatter().format(footer);
         expect(tree).to.deep.equal({
-            "w:footerReference": {
+            "hs:footerReference": {
                 _attr: {
                     "r:id": "rId1",
                     "hp:type": "default",

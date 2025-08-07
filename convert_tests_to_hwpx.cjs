@@ -182,7 +182,33 @@ const DOCX_TO_HWPX_MAPPINGS = {
     '"w:rFonts"': '"hp:rFonts"',
     '"w:kern"': '"hp:kern"',
     '"w:eastAsia"': '"hp:eastAsia"',
-    '"w:bidi"': '"hp:bidi"'
+    '"w:bidi"': '"hp:bidi"',
+    
+    // Header and Footer references
+    '"w:headerReference"': '"hs:headerReference"',
+    '"w:footerReference"': '"hs:footerReference"',
+    
+    // Additional section properties
+    '"w:sectPrChange"': '"hs:sectPrChange"',
+    '"w:headerFtr"': '"hs:headerFtr"',
+    
+    // Style-related elements
+    '"w:styleId"': '"hh:styleId"',
+    '"w:basedOn"': '"hh:basedOn"',
+    '"w:link"': '"hh:link"',
+    '"w:next"': '"hh:next"',
+    '"w:aliases"': '"hh:aliases"',
+    '"w:autoRedefine"': '"hh:autoRedefine"',
+    '"w:hidden"': '"hh:hidden"',
+    '"w:semiHidden"': '"hh:semiHidden"',
+    '"w:unhideWhenUsed"': '"hh:unhideWhenUsed"',
+    '"w:qFormat"': '"hh:qFormat"',
+    '"w:priority"': '"hh:priority"',
+    
+    // More elements found in failing tests
+    '"w:uri"': '"ha:uri"',
+    '"w:overrideTableStyleFontSizeAndJustification"': '"ha:overrideTableStyleFontSizeAndJustification"',
+    '"w:compatSetting"': '"ha:compatSetting"'
 };
 
 // Additional regex patterns for more complex replacements

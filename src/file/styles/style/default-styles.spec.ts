@@ -14,11 +14,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading1" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading1" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 1" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -28,11 +28,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Title" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Title" } },
                 { "hh:name": { _attr: { "hp:val": "Title" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -42,11 +42,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading1" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading1" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 1" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -56,11 +56,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading2" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading2" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 2" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -70,11 +70,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading3" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading3" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 3" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -84,11 +84,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading4" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading4" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 4" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -98,11 +98,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading5" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading5" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 5" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -112,11 +112,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Heading6" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Heading6" } },
                 { "hh:name": { _attr: { "hp:val": "Heading 6" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -126,11 +126,11 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "Strong" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "Strong" } },
                 { "hh:name": { _attr: { "hp:val": "Strong" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:next": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:next": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -140,10 +140,10 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "ListParagraph" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "ListParagraph" } },
                 { "hh:name": { _attr: { "hp:val": "List Paragraph" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:qFormat": EMPTY_OBJECT },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:qFormat": EMPTY_OBJECT },
             ],
         });
     });
@@ -153,10 +153,10 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "paragraph", "w:styleId": "FootnoteText" } },
+                { _attr: { "hp:type": "paragraph", "hh:styleId": "FootnoteText" } },
                 { "hh:name": { _attr: { "hp:val": "footnote text" } } },
-                { "w:basedOn": { _attr: { "hp:val": "Normal" } } },
-                { "w:link": { _attr: { "hp:val": "FootnoteTextChar" } } },
+                { "hh:basedOn": { _attr: { "hp:val": "Normal" } } },
+                { "hh:link": { _attr: { "hp:val": "FootnoteTextChar" } } },
                 {
                     "hh:uiPriority": {
                         _attr: {
@@ -165,10 +165,10 @@ describe("Default Styles", () => {
                     },
                 },
                 {
-                    "w:semiHidden": EMPTY_OBJECT,
+                    "hh:semiHidden": EMPTY_OBJECT,
                 },
                 {
-                    "w:unhideWhenUsed": EMPTY_OBJECT,
+                    "hh:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
                     "hp:paraPr": [
@@ -210,9 +210,9 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "character", "w:styleId": "FootnoteReference" } },
+                { _attr: { "hp:type": "character", "hh:styleId": "FootnoteReference" } },
                 { "hh:name": { _attr: { "hp:val": "footnote reference" } } },
-                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
+                { "hh:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
                     "hh:uiPriority": {
                         _attr: {
@@ -221,10 +221,10 @@ describe("Default Styles", () => {
                     },
                 },
                 {
-                    "w:semiHidden": EMPTY_OBJECT,
+                    "hh:semiHidden": EMPTY_OBJECT,
                 },
                 {
-                    "w:unhideWhenUsed": EMPTY_OBJECT,
+                    "hh:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
                     "hp:charPr": [
@@ -246,10 +246,10 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "character", "w:styleId": "FootnoteTextChar" } },
+                { _attr: { "hp:type": "character", "hh:styleId": "FootnoteTextChar" } },
                 { "hh:name": { _attr: { "hp:val": "Footnote Text Char" } } },
-                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
-                { "w:link": { _attr: { "hp:val": "FootnoteText" } } },
+                { "hh:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
+                { "hh:link": { _attr: { "hp:val": "FootnoteText" } } },
                 {
                     "hh:uiPriority": {
                         _attr: {
@@ -258,10 +258,10 @@ describe("Default Styles", () => {
                     },
                 },
                 {
-                    "w:semiHidden": EMPTY_OBJECT,
+                    "hh:semiHidden": EMPTY_OBJECT,
                 },
                 {
-                    "w:unhideWhenUsed": EMPTY_OBJECT,
+                    "hh:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
                     "hp:charPr": [
@@ -290,9 +290,9 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "character", "w:styleId": "Hyperlink" } },
+                { _attr: { "hp:type": "character", "hh:styleId": "Hyperlink" } },
                 { "hh:name": { _attr: { "hp:val": "Hyperlink" } } },
-                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
+                { "hh:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
                     "hh:uiPriority": {
                         _attr: {
@@ -301,7 +301,7 @@ describe("Default Styles", () => {
                     },
                 },
                 {
-                    "w:unhideWhenUsed": EMPTY_OBJECT,
+                    "hh:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
                     "hp:charPr": [
@@ -331,9 +331,9 @@ describe("Default Styles", () => {
         const tree = new Formatter().format(style);
         expect(tree).to.deep.equal({
             "hh:style": [
-                { _attr: { "hp:type": "character", "w:styleId": "Hyperlink" } },
+                { _attr: { "hp:type": "character", "hh:styleId": "Hyperlink" } },
                 { "hh:name": { _attr: { "hp:val": "Hyperlink" } } },
-                { "w:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
+                { "hh:basedOn": { _attr: { "hp:val": "DefaultParagraphFont" } } },
                 {
                     "hh:uiPriority": {
                         _attr: {
@@ -342,7 +342,7 @@ describe("Default Styles", () => {
                     },
                 },
                 {
-                    "w:unhideWhenUsed": EMPTY_OBJECT,
+                    "hh:unhideWhenUsed": EMPTY_OBJECT,
                 },
                 {
                     "hp:charPr": [

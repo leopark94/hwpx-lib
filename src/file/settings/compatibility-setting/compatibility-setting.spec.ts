@@ -14,7 +14,7 @@ describe("CompatibilitySetting", () => {
                 "ha:compatSetting": {
                     _attr: {
                         "hh:name": "compatibilityMode",
-                        "w:uri": "http://schemas.microsoft.com/office/word",
+                        "ha:uri": "http://schemas.microsoft.com/office/word",
                         "hp:val": 15,
                     },
                 },

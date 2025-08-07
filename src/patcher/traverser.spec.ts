@@ -601,8 +601,8 @@ const MOCK_JSON = {
                             name: "hs:sectPr",
                             attributes: { "hp:rsidR": "007B52ED", "hp:rsidSect": "0072043F" },
                             elements: [
-                                { type: "element", name: "w:headerReference", attributes: { "hp:type": "default", "r:id": "rId6" } },
-                                { type: "element", name: "w:footerReference", attributes: { "hp:type": "default", "r:id": "rId7" } },
+                                { type: "element", name: "hs:headerReference", attributes: { "hp:type": "default", "r:id": "rId6" } },
+                                { type: "element", name: "hs:footerReference", attributes: { "hp:type": "default", "r:id": "rId7" } },
                                 { type: "element", name: "hs:pageSize", attributes: { "hp:w": "11900", "hp:h": "16840" } },
                                 {
                                     type: "element",

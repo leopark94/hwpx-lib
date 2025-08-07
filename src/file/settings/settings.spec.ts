@@ -41,7 +41,7 @@ describe("Settings", () => {
                 "ha:compatSetting": {
                     _attr: {
                         "hp:val": 15,
-                        "w:uri": "http://schemas.microsoft.com/office/word",
+                        "ha:uri": "http://schemas.microsoft.com/office/word",
                         "hh:name": "compatibilityMode",
                     },
                 },
@@ -77,7 +77,7 @@ describe("Settings", () => {
                         "ha:compatSetting": {
                             _attr: {
                                 "hh:name": "compatibilityMode",
-                                "w:uri": "http://schemas.microsoft.com/office/word",
+                                "ha:uri": "http://schemas.microsoft.com/office/word",
                                 "hp:val": 15,
                             },
                         },
@@ -103,7 +103,7 @@ describe("Settings", () => {
                         "ha:compatSetting": {
                             _attr: {
                                 "hh:name": "compatibilityMode",
-                                "w:uri": "http://schemas.microsoft.com/office/word",
+                                "ha:uri": "http://schemas.microsoft.com/office/word",
                                 "hp:val": 99,
                             },
                         },
@@ -213,7 +213,7 @@ describe("Settings", () => {
                         "ha:compatSetting": {
                             _attr: {
                                 "hh:name": "compatibilityMode",
-                                "w:uri": "http://schemas.microsoft.com/office/word",
+                                "ha:uri": "http://schemas.microsoft.com/office/word",
                                 "hp:val": 99,
                             },
                         },

@@ -160,7 +160,7 @@ describe("External styles factory", () => {
                     {
                         root: {
                             "w:default": "1",
-                            "w:styleId": "Normal",
+                            "hh:styleId": "Normal",
                             "hp:type": "paragraph",
                         },
                         rootKey: "_attr",
@@ -178,7 +178,7 @@ describe("External styles factory", () => {
                     },
                     {
                         root: [],
-                        rootKey: "w:qFormat",
+                        rootKey: "hh:qFormat",
                     },
                 ],
                 rootKey: "hh:style",
@@ -188,7 +188,7 @@ describe("External styles factory", () => {
                 root: [
                     {
                         root: {
-                            "w:styleId": "Heading1",
+                            "hh:styleId": "Heading1",
                             "hp:type": "paragraph",
                         },
                         rootKey: "_attr",
@@ -213,7 +213,7 @@ describe("External styles factory", () => {
                                 rootKey: "_attr",
                             },
                         ],
-                        rootKey: "w:basedOn",
+                        rootKey: "hh:basedOn",
                     },
                     {
                         root: [

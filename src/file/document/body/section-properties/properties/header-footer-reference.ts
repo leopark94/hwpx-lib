@@ -53,7 +53,7 @@ class FooterReferenceAttributes extends XmlAttributeComponent<{
     readonly id: string;
 }> {
     protected readonly xmlKeys = {
-        type: "hs:type",
+        type: "hp:type",
         id: "r:id",
     };
 }

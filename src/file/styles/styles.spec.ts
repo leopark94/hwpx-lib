@@ -19,7 +19,7 @@ describe("Styles", () => {
             const tree = new Formatter().format(styles)["hh:styles"].filter((x: any) => !x._attr);
             expect(tree).to.deep.equal([
                 {
-                    "hh:style": { _attr: { "hp:type": "paragraph", "w:styleId": "pStyleId" } },
+                    "hh:style": { _attr: { "hp:type": "paragraph", "hh:styleId": "pStyleId" } },
                 },
             ]);
         });
@@ -37,7 +37,7 @@ describe("Styles", () => {
             expect(tree).to.deep.equal([
                 {
                     "hh:style": [
-                        { _attr: { "hp:type": "paragraph", "w:styleId": "pStyleId" } },
+                        { _attr: { "hp:type": "paragraph", "hh:styleId": "pStyleId" } },
                         { "hh:name": { _attr: { "hp:val": "Paragraph Style" } } },
                     ],
                 },
@@ -58,7 +58,7 @@ describe("Styles", () => {
             expect(tree).to.deep.equal([
                 {
                     "hh:style": [
-                        { _attr: { "hp:type": "character", "w:styleId": "pStyleId" } },
+                        { _attr: { "hp:type": "character", "hh:styleId": "pStyleId" } },
                         {
                             "hh:uiPriority": {
                                 _attr: {
@@ -67,7 +67,7 @@ describe("Styles", () => {
                             },
                         },
                         {
-                            "w:unhideWhenUsed": EMPTY_OBJECT,
+                            "hh:unhideWhenUsed": EMPTY_OBJECT,
                         },
                     ],
                 },
@@ -87,7 +87,7 @@ describe("Styles", () => {
             expect(tree).to.deep.equal([
                 {
                     "hh:style": [
-                        { _attr: { "hp:type": "character", "w:styleId": "pStyleId" } },
+                        { _attr: { "hp:type": "character", "hh:styleId": "pStyleId" } },
                         { "hh:name": { _attr: { "hp:val": "Character Style" } } },
                         {
                             "hh:uiPriority": {
@@ -97,7 +97,7 @@ describe("Styles", () => {
                             },
                         },
                         {
-                            "w:unhideWhenUsed": EMPTY_OBJECT,
+                            "hh:unhideWhenUsed": EMPTY_OBJECT,
                         },
                     ],
                 },

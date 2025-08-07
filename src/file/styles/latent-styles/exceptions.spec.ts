@@ -20,10 +20,10 @@ describe("LatentStyleException", () => {
                 "w:lsdException": {
                     _attr: {
                         "hh:name": "test-name",
-                        "w:qFormat": "test-qFormat",
-                        "w:semiHidden": "test-semiHidden",
+                        "hh:qFormat": "test-qFormat",
+                        "hh:semiHidden": "test-semiHidden",
                         "hh:uiPriority": "test-uiPriority",
-                        "w:unhideWhenUsed": "test-unhideWhenUsed",
+                        "hh:unhideWhenUsed": "test-unhideWhenUsed",
                     },
                 },
             });
