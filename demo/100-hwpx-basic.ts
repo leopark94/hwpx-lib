@@ -17,7 +17,7 @@ doc.add(
             }),
         ],
         alignment: "center",
-    })
+    }),
 );
 
 doc.add(
@@ -27,7 +27,7 @@ doc.add(
                 text: "이것은 한글 HWPX 형식으로 변환된 문서입니다.",
             }),
         ],
-    })
+    }),
 );
 
 doc.add(
@@ -54,7 +54,7 @@ doc.add(
                 ],
             }),
         ],
-    })
+    }),
 );
 
 // HWPX로 저장

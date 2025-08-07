@@ -83,8 +83,8 @@ export class Packer {
         overrides: readonly IXmlifyedFile[] = [],
     ): Stream {
         const stream = new Stream();
-        
-        this.compiler.compile(file).then(zip => {
+
+        this.compiler.compile(file).then((zip) => {
             zip.generateAsync({
                 type: "nodebuffer",
                 mimeType: "application/hwp+zip",

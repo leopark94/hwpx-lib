@@ -193,7 +193,7 @@ class LevelJc extends XmlComponent {
         if (value === AlignmentType.LEFT || value === AlignmentType.START) {
             alignValue = "LEFT" as any;
         } else if (value === AlignmentType.RIGHT || value === AlignmentType.END) {
-            alignValue = "RIGHT" as any;  
+            alignValue = "RIGHT" as any;
         } else if (value === AlignmentType.CENTER) {
             alignValue = "CENTER" as any;
         }

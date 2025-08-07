@@ -37,21 +37,7 @@ export class Document extends XmlComponent {
     public constructor(options: IDocumentOptions) {
         super("hml:document");
         // HWPX 네임스페이스 설정
-        this.root.push(
-            new DocumentAttributes(
-                [
-                    "ha",
-                    "hp",
-                    "hp10",
-                    "hs",
-                    "hc",
-                    "hh",
-                    "hm",
-                    "hml",
-                ],
-                undefined,
-            ),
-        );
+        this.root.push(new DocumentAttributes(["ha", "hp", "hp10", "hs", "hc", "hh", "hm", "hml"], undefined));
         this.body = new Body();
         if (options.background) {
             this.root.push(new DocumentBackground(options.background));

@@ -12,25 +12,25 @@ export class HwpxCompilerBase {
     protected nextCharPrId = 0;
     protected nextParaPrId = 0;
     protected nextBorderFillId = 1;
-    
+
     // 실제 빈도 기반 스타일 저장소
     protected charPrStyles = new Map();
     protected paraPrStyles = new Map();
     protected borderFillStyles = new Map();
-    
+
     // 실제 검증된 네임스페이스
     protected readonly namespaces = `xmlns:ha="http://www.hancom.co.kr/hwpml/2011/app" xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph" xmlns:hp10="http://www.hancom.co.kr/hwpml/2016/paragraph" xmlns:hs="http://www.hancom.co.kr/hwpml/2011/section" xmlns:hc="http://www.hancom.co.kr/hwpml/2011/core" xmlns:hh="http://www.hancom.co.kr/hwpml/2011/head" xmlns:hhs="http://www.hancom.co.kr/hwpml/2011/history" xmlns:hm="http://www.hancom.co.kr/hwpml/2011/master-page" xmlns:hpf="http://www.hancom.co.kr/schema/2011/hpf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf/" xmlns:ooxmlchart="http://www.hancom.co.kr/hwpml/2016/ooxmlchart" xmlns:hwpunitchar="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"`;
-    
+
     constructor() {
         this._initializeStyles();
     }
-    
+
     /**
      * 스타일 초기화 (document_element_to_hwpx_service.js 기반)
      */
     protected _initializeStyles(): void {
         // 기본 문자 스타일
-        this.charPrStyles.set('default', {
+        this.charPrStyles.set("default", {
             id: this.nextCharPrId++,
             xml: `<hh:charPr id="0" height="1000" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
 <hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
@@ -42,11 +42,11 @@ export class HwpxCompilerBase {
 <hh:strikeout shape="NONE" color="#000000"/>
 <hh:outline type="NONE"/>
 <hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
-</hh:charPr>`
+</hh:charPr>`,
         });
-        
+
         // 기본 문단 스타일
-        this.paraPrStyles.set('default', {
+        this.paraPrStyles.set("default", {
             id: this.nextParaPrId++,
             xml: `<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 <hh:align>LEFT</hh:align>
@@ -62,11 +62,11 @@ export class HwpxCompilerBase {
 <hh:margin left="0" right="0" indent="0" prev="0" next="0"/>
 <hh:lineSpacing type="PERCENT" value="160" unit=""/>
 <hh:border borderFillIDRef="0"/>
-</hh:paraPr>`
+</hh:paraPr>`,
         });
-        
+
         // 기본 테두리 스타일
-        this.borderFillStyles.set('default', {
+        this.borderFillStyles.set("default", {
             id: this.nextBorderFillId++,
             xml: `<hh:borderFill id="1">
 <hh:slash type="NONE"/>
@@ -79,11 +79,11 @@ export class HwpxCompilerBase {
 <hh:fillBrush>
 <hh:fillColorPattern type="SOLID" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
 </hh:fillBrush>
-</hh:borderFill>`
+</hh:borderFill>`,
         });
-        
+
         // 투명 테두리 (borderFillIDRef="2")
-        this.borderFillStyles.set('transparent', {
+        this.borderFillStyles.set("transparent", {
             id: this.nextBorderFillId++,
             xml: `<hh:borderFill id="2">
 <hh:slash type="NONE"/>
@@ -96,7 +96,7 @@ export class HwpxCompilerBase {
 <hh:fillBrush>
 <hh:fillColorPattern type="NONE" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
 </hh:fillBrush>
-</hh:borderFill>`
+</hh:borderFill>`,
         });
     }
 
@@ -124,7 +124,7 @@ ${this._generateTrackChangeList()}
 ${this._generateTrackChangeAuthorList()}
 ${this._generateOutlineShapeList()}
 </hh:head>`;
-        
+
         return headerXml;
     }
 
@@ -136,7 +136,7 @@ ${this._generateOutlineShapeList()}
 ${this._generateFirstParagraph()}
 ${this._compileBody(document)}
 </hs:sec>`;
-        
+
         return sectionXml;
     }
 
@@ -212,14 +212,18 @@ ${this._compileBody(document)}
     }
 
     protected _generateBorderFillList(): string {
-        const borderFills = Array.from(this.borderFillStyles.values()).map(style => style.xml).join('\n');
+        const borderFills = Array.from(this.borderFillStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
         return `<hh:borderFillList itemCnt="${this.borderFillStyles.size}">
 ${borderFills}
 </hh:borderFillList>`;
     }
 
     protected _generateCharPrList(): string {
-        const charPrs = Array.from(this.charPrStyles.values()).map(style => style.xml).join('\n');
+        const charPrs = Array.from(this.charPrStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
         return `<hh:charPrList itemCnt="${this.charPrStyles.size}">
 ${charPrs}
 </hh:charPrList>`;
@@ -238,7 +242,9 @@ ${charPrs}
     }
 
     protected _generateParaPrList(): string {
-        const paraPrs = Array.from(this.paraPrStyles.values()).map(style => style.xml).join('\n');
+        const paraPrs = Array.from(this.paraPrStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
         return `<hh:paraPrList itemCnt="${this.paraPrStyles.size}">
 ${paraPrs}
 </hh:paraPrList>`;
@@ -279,14 +285,14 @@ ${paraPrs}
 
     protected _generateFirstParagraph(): string {
         const elementId = this.nextElementId++;
-        
+
         return `<hp:p id="${elementId}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0"><hp:run charPrIDRef="0"><hp:secPr id="" textDirection="HORIZONTAL" spaceColumns="1134" tabStop="8000" tabStopVal="4000" tabStopUnit="HWPUNIT" outlineShapeIDRef="1" memoShapeIDRef="0" textVerticalWidthHead="0" masterPageCnt="0"><hp:grid lineGrid="0" charGrid="0" wonggojiFormat="0"/><hp:startNum pageStartsOn="BOTH" page="0" pic="0" tbl="0" equation="0"/><hp:visibility hideFirstHeader="0" hideFirstFooter="0" hideFirstMasterPage="0" border="SHOW_ALL" fill="SHOW_ALL" hideFirstPageNum="0" hideFirstEmptyLine="0" showLineNumber="0"/><hp:lineNumberShape restartType="0" countBy="0" distance="0" startNumber="0"/><hp:pagePr landscape="WIDELY" width="59528" height="84186" gutterType="LEFT_ONLY"><hp:margin header="4252" footer="4252" gutter="0" left="8504" right="8504" top="5668" bottom="4252"/></hp:pagePr><hp:footNotePr><hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/><hp:noteLine length="-1" type="SOLID" width="0.12 mm" color="#000000"/><hp:noteSpacing betweenNotes="283" belowLine="567" aboveLine="850"/><hp:numbering type="CONTINUOUS" newNum="1"/><hp:placement place="EACH_COLUMN" beneathText="0"/></hp:footNotePr><hp:endNotePr><hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/><hp:noteLine length="14692344" type="SOLID" width="0.12 mm" color="#000000"/><hp:noteSpacing betweenNotes="0" belowLine="567" aboveLine="850"/><hp:numbering type="CONTINUOUS" newNum="1"/><hp:placement place="END_OF_DOCUMENT" beneathText="0"/></hp:endNotePr><hp:pageBorderFill type="BOTH" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER"><hp:offset left="1417" right="1417" top="1417" bottom="1417"/></hp:pageBorderFill><hp:pageBorderFill type="EVEN" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER"><hp:offset left="1417" right="1417" top="1417" bottom="1417"/></hp:pageBorderFill><hp:pageBorderFill type="ODD" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER"><hp:offset left="1417" right="1417" top="1417" bottom="1417"/></hp:pageBorderFill></hp:secPr><hp:ctrl><hp:colPr id="" type="NEWSPAPER" layout="LEFT" colCount="1" sameSz="1" sameGap="0"/></hp:ctrl></hp:run><hp:run charPrIDRef="0"><hp:ctrl><hp:bookmark name="isPasted"/></hp:ctrl><hp:t></hp:t></hp:run><hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="42520" flags="393216"/></hp:linesegarray></hp:p>
 `;
     }
 
     protected _compileBody(documentWrapper: DocumentWrapper): string {
         let xml = "";
-        
+
         // Body의 각 요소 변환
         const document = documentWrapper.View;
         const body = document.Body;
@@ -297,44 +303,44 @@ ${paraPrs}
                 xml += this._compileTable(child);
             }
         }
-        
+
         return xml;
     }
 
     protected _compileParagraph(paragraph: Paragraph): string {
         const elementId = this.nextElementId++;
-        
+
         // 정렬에 따른 스타일 ID 결정
         let paraPrId = 0; // 기본값
         // TODO: paragraph 속성에서 정렬 확인
-        
-        let runXml = '';
-        
+
+        let runXml = "";
+
         // Paragraph의 children 처리
         // TODO: 실제 Paragraph 클래스 구조에 맞게 수정 필요
         const text = "텍스트"; // 임시
         const charPrId = 0; // 기본값
-        
+
         if (text) {
             const escapedText = this._escapeXmlText(text);
             runXml += `<hp:run charPrIDRef="${charPrId}"><hp:t>${escapedText}</hp:t></hp:run>`;
         }
-        
+
         // 빈 내용인 경우 기본 run 생성
         if (!runXml.trim()) {
             runXml = '<hp:run charPrIDRef="0"><hp:t></hp:t></hp:run>';
         }
-        
+
         // 실제 linesegarray 패턴
         const linesegArray = `<hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="42520" flags="393216"/></hp:linesegarray>`;
-        
+
         return `<hp:p id="${elementId}" paraPrIDRef="${paraPrId}" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">${runXml}${linesegArray}</hp:p>
 `;
     }
 
     protected _compileTable(table: Table): string {
         const tableId = this.nextElementId++;
-        
+
         // 기본 table 변환
         return `<hp:tbl id="${tableId}" zOrder="0" numberingType="TABLE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" pageBreak="CELL" repeatHeader="1" rowCnt="1" colCnt="1" cellSpacing="0" borderFillIDRef="2" noAdjust="0">
 <hp:sz width="47630" widthRelTo="ABSOLUTE" height="2931" heightRelTo="ABSOLUTE" protect="0"/>
@@ -412,21 +418,16 @@ ${paraPrs}
         let text = "";
         // 문서의 텍스트 추출
         text = "HWPX 변환 문서";
-        
+
         return text.substring(0, 1000);
     }
-    
+
     /**
      * XML 텍스트 이스케이프
      */
     protected _escapeXmlText(text: string): string {
-        if (!text) return '';
-        
-        return text
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&apos;');
+        if (!text) return "";
+
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
     }
 }
