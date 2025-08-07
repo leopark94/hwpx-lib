@@ -46,7 +46,7 @@ export class Paragraph extends FileChild {
     private readonly properties: ParagraphProperties;
 
     public constructor(options: string | IParagraphOptions) {
-        super("w:p");
+        super("hp:p");
 
         if (typeof options === "string") {
             this.properties = new ParagraphProperties({});

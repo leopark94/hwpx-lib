@@ -1,7 +1,7 @@
 {
-    "name": "docx",
-    "version": "9.5.1",
-    "description": "Easily generate .docx files with JS/TS with a nice declarative API. Works for Node and on the Browser.",
+    "name": "hwpx",
+    "version": "1.0.0",
+    "description": "Easily generate .hwpx files with JS/TS with a nice declarative API. Works for Node and on the Browser.",
     "type": "module",
     "main": "dist/index.umd.cjs",
     "module": "./dist/index.mjs",
@@ -43,10 +43,12 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dolanmiu/docx.git"
+        "url": "git+https://github.com/acalab-web/hwpx-lib.git"
     },
     "keywords": [
-        "docx",
+        "hwpx",
+        "hwp",
+        "hancom",
         "office",
         "word",
         "generate",

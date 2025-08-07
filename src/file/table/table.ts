@@ -52,7 +52,7 @@ export class Table extends FileChild {
         visuallyRightToLeft,
         cellSpacing,
     }: ITableOptions) {
-        super("w:tbl");
+        super("hp:tbl");
 
         this.root.push(
             new TableProperties({

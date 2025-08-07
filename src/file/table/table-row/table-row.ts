@@ -9,7 +9,7 @@ export type ITableRowOptions = {
 
 export class TableRow extends XmlComponent {
     public constructor(private readonly options: ITableRowOptions) {
-        super("w:tr");
+        super("hp:tr");
         this.root.push(new TableRowProperties(options));
 
         for (const child of options.children) {

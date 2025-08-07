@@ -11,7 +11,7 @@ export type ITableCellOptions = {
 
 export class TableCell extends XmlComponent {
     public constructor(public readonly options: ITableCellOptions) {
-        super("w:tc");
+        super("hp:tc");
 
         this.root.push(new TableCellProperties(options));
 

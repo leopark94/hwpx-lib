@@ -108,7 +108,7 @@ export class Run extends XmlComponent {
     protected readonly properties: RunProperties;
 
     public constructor(options: IRunOptions) {
-        super("w:r");
+        super("hp:run");
         this.properties = new RunProperties(options);
         this.root.push(this.properties);
 

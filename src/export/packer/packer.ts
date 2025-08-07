@@ -3,7 +3,8 @@ import { Stream } from "stream";
 import { File } from "@file/file";
 import { OutputByType, OutputType } from "@util/output-type";
 
-import { Compiler, IXmlifyedFile } from "./next-compiler";
+import { HwpxCompiler } from "./hwpx-compiler";
+import { IXmlifyedFile } from "./next-compiler";
 
 /**
  * Use blanks to prettify
@@ -32,7 +33,7 @@ export class Packer {
         const zip = this.compiler.compile(file, convertPrettifyType(prettify), overrides);
         return zip.generateAsync({
             type,
-            mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            mimeType: "application/hwp+zip",
             compression: "DEFLATE",
         });
     }
@@ -87,7 +88,7 @@ export class Packer {
 
         zip.generateAsync({
             type: "nodebuffer",
-            mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            mimeType: "application/hwp+zip",
             compression: "DEFLATE",
         }).then((z) => {
             stream.emit("data", z);
@@ -97,5 +98,5 @@ export class Packer {
         return stream;
     }
 
-    private static readonly compiler = new Compiler();
+    private static readonly compiler = new HwpxCompiler();
 }

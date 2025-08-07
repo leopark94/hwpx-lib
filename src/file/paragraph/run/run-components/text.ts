@@ -18,7 +18,7 @@ type ITextOptions = {
 
 export class Text extends XmlComponent {
     public constructor(options: string | ITextOptions) {
-        super("w:t");
+        super("hp:t");
 
         if (typeof options === "string") {
             this.root.push(new TextAttributes({ space: SpaceType.PRESERVE }));
