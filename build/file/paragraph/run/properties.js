@@ -122,7 +122,6 @@ class OffsetElement extends XmlComponent {
 }
 export class RunProperties extends IgnoreIfEmptyXmlComponent {
     constructor(options) {
-        var _a, _b;
         super("hh:charPr");
         Object.defineProperty(this, "charPrAttributes", {
             enumerable: true,
@@ -167,14 +166,8 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         if (options.bold !== undefined) {
             this.push(new OnOffElement("hh:bold", options.bold));
         }
-        if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
-            this.push(new OnOffElement("w:bCs", (_a = options.boldComplexScript) !== null && _a !== void 0 ? _a : options.bold));
-        }
         if (options.italics !== undefined) {
             this.push(new OnOffElement("hh:italic", options.italics));
-        }
-        if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
-            this.push(new OnOffElement("w:iCs", (_b = options.italicsComplexScript) !== null && _b !== void 0 ? _b : options.italics));
         }
         if (options.smallCaps !== undefined) {
             this.push(new OnOffElement("hh:smallCaps", options.smallCaps));
@@ -187,18 +180,6 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
         if (options.doubleStrike !== undefined) {
             this.push(new OnOffElement("hh:strikeout", options.doubleStrike));
-        }
-        if (options.emboss !== undefined) {
-            this.push(new OnOffElement("w:emboss", options.emboss));
-        }
-        if (options.imprint !== undefined) {
-            this.push(new OnOffElement("w:imprint", options.imprint));
-        }
-        if (options.noProof !== undefined) {
-            this.push(new OnOffElement("w:noProof", options.noProof));
-        }
-        if (options.snapToGrid !== undefined) {
-            this.push(new OnOffElement("w:snapToGrid", options.snapToGrid));
         }
         if (options.vanish) {
             this.push(new OnOffElement("hh:vanish", options.vanish));

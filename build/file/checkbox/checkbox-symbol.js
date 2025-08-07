@@ -8,8 +8,8 @@ class CheckboxSymbolAttributes extends XmlAttributeComponent {
             configurable: true,
             writable: true,
             value: {
-                val: "w14:val",
-                symbolfont: "w14:font",
+                val: "hp:val",
+                symbolfont: "hp:font",
             }
         });
     }

@@ -3,7 +3,7 @@ import { Stream } from "stream";
 import { File } from "@file/file";
 import { OutputByType, OutputType } from "@util/output-type";
 
-import { HwpxMainCompiler } from "./hwpx-main-compiler";
+import { HwpxTemplateCompiler } from "./hwpx-template-compiler";
 import { IXmlifyedFile } from "./next-compiler";
 
 /**
@@ -23,14 +23,13 @@ const convertPrettifyType = (
     prettify === true ? PrettifyType.WITH_2_BLANKS : prettify === false ? undefined : prettify;
 
 export class Packer {
-    // eslint-disable-next-line require-await
     public static async pack<T extends OutputType>(
         file: File,
         type: T,
         prettify?: boolean | (typeof PrettifyType)[keyof typeof PrettifyType],
         overrides: readonly IXmlifyedFile[] = [],
     ): Promise<OutputByType[T]> {
-        const zip = this.compiler.compile(file, convertPrettifyType(prettify), overrides);
+        const zip = await this.compiler.compile(file);
         return zip.generateAsync({
             type,
             mimeType: "application/hwp+zip",
@@ -84,19 +83,20 @@ export class Packer {
         overrides: readonly IXmlifyedFile[] = [],
     ): Stream {
         const stream = new Stream();
-        const zip = this.compiler.compile(file, convertPrettifyType(prettify), overrides);
-
-        zip.generateAsync({
-            type: "nodebuffer",
-            mimeType: "application/hwp+zip",
-            compression: "DEFLATE",
-        }).then((z) => {
-            stream.emit("data", z);
-            stream.emit("end");
+        
+        this.compiler.compile(file).then(zip => {
+            zip.generateAsync({
+                type: "nodebuffer",
+                mimeType: "application/hwp+zip",
+                compression: "DEFLATE",
+            }).then((z) => {
+                stream.emit("data", z);
+                stream.emit("end");
+            });
         });
 
         return stream;
     }
 
-    private static readonly compiler = new HwpxMainCompiler();
+    private static readonly compiler = new HwpxTemplateCompiler();
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<hpf:contents xmlns:hpf="http://www.hancom.co.kr/schema/2011/hpf">
+<hpf:header>header.xml</hpf:header>
+<hpf:section src="section0.xml"/>
+</hpf:contents>

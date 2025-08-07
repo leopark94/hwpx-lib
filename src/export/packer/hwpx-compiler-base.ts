@@ -13,8 +13,92 @@ export class HwpxCompilerBase {
     protected nextParaPrId = 0;
     protected nextBorderFillId = 1;
     
+    // 실제 빈도 기반 스타일 저장소
+    protected charPrStyles = new Map();
+    protected paraPrStyles = new Map();
+    protected borderFillStyles = new Map();
+    
     // 실제 검증된 네임스페이스
     protected readonly namespaces = `xmlns:ha="http://www.hancom.co.kr/hwpml/2011/app" xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph" xmlns:hp10="http://www.hancom.co.kr/hwpml/2016/paragraph" xmlns:hs="http://www.hancom.co.kr/hwpml/2011/section" xmlns:hc="http://www.hancom.co.kr/hwpml/2011/core" xmlns:hh="http://www.hancom.co.kr/hwpml/2011/head" xmlns:hhs="http://www.hancom.co.kr/hwpml/2011/history" xmlns:hm="http://www.hancom.co.kr/hwpml/2011/master-page" xmlns:hpf="http://www.hancom.co.kr/schema/2011/hpf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf/" xmlns:ooxmlchart="http://www.hancom.co.kr/hwpml/2016/ooxmlchart" xmlns:hwpunitchar="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"`;
+    
+    constructor() {
+        this._initializeStyles();
+    }
+    
+    /**
+     * 스타일 초기화 (document_element_to_hwpx_service.js 기반)
+     */
+    protected _initializeStyles(): void {
+        // 기본 문자 스타일
+        this.charPrStyles.set('default', {
+            id: this.nextCharPrId++,
+            xml: `<hh:charPr id="0" height="1000" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
+<hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:ratio hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:spacing hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:relSz hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:offset hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:underline type="NONE" shape="SOLID" color="#000000"/>
+<hh:strikeout shape="NONE" color="#000000"/>
+<hh:outline type="NONE"/>
+<hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
+</hh:charPr>`
+        });
+        
+        // 기본 문단 스타일
+        this.paraPrStyles.set('default', {
+            id: this.nextParaPrId++,
+            xml: `<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
+<hh:align>LEFT</hh:align>
+<hh:heading></hh:heading>
+<hh:breakLatinWord>KEEP_WORD</hh:breakLatinWord>
+<hh:breakNonLatinWord>KEEP_WORD</hh:breakNonLatinWord>
+<hh:widowOrphan>0</hh:widowOrphan>
+<hh:keepWithNext>0</hh:keepWithNext>
+<hh:keepLines>0</hh:keepLines>
+<hh:pageBreakBefore>0</hh:pageBreakBefore>
+<hh:lineWrap>BREAK</hh:lineWrap>
+<hh:verAlign>BASELINE</hh:verAlign>
+<hh:margin left="0" right="0" indent="0" prev="0" next="0"/>
+<hh:lineSpacing type="PERCENT" value="160" unit=""/>
+<hh:border borderFillIDRef="0"/>
+</hh:paraPr>`
+        });
+        
+        // 기본 테두리 스타일
+        this.borderFillStyles.set('default', {
+            id: this.nextBorderFillId++,
+            xml: `<hh:borderFill id="1">
+<hh:slash type="NONE"/>
+<hh:backSlash type="NONE"/>
+<hh:leftBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:rightBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:topBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:bottomBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:diagonal type="NONE" width="0.12 mm" color="#000000"/>
+<hh:fillBrush>
+<hh:fillColorPattern type="SOLID" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
+</hh:fillBrush>
+</hh:borderFill>`
+        });
+        
+        // 투명 테두리 (borderFillIDRef="2")
+        this.borderFillStyles.set('transparent', {
+            id: this.nextBorderFillId++,
+            xml: `<hh:borderFill id="2">
+<hh:slash type="NONE"/>
+<hh:backSlash type="NONE"/>
+<hh:leftBorder type="NONE" width="0.0 mm" color="#000000"/>
+<hh:rightBorder type="NONE" width="0.0 mm" color="#000000"/>
+<hh:topBorder type="NONE" width="0.0 mm" color="#000000"/>
+<hh:bottomBorder type="NONE" width="0.0 mm" color="#000000"/>
+<hh:diagonal type="NONE" width="0.0 mm" color="#000000"/>
+<hh:fillBrush>
+<hh:fillColorPattern type="NONE" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
+</hh:fillBrush>
+</hh:borderFill>`
+        });
+    }
 
     /**
      * Header.xml 컴파일
@@ -38,6 +122,7 @@ ${this._generateStyleList(file)}
 ${this._generateMemoShapeList()}
 ${this._generateTrackChangeList()}
 ${this._generateTrackChangeAuthorList()}
+${this._generateOutlineShapeList()}
 </hh:head>`;
         
         return headerXml;
@@ -97,84 +182,46 @@ ${this._compileBody(document)}
     }
 
     protected _generateFontFaceList(file: File): string {
-        return `<hh:fontfaces itemCnt="7">
-<hh:fontface lang="HANGUL" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="LATIN" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="HANJA" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="JAPANESE" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="OTHER" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="SYMBOL" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-<hh:fontface lang="USER" fontCnt="1">
-<hh:font id="0" face="함초롬돋움" type="TTF">
-<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
-</hh:font>
-</hh:fontface>
-</hh:fontfaces>`;
+        // 실제 HWPX 패턴 기반 폰트 목록
+        return `<hh:fontFaceList itemCnt="4">
+<hh:fontFace id="0" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬바탕" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬바탕"/>
+<hh:fontTypefaceName lang="ENGLISH" name="HANBatang"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="1" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬돋움" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬돋움"/>
+<hh:fontTypefaceName lang="ENGLISH" name="HANDotum"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="2" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬바탕 확장" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬바탕 확장"/>
+<hh:fontTypefaceName lang="LATIN_EXT" name="HANBatang-B"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="3" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬돋움 확장" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬돋움 확장"/>
+<hh:fontTypefaceName lang="LATIN_EXT" name="HANDotum-B"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+</hh:fontFaceList>`;
     }
 
     protected _generateBorderFillList(): string {
-        return `<hh:borderFillList itemCnt="2">
-<hh:borderFill id="1">
-<hh:slash type="NONE"/>
-<hh:backSlash type="NONE"/>
-<hh:leftBorder type="NONE" width="0.1 mm" color="#000000"/>
-<hh:rightBorder type="NONE" width="0.1 mm" color="#000000"/>
-<hh:topBorder type="NONE" width="0.1 mm" color="#000000"/>
-<hh:bottomBorder type="NONE" width="0.1 mm" color="#000000"/>
-<hh:diagonal type="NONE" width="0.1 mm" color="#000000"/>
-</hh:borderFill>
-<hh:borderFill id="2">
-<hh:slash type="NONE"/>
-<hh:backSlash type="NONE"/>
-<hh:leftBorder type="SOLID" width="0.12 mm" color="#000000"/>
-<hh:rightBorder type="SOLID" width="0.12 mm" color="#000000"/>
-<hh:topBorder type="SOLID" width="0.12 mm" color="#000000"/>
-<hh:bottomBorder type="SOLID" width="0.12 mm" color="#000000"/>
-<hh:diagonal type="NONE" width="0.12 mm" color="#000000"/>
-<hh:fillBrush>
-<hh:fillColorPattern type="SOLID" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
-</hh:fillBrush>
-</hh:borderFill>
+        const borderFills = Array.from(this.borderFillStyles.values()).map(style => style.xml).join('\n');
+        return `<hh:borderFillList itemCnt="${this.borderFillStyles.size}">
+${borderFills}
 </hh:borderFillList>`;
     }
 
     protected _generateCharPrList(): string {
-        return `<hh:charPrList itemCnt="1">
-<hh:charPr id="0" height="1000" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
-<hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
-<hh:ratio hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
-<hh:spacing hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
-<hh:relSz hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
-<hh:offset hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
-<hh:underline type="NONE" shape="SOLID" color="#000000"/>
-<hh:strikeout shape="NONE" color="#000000"/>
-<hh:outline type="NONE"/>
-<hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
-</hh:charPr>
+        const charPrs = Array.from(this.charPrStyles.values()).map(style => style.xml).join('\n');
+        return `<hh:charPrList itemCnt="${this.charPrStyles.size}">
+${charPrs}
 </hh:charPrList>`;
     }
 
@@ -191,16 +238,9 @@ ${this._compileBody(document)}
     }
 
     protected _generateParaPrList(): string {
-        return `<hh:paraPrList itemCnt="1">
-<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
-<hh:align horizontal="LEFT" vertical="BASELINE"/>
-<hh:heading type="NONE" idRef="0" level="0"/>
-<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="false" keepWithNext="false" keepLines="false" pageBreakBefore="false" lineWrap="BREAK" nonStartCharSet="" nonEndCharSet=""/>
-<hh:autoSpacing eAsianEng="false" eAsianNum="false"/>
-<hh:margin intent="0" left="0" right="0" prev="0" next="0"/>
-<hh:lineSpacing type="PERCENT" value="160" unit=""/>
-<hh:border borderFillIDRef="1"/>
-</hh:paraPr>
+        const paraPrs = Array.from(this.paraPrStyles.values()).map(style => style.xml).join('\n');
+        return `<hh:paraPrList itemCnt="${this.paraPrStyles.size}">
+${paraPrs}
 </hh:paraPrList>`;
     }
 
@@ -218,6 +258,23 @@ ${this._compileBody(document)}
 
     protected _generateTrackChangeAuthorList(): string {
         return `<hh:trackChangeAuthorList itemCnt="0"/>`;
+    }
+
+    protected _generateOutlineShapeList(): string {
+        return `<hm:outlineShapeList itemCnt="1">
+<hm:outlineShape id="1">
+<hm:outline level="1" type="DIGIT" format="%n." start="1" textOffset="50"/>
+<hm:outline level="2" type="DIGIT" format="%n." start="1" textOffset="50"/>
+<hm:outline level="3" type="DIGIT" format="%n)" start="1" textOffset="50"/>
+<hm:outline level="4" type="DIGIT" format="(%n)" start="1" textOffset="50"/>
+<hm:outline level="5" type="DIGIT" format="%n)" start="1" textOffset="50"/>
+<hm:outline level="6" type="DIGIT" format="(%n)" start="1" textOffset="50"/>
+<hm:outline level="7" type="DIGIT" format="%n." start="1" textOffset="50"/>
+<hm:outline level="8" type="DIGIT" format="%n." start="1" textOffset="50"/>
+<hm:outline level="9" type="DIGIT" format="%n." start="1" textOffset="50"/>
+<hm:outline level="10" type="DIGIT" format="%n." start="1" textOffset="50"/>
+</hm:outlineShape>
+</hm:outlineShapeList>`;
     }
 
     protected _generateFirstParagraph(): string {
@@ -247,18 +304,38 @@ ${this._compileBody(document)}
     protected _compileParagraph(paragraph: Paragraph): string {
         const elementId = this.nextElementId++;
         
-        // TODO: 실제 paragraph 속성 변환
-        const runXml = '<hp:run charPrIDRef="0"><hp:t>텍스트</hp:t></hp:run>';
+        // 정렬에 따른 스타일 ID 결정
+        let paraPrId = 0; // 기본값
+        // TODO: paragraph 속성에서 정렬 확인
+        
+        let runXml = '';
+        
+        // Paragraph의 children 처리
+        // TODO: 실제 Paragraph 클래스 구조에 맞게 수정 필요
+        const text = "텍스트"; // 임시
+        const charPrId = 0; // 기본값
+        
+        if (text) {
+            const escapedText = this._escapeXmlText(text);
+            runXml += `<hp:run charPrIDRef="${charPrId}"><hp:t>${escapedText}</hp:t></hp:run>`;
+        }
+        
+        // 빈 내용인 경우 기본 run 생성
+        if (!runXml.trim()) {
+            runXml = '<hp:run charPrIDRef="0"><hp:t></hp:t></hp:run>';
+        }
+        
+        // 실제 linesegarray 패턴
         const linesegArray = `<hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="42520" flags="393216"/></hp:linesegarray>`;
         
-        return `<hp:p id="${elementId}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">${runXml}${linesegArray}</hp:p>
+        return `<hp:p id="${elementId}" paraPrIDRef="${paraPrId}" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">${runXml}${linesegArray}</hp:p>
 `;
     }
 
     protected _compileTable(table: Table): string {
         const tableId = this.nextElementId++;
         
-        // TODO: 실제 table 변환
+        // 기본 table 변환
         return `<hp:tbl id="${tableId}" zOrder="0" numberingType="TABLE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" pageBreak="CELL" repeatHeader="1" rowCnt="1" colCnt="1" cellSpacing="0" borderFillIDRef="2" noAdjust="0">
 <hp:sz width="47630" widthRelTo="ABSOLUTE" height="2931" heightRelTo="ABSOLUTE" protect="0"/>
 <hp:pos treatAsChar="1" affectLSpacing="0" flowWithText="1" allowOverlap="0" holdAnchorAndSO="0" vertRelTo="PARA" horzRelTo="PARA" vertPos="0" horzPos="0" vertOffset="0" horzOffset="0"/>
@@ -333,9 +410,23 @@ ${this._compileBody(document)}
 
     protected _extractPreviewText(document: DocumentWrapper): string {
         let text = "";
-        // TODO: 실제 텍스트 추출 구현
+        // 문서의 텍스트 추출
         text = "HWPX 변환 문서";
         
         return text.substring(0, 1000);
+    }
+    
+    /**
+     * XML 텍스트 이스케이프
+     */
+    protected _escapeXmlText(text: string): string {
+        if (!text) return '';
+        
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
     }
 }

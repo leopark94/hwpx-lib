@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><hh:head xmlns:ha="http://www.hancom.co.kr/hwpml/2011/app" xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph" xmlns:hp10="http://www.hancom.co.kr/hwpml/2016/paragraph" xmlns:hs="http://www.hancom.co.kr/hwpml/2011/section" xmlns:hc="http://www.hancom.co.kr/hwpml/2011/core" xmlns:hh="http://www.hancom.co.kr/hwpml/2011/head" xmlns:hhs="http://www.hancom.co.kr/hwpml/2011/history" xmlns:hm="http://www.hancom.co.kr/hwpml/2011/master-page" xmlns:hpf="http://www.hancom.co.kr/schema/2011/hpf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf/" xmlns:ooxmlchart="http://www.hancom.co.kr/hwpml/2016/ooxmlchart" xmlns:hwpunitchar="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0">
+<hh:docInfo>
+<hh:docSetting TabStop="8000" PageNumType="0" PageStartNum="0" PageStartNumDisp="1" PageNumPos="BOTTOM" TextDir="HORIZONTAL" Gutters="0" WidowOrphan="0" SpellerIgnoreDigit="0" SpellerProcessEnd="1" SpellerUseReplaceList="0" Watermark="0" BorderFlag="ALL" ApplyPageNumType="0" PageNumCtrl="0" MailMergeByBlock="0" MailMergeSort="0" TrackChange="0" TrackChangeOpen="0" LineWrapForLetter="0" OverflowToFootnote="0" HideAnchor="0" EmptyLine="1" Numberig="0" TabAutoExpand="0" BlockFromNonWord="0"/>
+</hh:docInfo>
+<hh:DocumentProperties/>
+<hh:CompatibleDocument>
+<hh:TargetProgram>HWP2018</hh:TargetProgram>
+<hh:MinVersion/>
+</hh:CompatibleDocument>
+<hh:LayoutCompatibility>
+<hh:LayoutFlag ApplyExtendedCharSpacing="0" ApplyFontWeightToBold="0" UseInnerUnderline="0" FixedUnderlineWidth="0" DoNotApplyDiacSymMarkOfNoneTextPart="0" DoNotAlignWhitespaceOnRight="0" DoNotDrawLastCharWithSpacing="0" DisableGrowShrinkTextToFit="0" TreatQuotationAsLatin="0" DoNotApplyLineBreakAtWordBreakForPuctuation="0" AllowBreakingFontForLargeChar="0" AllowBreakLatinWord="0" AllowWordSuffixBetweenWhiteSpace="0" AllowWordBreakOverflow="0" ApplyMinColumnWidthTo1mm="0" ApplyTabPosBasedOnSegment="0" BreakTabOverLine="0" AdjustMarginFromArabicStyle="0" BreakLatinWordWithinQuotation="0" DrawOverlineOnBottomOfText="0" ApplyBaseCharSpacingOfLetterList="0" ApplyLineHeightPercent="0" DoNotAdjustWordInJustify="0" CheckMaxTextExtentWhenLineBreak="0" UsePrevSpacingAtParaStart="0" TruncateAtLineFeed="0" UnderlineFollowBold="0" DoNotSplitTable="0" LineBreakLikeWord97="0" LineBreakWithNonStrictRule="0" ApplyAtLeastToPercent="0" DisableVerticalCenterOfFolderNameText="0" TreatTimeAsChar="0" UseDailyNewspaperPaperType="0" AllowSpaceOfCharOuterCellInTable="0" ApplyZeroSpacingAtBlankLine="0" ApplyParaBorderToOutside="0"/>
+</hh:LayoutCompatibility>
+<hh:DocData>
+<hh:VariableDocumentProperty VariableDocumentPropertyCnt="0"/>
+</hh:DocData>
+<hh:refList>
+<hh:Forbidden>
+<hh:ForbiddenWord>
+<hh:beforeProc beforeSpace="1">!%),.:;?]}¢°'"′″℃〉》」』】〕ぁぃぅぇぉっゃゅょゎ゛゜ゝゞァィゥェォヵㇰヶㇱㇲッㇳㇴㇵㇶㇷㇸㇹㇺャュョヮㇻㇼㇽㇾㇿヷヺ"ヽヾ</hh:beforeProc>
+<hh:afterProc afterSpace="1">#$(\[{£¥'"〈《「『【〔</hh:afterProc>
+<hh:betweenProc koreanLineUnit="10000" otherLineUnit="10000"/>
+</hh:ForbiddenWord>
+</hh:Forbidden>
+</hh:refList>
+<hh:fontFaceList itemCnt="1">
+<hh:fontFace lang="HANGUL" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="LATIN" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="HANJA" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="JAPANESE" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="OTHER" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="SYMBOL" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+<hh:fontFace lang="USER" fontCnt="1">
+<hh:font id="0" face="함초롬돋움" type="TTF">
+<hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
+</hh:font>
+</hh:fontFace>
+</hh:fontFaceList>
+<hh:borderFillList itemCnt="2">
+<hh:borderFill id="1">
+<hh:slash type="NONE"/>
+<hh:backSlash type="NONE"/>
+<hh:leftBorder type="NONE" width="0.1 mm" color="#000000"/>
+<hh:rightBorder type="NONE" width="0.1 mm" color="#000000"/>
+<hh:topBorder type="NONE" width="0.1 mm" color="#000000"/>
+<hh:bottomBorder type="NONE" width="0.1 mm" color="#000000"/>
+<hh:diagonal type="NONE" width="0.1 mm" color="#000000"/>
+</hh:borderFill>
+<hh:borderFill id="2">
+<hh:slash type="NONE"/>
+<hh:backSlash type="NONE"/>
+<hh:leftBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:rightBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:topBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:bottomBorder type="SOLID" width="0.12 mm" color="#000000"/>
+<hh:diagonal type="NONE" width="0.12 mm" color="#000000"/>
+<hh:fillBrush>
+<hh:fillColorPattern type="SOLID" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
+</hh:fillBrush>
+</hh:borderFill>
+</hh:borderFillList>
+<hh:charPrList itemCnt="2">
+<hh:charPr id="0" height="1000" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
+<hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:ratio hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:spacing hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:relSz hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:offset hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:underline type="NONE" shape="SOLID" color="#000000"/>
+<hh:strikeout shape="NONE" color="#000000"/>
+<hh:outline type="NONE"/>
+<hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
+</hh:charPr>
+<hh:charPr id="1" height="1400" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
+<hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:ratio hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:spacing hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:relSz hangul="100" latin="100" hanja="100" japanese="100" other="100" symbol="100" user="100"/>
+<hh:offset hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
+<hh:underline type="NONE" shape="SOLID" color="#000000"/>
+<hh:strikeout shape="NONE" color="#000000"/>
+<hh:outline type="NONE"/>
+<hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
+</hh:charPr>
+</hh:charPrList>
+<hh:tabPrList itemCnt="0"/>
+<hh:numberingList itemCnt="0"/>
+<hh:bulletList itemCnt="0"/>
+<hh:paraPrList itemCnt="2">
+<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
+<hh:align horizontal="LEFT" vertical="BASELINE"/>
+<hh:heading type="NONE" idRef="0" level="0"/>
+<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="false" keepWithNext="false" keepLines="false" pageBreakBefore="false" lineWrap="BREAK" nonStartCharSet="" nonEndCharSet=""/>
+<hh:autoSpacing eAsianEng="false" eAsianNum="false"/>
+<hh:margin intent="0" left="0" right="0" prev="0" next="0"/>
+<hh:lineSpacing type="PERCENT" value="160" unit=""/>
+<hh:border borderFillIDRef="1"/>
+</hh:paraPr>
+<hh:paraPr id="1" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
+<hh:align horizontal="CENTER" vertical="BASELINE"/>
+<hh:heading type="NONE" idRef="0" level="0"/>
+<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="false" keepWithNext="false" keepLines="false" pageBreakBefore="false" lineWrap="BREAK" nonStartCharSet="" nonEndCharSet=""/>
+<hh:autoSpacing eAsianEng="false" eAsianNum="false"/>
+<hh:margin intent="0" left="0" right="0" prev="0" next="0"/>
+<hh:lineSpacing type="PERCENT" value="160" unit=""/>
+<hh:border borderFillIDRef="1"/>
+</hh:paraPr>
+</hh:paraPrList>
+<hh:styleList itemCnt="0"/>
+<hh:memoShapeList itemCnt="0"/>
+<hh:trackChangeList itemCnt="0"/>
+<hh:trackChangeAuthorList itemCnt="0"/>
+</hh:head>

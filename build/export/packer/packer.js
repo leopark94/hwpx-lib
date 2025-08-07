@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { Stream } from "stream";
-import { HwpxMainCompiler } from "./hwpx-main-compiler";
+import { HwpxTemplateCompiler } from "./hwpx-template-compiler";
 export const PrettifyType = {
     NONE: "",
     WITH_2_BLANKS: "  ",
@@ -19,7 +19,7 @@ const convertPrettifyType = (prettify) => prettify === true ? PrettifyType.WITH_
 export class Packer {
     static pack(file, type, prettify, overrides = []) {
         return __awaiter(this, void 0, void 0, function* () {
-            const zip = this.compiler.compile(file, convertPrettifyType(prettify), overrides);
+            const zip = yield this.compiler.compile(file);
             return zip.generateAsync({
                 type,
                 mimeType: "application/hwp+zip",
@@ -44,14 +44,15 @@ export class Packer {
     }
     static toStream(file, prettify, overrides = []) {
         const stream = new Stream();
-        const zip = this.compiler.compile(file, convertPrettifyType(prettify), overrides);
-        zip.generateAsync({
-            type: "nodebuffer",
-            mimeType: "application/hwp+zip",
-            compression: "DEFLATE",
-        }).then((z) => {
-            stream.emit("data", z);
-            stream.emit("end");
+        this.compiler.compile(file).then(zip => {
+            zip.generateAsync({
+                type: "nodebuffer",
+                mimeType: "application/hwp+zip",
+                compression: "DEFLATE",
+            }).then((z) => {
+                stream.emit("data", z);
+                stream.emit("end");
+            });
         });
         return stream;
     }
@@ -60,6 +61,6 @@ Object.defineProperty(Packer, "compiler", {
     enumerable: true,
     configurable: true,
     writable: true,
-    value: new HwpxMainCompiler()
+    value: new HwpxTemplateCompiler()
 });
 //# sourceMappingURL=packer.js.map

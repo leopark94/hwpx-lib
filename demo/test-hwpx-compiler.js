@@ -73,8 +73,30 @@ async function generateSimpleHwpx() {
 </hh:ForbiddenWord>
 </hh:Forbidden>
 </hh:refList>
-<hh:fontfaces itemCnt="1">
-<hh:fontface lang="HANGUL" fontCnt="1">
+<hh:fontFaceList itemCnt="4">
+<hh:fontFace id="0" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬바탕" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬바탕"/>
+<hh:fontTypefaceName lang="ENGLISH" name="HANBatang"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="1" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬돋움" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬돋움"/>
+<hh:fontTypefaceName lang="ENGLISH" name="HANDotum"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="2" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬바탕 확장" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬바탕 확장"/>
+<hh:fontTypefaceName lang="LATIN_EXT" name="HANBatang-B"/>
+</hh:fontTypefaceNameList>
+</hh:fontFace>
+<hh:fontFace id="3" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬돋움 확장" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
+<hh:fontTypefaceNameList>
+<hh:fontTypefaceName lang="HANGUL" name="함초롬돋움 확장"/>
+<hh:fontTypefaceName lang="LATIN_EXT" name="HANDotum-B"/>
+</hh:fontTypefaceNameList>
 <hh:font id="0" face="함초롬돋움" type="TTF">
 <hh:typeInfo familyType="FCAT_SERIF" serifStyle="SERIF_CLAS_NORMAL_SANS" weight="400" proportion="PROP_MODERN" contrast="CONTRAST_NONE" strokeVariation="STROKE_GRADUAL_TRAN" armStyle="ARM_STRAIGHT_ARMS_VERT" letterform="LETTER_NORMAL_CONTACT" midline="MIDLINE_STANDARD_TRIMMED" xHeight="XHEIGHT_CONSTANT_LARGE"/>
 </hh:font>

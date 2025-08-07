@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0">
+    <manifest:file-entry manifest:media-type="application/hwp+zip" manifest:full-path="/"/>
+    <manifest:file-entry manifest:media-type="application/xml" manifest:full-path="version.xml"/>
+    <manifest:file-entry manifest:media-type="application/xml" manifest:full-path="settings.xml"/>
+    <manifest:file-entry manifest:media-type="application/xml" manifest:full-path="Contents/content.hpf"/>
+    <manifest:file-entry manifest:media-type="application/xml" manifest:full-path="Contents/header.xml"/>
+    <manifest:file-entry manifest:media-type="application/xml" manifest:full-path="Contents/section0.xml"/>
+</manifest:manifest>

@@ -318,9 +318,9 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         // DOCX 전용: iCs (복잡한 스크립트용 기울임) - HWPX에서는 언어별로 처리
-        if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
-            this.push(new OnOffElement("w:iCs", options.italicsComplexScript ?? options.italics));
-        }
+        // if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
+        //     this.push(new OnOffElement("w:iCs", options.italicsComplexScript ?? options.italics));
+        // }
 
         // These two are mutually exclusive
         if (options.smallCaps !== undefined) {
@@ -338,24 +338,24 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         // DOCX 전용: emboss (양각 효과) - HWPX에서는 지원하지 않음
-        if (options.emboss !== undefined) {
-            this.push(new OnOffElement("w:emboss", options.emboss));
-        }
+        // if (options.emboss !== undefined) {
+        //     this.push(new OnOffElement("w:emboss", options.emboss));
+        // }
 
         // DOCX 전용: imprint (음각 효과) - HWPX에서는 지원하지 않음
-        if (options.imprint !== undefined) {
-            this.push(new OnOffElement("w:imprint", options.imprint));
-        }
+        // if (options.imprint !== undefined) {
+        //     this.push(new OnOffElement("w:imprint", options.imprint));
+        // }
 
         // DOCX 전용: noProof (맞춤법 검사 제외)
-        if (options.noProof !== undefined) {
-            this.push(new OnOffElement("w:noProof", options.noProof));
-        }
+        // if (options.noProof !== undefined) {
+        //     this.push(new OnOffElement("w:noProof", options.noProof));
+        // }
 
         // DOCX 전용: snapToGrid (격자에 맞춤) - HWPX는 paraPr 수준에서 지원
-        if (options.snapToGrid !== undefined) {
-            this.push(new OnOffElement("w:snapToGrid", options.snapToGrid));
-        }
+        // if (options.snapToGrid !== undefined) {
+        //     this.push(new OnOffElement("w:snapToGrid", options.snapToGrid));
+        // }
 
         if (options.vanish) {
             // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_vanish_topic_ID0E6W3O.html

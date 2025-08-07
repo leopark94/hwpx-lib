@@ -7,7 +7,12 @@ export declare class HwpxCompilerBase {
     protected nextCharPrId: number;
     protected nextParaPrId: number;
     protected nextBorderFillId: number;
+    protected charPrStyles: Map<any, any>;
+    protected paraPrStyles: Map<any, any>;
+    protected borderFillStyles: Map<any, any>;
     protected readonly namespaces = "xmlns:ha=\"http://www.hancom.co.kr/hwpml/2011/app\" xmlns:hp=\"http://www.hancom.co.kr/hwpml/2011/paragraph\" xmlns:hp10=\"http://www.hancom.co.kr/hwpml/2016/paragraph\" xmlns:hs=\"http://www.hancom.co.kr/hwpml/2011/section\" xmlns:hc=\"http://www.hancom.co.kr/hwpml/2011/core\" xmlns:hh=\"http://www.hancom.co.kr/hwpml/2011/head\" xmlns:hhs=\"http://www.hancom.co.kr/hwpml/2011/history\" xmlns:hm=\"http://www.hancom.co.kr/hwpml/2011/master-page\" xmlns:hpf=\"http://www.hancom.co.kr/schema/2011/hpf\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:opf=\"http://www.idpf.org/2007/opf/\" xmlns:ooxmlchart=\"http://www.hancom.co.kr/hwpml/2016/ooxmlchart\" xmlns:hwpunitchar=\"http://www.hancom.co.kr/hwpml/2016/HwpUnitChar\" xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns:config=\"urn:oasis:names:tc:opendocument:xmlns:config:1.0\"";
+    constructor();
+    protected _initializeStyles(): void;
     compileHeader(file: File): string;
     compileSection(document: DocumentWrapper): string;
     protected _generateDocInfo(): string;
@@ -27,10 +32,12 @@ export declare class HwpxCompilerBase {
     protected _generateMemoShapeList(): string;
     protected _generateTrackChangeList(): string;
     protected _generateTrackChangeAuthorList(): string;
+    protected _generateOutlineShapeList(): string;
     protected _generateFirstParagraph(): string;
     protected _compileBody(documentWrapper: DocumentWrapper): string;
     protected _compileParagraph(paragraph: Paragraph): string;
     protected _compileTable(table: Table): string;
     protected _generateSettings(): string;
     protected _extractPreviewText(document: DocumentWrapper): string;
+    protected _escapeXmlText(text: string): string;
 }
