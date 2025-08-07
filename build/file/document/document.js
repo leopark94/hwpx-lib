@@ -11,16 +11,7 @@ export class Document extends XmlComponent {
             writable: true,
             value: void 0
         });
-        this.root.push(new DocumentAttributes([
-            "ha",
-            "hp",
-            "hp10",
-            "hs",
-            "hc",
-            "hh",
-            "hm",
-            "hml",
-        ], undefined));
+        this.root.push(new DocumentAttributes(["ha", "hp", "hp10", "hs", "hc", "hh", "hm", "hml"], undefined));
         this.body = new Body();
         if (options.background) {
             this.root.push(new DocumentBackground(options.background));

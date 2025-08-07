@@ -68,7 +68,7 @@ export class HwpxTemplateCompiler {
     compile(file) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const templatePath = path.join(process.cwd(), 'templates/empty_template.hwpx');
+                const templatePath = path.join(process.cwd(), "templates/empty_template.hwpx");
                 if (!fs.existsSync(templatePath)) {
                     return this.compileFromScratch(file);
                 }
@@ -87,7 +87,7 @@ export class HwpxTemplateCompiler {
                 return loadedZip;
             }
             catch (error) {
-                console.warn('템플릿 로드 실패, 기본 구조로 생성:', error);
+                console.warn("템플릿 로드 실패, 기본 구조로 생성:", error);
                 return this.compileFromScratch(file);
             }
         });
@@ -132,7 +132,7 @@ export class HwpxTemplateCompiler {
         return zip;
     }
     _initializeStyles() {
-        this.charPrStyles.set('default', {
+        this.charPrStyles.set("default", {
             id: this.nextCharPrId++,
             xml: `<hh:charPr id="0" height="1000" textColor="#000000" shadeColor="none" useFontSpace="0" useKerning="0" symMark="NONE" borderFillIDRef="2">
 <hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/>
@@ -144,9 +144,9 @@ export class HwpxTemplateCompiler {
 <hh:strikeout shape="NONE" color="#000000"/>
 <hh:outline type="NONE"/>
 <hh:shadow type="NONE" color="#C0C0C0" offsetX="10" offsetY="10"/>
-</hh:charPr>`
+</hh:charPr>`,
         });
-        this.paraPrStyles.set('default', {
+        this.paraPrStyles.set("default", {
             id: this.nextParaPrId++,
             xml: `<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 <hh:align>LEFT</hh:align>
@@ -162,9 +162,9 @@ export class HwpxTemplateCompiler {
 <hh:margin left="0" right="0" indent="0" prev="0" next="0"/>
 <hh:lineSpacing type="PERCENT" value="160" unit=""/>
 <hh:border borderFillIDRef="0"/>
-</hh:paraPr>`
+</hh:paraPr>`,
         });
-        this.borderFillStyles.set('default', {
+        this.borderFillStyles.set("default", {
             id: this.nextBorderFillId++,
             xml: `<hh:borderFill id="1">
 <hh:slash type="NONE"/>
@@ -177,9 +177,9 @@ export class HwpxTemplateCompiler {
 <hh:fillBrush>
 <hh:fillColorPattern type="SOLID" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
 </hh:fillBrush>
-</hh:borderFill>`
+</hh:borderFill>`,
         });
-        this.borderFillStyles.set('transparent', {
+        this.borderFillStyles.set("transparent", {
             id: this.nextBorderFillId++,
             xml: `<hh:borderFill id="2">
 <hh:slash type="NONE"/>
@@ -192,13 +192,19 @@ export class HwpxTemplateCompiler {
 <hh:fillBrush>
 <hh:fillColorPattern type="NONE" patternColor="#FFFFFF" backgroundColor="#FFFFFF"/>
 </hh:fillBrush>
-</hh:borderFill>`
+</hh:borderFill>`,
         });
     }
     _generateHeader(file) {
-        const charPrs = Array.from(this.charPrStyles.values()).map(style => style.xml).join('\n');
-        const paraPrs = Array.from(this.paraPrStyles.values()).map(style => style.xml).join('\n');
-        const borderFills = Array.from(this.borderFillStyles.values()).map(style => style.xml).join('\n');
+        const charPrs = Array.from(this.charPrStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
+        const paraPrs = Array.from(this.paraPrStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
+        const borderFills = Array.from(this.borderFillStyles.values())
+            .map((style) => style.xml)
+            .join("\n");
         return `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><hh:head ${this.namespaces}>
 <hh:docInfo>
 <hh:docSetting TabStop="8000" PageNumType="0" PageStartNum="0" PageStartNumDisp="1" PageNumPos="BOTTOM" TextDir="HORIZONTAL" Gutters="0" WidowOrphan="0" SpellerIgnoreDigit="0" SpellerProcessEnd="1" SpellerUseReplaceList="0" Watermark="0" BorderFlag="ALL" ApplyPageNumType="0" PageNumCtrl="0" MailMergeByBlock="0" MailMergeSort="0" TrackChange="0" TrackChangeOpen="0" LineWrapForLetter="0" OverflowToFootnote="0" HideAnchor="0" EmptyLine="1" Numberig="0" TabAutoExpand="0" BlockFromNonWord="0"/>
@@ -282,10 +288,11 @@ ${paraPrs}
 </hh:head>`;
     }
     _generateSection(document) {
-        return `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><hs:sec ${this.namespaces}>
-${this._generateFirstParagraph()}
+        const fullNamespaces = `xmlns:hml="http://www.hancom.co.kr/hwpml/2011/document" ${this.namespaces}`;
+        return `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<hml:sec ${fullNamespaces} id="0" textDirection="HORIZONTAL" spaceColumns="1" columnGap="4252">
 ${this._compileBody(document)}
-</hs:sec>`;
+</hml:sec>`;
     }
     _generateFirstParagraph() {
         const elementId = this.nextElementId++;
@@ -333,7 +340,7 @@ ${this._compileBody(document)}
 </ha:HwpApplicationSetting>`;
     }
     _compileBody(documentWrapper) {
-        let xml = '';
+        let xml = "";
         try {
             const body = documentWrapper.Document.Body;
             for (const section of body.Sections) {
@@ -355,19 +362,19 @@ ${this._compileBody(document)}
         return xml;
     }
     _compileParagraph(paragraph) {
-        const elementId = this.nextElementId++;
+        const elementId = 0;
         let paraPrId = 0;
         const properties = paragraph.Properties;
         if (properties && properties.alignment && properties.alignment.horizontal === "center") {
             paraPrId = 0;
         }
-        let runXml = '';
+        let runXml = "";
         try {
             const children = paragraph.Children || [];
             for (const child of children) {
                 if (child instanceof TextRun) {
                     const charPrId = 0;
-                    const text = child.text || '';
+                    const text = child.text || "";
                     const escapedText = this._escapeXmlText(text);
                     runXml += `<hp:run charPrIDRef="${charPrId}"><hp:t>${escapedText}</hp:t></hp:run>`;
                 }
@@ -376,9 +383,9 @@ ${this._compileBody(document)}
         catch (error) {
         }
         if (!runXml.trim()) {
-            runXml = '<hp:run charPrIDRef="0"><hp:t></hp:t></hp:run>';
+            runXml = '<hp:run charPrIDRef="0"><hp:t> </hp:t></hp:run>';
         }
-        const linesegArray = `<hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="42520" flags="393216"/></hp:linesegarray>`;
+        const linesegArray = `<hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="1200" textheight="1200" baseline="1020" spacing="720" horzpos="0" horzsize="45352" flags="393216"/></hp:linesegarray>`;
         return `<hp:p id="${elementId}" paraPrIDRef="${paraPrId}" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">${runXml}${linesegArray}</hp:p>
 `;
     }
@@ -430,13 +437,8 @@ ${this._compileBody(document)}
     }
     _escapeXmlText(text) {
         if (!text)
-            return '';
-        return text
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&apos;');
+            return "";
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
     }
     _extractPreviewText(document) {
         let text = "";

@@ -1,4 +1,3 @@
-import { Document } from "@file/document";
 import { DocumentWrapper } from "@file/document-wrapper";
 import { Paragraph } from "@file/paragraph";
 import { Table } from "@file/table";
@@ -181,7 +180,7 @@ ${this._compileBody(document)}
 </hh:refList>`;
     }
 
-    protected _generateFontFaceList(file: File): string {
+    protected _generateFontFaceList(_file: File): string {
         // 실제 HWPX 패턴 기반 폰트 목록
         return `<hh:fontFaceList itemCnt="4">
 <hh:fontFace id="0" flags="0" bold="None" fontCmpType="COPY" fontName="함초롬바탕" fontType="TTF" fontTypeInfoID="0" italic="None" subset="0" symbolic="0" underline="None">
@@ -233,7 +232,7 @@ ${charPrs}
         return `<hh:tabPrList itemCnt="0"/>`;
     }
 
-    protected _generateNumberingList(file: File): string {
+    protected _generateNumberingList(_file: File): string {
         return `<hh:numberingList itemCnt="0"/>`;
     }
 
@@ -250,7 +249,7 @@ ${paraPrs}
 </hh:paraPrList>`;
     }
 
-    protected _generateStyleList(file: File): string {
+    protected _generateStyleList(_file: File): string {
         return `<hh:styleList itemCnt="0"/>`;
     }
 
@@ -296,11 +295,22 @@ ${paraPrs}
         // Body의 각 요소 변환
         const document = documentWrapper.View;
         const body = document.Body;
-        for (const child of body["root"]) {
-            if (child instanceof Paragraph) {
-                xml += this._compileParagraph(child);
-            } else if (child instanceof Table) {
-                xml += this._compileTable(child);
+
+        // XmlComponent의 protected root 접근
+        const bodyRoot = (body as any).root;
+
+        // 디버깅용 로그
+        console.log("Body root elements count:", bodyRoot?.length || 0);
+
+        if (bodyRoot && Array.isArray(bodyRoot)) {
+            for (const child of bodyRoot) {
+                console.log("Processing child:", child?.constructor?.name);
+
+                if (child instanceof Paragraph) {
+                    xml += this._compileParagraph(child);
+                } else if (child instanceof Table) {
+                    xml += this._compileTable(child);
+                }
             }
         }
 
@@ -312,18 +322,45 @@ ${paraPrs}
 
         // 정렬에 따른 스타일 ID 결정
         let paraPrId = 0; // 기본값
-        // TODO: paragraph 속성에서 정렬 확인
 
         let runXml = "";
 
-        // Paragraph의 children 처리
-        // TODO: 실제 Paragraph 클래스 구조에 맞게 수정 필요
-        const text = "텍스트"; // 임시
-        const charPrId = 0; // 기본값
+        // Paragraph의 root 접근
+        const paragraphRoot = (paragraph as any).root;
 
-        if (text) {
-            const escapedText = this._escapeXmlText(text);
-            runXml += `<hp:run charPrIDRef="${charPrId}"><hp:t>${escapedText}</hp:t></hp:run>`;
+        console.log("Paragraph root:", paragraphRoot?.length, "elements");
+
+        if (paragraphRoot && Array.isArray(paragraphRoot)) {
+            for (const child of paragraphRoot) {
+                // TextRun 또는 Run 처리
+                console.log("Paragraph child:", child?.constructor?.name, child?.rootKey);
+
+                // TextRun은 rootKey가 'w:r' 또는 'hp:run'일 수 있음
+                if (child?.rootKey === "w:r" || child?.constructor?.name === "TextRun" || child?.constructor?.name === "Run") {
+                    // TextRun의 텍스트 추출
+                    const textRunRoot = (child as any).root;
+                    let text = "";
+
+                    if (textRunRoot && Array.isArray(textRunRoot)) {
+                        for (const runChild of textRunRoot) {
+                            // Text 요소 찾기 (rootKey가 'w:t' 또는 직접 텍스트)
+                            if (runChild?.rootKey === "w:t" || runChild?.constructor?.name === "Text") {
+                                const textRoot = (runChild as any).root;
+                                if (textRoot && textRoot.length > 0) {
+                                    text += textRoot[0] || "";
+                                }
+                            } else if (typeof runChild === "string") {
+                                text += runChild;
+                            }
+                        }
+                    }
+
+                    if (text) {
+                        const escapedText = this._escapeXmlText(text);
+                        runXml += `<hp:run charPrIDRef="0"><hp:t>${escapedText}</hp:t></hp:run>`;
+                    }
+                }
+            }
         }
 
         // 빈 내용인 경우 기본 run 생성
@@ -340,14 +377,102 @@ ${paraPrs}
 
     protected _compileTable(table: Table): string {
         const tableId = this.nextElementId++;
+        const tableRoot = (table as any).root;
 
-        // 기본 table 변환
-        return `<hp:tbl id="${tableId}" zOrder="0" numberingType="TABLE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" pageBreak="CELL" repeatHeader="1" rowCnt="1" colCnt="1" cellSpacing="0" borderFillIDRef="2" noAdjust="0">
-<hp:sz width="47630" widthRelTo="ABSOLUTE" height="2931" heightRelTo="ABSOLUTE" protect="0"/>
+        let rowsXml = "";
+        let rowCount = 0;
+        let colCount = 0;
+
+        console.log("Table root:", tableRoot?.length, "elements");
+
+        if (tableRoot && Array.isArray(tableRoot)) {
+            // TableRow 처리
+            for (const row of tableRoot) {
+                console.log("Table child:", row?.constructor?.name, row?.rootKey);
+
+                if (row?.constructor?.name === "TableRow" || row?.rootKey === "w:tr") {
+                    rowCount++;
+                    const rowXml = this._compileTableRow(row, rowCount - 1);
+                    rowsXml += rowXml;
+
+                    // 컬럼 수 계산
+                    const rowRoot = (row as any).root;
+                    if (rowRoot && Array.isArray(rowRoot)) {
+                        let cellCount = 0;
+                        for (const cell of rowRoot) {
+                            if (cell?.constructor?.name === "TableCell" || cell?.rootKey === "w:tc") {
+                                cellCount++;
+                            }
+                        }
+                        colCount = Math.max(colCount, cellCount);
+                    }
+                }
+            }
+        }
+
+        // 기본값 설정
+        if (rowCount === 0) rowCount = 1;
+        if (colCount === 0) colCount = 1;
+
+        return `<hp:tbl id="${tableId}" zOrder="0" numberingType="TABLE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" pageBreak="CELL" repeatHeader="1" rowCnt="${rowCount}" colCnt="${colCount}" cellSpacing="0" borderFillIDRef="1" noAdjust="0">
+<hp:sz width="47630" widthRelTo="ABSOLUTE" height="${rowCount * 3000}" heightRelTo="ABSOLUTE" protect="0"/>
 <hp:pos treatAsChar="1" affectLSpacing="0" flowWithText="1" allowOverlap="0" holdAnchorAndSO="0" vertRelTo="PARA" horzRelTo="PARA" vertPos="0" horzPos="0" vertOffset="0" horzOffset="0"/>
 <hp:outMargin left="0" right="0" top="0" bottom="0"/>
-<hp:caption pos="0" gap="850" width="0" height="0" sideMargin="0" fullSz="1"/>
-</hp:tbl>
+${rowsXml}</hp:tbl>
+`;
+    }
+
+    protected _compileTableRow(row: any, rowIndex: number): string {
+        const rowRoot = row.root;
+        let cellsXml = "";
+        let colIndex = 0;
+
+        if (rowRoot && Array.isArray(rowRoot)) {
+            for (const cell of rowRoot) {
+                if (cell?.constructor?.name === "TableCell" || cell?.rootKey === "w:tc") {
+                    cellsXml += this._compileTableCell(cell, colIndex, rowIndex);
+                    colIndex++;
+                }
+            }
+        }
+
+        return `<hp:tr>
+<hp:sz height="3000" heightRelTo="ABSOLUTE"/>
+${cellsXml}</hp:tr>
+`;
+    }
+
+    protected _compileTableCell(cell: any, colIndex: number, rowIndex: number): string {
+        const cellRoot = cell.root;
+        let contentXml = "";
+
+        if (cellRoot && Array.isArray(cellRoot)) {
+            // 셀 내의 Paragraph 처리
+            for (const child of cellRoot) {
+                if (child instanceof Paragraph) {
+                    contentXml += this._compileParagraph(child);
+                } else if (child?.constructor?.name === "Paragraph") {
+                    contentXml += this._compileParagraph(child);
+                }
+            }
+        }
+
+        // 빈 셀인 경우 기본 문단 추가
+        if (!contentXml) {
+            const emptyParaId = this.nextElementId++;
+            contentXml = `<hp:p id="${emptyParaId}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0"><hp:run charPrIDRef="0"><hp:t></hp:t></hp:run><hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="10000" flags="393216"/></hp:linesegarray></hp:p>`;
+        }
+
+        const cellWidth = 47630 / 4; // 임시로 4등분
+
+        return `<hp:tc>
+<hp:cellAddr colAddr="${colIndex}" rowAddr="${rowIndex}"/>
+<hp:cellSpan colSpan="1" rowSpan="1"/>
+<hp:cellSz width="${cellWidth}" height="3000"/>
+<hp:cellMargin left="510" right="510" top="141" bottom="141"/>
+<hp:subList>
+${contentXml}</hp:subList>
+</hp:tc>
 `;
     }
 
@@ -414,7 +539,7 @@ ${paraPrs}
 </ha:HwpApplicationSetting>`;
     }
 
-    protected _extractPreviewText(document: DocumentWrapper): string {
+    protected _extractPreviewText(_document: DocumentWrapper): string {
         let text = "";
         // 문서의 텍스트 추출
         text = "HWPX 변환 문서";

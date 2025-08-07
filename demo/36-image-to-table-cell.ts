@@ -29,9 +29,7 @@ const table = new Table({
                 new TableCell({
                     children: [
                         new Paragraph({
-                            children: [
-                                new TextRun("[이미지]"),
-                            ],
+                            children: [new TextRun("[이미지]")],
                         }),
                     ],
                 }),

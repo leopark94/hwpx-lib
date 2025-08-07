@@ -21,14 +21,14 @@ export declare class HwpxCompilerBase {
     protected _generateLayoutCompatibility(): string;
     protected _generateDocData(): string;
     protected _generateForbidden(): string;
-    protected _generateFontFaceList(file: File): string;
+    protected _generateFontFaceList(_file: File): string;
     protected _generateBorderFillList(): string;
     protected _generateCharPrList(): string;
     protected _generateTabPrList(): string;
-    protected _generateNumberingList(file: File): string;
+    protected _generateNumberingList(_file: File): string;
     protected _generateBulletList(): string;
     protected _generateParaPrList(): string;
-    protected _generateStyleList(file: File): string;
+    protected _generateStyleList(_file: File): string;
     protected _generateMemoShapeList(): string;
     protected _generateTrackChangeList(): string;
     protected _generateTrackChangeAuthorList(): string;
@@ -37,7 +37,9 @@ export declare class HwpxCompilerBase {
     protected _compileBody(documentWrapper: DocumentWrapper): string;
     protected _compileParagraph(paragraph: Paragraph): string;
     protected _compileTable(table: Table): string;
+    protected _compileTableRow(row: any, rowIndex: number): string;
+    protected _compileTableCell(cell: any, colIndex: number, rowIndex: number): string;
     protected _generateSettings(): string;
-    protected _extractPreviewText(document: DocumentWrapper): string;
+    protected _extractPreviewText(_document: DocumentWrapper): string;
     protected _escapeXmlText(text: string): string;
 }

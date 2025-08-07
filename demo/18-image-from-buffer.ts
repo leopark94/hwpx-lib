@@ -10,9 +10,7 @@ const doc = new Document({
         {
             children: [
                 new Paragraph({
-                    children: [
-                        new TextRun("[이미지]"),
-                    ],
+                    children: [new TextRun("[이미지]")],
                 }),
             ],
         },

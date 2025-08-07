@@ -19,11 +19,11 @@ patchDocument({
             type: PatchType.PARAGRAPH,
             children: [
                 new TextRun("#657"),
-                
-                        new TextRun({
-                            text: "BBC News Link",
-                        }),
-                    ,
+
+                new TextRun({
+                    text: "BBC News Link",
+                }),
+                ,
             ],
         },
         paragraph_replace: {
@@ -34,11 +34,11 @@ patchDocument({
                 new Paragraph({
                     children: [
                         new TextRun("This is a "),
-                        
-                                new TextRun({
-                                    text: "Google Link",
-                                }),
-                            ,
+
+                        new TextRun({
+                            text: "Google Link",
+                        }),
+                        ,
                         new TextRun("[이미지]"),
                     ],
                 }),
@@ -53,18 +53,16 @@ patchDocument({
             children: [
                 new TextRun("replaced just as"),
                 new TextRun(" well"),
-                
-                        new TextRun({
-                            text: "BBC News Link",
-                        }),
-                    ,
+
+                new TextRun({
+                    text: "BBC News Link",
+                }),
+                ,
             ],
         },
         image_test: {
             type: PatchType.PARAGRAPH,
-            children: [
-                new TextRun("[이미지]"),
-            ],
+            children: [new TextRun("[이미지]")],
         },
         table: {
             type: PatchType.DOCUMENT,

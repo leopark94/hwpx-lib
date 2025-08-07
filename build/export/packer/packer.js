@@ -44,7 +44,7 @@ export class Packer {
     }
     static toStream(file, prettify, overrides = []) {
         const stream = new Stream();
-        this.compiler.compile(file).then(zip => {
+        this.compiler.compile(file).then((zip) => {
             zip.generateAsync({
                 type: "nodebuffer",
                 mimeType: "application/hwp+zip",
