@@ -1,7 +1,7 @@
 /**
  * HWPX 기본 생성 테스트
  */
-import { File, Document, Paragraph, TextRun, Table, TableRow, TableCell, Packer } from "hwpx";
+import { File, Paragraph, TextRun, Table, TableRow, TableCell, Packer } from "hwpx";
 import * as fs from "fs";
 
 // File 생성 (HWPX 문서)

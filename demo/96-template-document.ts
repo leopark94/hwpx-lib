@@ -1,7 +1,20 @@
 // Patch a document with patches
 
 import * as fs from "fs";
-import { Document, Packer, Paragraph, TextRun } from "hwpx";
+import { 
+    patchDocument, 
+    PatchType, 
+    Paragraph, 
+    TextRun, 
+    Table, 
+    TableRow, 
+    TableCell, 
+    HeadingLevel, 
+    TextDirection, 
+    VerticalAlign 
+} from "hwpx";
+
+const VerticalAlignTable = VerticalAlign;
 
 patchDocument({
     outputType: "nodebuffer",
@@ -19,11 +32,9 @@ patchDocument({
             type: PatchType.PARAGRAPH,
             children: [
                 new TextRun("#657"),
-
                 new TextRun({
                     text: "BBC News Link",
                 }),
-                ,
             ],
         },
         paragraph_replace: {
@@ -34,11 +45,9 @@ patchDocument({
                 new Paragraph({
                     children: [
                         new TextRun("This is a "),
-
                         new TextRun({
                             text: "Google Link",
                         }),
-                        ,
                         new TextRun("[이미지]"),
                     ],
                 }),
@@ -53,11 +62,9 @@ patchDocument({
             children: [
                 new TextRun("replaced just as"),
                 new TextRun(" well"),
-
                 new TextRun({
                     text: "BBC News Link",
                 }),
-                ,
             ],
         },
         image_test: {
