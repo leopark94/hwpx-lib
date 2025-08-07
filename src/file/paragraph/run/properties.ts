@@ -309,9 +309,9 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         // DOCX 전용: bCs (복잡한 스크립트용 굵기) - HWPX에서는 언어별로 처리
-        if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
-            this.push(new OnOffElement("w:bCs", options.boldComplexScript ?? options.bold));
-        }
+        // if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
+        //     this.push(new OnOffElement("w:bCs", options.boldComplexScript ?? options.bold));
+        // }
 
         if (options.italics !== undefined) {
             this.push(new OnOffElement("hh:italic", options.italics));

@@ -61,3 +61,13 @@ tmp
 
 # Exclude Mac .DS_Store files
 .DS_Store
+
+# Study files (HWPX analysis)
+study/hwpx/
+study/hwpx_analysis/
+study/hwpx_analysis_all/
+study/xml_comparison/
+study/*.hwpx
+study/*.json
+study/*.md
+!study/document_element_to_hwpx_service.js

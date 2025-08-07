@@ -27,19 +27,19 @@ export class CheckBoxUtil extends XmlComponent {
     private readonly DEFAULT_CHECKED_SYMBOL: string = "2612";
     private readonly DEFAULT_FONT: string = "MS Gothic";
     public constructor(options?: ICheckboxSymbolOptions) {
-        super("w14:checkbox");
+        super("hp:checkbox");
 
         const value = options?.checked ? "1" : "0";
         let symbol: string;
         let font: string;
-        this.root.push(new CheckBoxSymbolElement("w14:checked", value));
+        this.root.push(new CheckBoxSymbolElement("hp:checked", value));
 
         symbol = options?.checkedState?.value ? options?.checkedState?.value : this.DEFAULT_CHECKED_SYMBOL;
         font = options?.checkedState?.font ? options?.checkedState?.font : this.DEFAULT_FONT;
-        this.root.push(new CheckBoxSymbolElement("w14:checkedState", symbol, font));
+        this.root.push(new CheckBoxSymbolElement("hp:checkedState", symbol, font));
 
         symbol = options?.uncheckedState?.value ? options?.uncheckedState?.value : this.DEFAULT_UNCHECKED_SYMBOL;
         font = options?.uncheckedState?.font ? options?.uncheckedState?.font : this.DEFAULT_FONT;
-        this.root.push(new CheckBoxSymbolElement("w14:uncheckedState", symbol, font));
+        this.root.push(new CheckBoxSymbolElement("hp:uncheckedState", symbol, font));
     }
 }

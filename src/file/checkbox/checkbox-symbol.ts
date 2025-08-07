@@ -1,9 +1,4 @@
-// This represents element type CT_SdtCheckboxSymbol element
-// <xsd:complexType name="CT_SdtCheckboxSymbol">
-//   <xsd:attribute name="font" type="w:ST_String"/>
-//    <xsd:attribute name="val" type="w:ST_ShortHexNumber"/>
-// </xsd:complexType>
-
+// HWPX checkbox symbol element
 import { XmlAttributeComponent, XmlComponent } from "@file/xml-components";
 import { shortHexNumber } from "@util/values";
 
@@ -12,8 +7,8 @@ class CheckboxSymbolAttributes extends XmlAttributeComponent<{
     readonly symbolfont?: string;
 }> {
     protected readonly xmlKeys = {
-        val: "w14:val",
-        symbolfont: "w14:font",
+        val: "hp:val",
+        symbolfont: "hp:font",
     };
 }
 
