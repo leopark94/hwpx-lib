@@ -292,12 +292,24 @@ ${paraPrs}
     protected _compileBody(documentWrapper: DocumentWrapper): string {
         let xml = "";
 
-        // DocumentWrapper.View.Body의 root에서 직접 접근
+        // 디버깅을 위한 구조 확인
+        console.log("=== DocumentWrapper 구조 분석 ===");
+        console.log("documentWrapper keys:", Object.keys(documentWrapper));
+        console.log("documentWrapper.View keys:", Object.keys(documentWrapper.View));
+        console.log("documentWrapper.View.Body keys:", Object.keys(documentWrapper.View.Body));
+        
         const body = documentWrapper.View.Body;
+        console.log("Body type:", body.constructor.name);
+        console.log("Body root:", (body as any).root);
+        console.log("Body sections:", (body as any).sections);
+
+        // root 직접 접근
         const bodyRoot = (body as any).root;
 
         if (bodyRoot && Array.isArray(bodyRoot)) {
+            console.log(`Body root has ${bodyRoot.length} children`);
             for (const child of bodyRoot) {
+                console.log("Child type:", child?.constructor?.name);
                 if (child instanceof Paragraph) {
                     xml += this._compileParagraph(child);
                 } else if (child instanceof Table) {
@@ -308,6 +320,7 @@ ${paraPrs}
 
         // 만약 내용이 없으면 기본 문단 추가
         if (!xml) {
+            console.log("WARNING: No content found, using default paragraph");
             xml = this._generateFirstParagraph();
         }
 
