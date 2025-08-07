@@ -18,7 +18,7 @@ export type IFootnoteOptions = {
 
 export class Footnote extends XmlComponent {
     public constructor(options: IFootnoteOptions) {
-        super("w:footnote");
+        super("hh:footnote");
         this.root.push(
             new FootnoteAttributes({
                 type: options.type,

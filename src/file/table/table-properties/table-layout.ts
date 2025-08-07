@@ -14,7 +14,7 @@ export const TableLayoutType = {
 class TableLayoutAttributes extends XmlAttributeComponent<{
     readonly type: (typeof TableLayoutType)[keyof typeof TableLayoutType];
 }> {
-    protected readonly xmlKeys = { type: "w:type" };
+    protected readonly xmlKeys = { type: "hs:type" };
 }
 
 // <xsd:complexType name="CT_TblLayoutType">

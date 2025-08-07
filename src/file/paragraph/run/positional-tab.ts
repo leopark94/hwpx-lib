@@ -54,7 +54,7 @@ export type PositionalTabOptions = {
 // </xsd:complexType>
 export class PositionalTab extends XmlComponent {
     public constructor(options: PositionalTabOptions) {
-        super("w:ptab");
+        super("hp:ptab");
 
         this.root.push(
             new NextAttributeComponent<{

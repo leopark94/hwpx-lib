@@ -32,7 +32,7 @@ export class SectionTypeAttributes extends XmlAttributeComponent<{
 
 export class Type extends XmlComponent {
     public constructor(value: (typeof SectionType)[keyof typeof SectionType]) {
-        super("w:type");
+        super("hs:type");
         this.root.push(new SectionTypeAttributes({ val: value }));
     }
 }

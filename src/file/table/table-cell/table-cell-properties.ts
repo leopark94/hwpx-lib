@@ -31,7 +31,7 @@ export class TableCellProperties extends IgnoreIfEmptyXmlComponent {
         super("hp:tcPr");
 
         if (options.width) {
-            this.root.push(new TableWidthElement("w:tcW", options.width));
+            this.root.push(new TableWidthElement("hp:width", options.width));
         }
 
         if (options.columnSpan) {

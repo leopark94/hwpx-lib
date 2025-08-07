@@ -28,7 +28,7 @@ export class Attributes extends XmlAttributeComponent<{
         fill: "w:fill",
         space: "w:space",
         sz: "hp:height",
-        type: "w:type",
+        type: "hs:type",
         rsidR: "w:rsidR",
         rsidRPr: "w:rsidRPr",
         rsidSect: "w:rsidSect",

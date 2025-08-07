@@ -161,7 +161,7 @@ class LevelAttributes extends XmlAttributeComponent<{
 // </xsd:complexType>
 class NumberFormat extends XmlComponent {
     public constructor(value: string) {
-        super("w:numFmt");
+        super("hp:numFmt");
         this.root.push(
             new Attributes({
                 val: value,
@@ -176,7 +176,7 @@ class NumberFormat extends XmlComponent {
 // </xsd:complexType>
 class LevelText extends XmlComponent {
     public constructor(value: string) {
-        super("w:lvlText");
+        super("hp:lvlText");
         this.root.push(
             new Attributes({
                 val: value,
@@ -187,7 +187,7 @@ class LevelText extends XmlComponent {
 
 class LevelJc extends XmlComponent {
     public constructor(value: (typeof AlignmentType)[keyof typeof AlignmentType]) {
-        super("w:lvlJc");
+        super("hp:lvlJc");
         this.root.push(
             new Attributes({
                 val: value,

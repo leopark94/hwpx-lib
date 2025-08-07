@@ -198,7 +198,7 @@ export class Settings extends XmlComponent {
 
         // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_trackRevisions_topic_ID0EKXKY.html
         if (options.trackRevisions !== undefined) {
-            this.root.push(new OnOffElement("w:trackRevisions", options.trackRevisions));
+            this.root.push(new OnOffElement("ha:trackRevisions", options.trackRevisions));
         }
 
         // http://officeopenxml.com/WPSectionFooterReference.php

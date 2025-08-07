@@ -8,7 +8,7 @@ export class WordWrapAttributes extends XmlAttributeComponent<{ readonly val: 0 
 
 export class WordWrap extends XmlComponent {
     public constructor() {
-        super("w:wordWrap");
+        super("hp:wordWrap");
         this.root.push(new WordWrapAttributes({ val: 0 }));
     }
 }

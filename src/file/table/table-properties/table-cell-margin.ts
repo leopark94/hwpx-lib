@@ -34,7 +34,7 @@ export type ITableCellMarginOptions = {
 // </xsd:complexType>
 
 export const TableCellMarginElementType = {
-    TABLE: "w:tblCellMar",
+    TABLE: "hp:cellMargin",
     TABLE_CELL: "w:tcMar",
 } as const;
 

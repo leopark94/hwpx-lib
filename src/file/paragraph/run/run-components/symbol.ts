@@ -6,7 +6,7 @@ class SymbolAttributes extends XmlAttributeComponent<{
 }> {
     protected readonly xmlKeys = {
         char: "w:char",
-        symbolfont: "w:font",
+        symbolfont: "hh:font",
     };
 }
 

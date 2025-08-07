@@ -8,7 +8,7 @@ import { FootnotesAttributes } from "./footnotes-attributes";
 
 export class FootNotes extends XmlComponent {
     public constructor() {
-        super("w:footnotes");
+        super("hh:footnotes");
 
         this.root.push(
             new FootnotesAttributes({

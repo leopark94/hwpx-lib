@@ -60,10 +60,10 @@ export type IStyleOptions = {
 
 class StyleAttributes extends XmlAttributeComponent<IStyleAttributes> {
     protected readonly xmlKeys = {
-        type: "w:type",
-        styleId: "w:styleId",
-        default: "w:default",
-        customStyle: "w:customStyle",
+        type: "hs:type",
+        styleId: "hh:styleId",
+        default: "hh:default",
+        customStyle: "hh:customStyle",
     };
 }
 
@@ -76,15 +76,15 @@ export class Style extends XmlComponent {
         }
 
         if (options.basedOn) {
-            this.root.push(new StringValueElement("w:basedOn", options.basedOn));
+            this.root.push(new StringValueElement("hh:basedOn", options.basedOn));
         }
 
         if (options.next) {
-            this.root.push(new StringValueElement("w:next", options.next));
+            this.root.push(new StringValueElement("hh:next", options.next));
         }
 
         if (options.link) {
-            this.root.push(new StringValueElement("w:link", options.link));
+            this.root.push(new StringValueElement("hh:link", options.link));
         }
 
         if (options.uiPriority !== undefined) {
@@ -92,15 +92,15 @@ export class Style extends XmlComponent {
         }
 
         if (options.semiHidden !== undefined) {
-            this.root.push(new OnOffElement("w:semiHidden", options.semiHidden));
+            this.root.push(new OnOffElement("hh:semiHidden", options.semiHidden));
         }
 
         if (options.unhideWhenUsed !== undefined) {
-            this.root.push(new OnOffElement("w:unhideWhenUsed", options.unhideWhenUsed));
+            this.root.push(new OnOffElement("hh:unhideWhenUsed", options.unhideWhenUsed));
         }
 
         if (options.quickFormat !== undefined) {
-            this.root.push(new OnOffElement("w:qFormat", options.quickFormat));
+            this.root.push(new OnOffElement("hh:qFormat", options.quickFormat));
         }
     }
 }

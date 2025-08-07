@@ -13,7 +13,7 @@ type IColumnAttributes = {
 
 export class Column extends XmlComponent {
     public constructor({ width, space }: IColumnAttributes) {
-        super("w:col");
+        super("hs:column");
         this.root.push(
             new NextAttributeComponent<IColumnAttributes>({
                 width: { key: "w:w", value: twipsMeasureValue(width) },

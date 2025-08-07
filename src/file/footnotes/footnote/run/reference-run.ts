@@ -11,7 +11,7 @@ export class FootNoteReferenceRunAttributes extends XmlAttributeComponent<{
 
 export class FootnoteReference extends XmlComponent {
     public constructor(id: number) {
-        super("w:footnoteReference");
+        super("hp:footnoteRef");
 
         this.root.push(
             new FootNoteReferenceRunAttributes({

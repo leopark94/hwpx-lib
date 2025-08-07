@@ -112,27 +112,27 @@ export const createFont = ({
 }: FontOptions): XmlComponent =>
     // http://www.datypic.com/sc/ooxml/e-w_font-1.html
     new BuilderElement({
-        name: "w:font",
+        name: "hh:font",
         attributes: {
-            name: { key: "w:name", value: name },
+            name: { key: "hh:name", value: name },
         },
         children: [
             // http://www.datypic.com/sc/ooxml/e-w_altName-1.html
             ...(altName ? [createStringElement("w:altName", altName)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_panose1-1.html
-            ...(panose1 ? [createStringElement("w:panose1", panose1)] : []),
+            ...(panose1 ? [createStringElement("hh:panose1", panose1)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_charset-1.html
-            ...(charset ? [createStringElement("w:charset", charset)] : []),
+            ...(charset ? [createStringElement("hh:charset", charset)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_family-1.html
-            ...(family ? [createStringElement("w:family", family)] : []),
+            ...(family ? [createStringElement("hh:family", family)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_notTrueType-1.html
             ...(notTrueType ? [new OnOffElement("w:notTrueType", notTrueType)] : []),
-            ...(pitch ? [createStringElement("w:pitch", pitch)] : []),
+            ...(pitch ? [createStringElement("hh:pitch", pitch)] : []),
             // http://www.datypic.com/sc/ooxml/e-w_sig-1.html
             ...(sig
                 ? [
                       new BuilderElement({
-                          name: "w:sig",
+                          name: "hh:sig",
                           attributes: {
                               usb0: { key: "w:usb0", value: sig.usb0 },
                               usb1: { key: "w:usb1", value: sig.usb1 },
@@ -145,12 +145,12 @@ export const createFont = ({
                   ]
                 : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedRegular-1.html
-            ...(embedRegular ? [createFontRelationship(embedRegular, "w:embedRegular")] : []),
+            ...(embedRegular ? [createFontRelationship(embedRegular, "hh:embedRegular")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedBold-1.html
-            ...(embedBold ? [createFontRelationship(embedBold, "w:embedBold")] : []),
+            ...(embedBold ? [createFontRelationship(embedBold, "hh:embedBold")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedItalic-1.html
-            ...(embedItalic ? [createFontRelationship(embedItalic, "w:embedItalic")] : []),
+            ...(embedItalic ? [createFontRelationship(embedItalic, "hh:embedItalic")] : []),
             // http://www.datypic.com/sc/ooxml/e-w_embedBoldItalic-1.html
-            ...(embedBoldItalic ? [createFontRelationship(embedBoldItalic, "w:embedBoldItalic")] : []),
+            ...(embedBoldItalic ? [createFontRelationship(embedBoldItalic, "hh:embedBoldItalic")] : []),
         ],
     });

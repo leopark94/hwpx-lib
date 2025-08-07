@@ -12,7 +12,7 @@ import { ITableOfContentsOptions } from "./table-of-contents-properties";
 
 export class TableOfContents extends FileChild {
     public constructor(alias: string = "Table of Contents", properties?: ITableOfContentsOptions) {
-        super("w:sdt");
+        super("hp:ctrl");
         this.root.push(new StructuredDocumentTagProperties(alias));
 
         const content = new StructuredDocumentTagContent();

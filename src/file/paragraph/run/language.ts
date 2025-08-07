@@ -28,7 +28,7 @@ export const createLanguageComponent = (options: ILanguageOptions): XmlComponent
                 value: options.eastAsia,
             },
             bidirectional: {
-                key: "w:bidi",
+                key: "hs:bidi",
                 value: options.bidirectional,
             },
         },

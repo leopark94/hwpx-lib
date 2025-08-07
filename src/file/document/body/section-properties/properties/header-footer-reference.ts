@@ -53,14 +53,14 @@ class FooterReferenceAttributes extends XmlAttributeComponent<{
     readonly id: string;
 }> {
     protected readonly xmlKeys = {
-        type: "w:type",
+        type: "hs:type",
         id: "r:id",
     };
 }
 
 export const HeaderFooterType = {
-    HEADER: "w:headerReference",
-    FOOTER: "w:footerReference",
+    HEADER: "hs:headerReference",
+    FOOTER: "hs:footerReference",
 } as const;
 
 export class HeaderFooterReference extends XmlComponent {

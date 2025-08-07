@@ -6,7 +6,7 @@ export const EmphasisMarkType = {
 
 export abstract class BaseEmphasisMark extends XmlComponent {
     protected constructor(emphasisMarkType: (typeof EmphasisMarkType)[keyof typeof EmphasisMarkType]) {
-        super("w:em");
+        super("hp:emphasis");
         this.root.push(
             new Attributes({
                 val: emphasisMarkType,

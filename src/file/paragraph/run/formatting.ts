@@ -52,7 +52,7 @@ export class Color extends XmlComponent {
 // </xsd:simpleType>
 export class Highlight extends XmlComponent {
     public constructor(color: string) {
-        super("w:highlight");
+        super("hp:highlight");
         this.root.push(
             new Attributes({
                 val: color,

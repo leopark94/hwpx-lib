@@ -10,17 +10,17 @@ export type ILatentStyleExceptionAttributesProperties = {
 
 export class LatentStyleExceptionAttributes extends XmlAttributeComponent<ILatentStyleExceptionAttributesProperties> {
     protected readonly xmlKeys = {
-        name: "w:name",
-        uiPriority: "w:uiPriority",
-        qFormat: "w:qFormat",
-        semiHidden: "w:semiHidden",
-        unhideWhenUsed: "w:unhideWhenUsed",
+        name: "hh:name",
+        uiPriority: "hh:uiPriority",
+        qFormat: "hh:qFormat",
+        semiHidden: "hh:semiHidden",
+        unhideWhenUsed: "hh:unhideWhenUsed",
     };
 }
 
 export class LatentStyleException extends XmlComponent {
     public constructor(attributes: ILatentStyleExceptionAttributesProperties) {
-        super("w:lsdException");
+        super("hh:lsdException");
         this.root.push(new LatentStyleExceptionAttributes(attributes));
     }
 }

@@ -6,7 +6,7 @@ export class BookmarkStartAttributes extends XmlAttributeComponent<{
 }> {
     protected readonly xmlKeys = {
         id: "w:id",
-        name: "w:name",
+        name: "hh:name",
     };
 }
 

@@ -104,9 +104,9 @@ export type IDocGridAttributesProperties = {
  */
 export const createDocumentGrid = ({ type, linePitch, charSpace }: IDocGridAttributesProperties): XmlComponent =>
     new BuilderElement<IDocGridAttributesProperties>({
-        name: "w:docGrid",
+        name: "hs:docGrid",
         attributes: {
-            type: { key: "w:type", value: type },
+            type: { key: "hs:type", value: type },
             linePitch: { key: "w:linePitch", value: decimalNumber(linePitch) },
             charSpace: { key: "w:charSpace", value: charSpace ? decimalNumber(charSpace) : undefined },
         },

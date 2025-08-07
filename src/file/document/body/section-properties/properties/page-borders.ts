@@ -73,7 +73,7 @@ class PageBordersAttributes extends XmlAttributeComponent<IPageBorderAttributes>
 // </xsd:complexType>
 export class PageBorders extends IgnoreIfEmptyXmlComponent {
     public constructor(options?: IPageBordersOptions) {
-        super("w:pgBorders");
+        super("hs:pageBorders");
 
         if (!options) {
             return this;

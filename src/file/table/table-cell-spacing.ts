@@ -27,11 +27,11 @@ export type ITableCellSpacingProperties = {
 
 export class TableCellSpacingElement extends XmlComponent {
     public constructor({ type = CellSpacingType.DXA, value }: ITableCellSpacingProperties) {
-        super("w:tblCellSpacing");
+        super("hp:cellSpacing");
 
         this.root.push(
             new NextAttributeComponent<ITableCellSpacingProperties>({
-                type: { key: "w:type", value: type },
+                type: { key: "hs:type", value: type },
                 value: { key: "w:w", value: measurementOrPercentValue(value) },
             }),
         );

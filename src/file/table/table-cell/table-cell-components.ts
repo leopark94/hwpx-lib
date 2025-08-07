@@ -28,7 +28,7 @@ export type ITableCellBorders = {
 
 export class TableCellBorders extends IgnoreIfEmptyXmlComponent {
     public constructor(options: ITableCellBorders) {
-        super("w:tcBorders");
+        super("hp:borders");
 
         if (options.top) {
             this.root.push(new BorderElement("w:top", options.top));
@@ -129,7 +129,7 @@ class TDirectionAttributes extends XmlAttributeComponent<{
  */
 export class TDirection extends XmlComponent {
     public constructor(value: (typeof TextDirection)[keyof typeof TextDirection]) {
-        super("w:textDirection");
+        super("hs:textDirection");
 
         this.root.push(
             new TDirectionAttributes({

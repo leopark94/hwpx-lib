@@ -34,7 +34,7 @@ export class TableBorders extends XmlComponent {
     };
 
     public constructor(options: ITableBordersOptions) {
-        super("w:tblBorders");
+        super("hp:borders");
 
         if (options.top) {
             this.root.push(new BorderElement("w:top", options.top));

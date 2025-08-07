@@ -51,7 +51,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
         super("hp:tblPr");
 
         if (options.style) {
-            this.root.push(new StringValueElement("w:tblStyle", options.style));
+            this.root.push(new StringValueElement("hp:tblStyle", options.style));
         }
 
         if (options.float) {
@@ -63,7 +63,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.width) {
-            this.root.push(new TableWidthElement("w:tblW", options.width));
+            this.root.push(new TableWidthElement("hp:tblW", options.width));
         }
 
         if (options.alignment) {

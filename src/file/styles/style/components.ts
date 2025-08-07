@@ -10,14 +10,14 @@ class ComponentAttributes extends XmlAttributeComponent<{
 
 export class Name extends XmlComponent {
     public constructor(value: string) {
-        super("w:name");
+        super("hh:name");
         this.root.push(new ComponentAttributes({ val: value }));
     }
 }
 
 export class UiPriority extends XmlComponent {
     public constructor(value: number) {
-        super("w:uiPriority");
+        super("hh:uiPriority");
         this.root.push(new ComponentAttributes({ val: decimalNumber(value) }));
     }
 }

@@ -31,7 +31,7 @@ export class TableRowHeightAttributes extends XmlAttributeComponent<{
 
 export class TableRowHeight extends XmlComponent {
     public constructor(value: number | PositiveUniversalMeasure, rule: (typeof HeightRule)[keyof typeof HeightRule]) {
-        super("w:trHeight");
+        super("hp:height");
 
         this.root.push(
             new TableRowHeightAttributes({

@@ -96,7 +96,7 @@ class RootCommentsAttributes extends XmlAttributeComponent<{
 
 export class CommentRangeStart extends XmlComponent {
     public constructor(id: number) {
-        super("w:commentRangeStart");
+        super("hp:commentRangeStart");
 
         this.root.push(new CommentRangeAttributes({ id }));
     }
@@ -104,7 +104,7 @@ export class CommentRangeStart extends XmlComponent {
 
 export class CommentRangeEnd extends XmlComponent {
     public constructor(id: number) {
-        super("w:commentRangeEnd");
+        super("hp:commentRangeEnd");
 
         this.root.push(new CommentRangeAttributes({ id }));
     }
@@ -112,7 +112,7 @@ export class CommentRangeEnd extends XmlComponent {
 
 export class CommentReference extends XmlComponent {
     public constructor(id: number) {
-        super("w:commentReference");
+        super("hp:commentReference");
 
         this.root.push(new CommentRangeAttributes({ id }));
     }

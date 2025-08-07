@@ -11,7 +11,7 @@ export class CheckBox extends XmlComponent {
     private readonly DEFAULT_CHECKED_SYMBOL: string = "2612";
     private readonly DEFAULT_FONT: string = "MS Gothic";
     public constructor(options?: ICheckboxSymbolOptions) {
-        super("w:sdt");
+        super("hp:ctrl");
 
         const properties = new StructuredDocumentTagProperties(options?.alias);
         properties.addChildElement(new CheckBoxUtil(options));

@@ -13,7 +13,7 @@ class PageTextDirectionAttributes extends XmlAttributeComponent<{
 
 export class PageTextDirection extends XmlComponent {
     public constructor(value: (typeof PageTextDirectionType)[keyof typeof PageTextDirectionType]) {
-        super("w:textDirection");
+        super("hs:textDirection");
 
         this.root.push(
             new PageTextDirectionAttributes({

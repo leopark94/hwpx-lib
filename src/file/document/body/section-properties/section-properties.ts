@@ -150,7 +150,7 @@ export class SectionProperties extends XmlComponent {
         }
 
         if (titlePage !== undefined) {
-            this.root.push(new OnOffElement("w:titlePg", titlePage));
+            this.root.push(new OnOffElement("hs:titlePage", titlePage));
         }
 
         if (textDirection) {

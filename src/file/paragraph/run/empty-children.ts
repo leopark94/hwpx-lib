@@ -26,13 +26,13 @@ import { EmptyElement } from "@file/xml-components";
 
 export class NoBreakHyphen extends EmptyElement {
     public constructor() {
-        super("w:noBreakHyphen");
+        super("hp:noBreakHyphen");
     }
 }
 
 export class SoftHyphen extends EmptyElement {
     public constructor() {
-        super("w:softHyphen");
+        super("hp:softHyphen");
     }
 }
 
@@ -80,25 +80,25 @@ export class AnnotationReference extends EmptyElement {
 
 export class FootnoteReferenceElement extends EmptyElement {
     public constructor() {
-        super("w:footnoteRef");
+        super("hp:footnoteRef");
     }
 }
 
 export class EndnoteReference extends EmptyElement {
     public constructor() {
-        super("w:endnoteRef");
+        super("hp:endnoteRef");
     }
 }
 
 export class Separator extends EmptyElement {
     public constructor() {
-        super("w:separator");
+        super("hp:separator");
     }
 }
 
 export class ContinuationSeparator extends EmptyElement {
     public constructor() {
-        super("w:continuationSeparator");
+        super("hp:continuationSeparator");
     }
 }
 
@@ -122,6 +122,6 @@ export class Tab extends EmptyElement {
 
 export class LastRenderedPageBreak extends EmptyElement {
     public constructor() {
-        super("w:lastRenderedPageBreak");
+        super("hp:pageBreak");
     }
 }

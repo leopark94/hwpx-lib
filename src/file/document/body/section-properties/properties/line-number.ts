@@ -125,7 +125,7 @@ export type ILineNumberAttributes = {
  */
 export const createLineNumberType = ({ countBy, start, restart, distance }: ILineNumberAttributes): XmlComponent =>
     new BuilderElement<ILineNumberAttributes>({
-        name: "w:lnNumType",
+        name: "hs:lineNumbers",
         attributes: {
             countBy: { key: "w:countBy", value: countBy === undefined ? undefined : decimalNumber(countBy) },
             start: { key: "w:start", value: start === undefined ? undefined : decimalNumber(start) },

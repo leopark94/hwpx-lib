@@ -195,17 +195,17 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
 
         // These two are mutually exclusive
         if (options.smallCaps !== undefined) {
-            this.push(new OnOffElement("w:smallCaps", options.smallCaps));
+            this.push(new OnOffElement("hp:smallCaps", options.smallCaps));
         } else if (options.allCaps !== undefined) {
-            this.push(new OnOffElement("w:caps", options.allCaps));
+            this.push(new OnOffElement("hp:caps", options.allCaps));
         }
 
         if (options.strike !== undefined) {
-            this.push(new OnOffElement("w:strike", options.strike));
+            this.push(new OnOffElement("hp:strikeout", options.strike));
         }
 
         if (options.doubleStrike !== undefined) {
-            this.push(new OnOffElement("w:dstrike", options.doubleStrike));
+            this.push(new OnOffElement("hp:strikeout", options.doubleStrike));
         }
 
         if (options.emboss !== undefined) {
@@ -227,7 +227,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         if (options.vanish) {
             // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_vanish_topic_ID0E6W3O.html
             // http://www.datypic.com/sc/ooxml/e-w_vanish-1.html
-            this.push(new OnOffElement("w:vanish", options.vanish));
+            this.push(new OnOffElement("hp:vanish", options.vanish));
         }
 
         if (options.color) {
@@ -312,7 +312,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.math) {
-            this.push(new OnOffElement("w:oMath", options.math));
+            this.push(new OnOffElement("hp:math", options.math));
         }
 
         if (options.revision) {
@@ -327,7 +327,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
 
 export class RunPropertiesChange extends XmlComponent {
     public constructor(options: IRunPropertiesChangeOptions) {
-        super("w:rPrChange");
+        super("hp:rPrChange");
         this.root.push(
             new ChangeAttributes({
                 id: options.id,

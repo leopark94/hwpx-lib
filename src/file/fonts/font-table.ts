@@ -20,7 +20,7 @@ export const createFontTable = (fonts: readonly FontOptionsWithKey[]): XmlCompon
     // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_Font_topic_ID0ERNCU.html
     // http://www.datypic.com/sc/ooxml/e-w_fonts.html
     new BuilderElement({
-        name: "w:fonts",
+        name: "hh:fonts",
         attributes: {
             mc: { key: "xmlns:mc", value: "http://schemas.openxmlformats.org/markup-compatibility/2006" },
             r: { key: "xmlns:r", value: "http://schemas.openxmlformats.org/officeDocument/2006/relationships" },
