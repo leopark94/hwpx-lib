@@ -36,7 +36,7 @@ class ShadingAttributes extends XmlAttributeComponent<IShadingAttributesProperti
 
 export class Shading extends XmlComponent {
     public constructor({ fill, color, type }: IShadingAttributesProperties) {
-        super("hp:shading");
+        super("hp:shd");
         this.root.push(
             new ShadingAttributes({
                 fill: fill === undefined ? undefined : hexColorValue(fill),
