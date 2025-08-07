@@ -308,6 +308,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new OnOffElement("hh:bold", options.bold));
         }
 
+        // DOCX 전용: bCs (복잡한 스크립트용 굵기) - HWPX에서는 언어별로 처리
         if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
             this.push(new OnOffElement("w:bCs", options.boldComplexScript ?? options.bold));
         }
@@ -316,6 +317,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new OnOffElement("hh:italic", options.italics));
         }
 
+        // DOCX 전용: iCs (복잡한 스크립트용 기울임) - HWPX에서는 언어별로 처리
         if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
             this.push(new OnOffElement("w:iCs", options.italicsComplexScript ?? options.italics));
         }
@@ -335,18 +337,22 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new OnOffElement("hh:strikeout", options.doubleStrike));
         }
 
+        // DOCX 전용: emboss (양각 효과) - HWPX에서는 지원하지 않음
         if (options.emboss !== undefined) {
             this.push(new OnOffElement("w:emboss", options.emboss));
         }
 
+        // DOCX 전용: imprint (음각 효과) - HWPX에서는 지원하지 않음
         if (options.imprint !== undefined) {
             this.push(new OnOffElement("w:imprint", options.imprint));
         }
 
+        // DOCX 전용: noProof (맞춤법 검사 제외)
         if (options.noProof !== undefined) {
             this.push(new OnOffElement("w:noProof", options.noProof));
         }
 
+        // DOCX 전용: snapToGrid (격자에 맞춤) - HWPX는 paraPr 수준에서 지원
         if (options.snapToGrid !== undefined) {
             this.push(new OnOffElement("w:snapToGrid", options.snapToGrid));
         }
@@ -382,10 +388,12 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new Underline(options.underline.type, options.underline.color));
         }
 
+        // DOCX 전용: effect (텍스트 애니메이션 효과) - HWPX에서는 지원하지 않음
         if (options.effect) {
             this.push(new StringValueElement("w:effect", options.effect));
         }
 
+        // DOCX 전용: bdr (문자 테두리) - HWPX는 borderFillIDRef 사용
         if (options.border) {
             this.push(new BorderElement("w:bdr", options.border));
         }

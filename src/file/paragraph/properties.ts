@@ -123,6 +123,7 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
             this.push(createFrameProperties(options.frame));
         }
 
+        // DOCX 전용: widowControl (고아/과부 제어) - HWPX는 breakSetting[@widowOrphan]으로 처리
         if (options.widowControl !== undefined) {
             this.push(new OnOffElement("w:widowControl", options.widowControl));
         }
@@ -154,10 +155,12 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new Shading(options.shading));
         }
 
+        // DOCX 전용: wordWrap (단어 나눔) - HWPX는 breakSetting으로 처리
         if (options.wordWrap) {
             this.push(new WordWrap());
         }
 
+        // DOCX 전용: overflowPunct (구두점 오버플로우) - HWPX에서는 지원하지 않음
         if (options.overflowPunctuation) {
             this.push(new OnOffElement("w:overflowPunct", options.overflowPunctuation));
         }
@@ -191,6 +194,7 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new Indent(options.indent));
         }
 
+        // DOCX 전용: contextualSpacing (맥락적 간격) - HWPX에서는 지원하지 않음
         if (options.contextualSpacing !== undefined) {
             this.push(new OnOffElement("w:contextualSpacing", options.contextualSpacing));
         }
@@ -203,10 +207,12 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
             this.push(new OutlineLevel(options.outlineLevel));
         }
 
+        // DOCX 전용: suppressLineNumbers (줄 번호 숨김) - HWPX에서는 지원하지 않음
         if (options.suppressLineNumbers !== undefined) {
             this.push(new OnOffElement("w:suppressLineNumbers", options.suppressLineNumbers));
         }
 
+        // DOCX 전용: autoSpaceDN (동아시아 타이포그래피) - HWPX는 hh:autoSpacing으로 처리
         if (options.autoSpaceEastAsianText !== undefined) {
             this.push(new OnOffElement("w:autoSpaceDN", options.autoSpaceEastAsianText));
         }

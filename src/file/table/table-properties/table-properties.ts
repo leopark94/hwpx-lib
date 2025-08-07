@@ -58,6 +58,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
             this.root.push(new TableFloatProperties(options.float));
         }
 
+        // DOCX 전용: bidiVisual (양방향 텍스트 테이블) - HWPX에서는 제한적 지원
         if (options.visuallyRightToLeft !== undefined) {
             this.root.push(new OnOffElement("hp:bidiVisual", options.visuallyRightToLeft));
         }
@@ -70,6 +71,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
             this.root.push(new Alignment(options.alignment));
         }
 
+        // DOCX 전용: tblInd (테이블 들여쓰기) - HWPX에서는 부분 지원
         if (options.indent) {
             this.root.push(new TableWidthElement("hp:tblInd", options.indent));
         }
@@ -86,6 +88,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
             this.root.push(new TableLayout(options.layout));
         }
 
+        // DOCX 전용: tblCellMar (셀 마진) - HWPX에서는 제한적 지원
         if (options.cellMargin) {
             this.root.push(new TableCellMargin(TableCellMarginElementType.TABLE, options.cellMargin));
         }
