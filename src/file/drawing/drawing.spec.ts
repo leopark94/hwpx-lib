@@ -36,7 +36,7 @@ describe("Drawing", () => {
             currentBreak = createDrawing();
             const tree = new Formatter().format(currentBreak);
             expect(tree).to.deep.equal({
-                "w:drawing": [
+                "hp:drawing": [
                     {
                         "wp:inline": [
                             {
@@ -224,7 +224,7 @@ describe("Drawing", () => {
             });
             const tree = new Formatter().format(currentBreak);
             expect(tree).to.deep.equal({
-                "w:drawing": [
+                "hp:drawing": [
                     {
                         "wp:anchor": [
                             {
@@ -455,7 +455,7 @@ describe("Drawing", () => {
                 stack: [new ConcreteHyperlink([new TextRun("Test")], "1")],
             } as unknown as IContext);
             expect(tree).to.deep.equal({
-                "w:drawing": [
+                "hp:drawing": [
                     {
                         "wp:anchor": [
                             {

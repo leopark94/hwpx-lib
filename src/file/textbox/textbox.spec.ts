@@ -30,7 +30,11 @@ describe("VmlTextbox", () => {
                                             "w:txbxContent": [
                                                 {
                                                     "hp:p": [
-                                                        { "hp:run": [{ "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] }] },
+                                                        {
+                                                            "hp:run": [
+                                                                { "hp:t": [{ _attr: { "xml:space": "preserve" } }, "test-content"] },
+                                                            ],
+                                                        },
                                                     ],
                                                 },
                                             ],

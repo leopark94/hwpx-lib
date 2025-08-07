@@ -29,7 +29,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "hp:top": {
                             _attr: {
@@ -54,7 +54,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "w:start": {
                             _attr: {
@@ -79,7 +79,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "hp:bottom": {
                             _attr: {
@@ -104,7 +104,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "w:end": {
                             _attr: {
@@ -129,7 +129,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "hp:left": {
                             _attr: {
@@ -154,7 +154,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "hp:right": {
                             _attr: {
@@ -204,7 +204,7 @@ describe("TableCellBorders", () => {
 
             const tree = new Formatter().format(tb);
             expect(tree).to.deep.equal({
-                "w:tcBorders": [
+                "hp:tcBorders": [
                     {
                         "hp:top": {
                             _attr: {
@@ -474,7 +474,7 @@ describe("TableCell", () => {
                     {
                         "hp:tcPr": [
                             {
-                                "w:tcW": {
+                                "hp:tcW": {
                                     _attr: {
                                         "hp:type": "dxa",
                                         "hp:w": 100,
@@ -598,7 +598,7 @@ describe("TableCell", () => {
                         {
                             "hp:tcPr": [
                                 {
-                                    "w:tcBorders": [
+                                    "hp:tcBorders": [
                                         {
                                             "hp:top": {
                                                 _attr: {

@@ -49,15 +49,39 @@ export const AlignmentType = {
     JUSTIFIED: "both",
 } as const;
 
+// HWPX에서는 horizontal과 vertical 속성으로 분리
 export class AlignmentAttributes extends XmlAttributeComponent<{
-    readonly val: (typeof AlignmentType)[keyof typeof AlignmentType];
+    readonly horizontal?: (typeof AlignmentType)[keyof typeof AlignmentType];
+    readonly vertical?: string;
 }> {
-    protected readonly xmlKeys = { val: "hp:val" };
+    protected readonly xmlKeys = {
+        horizontal: "horizontal",
+        vertical: "vertical",
+    };
 }
 
 export class Alignment extends XmlComponent {
     public constructor(type: (typeof AlignmentType)[keyof typeof AlignmentType]) {
-        super("hp:align");
-        this.root.push(new AlignmentAttributes({ val: type }));
+        super("hh:align");
+        // HWPX 형식에 맞게 변환
+        let horizontal: string = type;
+        if (type === AlignmentType.LEFT || type === AlignmentType.START) {
+            horizontal = "LEFT";
+        } else if (type === AlignmentType.RIGHT || type === AlignmentType.END) {
+            horizontal = "RIGHT";
+        } else if (type === AlignmentType.CENTER) {
+            horizontal = "CENTER";
+        } else if (type === AlignmentType.BOTH || type === AlignmentType.JUSTIFIED) {
+            horizontal = "JUSTIFY";
+        } else if (type === AlignmentType.DISTRIBUTE) {
+            horizontal = "DISTRIBUTE";
+        }
+
+        this.root.push(
+            new AlignmentAttributes({
+                horizontal: horizontal,
+                vertical: "BASELINE",
+            }),
+        );
     }
 }

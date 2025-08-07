@@ -81,7 +81,7 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
     private readonly numberingReferences: { readonly reference: string; readonly instance: number }[] = [];
 
     public constructor(options?: IParagraphPropertiesOptions) {
-        super("hp:paraPr");
+        super("hh:paraPr");
 
         if (!options) {
             return this;
@@ -180,7 +180,7 @@ export class ParagraphProperties extends IgnoreIfEmptyXmlComponent {
          */
 
         if (options.bidirectional !== undefined) {
-            this.push(new OnOffElement("hs:bidi", options.bidirectional));
+            this.push(new OnOffElement("hh:bidi", options.bidirectional));
         }
 
         if (options.spacing) {

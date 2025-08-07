@@ -3,10 +3,11 @@ import { UniversalMeasure, hexColorValue, signedTwipsMeasureValue } from "@util/
 
 export class CharacterSpacing extends XmlComponent {
     public constructor(value: number | UniversalMeasure) {
-        super("hp:lineSpacing");
+        super("hh:spacing");
         this.root.push(
             new Attributes({
-                val: signedTwipsMeasureValue(value),
+                hangul: signedTwipsMeasureValue(value),
+                latin: signedTwipsMeasureValue(value),
             }),
         );
     }
@@ -18,9 +19,11 @@ export class CharacterSpacing extends XmlComponent {
 //     <xsd:attribute name="themeTint" type="ST_UcharHexNumber" use="optional"/>
 //     <xsd:attribute name="themeShade" type="ST_UcharHexNumber" use="optional"/>
 // </xsd:complexType>
+// HWPX에서는 Color가 RunProperties의 속성으로 처리됨
+// 이 클래스는 DOCX 호환성을 위해 유지하되, 실제 사용시에는 RunProperties에서 직접 처리
 export class Color extends XmlComponent {
     public constructor(color: string) {
-        super("hp:textColor");
+        super("hh:textColor"); // HWPX에서는 사용되지 않음
         this.root.push(
             new Attributes({
                 val: hexColorValue(color),
@@ -50,9 +53,10 @@ export class Color extends XmlComponent {
 //         <xsd:enumeration value="none"/>
 //     </xsd:restriction>
 // </xsd:simpleType>
+// HWPX에서는 Highlight가 RunProperties의 shadeColor 속성으로 처리됨
 export class Highlight extends XmlComponent {
     public constructor(color: string) {
-        super("hp:highlight");
+        super("hh:shadeColor"); // HWPX에서는 사용되지 않음
         this.root.push(
             new Attributes({
                 val: color,

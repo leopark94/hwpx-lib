@@ -12,7 +12,7 @@ describe("ParagraphStyle", () => {
             style = new Style("test");
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:pStyle": {
+                "hp:pStyle": {
                     _attr: {
                         "hp:val": "test",
                     },
@@ -24,7 +24,7 @@ describe("ParagraphStyle", () => {
             style = new Style("");
             const tree = new Formatter().format(style);
             expect(tree).to.deep.equal({
-                "w:pStyle": {
+                "hp:pStyle": {
                     _attr: {
                         "hp:val": "",
                     },

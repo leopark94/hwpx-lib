@@ -34,7 +34,7 @@ export class TableBorders extends XmlComponent {
     };
 
     public constructor(options: ITableBordersOptions) {
-        super("hp:borders");
+        super("hp:tblBorders");
 
         if (options.top) {
             this.root.push(new BorderElement("hp:top", options.top));
@@ -61,15 +61,15 @@ export class TableBorders extends XmlComponent {
         }
 
         if (options.insideHorizontal) {
-            this.root.push(new BorderElement("w:insideH", options.insideHorizontal));
+            this.root.push(new BorderElement("hp:insideH", options.insideHorizontal));
         } else {
-            this.root.push(new BorderElement("w:insideH", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:insideH", DEFAULT_BORDER));
         }
 
         if (options.insideVertical) {
-            this.root.push(new BorderElement("w:insideV", options.insideVertical));
+            this.root.push(new BorderElement("hp:insideV", options.insideVertical));
         } else {
-            this.root.push(new BorderElement("w:insideV", DEFAULT_BORDER));
+            this.root.push(new BorderElement("hp:insideV", DEFAULT_BORDER));
         }
     }
 }

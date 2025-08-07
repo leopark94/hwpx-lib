@@ -40,7 +40,7 @@ describe("ImageRun", () => {
             expect(tree).to.deep.equal({
                 "hp:run": [
                     {
-                        "w:drawing": [
+                        "hp:drawing": [
                             {
                                 "wp:anchor": [
                                     {
@@ -293,7 +293,7 @@ describe("ImageRun", () => {
             expect(tree).to.deep.equal({
                 "hp:run": [
                     {
-                        "w:drawing": [
+                        "hp:drawing": [
                             {
                                 "wp:anchor": [
                                     {
@@ -549,7 +549,7 @@ describe("ImageRun", () => {
             expect(tree).to.deep.equal({
                 "hp:run": [
                     {
-                        "w:drawing": [
+                        "hp:drawing": [
                             {
                                 "wp:anchor": [
                                     {
@@ -805,7 +805,7 @@ describe("ImageRun", () => {
             expect(tree).to.deep.equal({
                 "hp:run": [
                     {
-                        "w:drawing": [
+                        "hp:drawing": [
                             {
                                 "wp:anchor": [
                                     {
@@ -1069,7 +1069,7 @@ describe("ImageRun", () => {
             expect(tree).toStrictEqual({
                 "hp:run": [
                     {
-                        "w:drawing": [
+                        "hp:drawing": [
                             {
                                 "wp:inline": expect.arrayContaining([
                                     {

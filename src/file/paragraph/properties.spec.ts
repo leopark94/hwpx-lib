@@ -35,7 +35,7 @@ describe("ParagraphProperties", () => {
             expect(tree).to.deep.equal({
                 "hp:paraPr": [
                     {
-                        "w:pStyle": {
+                        "hp:pStyle": {
                             _attr: {
                                 "hp:val": "ListParagraph",
                             },

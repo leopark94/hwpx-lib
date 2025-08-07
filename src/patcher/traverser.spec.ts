@@ -61,7 +61,7 @@ const MOCK_JSON = {
                                 {
                                     type: "element",
                                     name: "hp:paraPr",
-                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Title" } }],
+                                    elements: [{ type: "element", name: "hp:pStyle", attributes: { "hp:val": "Title" } }],
                                 },
                                 {
                                     type: "element",
@@ -250,7 +250,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -286,7 +290,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -309,7 +317,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3004", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -344,7 +356,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -380,7 +396,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -403,7 +423,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3004", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -438,7 +462,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -461,7 +489,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3003", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3003", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -484,7 +516,11 @@ const MOCK_JSON = {
                                                     type: "element",
                                                     name: "hp:tcPr",
                                                     elements: [
-                                                        { type: "element", name: "w:tcW", attributes: { "hp:w": "3004", "hp:type": "dxa" } },
+                                                        {
+                                                            type: "element",
+                                                            name: "hp:tcW",
+                                                            attributes: { "hp:w": "3004", "hp:type": "dxa" },
+                                                        },
                                                     ],
                                                 },
                                                 {
@@ -570,7 +606,7 @@ const MOCK_JSON = {
                                 {
                                     type: "element",
                                     name: "hp:paraPr",
-                                    elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Header" } }],
+                                    elements: [{ type: "element", name: "hp:pStyle", attributes: { "hp:val": "Header" } }],
                                 },
                                 {
                                     type: "element",

@@ -17,7 +17,7 @@ export type IIndentAttributesProperties = {
 //     <xsd:element name="ind" type="CT_Ind" minOccurs="0"/>
 export class Indent extends XmlComponent {
     public constructor({ start, end, left, right, hanging, firstLine }: IIndentAttributesProperties) {
-        super("hp:margin");
+        super("hh:margin");
         // <xsd:complexType name="CT_Ind">
         //     <xsd:attribute name="start" type="ST_SignedTwipsMeasure" use="optional"/>
         //     <xsd:attribute name="startChars" type="ST_DecimalNumber" use="optional"/>
@@ -50,20 +50,25 @@ export class Indent extends XmlComponent {
                     value: end === undefined ? undefined : signedTwipsMeasureValue(end),
                 },
                 left: {
-                    key: "hp:left",
+                    key: "left",
                     value: left === undefined ? undefined : signedTwipsMeasureValue(left),
                 },
                 right: {
-                    key: "hp:right",
+                    key: "right",
                     value: right === undefined ? undefined : signedTwipsMeasureValue(right),
                 },
-                hanging: {
-                    key: "w:hanging",
-                    value: hanging === undefined ? undefined : twipsMeasureValue(hanging),
+                intent: {
+                    key: "intent",
+                    value:
+                        firstLine !== undefined
+                            ? twipsMeasureValue(firstLine)
+                            : hanging !== undefined
+                              ? `-${twipsMeasureValue(hanging)}`
+                              : undefined,
                 },
-                firstLine: {
-                    key: "w:firstLine",
-                    value: firstLine === undefined ? undefined : twipsMeasureValue(firstLine),
+                unit: {
+                    key: "unit",
+                    value: "HWPUNIT",
                 },
             }),
         );

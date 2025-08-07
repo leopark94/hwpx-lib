@@ -3,18 +3,11 @@
 import { BorderElement, IBorderOptions } from "@file/border";
 import { IShadingAttributesProperties, Shading } from "@file/shading";
 import { ChangeAttributes, IChangedAttributesProperties } from "@file/track-revision/track-revision";
-import {
-    HpsMeasureElement,
-    IgnoreIfEmptyXmlComponent,
-    NumberValueElement,
-    OnOffElement,
-    StringValueElement,
-    XmlComponent,
-} from "@file/xml-components";
-import { PositiveUniversalMeasure, UniversalMeasure } from "@util/values";
+import { IgnoreIfEmptyXmlComponent, OnOffElement, StringValueElement, XmlComponent, XmlAttributeComponent } from "@file/xml-components";
+import { PositiveUniversalMeasure, UniversalMeasure, hexColorValue } from "@util/values";
 
 import { EmphasisMark, EmphasisMarkType } from "./emphasis-mark";
-import { CharacterSpacing, Color, Highlight, HighlightComplexScript } from "./formatting";
+import { CharacterSpacing } from "./formatting";
 import { ILanguageOptions, createLanguageComponent } from "./language";
 import { IFontAttributesProperties, RunFonts } from "./run-fonts";
 import { SubScript, SuperScript } from "./script";
@@ -155,16 +148,150 @@ export type IRunPropertiesChangeOptions = {} & IRunPropertiesOptions & IChangedA
 //     </xsd:choice>
 // </xsd:group>
 
+// HWPX charPr 속성을 위한 클래스
+class CharPrAttributes extends XmlAttributeComponent<{
+    readonly id?: string;
+    readonly height?: number;
+    readonly textColor?: string;
+    readonly shadeColor?: string;
+    readonly useFontSpace?: number;
+    readonly useKerning?: number;
+    readonly symMark?: string;
+    readonly borderFillIDRef?: string;
+}> {
+    protected readonly xmlKeys = {
+        id: "id",
+        height: "height",
+        textColor: "textColor",
+        shadeColor: "shadeColor",
+        useFontSpace: "useFontSpace",
+        useKerning: "useKerning",
+        symMark: "symMark",
+        borderFillIDRef: "borderFillIDRef",
+    };
+}
+
+// HWPX 언어별 속성을 위한 클래스
+class HwpxLangAttributes extends XmlAttributeComponent<{
+    readonly hangul?: string;
+    readonly latin?: string;
+    readonly hanja?: string;
+    readonly japanese?: string;
+    readonly other?: string;
+    readonly symbol?: string;
+    readonly user?: string;
+}> {
+    protected readonly xmlKeys = {
+        hangul: "hangul",
+        latin: "latin",
+        hanja: "hanja",
+        japanese: "japanese",
+        other: "other",
+        symbol: "symbol",
+        user: "user",
+    };
+}
+
+// HWPX ratio 요소
+class RatioElement extends XmlComponent {
+    public constructor(scale: number) {
+        super("hh:ratio");
+        this.root.push(
+            new HwpxLangAttributes({
+                hangul: scale.toString(),
+                latin: scale.toString(),
+                hanja: scale.toString(),
+                japanese: scale.toString(),
+                other: scale.toString(),
+                symbol: scale.toString(),
+                user: scale.toString(),
+            }),
+        );
+    }
+}
+
+// HWPX relSz 요소 (상대 크기)
+class RelSzElement extends XmlComponent {
+    public constructor() {
+        super("hh:relSz");
+        this.root.push(
+            new HwpxLangAttributes({
+                hangul: "100",
+                latin: "100",
+                hanja: "100",
+                japanese: "100",
+                other: "100",
+                symbol: "100",
+                user: "100",
+            }),
+        );
+    }
+}
+
+// HWPX offset 요소 (문자 위치)
+class OffsetElement extends XmlComponent {
+    public constructor(position: UniversalMeasure) {
+        super("hh:offset");
+        // UniversalMeasure에서 숫자만 추출
+        const match = position.match(/^-?\d+/);
+        const value = match ? match[0] : "0";
+        this.root.push(
+            new HwpxLangAttributes({
+                hangul: value,
+                latin: value,
+                hanja: value,
+                japanese: value,
+                other: value,
+                symbol: value,
+                user: value,
+            }),
+        );
+    }
+}
+
 export class RunProperties extends IgnoreIfEmptyXmlComponent {
+    private readonly charPrAttributes?: CharPrAttributes;
+
     public constructor(options?: IRunPropertiesOptions) {
-        super("hp:charPr");
+        super("hh:charPr");
 
         if (!options) {
             return;
         }
 
+        // HWPX 속성 설정
+        const attributes: {
+            id?: string;
+            height?: number;
+            textColor?: string;
+            shadeColor?: string;
+            useFontSpace?: number;
+            useKerning?: number;
+            symMark?: string;
+            borderFillIDRef?: string;
+        } = {};
+        if (options.size !== undefined) {
+            // HWPX에서는 1/100 pt 단위
+            attributes.height = typeof options.size === "number" ? options.size * 100 : 1000;
+        }
+        if (options.color) {
+            attributes.textColor = hexColorValue(options.color);
+        }
+        if (options.highlight && options.highlight !== "none") {
+            attributes.shadeColor = options.highlight;
+        }
+        if (options.kern !== undefined) {
+            attributes.useKerning = typeof options.kern === "number" ? (options.kern > 0 ? 1 : 0) : 1;
+        }
+
+        // 속성이 있으면 추가
+        if (Object.keys(attributes).length > 0) {
+            this.charPrAttributes = new CharPrAttributes(attributes);
+            this.root.push(this.charPrAttributes);
+        }
+
         if (options.style) {
-            this.push(new StringValueElement("hp:styleRef", options.style));
+            this.push(new StringValueElement("hh:styleRef", options.style));
         }
 
         if (options.font) {
@@ -178,7 +305,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.bold !== undefined) {
-            this.push(new OnOffElement("hp:bold", options.bold));
+            this.push(new OnOffElement("hh:bold", options.bold));
         }
 
         if ((options.boldComplexScript === undefined && options.bold !== undefined) || options.boldComplexScript) {
@@ -186,7 +313,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.italics !== undefined) {
-            this.push(new OnOffElement("hp:italic", options.italics));
+            this.push(new OnOffElement("hh:italic", options.italics));
         }
 
         if ((options.italicsComplexScript === undefined && options.italics !== undefined) || options.italicsComplexScript) {
@@ -195,17 +322,17 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
 
         // These two are mutually exclusive
         if (options.smallCaps !== undefined) {
-            this.push(new OnOffElement("hp:smallCaps", options.smallCaps));
+            this.push(new OnOffElement("hh:smallCaps", options.smallCaps));
         } else if (options.allCaps !== undefined) {
-            this.push(new OnOffElement("hp:caps", options.allCaps));
+            this.push(new OnOffElement("hh:caps", options.allCaps));
         }
 
         if (options.strike !== undefined) {
-            this.push(new OnOffElement("hp:strikeout", options.strike));
+            this.push(new OnOffElement("hh:strikeout", options.strike));
         }
 
         if (options.doubleStrike !== undefined) {
-            this.push(new OnOffElement("hp:strikeout", options.doubleStrike));
+            this.push(new OnOffElement("hh:strikeout", options.doubleStrike));
         }
 
         if (options.emboss !== undefined) {
@@ -227,47 +354,28 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         if (options.vanish) {
             // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_vanish_topic_ID0E6W3O.html
             // http://www.datypic.com/sc/ooxml/e-w_vanish-1.html
-            this.push(new OnOffElement("hp:vanish", options.vanish));
+            this.push(new OnOffElement("hh:vanish", options.vanish));
         }
 
-        if (options.color) {
-            this.push(new Color(options.color));
+        // HWPX ratio 요소 (문자 폭 비율)
+        if (options.scale !== undefined) {
+            const ratio = this.createRatioElement(options.scale);
+            this.push(ratio);
         }
 
+        // HWPX spacing 요소 (문자 간격)
         if (options.characterSpacing) {
             this.push(new CharacterSpacing(options.characterSpacing));
         }
 
-        if (options.scale !== undefined) {
-            this.push(new NumberValueElement("hp:w", options.scale));
-        }
+        // HWPX relSz 요소 (상대 크기)
+        const relSz = this.createRelSzElement();
+        this.push(relSz);
 
-        if (options.kern) {
-            this.push(new HpsMeasureElement("hp:kern", options.kern));
-        }
-
+        // HWPX offset 요소 (문자 위치)
         if (options.position) {
-            this.push(new StringValueElement("w:position", options.position));
-        }
-
-        if (options.size !== undefined) {
-            this.push(new HpsMeasureElement("hp:height", options.size));
-        }
-        const szCs =
-            options.sizeComplexScript === undefined || options.sizeComplexScript === true ? options.size : options.sizeComplexScript;
-        if (szCs) {
-            this.push(new HpsMeasureElement("w:szCs", szCs));
-        }
-
-        if (options.highlight) {
-            this.push(new Highlight(options.highlight));
-        }
-        const highlightCs =
-            options.highlightComplexScript === undefined || options.highlightComplexScript === true
-                ? options.highlight
-                : options.highlightComplexScript;
-        if (highlightCs) {
-            this.push(new HighlightComplexScript(highlightCs));
+            const offset = this.createOffsetElement(options.position);
+            this.push(offset);
         }
 
         if (options.underline) {
@@ -312,7 +420,7 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.math) {
-            this.push(new OnOffElement("hp:math", options.math));
+            this.push(new OnOffElement("hh:math", options.math));
         }
 
         if (options.revision) {
@@ -323,11 +431,26 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
     public push(item: XmlComponent): void {
         this.root.push(item);
     }
+
+    // HWPX ratio 요소 생성
+    private createRatioElement(scale: number): RatioElement {
+        return new RatioElement(scale);
+    }
+
+    // HWPX relSz 요소 생성 (기본값 100)
+    private createRelSzElement(): RelSzElement {
+        return new RelSzElement();
+    }
+
+    // HWPX offset 요소 생성
+    private createOffsetElement(position: UniversalMeasure): OffsetElement {
+        return new OffsetElement(position);
+    }
 }
 
 export class RunPropertiesChange extends XmlComponent {
     public constructor(options: IRunPropertiesChangeOptions) {
-        super("hp:rPrChange");
+        super("hh:rPrChange");
         this.root.push(
             new ChangeAttributes({
                 id: options.id,

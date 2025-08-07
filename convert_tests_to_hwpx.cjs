@@ -220,6 +220,12 @@ const DOCX_TO_HWPX_MAPPINGS = {
     '"w:width"': '"hp:sz"', // Border width should be hp:sz not hp:width
     '"w:type"': '"hp:val"',  // Border type should be hp:val not hp:type
     
+    // Drawing and Style mappings based on HWPX_IMPLEMENTATION_GUIDE.md
+    '"w:drawing"': '"hp:drawing"',
+    '"w:pStyle"': '"hp:pStyle"',
+    '"w:tcBorders"': '"hp:tcBorders"',
+    '"w:tcW"': '"hp:tcW"',
+    
     // More missing elements from error analysis
     '"w:document"': '"hml:document"', // Already defined but ensuring consistency
     '"w:hyperlink"': '"hp:hyperlink"',

@@ -28,7 +28,7 @@ export type ITableCellBorders = {
 
 export class TableCellBorders extends IgnoreIfEmptyXmlComponent {
     public constructor(options: ITableCellBorders) {
-        super("hp:borders");
+        super("hp:tcBorders");
 
         if (options.top) {
             this.root.push(new BorderElement("hp:top", options.top));

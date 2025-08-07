@@ -17,20 +17,41 @@ export type ISpacingProperties = {
     readonly afterAutoSpacing?: boolean;
 };
 
-class SpacingAttributes extends XmlAttributeComponent<ISpacingProperties> {
+// HWPX에서는 lineSpacing에 type과 value 속성 사용
+class LineSpacingAttributes extends XmlAttributeComponent<{
+    readonly type?: string;
+    readonly value?: string;
+    readonly unit?: string;
+}> {
     protected readonly xmlKeys = {
-        after: "w:after",
-        before: "w:before",
-        line: "w:line",
-        lineRule: "w:lineRule",
-        beforeAutoSpacing: "w:beforeAutospacing",
-        afterAutoSpacing: "w:afterAutospacing",
+        type: "type",
+        value: "value",
+        unit: "unit",
     };
 }
 
 export class Spacing extends XmlComponent {
     public constructor(options: ISpacingProperties) {
-        super("hp:lineSpacing");
-        this.root.push(new SpacingAttributes(options));
+        super("hh:lineSpacing");
+
+        // HWPX 형식으로 변환
+        if (options.line !== undefined) {
+            let type = "PERCENT";
+            const value = options.line.toString();
+
+            if (options.lineRule === LineRuleType.EXACTLY || options.lineRule === LineRuleType.EXACT) {
+                type = "FIXED";
+            } else if (options.lineRule === LineRuleType.AT_LEAST) {
+                type = "AT_LEAST";
+            }
+
+            this.root.push(
+                new LineSpacingAttributes({
+                    type: type,
+                    value: value,
+                    unit: "HWPUNIT",
+                }),
+            );
+        }
     }
 }

@@ -64,7 +64,7 @@ export type IDocumentBackgroundOptions = {
 
 export class DocumentBackground extends XmlComponent {
     public constructor(options: IDocumentBackgroundOptions) {
-        super("ha:background");
+        super("w:background");
 
         this.root.push(
             new DocumentBackgroundAttributes({

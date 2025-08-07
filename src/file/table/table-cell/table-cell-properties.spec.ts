@@ -45,7 +45,7 @@ describe("TableCellProperties", () => {
                 },
             });
             const tree = new Formatter().format(properties);
-            expect(tree).to.deep.equal({ "hp:tcPr": [{ "w:tcW": { _attr: { "hp:type": "dxa", "hp:w": 1 } } }] });
+            expect(tree).to.deep.equal({ "hp:tcPr": [{ "hp:tcW": { _attr: { "hp:type": "dxa", "hp:w": 1 } } }] });
         });
 
         it("should set width using default of AUTO", () => {
@@ -55,7 +55,7 @@ describe("TableCellProperties", () => {
                 },
             });
             const tree = new Formatter().format(properties);
-            expect(tree).to.deep.equal({ "hp:tcPr": [{ "w:tcW": { _attr: { "hp:type": "auto", "hp:w": 1 } } }] });
+            expect(tree).to.deep.equal({ "hp:tcPr": [{ "hp:tcW": { _attr: { "hp:type": "auto", "hp:w": 1 } } }] });
         });
 
         it("sets shading", () => {
@@ -83,7 +83,7 @@ describe("TableCellProperties", () => {
             const tree = new Formatter().format(properties);
 
             expect(tree["hp:tcPr"][0]).to.deep.equal({
-                "w:tcBorders": [{ "hp:top": { _attr: { "hp:val": "dashDotStroked", "hp:sz": 3, "hp:color": "ff0000" } } }],
+                "hp:tcBorders": [{ "hp:top": { _attr: { "hp:val": "dashDotStroked", "hp:sz": 3, "hp:color": "ff0000" } } }],
             });
         });
 

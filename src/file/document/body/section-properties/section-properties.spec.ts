@@ -84,7 +84,9 @@ describe("SectionProperties", () => {
             expect(tree["hp:sectPr"]).to.be.an.instanceof(Array);
             expect(tree["hp:sectPr"][0]).to.deep.equal({ "hs:headerReference": { _attr: { "r:id": "rId100", "hp:type": "default" } } });
             expect(tree["hp:sectPr"][1]).to.deep.equal({ "hs:footerReference": { _attr: { "r:id": "rId200", "hp:type": "even" } } });
-            expect(tree["hp:sectPr"][2]).to.deep.equal({ "hs:pageSize": { _attr: { "hp:h": 1680, "hp:w": 1190, "w:orient": "portrait" } } });
+            expect(tree["hp:sectPr"][2]).to.deep.equal({
+                "hs:pageSize": { _attr: { "hp:h": 1680, "hp:w": 1190, "w:orient": "portrait" } },
+            });
             expect(tree["hp:sectPr"][3]).to.deep.equal({
                 "hs:pageMargin": {
                     _attr: {

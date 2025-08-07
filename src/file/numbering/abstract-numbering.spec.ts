@@ -2050,12 +2050,18 @@ describe("AbstractNumbering", () => {
             const highlightTests = [
                 {
                     highlight: HighlightColor.YELLOW,
-                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                    expected: [
+                        { "hp:highlight": { _attr: { "hp:val": "yellow" } } },
+                        { "w:highlightCs": { _attr: { "hp:val": "yellow" } } },
+                    ],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: true,
-                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "yellow" } } }],
+                    expected: [
+                        { "hp:highlight": { _attr: { "hp:val": "yellow" } } },
+                        { "w:highlightCs": { _attr: { "hp:val": "yellow" } } },
+                    ],
                 },
                 {
                     highlight: HighlightColor.YELLOW,
@@ -2065,7 +2071,10 @@ describe("AbstractNumbering", () => {
                 {
                     highlight: HighlightColor.YELLOW,
                     highlightComplexScript: "550099",
-                    expected: [{ "hp:highlight": { _attr: { "hp:val": "yellow" } } }, { "w:highlightCs": { _attr: { "hp:val": "550099" } } }],
+                    expected: [
+                        { "hp:highlight": { _attr: { "hp:val": "yellow" } } },
+                        { "w:highlightCs": { _attr: { "hp:val": "550099" } } },
+                    ],
                 },
             ];
             highlightTests.forEach(({ highlight, highlightComplexScript, expected }) => {

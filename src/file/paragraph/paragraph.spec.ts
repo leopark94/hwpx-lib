@@ -55,7 +55,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading1" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading1" } } }],
                     },
                 ],
             });
@@ -71,7 +71,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading2" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading2" } } }],
                     },
                 ],
             });
@@ -87,7 +87,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading3" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading3" } } }],
                     },
                 ],
             });
@@ -103,7 +103,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading4" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading4" } } }],
                     },
                 ],
             });
@@ -119,7 +119,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading5" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading5" } } }],
                     },
                 ],
             });
@@ -135,7 +135,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Heading6" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Heading6" } } }],
                     },
                 ],
             });
@@ -151,7 +151,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "Title" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "Title" } } }],
                     },
                 ],
             });
@@ -573,7 +573,7 @@ describe("Paragraph", () => {
             expect(tree).to.have.property("hp:p").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]).to.have.property("hp:paraPr").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]["hp:paraPr"][0]).to.deep.equal({
-                "w:pStyle": { _attr: { "hp:val": "ListParagraph" } },
+                "hp:pStyle": { _attr: { "hp:val": "ListParagraph" } },
             });
         });
 
@@ -587,7 +587,7 @@ describe("Paragraph", () => {
             expect(tree).to.have.property("hp:p").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]).to.have.property("hp:paraPr").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]["hp:paraPr"][0]).to.deep.equal({
-                "w:pStyle": { _attr: { "hp:val": "ListParagraph" } },
+                "hp:pStyle": { _attr: { "hp:val": "ListParagraph" } },
             });
         });
 
@@ -618,7 +618,7 @@ describe("Paragraph", () => {
             expect(tree).to.have.property("hp:p").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]).to.have.property("hp:paraPr").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]["hp:paraPr"][0]).to.deep.equal({
-                "w:pStyle": { _attr: { "hp:val": "ListParagraph" } },
+                "hp:pStyle": { _attr: { "hp:val": "ListParagraph" } },
             });
         });
 
@@ -634,7 +634,7 @@ describe("Paragraph", () => {
             expect(tree).to.have.property("hp:p").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]).to.have.property("hp:paraPr").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]["hp:paraPr"][0]).to.deep.equal({
-                "w:pStyle": { _attr: { "hp:val": "myFancyStyle" } },
+                "hp:pStyle": { _attr: { "hp:val": "myFancyStyle" } },
             });
         });
 
@@ -649,7 +649,7 @@ describe("Paragraph", () => {
             const tree = new Formatter().format(paragraph);
             expect(tree).to.have.property("hp:p").which.is.an("array").which.has.length.at.least(1);
             expect(tree["hp:p"][0]).to.have.property("hp:paraPr").which.is.an("array").which.has.length.at.least(1);
-            expect(tree["hp:p"][0]["hp:paraPr"][0]).to.not.have.property("w:pStyle");
+            expect(tree["hp:p"][0]["hp:paraPr"][0]).to.not.have.property("hp:pStyle");
         });
 
         it("it should add numbered properties", () => {
@@ -665,9 +665,12 @@ describe("Paragraph", () => {
                 "hp:p": [
                     {
                         "hp:paraPr": [
-                            { "w:pStyle": { _attr: { "hp:val": "ListParagraph" } } },
+                            { "hp:pStyle": { _attr: { "hp:val": "ListParagraph" } } },
                             {
-                                "w:numPr": [{ "w:ilvl": { _attr: { "hp:val": 0 } } }, { "w:numId": { _attr: { "hp:val": "{test id-4}" } } }],
+                                "w:numPr": [
+                                    { "w:ilvl": { _attr: { "hp:val": 0 } } },
+                                    { "w:numId": { _attr: { "hp:val": "{test id-4}" } } },
+                                ],
                             },
                         ],
                     },
@@ -689,7 +692,10 @@ describe("Paragraph", () => {
                     {
                         "hp:paraPr": [
                             {
-                                "w:numPr": [{ "w:ilvl": { _attr: { "hp:val": 0 } } }, { "w:numId": { _attr: { "hp:val": "{test id-0}" } } }],
+                                "w:numPr": [
+                                    { "w:ilvl": { _attr: { "hp:val": 0 } } },
+                                    { "w:numId": { _attr: { "hp:val": "{test id-0}" } } },
+                                ],
                             },
                         ],
                     },
@@ -752,7 +758,7 @@ describe("Paragraph", () => {
             expect(tree).to.deep.equal({
                 "hp:p": [
                     {
-                        "hp:paraPr": [{ "w:pStyle": { _attr: { "hp:val": "myFancyStyle" } } }],
+                        "hp:paraPr": [{ "hp:pStyle": { _attr: { "hp:val": "myFancyStyle" } } }],
                     },
                 ],
             });

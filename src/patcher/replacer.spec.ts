@@ -16,12 +16,17 @@ export const MOCK_JSON = {
                 {
                     type: "element",
                     name: "hp:p",
-                    attributes: { "w14:paraId": "3BE1A671", "w14:textId": "74E856C4", "hp:rsidR": "000D38A7", "w:rsidRDefault": "000D38A7" },
+                    attributes: {
+                        "w14:paraId": "3BE1A671",
+                        "w14:textId": "74E856C4",
+                        "hp:rsidR": "000D38A7",
+                        "w:rsidRDefault": "000D38A7",
+                    },
                     elements: [
                         {
                             type: "element",
                             name: "hp:paraPr",
-                            elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Header" } }],
+                            elements: [{ type: "element", name: "hp:pStyle", attributes: { "hp:val": "Header" } }],
                         },
                         {
                             type: "element",

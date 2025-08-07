@@ -86,7 +86,7 @@ describe("paragraph-token-replacer", () => {
                         {
                             type: "element",
                             name: "hp:paraPr",
-                            elements: [{ type: "element", name: "w:pStyle", attributes: { "hp:val": "Title" } }],
+                            elements: [{ type: "element", name: "hp:pStyle", attributes: { "hp:val": "Title" } }],
                         },
                         {
                             type: "element",
@@ -149,7 +149,7 @@ describe("paragraph-token-replacer", () => {
                                 attributes: {
                                     "hp:val": "Title",
                                 },
-                                name: "w:pStyle",
+                                name: "hp:pStyle",
                                 type: "element",
                             },
                         ],

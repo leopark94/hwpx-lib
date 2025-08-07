@@ -24,11 +24,12 @@ export const UnderlineType = {
 
 export class Underline extends XmlComponent {
     public constructor(underlineType: (typeof UnderlineType)[keyof typeof UnderlineType] = UnderlineType.SINGLE, color?: string) {
-        super("hp:underline");
+        super("hh:underline");
         this.root.push(
             new Attributes({
-                val: underlineType,
-                color: color === undefined ? undefined : hexColorValue(color),
+                type: underlineType === UnderlineType.NONE ? "NONE" : underlineType.toUpperCase(),
+                shape: "SOLID", // HWPX default
+                color: color === undefined ? "#000000" : hexColorValue(color),
             }),
         );
     }

@@ -59,7 +59,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.visuallyRightToLeft !== undefined) {
-            this.root.push(new OnOffElement("w:bidiVisual", options.visuallyRightToLeft));
+            this.root.push(new OnOffElement("hp:bidiVisual", options.visuallyRightToLeft));
         }
 
         if (options.width) {
@@ -71,7 +71,7 @@ export class TableProperties extends IgnoreIfEmptyXmlComponent {
         }
 
         if (options.indent) {
-            this.root.push(new TableWidthElement("w:tblInd", options.indent));
+            this.root.push(new TableWidthElement("hp:tblInd", options.indent));
         }
 
         if (options.borders) {
