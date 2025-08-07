@@ -4,7 +4,7 @@ import { Element } from "xml-js";
 import { Formatter } from "@export/formatter";
 import { IContext, XmlComponent } from "@file/xml-components";
 
-import { IPatch, PatchType } from "./from-docx";
+import { IPatch, PatchType } from "./from-hwpx";
 import { findRunElementIndexWithToken, splitRunElement } from "./paragraph-split-inject";
 import { replaceTokenInParagraphElement } from "./paragraph-token-replacer";
 import { findLocationOfText } from "./traverser";

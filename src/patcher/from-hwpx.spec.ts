@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ExternalHyperlink, ImageRun, Paragraph, TextRun } from "@file/paragraph";
 
-import { PatchType, patchDocument } from "./from-docx";
+import { PatchType, patchDocument } from "./from-hwpx";
 
 const MOCK_XML = `
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

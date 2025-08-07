@@ -4,7 +4,7 @@ import { IViewWrapper } from "@file/document-wrapper";
 import { File } from "@file/file";
 import { Paragraph, TextRun } from "@file/paragraph";
 
-import { PatchType } from "./from-docx";
+import { PatchType } from "./from-hwpx";
 import { replacer } from "./replacer";
 
 export const MOCK_JSON = {

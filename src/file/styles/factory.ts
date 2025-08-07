@@ -38,7 +38,7 @@ export type IDefaultStylesOptions = {
 
 export class DefaultStylesFactory {
     public newInstance(options: IDefaultStylesOptions = {}): IStylesOptions {
-        const documentAttributes = new DocumentAttributes(["mc", "r", "w", "w14", "w15"], "w14 w15");
+        const documentAttributes = new DocumentAttributes(["hp", "hs", "hc", "hh"], "");
         return {
             initialStyles: documentAttributes,
             importedStyles: [

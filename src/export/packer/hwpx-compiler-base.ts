@@ -292,26 +292,23 @@ ${paraPrs}
     protected _compileBody(documentWrapper: DocumentWrapper): string {
         let xml = "";
 
-        // Body의 각 요소 변환
-        const document = documentWrapper.View;
-        const body = document.Body;
-
-        // XmlComponent의 protected root 접근
+        // DocumentWrapper.View.Body의 root에서 직접 접근
+        const body = documentWrapper.View.Body;
         const bodyRoot = (body as any).root;
-
-        // 디버깅용 로그
-        console.log("Body root elements count:", bodyRoot?.length || 0);
 
         if (bodyRoot && Array.isArray(bodyRoot)) {
             for (const child of bodyRoot) {
-                console.log("Processing child:", child?.constructor?.name);
-
                 if (child instanceof Paragraph) {
                     xml += this._compileParagraph(child);
                 } else if (child instanceof Table) {
                     xml += this._compileTable(child);
                 }
             }
+        }
+
+        // 만약 내용이 없으면 기본 문단 추가
+        if (!xml) {
+            xml = this._generateFirstParagraph();
         }
 
         return xml;

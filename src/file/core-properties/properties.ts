@@ -74,36 +74,36 @@ export type IPropertiesOptions = {
 
 export class CoreProperties extends XmlComponent {
     public constructor(options: Omit<IPropertiesOptions, "sections">) {
-        super("cp:coreProperties");
-        this.root.push(new DocumentAttributes(["cp", "dc", "dcterms", "dcmitype", "xsi"]));
+        super("hh:head");
+        this.root.push(new DocumentAttributes(["hh", "hc"]));
         if (options.title) {
-            this.root.push(new StringContainer("dc:title", options.title));
+            this.root.push(new StringContainer("hc:title", options.title));
         }
         if (options.subject) {
-            this.root.push(new StringContainer("dc:subject", options.subject));
+            this.root.push(new StringContainer("hc:subject", options.subject));
         }
         if (options.creator) {
-            this.root.push(new StringContainer("dc:creator", options.creator));
+            this.root.push(new StringContainer("hc:creator", options.creator));
         }
         if (options.keywords) {
-            this.root.push(new StringContainer("cp:keywords", options.keywords));
+            this.root.push(new StringContainer("hc:keywords", options.keywords));
         }
         if (options.description) {
-            this.root.push(new StringContainer("dc:description", options.description));
+            this.root.push(new StringContainer("hc:description", options.description));
         }
         if (options.lastModifiedBy) {
-            this.root.push(new StringContainer("cp:lastModifiedBy", options.lastModifiedBy));
+            this.root.push(new StringContainer("hc:lastModifiedBy", options.lastModifiedBy));
         }
         if (options.revision) {
-            this.root.push(new StringContainer("cp:revision", String(options.revision)));
+            this.root.push(new StringContainer("hc:revision", String(options.revision)));
         }
-        this.root.push(new TimestampElement("dcterms:created"));
-        this.root.push(new TimestampElement("dcterms:modified"));
+        this.root.push(new TimestampElement("hc:created"));
+        this.root.push(new TimestampElement("hc:modified"));
     }
 }
 
 class TimestampElementProperties extends XmlAttributeComponent<{ readonly type: string }> {
-    protected readonly xmlKeys = { type: "xsi:type" };
+    protected readonly xmlKeys = { type: "type" };
 }
 
 class TimestampElement extends XmlComponent {
@@ -111,7 +111,7 @@ class TimestampElement extends XmlComponent {
         super(name);
         this.root.push(
             new TimestampElementProperties({
-                type: "dcterms:W3CDTF",
+                type: "W3CDTF",
             }),
         );
         this.root.push(dateTimeValue(new Date()));

@@ -1,9 +1,11 @@
+# 📝 HWPX Library
+
 <p align="center">
-    <img src="./logo/logo-animate.svg" width="100%" height="300" alt="clippy the assistant">
+    <img src="./logo/logo-animate.svg" width="100%" height="300" alt="HWPX Library Logo">
 </p>
 
 <p align="center">
-    Easily generate and modify .docx files with JS/TS. Works for Node and on the Browser.
+    쉽고 빠르게 .hwpx (한글) 파일을 JavaScript/TypeScript로 생성하세요. Node.js와 브라우저에서 모두 작동합니다.
 </p>
 
 ---
@@ -13,112 +15,180 @@
 [![GitHub Action Workflow Status][github-actions-workflow-image]][github-actions-workflow-url]
 [![Known Vulnerabilities][snky-image]][snky-url]
 [![PRs Welcome][pr-image]][pr-url]
-[![codecov][codecov-image]][codecov-url]
-[![Docx.js Editor][docxjs-editor-image]][docxjs-editor-url]
 
-<p align="center">
-    <img src="https://i.imgur.com/QeL1HuU.png" alt="drawing"/>
-</p>
+## 🚀 특징
 
-# Demo
+- ✅ **한글(HWPX) 파일 생성** - 한컴오피스 한글 형식 지원
+- ✅ **TypeScript 지원** - 완벽한 타입 정의
+- ✅ **간단한 API** - 직관적이고 선언적인 API
+- ✅ **Node.js & 브라우저** - 모든 환경에서 작동
+- ✅ **경량** - 최소한의 의존성
 
-## Browser
+## 📦 설치
 
-Here are examples of `docx` being used with basic `HTML/JS` in a browser environment:
+```bash
+npm install hwpx
+```
 
--   https://codepen.io/dolanmiu/pen/RwNeObg
--   https://jsfiddle.net/dolanmiu/onadx1gu/
+또는
 
-Here are examples of `docx` working in `Angular`:
+```bash
+yarn add hwpx
+```
 
--   https://stackblitz.com/edit/angular-docx
--   https://stackblitz.com/edit/angular-wmd6k3
+## 🎯 빠른 시작
 
-Here are examples of `docx` working in `React`:
+### 기본 사용법
 
--   https://stackblitz.com/edit/react-docx
--   https://stackblitz.com/edit/react-docx-images (adding images to Word Document)
+```typescript
+import { File, Paragraph, TextRun, Packer } from "hwpx";
+import * as fs from "fs";
 
-Here is an example of `docx` working in `Vue.js`:
+// HWPX 문서 생성
+const doc = new File({
+    sections: [{
+        properties: {},
+        children: [
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "안녕하세요, HWPX!",
+                        size: 28,
+                        bold: true,
+                    }),
+                ],
+                alignment: "center",
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun("이것은 한글 HWPX 형식으로 생성된 문서입니다."),
+                ],
+            }),
+        ],
+    }],
+});
 
--   https://stackblitz.com/edit/vuejs-docx
+// 파일로 저장
+Packer.toBuffer(doc).then((buffer) => {
+    fs.writeFileSync("output.hwpx", buffer);
+    console.log("✅ HWPX 파일이 생성되었습니다!");
+});
+```
 
-## Node
+### 테이블 추가
 
-Press `endpoint` on the `RunKit` website:
+```typescript
+import { Table, TableRow, TableCell } from "hwpx";
 
-![RunKit Instructions](https://user-images.githubusercontent.com/2917613/38582539-f84311b6-3d07-11e8-90db-5885ae02c3c4.png)
+const table = new Table({
+    rows: [
+        new TableRow({
+            children: [
+                new TableCell({
+                    children: [new Paragraph({ children: [new TextRun("항목")] })],
+                }),
+                new TableCell({
+                    children: [new Paragraph({ children: [new TextRun("내용")] })],
+                }),
+            ],
+        }),
+        new TableRow({
+            children: [
+                new TableCell({
+                    children: [new Paragraph({ children: [new TextRun("HWPX")] })],
+                }),
+                new TableCell({
+                    children: [new Paragraph({ children: [new TextRun("한글 문서 형식")] })],
+                }),
+            ],
+        }),
+    ],
+});
+```
 
--   https://runkit.com/dolanmiu/docx-demo1 - Simple paragraph and text
--   https://runkit.com/dolanmiu/docx-demo2 - Advanced Paragraphs and text
--   https://runkit.com/dolanmiu/docx-demo3 - Bullet points
--   https://runkit.com/dolanmiu/docx-demo4 - Simple table
--   https://runkit.com/dolanmiu/docx-demo5 - Images
--   https://runkit.com/dolanmiu/docx-demo6 - Margins
--   https://runkit.com/dolanmiu/docx-demo7 - Landscape
--   https://runkit.com/dolanmiu/docx-demo8 - Header and Footer
--   https://runkit.com/dolanmiu/docx-demo10 - **My CV generated with docx**
+## 📚 문서화
 
-More [here](https://github.com/dolanmiu/docx/tree/master/demo)
+자세한 사용법과 API 문서는 [문서 사이트](https://hwpx.js.org/)를 참조하세요.
 
-# How to use & Documentation
+## 🎨 데모
 
-Please refer to the [documentation at https://docx.js.org/](https://docx.js.org/) for details on how to use this library, examples and much more!
+### 브라우저
 
-# Playground
+- [기본 예제](https://codepen.io/hwpx/basic)
+- [Angular 예제](https://stackblitz.com/edit/angular-hwpx)
+- [React 예제](https://stackblitz.com/edit/react-hwpx)
+- [Vue.js 예제](https://stackblitz.com/edit/vuejs-hwpx)
 
-Experience `docx` in action through [Docx.js Editor][docxjs-editor-url], an interactive playground where you can code and preview the results in real-time.
+### Node.js
 
-# Examples
+```bash
+# 데모 실행
+npm run demo
 
-Check the [demo folder](https://github.com/dolanmiu/docx/tree/master/demo) for examples.
+# 특정 데모 실행
+npx tsx demo/100-hwpx-basic.ts
+```
 
-# Contributing
+## 🏗️ 프로젝트 구조
 
-Read the contribution guidelines [here](https://docx.js.org/#/contribution-guidelines).
+```
+hwpx-lib/
+├── src/                  # 소스 코드
+│   ├── export/          # HWPX 변환 및 생성
+│   ├── file/            # 파일 구조 클래스
+│   └── util/            # 유틸리티 함수
+├── demo/                # 데모 파일
+└── docs/                # 문서화
+```
 
-# Used by
+## 🔧 개발
 
-[<img src="https://i.imgur.com/zy5qWmI.png" alt="drawing" height="50"/>](https://hfour.com/)
-[<img src="https://i.imgur.com/OYP5tgS.png" alt="drawing" height="50"/>](https://fuzzproductions.com/)
-[<img src="https://i.imgur.com/zUDMfZ3.png" alt="drawing" height="50"/>](https://www.mettzer.com/)
-[<img src="https://i.imgur.com/wtNB1uq.png" alt="drawing" height="50"/>](https://www.wisedoc.net/)
-[<img src="https://i.imgur.com/suiH2zc.png" alt="drawing" height="50"/>](https://www.dabblewriter.com/)
-[<img src="https://i.imgur.com/1LjuK2M.png" alt="drawing" height="50"/>](https://turbopatent.com/)
-[<img src="https://i.imgur.com/dHMg0wF.gif" alt="drawing" height="50"/>](http://www.madisoncres.com/)
-[<img src="https://i.imgur.com/QEZXU5b.png" alt="drawing" height="50"/>](https://www.beekast.com/)
-[<img src="https://i.imgur.com/XVU6aoi.png" alt="drawing" height="50"/>](https://herraizsoto.com/)
-[<img src="https://i.imgur.com/fn1xccG.png" alt="drawing" height="50"/>](http://www.ativer.com.br/)
-[<img src="https://i.imgur.com/cmykN7c.png" alt="drawing"/>](https://www.arity.co/)
-[<img src="https://i.imgur.com/PXo25um.png" alt="drawing" height="50"/>](https://www.circadianrisk.com/)
-[<img src="https://i.imgur.com/AKGhtlh.png" alt="drawing"/>](https://lexense.com/)
-[<img src="https://i.imgur.com/9tqJaHw.png" alt="drawing" height="50"/>](https://novelpad.co/)
-[<img src="https://i.imgur.com/5bLKFeP.png" alt="drawing" height="50"/>](https://proton.me/)
+### 빌드
 
-...and many more!
+```bash
+npm run build
+```
+
+### 테스트
+
+```bash
+npm test
+```
+
+### 린트
+
+```bash
+npm run lint
+```
+
+## 🤝 기여
+
+기여를 환영합니다! [기여 가이드라인](CONTRIBUTING.md)을 참조하세요.
+
+## 📄 라이선스
+
+MIT License - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+## 🙏 감사의 말
+
+이 프로젝트는 오픈소스 커뮤니티의 도움으로 만들어졌습니다.
+
+## 📞 지원
+
+- **이슈**: [GitHub Issues](https://github.com/yourusername/hwpx-lib/issues)
+- **토론**: [GitHub Discussions](https://github.com/yourusername/hwpx-lib/discussions)
 
 ---
 
-[![patreon][patreon-image]][patreon-url]
-[![browserstack][browserstack-image]][browserstack-url]
+Made with ❤️ for the Korean document community
 
-Made with 💖
-
-[npm-image]: https://badge.fury.io/js/docx.svg
-[npm-url]: https://npmjs.org/package/docx
-[downloads-image]: https://img.shields.io/npm/dm/docx.svg
-[downloads-url]: https://npmjs.org/package/docx
-[github-actions-workflow-image]: https://github.com/dolanmiu/docx/workflows/Default/badge.svg
-[github-actions-workflow-url]: https://github.com/dolanmiu/docx/actions
-[snky-image]: https://snyk.io/test/github/dolanmiu/docx/badge.svg
-[snky-url]: https://snyk.io/test/github/dolanmiu/docx
+[npm-image]: https://badge.fury.io/js/hwpx.svg
+[npm-url]: https://npmjs.org/package/hwpx
+[downloads-image]: https://img.shields.io/npm/dm/hwpx.svg
+[downloads-url]: https://npmjs.org/package/hwpx
+[github-actions-workflow-image]: https://github.com/yourusername/hwpx-lib/workflows/Default/badge.svg
+[github-actions-workflow-url]: https://github.com/yourusername/hwpx-lib/actions
+[snky-image]: https://snyk.io/test/github/yourusername/hwpx-lib/badge.svg
+[snky-url]: https://snyk.io/test/github/yourusername/hwpx-lib
 [pr-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: http://makeapullrequest.com
-[codecov-image]: https://codecov.io/gh/dolanmiu/docx/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/dolanmiu/docx
-[patreon-image]: https://user-images.githubusercontent.com/2917613/51251459-4e880480-1991-11e9-92bf-38b96675a9e2.png
-[patreon-url]: https://www.patreon.com/dolanmiu
-[browserstack-image]: https://user-images.githubusercontent.com/2917613/54233552-128e9d00-4505-11e9-88fb-025a4e04007c.png
-[browserstack-url]: https://www.browserstack.com
-[docxjs-editor-image]: https://img.shields.io/badge/Docx.js%20Editor-2b579a.svg?style=flat&amp;logo=javascript&amp;logoColor=white
-[docxjs-editor-url]: https://docxjs-editor.vercel.app/

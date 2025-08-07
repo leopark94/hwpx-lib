@@ -70,9 +70,9 @@
     "author": "Dolan Miu",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/dolanmiu/docx/issues"
+        "url": "https://github.com/acalab-web/hwpx-lib/issues"
     },
-    "homepage": "https://docx.js.org",
+    "homepage": "https://hwpx.js.org",
     "devDependencies": {
         "@types/eslint__js": "^8.42.3",
         "@types/inquirer": "^9.0.3",

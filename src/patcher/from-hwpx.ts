@@ -120,22 +120,22 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
 
         const json = toJson(await value.async("text"));
 
-        if (key === "word/document.xml") {
-            const document = json.elements?.find((i) => i.name === "hml:document");
+        if (key === "Contents/section0.xml") {
+            const document = json.elements?.find((i) => i.name === "hs:sec");
             if (document && document.attributes) {
                 // We could check all namespaces from Document, but we'll instead
                 // check only those that may be used by our element types.
 
-                for (const ns of ["mc", "wp", "r", "w15", "m"] as const) {
+                for (const ns of ["hp", "hs", "hc", "hh", "hm"] as const) {
                     // eslint-disable-next-line functional/immutable-data
                     document.attributes[`xmlns:${ns}`] = DocumentAttributeNamespaces[ns];
                 }
                 // eslint-disable-next-line functional/immutable-data
-                document.attributes["mc:Ignorable"] = `${document.attributes["mc:Ignorable"] || ""} w15`.trim();
+                document.attributes["Ignorable"] = `${document.attributes["Ignorable"] || ""}`.trim();
             }
         }
 
-        if (key.startsWith("word/") && !key.endsWith(".xml.rels")) {
+        if (key.startsWith("Contents/") && !key.endsWith(".xml.rels")) {
             const context: IContext = {
                 file,
                 viewWrapper: {
@@ -226,7 +226,7 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
 
     for (const { key, mediaDatas } of imageRelationshipAdditions) {
         // eslint-disable-next-line functional/immutable-data
-        const relationshipKey = `word/_rels/${key.split("/").pop()}.rels`;
+        const relationshipKey = `Contents/_rels/${key.split("/").pop()}.rels`;
         const relationshipsJson = map.get(relationshipKey) ?? createRelationshipFile();
         map.set(relationshipKey, relationshipsJson);
 
@@ -247,7 +247,7 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
 
     for (const { key, hyperlink } of hyperlinkRelationshipAdditions) {
         // eslint-disable-next-line functional/immutable-data
-        const relationshipKey = `word/_rels/${key.split("/").pop()}.rels`;
+        const relationshipKey = `Contents/_rels/${key.split("/").pop()}.rels`;
 
         const relationshipsJson = map.get(relationshipKey) ?? createRelationshipFile();
         map.set(relationshipKey, relationshipsJson);
@@ -289,12 +289,12 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
     }
 
     for (const { data: stream, fileName } of file.Media.Array) {
-        zip.file(`word/media/${fileName}`, stream);
+        zip.file(`Contents/media/${fileName}`, stream);
     }
 
     return zip.generateAsync({
         type: outputType,
-        mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        mimeType: "application/hwp+zip",
         compression: "DEFLATE",
     });
 };

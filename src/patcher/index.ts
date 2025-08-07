@@ -1,2 +1,2 @@
-export * from "./from-docx";
+export * from "./from-hwpx";
 export * from "./patch-detector";

@@ -1,6 +1,6 @@
 import JSZip from "jszip";
 
-import { InputDataType } from "./from-docx";
+import { InputDataType } from "./from-hwpx";
 import { traverse } from "./traverser";
 import { toJson } from "./util";
 
@@ -17,7 +17,7 @@ export const patchDetector = async ({ data }: PatchDetectorOptions): Promise<rea
         if (!key.endsWith(".xml") && !key.endsWith(".rels")) {
             continue;
         }
-        if (key.startsWith("word/") && !key.endsWith(".xml.rels")) {
+        if (key.startsWith("Contents/") && !key.endsWith(".xml.rels")) {
             const json = toJson(await value.async("text"));
             traverse(json).forEach((p) => findPatchKeys(p.text).forEach((patch) => patches.add(patch)));
         }

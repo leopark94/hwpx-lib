@@ -103,7 +103,7 @@ describe("Packer", () => {
 
     describe("#toBuffer()", () => {
         it(
-            "should create a standard docx file",
+            "should create a standard hwpx file",
             async () => {
                 const buffer = await Packer.toBuffer(file);
 
@@ -133,7 +133,7 @@ describe("Packer", () => {
 
     describe("#toBase64String()", () => {
         it(
-            "should create a standard docx file",
+            "should create a standard hwpx file",
             async () => {
                 const str = await Packer.toBase64String(file);
                 expect(str).toBeDefined();
@@ -161,7 +161,7 @@ describe("Packer", () => {
     });
 
     describe("#toBlob()", () => {
-        it("should create a standard docx file", async () => {
+        it("should create a standard hwpx file", async () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             vi.spyOn((Packer as any).compiler, "compile").mockReturnValue({
                 generateAsync: () => vi.fn(),
@@ -188,7 +188,7 @@ describe("Packer", () => {
     });
 
     describe("#toArrayBuffer()", () => {
-        it("should create a standard docx file", async () => {
+        it("should create a standard hwpx file", async () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             vi.spyOn((Packer as any).compiler, "compile").mockReturnValue({
                 generateAsync: () => vi.fn(),
@@ -215,7 +215,7 @@ describe("Packer", () => {
     });
 
     describe("#toStream()", () => {
-        it("should create a standard docx file", async () => {
+        it("should create a standard hwpx file", async () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             vi.spyOn((Packer as any).compiler, "compile").mockReturnValue({
                 generateAsync: () => Promise.resolve(vi.fn()),

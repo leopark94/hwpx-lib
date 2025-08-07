@@ -1,18 +1,7 @@
 // Patch a document with patches
 
 import * as fs from "fs";
-import { 
-    patchDocument, 
-    PatchType, 
-    Paragraph, 
-    TextRun, 
-    Table, 
-    TableRow, 
-    TableCell, 
-    HeadingLevel, 
-    TextDirection, 
-    VerticalAlign 
-} from "hwpx";
+import { patchDocument, PatchType, Paragraph, TextRun, Table, TableRow, TableCell, HeadingLevel, TextDirection, VerticalAlign } from "hwpx";
 
 const VerticalAlignTable = VerticalAlign;
 
