@@ -1,8 +1,8 @@
 import { XmlComponent } from "@file/xml-components";
-export type ICustomPropertyOptions = {
+export interface ICustomPropertyOptions {
     readonly name: string;
     readonly value: string;
-};
+}
 export declare class CustomProperty extends XmlComponent {
     constructor(id: number, properties: ICustomPropertyOptions);
 }

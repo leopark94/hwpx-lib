@@ -16,25 +16,25 @@ export declare const PenAlignment: {
     readonly CENTER: "ctr";
     readonly INSET: "in";
 };
-export type OutlineAttributes = {
+export interface OutlineAttributes {
     readonly width?: number;
     readonly cap?: keyof typeof LineCap;
     readonly compoundLine?: keyof typeof CompoundLine;
     readonly align?: keyof typeof PenAlignment;
-};
-type OutlineNoFill = {
+}
+interface OutlineNoFill {
     readonly type: "noFill";
-};
-type OutlineRgbSolidFill = {
+}
+interface OutlineRgbSolidFill {
     readonly type: "solidFill";
     readonly solidFillType: "rgb";
     readonly value: string;
-};
-type OutlineSchemeSolidFill = {
+}
+interface OutlineSchemeSolidFill {
     readonly type: "solidFill";
     readonly solidFillType: "scheme";
     readonly value: (typeof SchemeColor)[keyof typeof SchemeColor];
-};
+}
 type OutlineSolidFill = OutlineRgbSolidFill | OutlineSchemeSolidFill;
 type OutlineFillProperties = OutlineNoFill | OutlineSolidFill;
 export type OutlineOptions = OutlineAttributes & OutlineFillProperties;

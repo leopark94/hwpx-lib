@@ -4,10 +4,10 @@ import { FootNotes } from "./footnotes";
 import { Header } from "./header/header";
 import { Relationships } from "./relationships";
 import { XmlComponent } from "./xml-components";
-export type IViewWrapper = {
+export interface IViewWrapper {
     readonly View: Document | Footer | Header | FootNotes | XmlComponent;
     readonly Relationships: Relationships;
-};
+}
 export declare class DocumentWrapper implements IViewWrapper {
     private readonly document;
     private readonly relationships;

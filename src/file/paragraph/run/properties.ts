@@ -3,7 +3,7 @@
 import { BorderElement, IBorderOptions } from "@file/border";
 import { IShadingAttributesProperties, Shading } from "@file/shading";
 import { ChangeAttributes, IChangedAttributesProperties } from "@file/track-revision/track-revision";
-import { IgnoreIfEmptyXmlComponent, OnOffElement, StringValueElement, XmlComponent, XmlAttributeComponent } from "@file/xml-components";
+import { IgnoreIfEmptyXmlComponent, OnOffElement, StringValueElement, XmlAttributeComponent, XmlComponent } from "@file/xml-components";
 import { PositiveUniversalMeasure, UniversalMeasure, hexColorValue } from "@util/values";
 
 import { EmphasisMark, EmphasisMarkType } from "./emphasis-mark";
@@ -261,14 +261,14 @@ export class RunProperties extends IgnoreIfEmptyXmlComponent {
 
         // HWPX 속성 설정
         const attributes: {
-            id?: string;
-            height?: number;
-            textColor?: string;
-            shadeColor?: string;
-            useFontSpace?: number;
-            useKerning?: number;
-            symMark?: string;
-            borderFillIDRef?: string;
+            readonly id?: string;
+            readonly height?: number;
+            readonly textColor?: string;
+            readonly shadeColor?: string;
+            readonly useFontSpace?: number;
+            readonly useKerning?: number;
+            readonly symMark?: string;
+            readonly borderFillIDRef?: string;
         } = {};
         if (options.size !== undefined) {
             // HWPX에서는 1/100 pt 단위

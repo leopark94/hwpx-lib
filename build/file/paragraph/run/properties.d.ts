@@ -7,10 +7,10 @@ import { EmphasisMarkType } from "./emphasis-mark";
 import { ILanguageOptions } from "./language";
 import { IFontAttributesProperties } from "./run-fonts";
 import { UnderlineType } from "./underline";
-type IFontOptions = {
+interface IFontOptions {
     readonly name: string;
     readonly hint?: string;
-};
+}
 export declare const TextEffect: {
     readonly BLINK_BACKGROUND: "blinkBackground";
     readonly LIGHTS: "lights";
@@ -39,7 +39,7 @@ export declare const HighlightColor: {
     readonly WHITE: "white";
     readonly YELLOW: "yellow";
 };
-export type IRunStylePropertiesOptions = {
+export interface IRunStylePropertiesOptions {
     readonly noProof?: boolean;
     readonly bold?: boolean;
     readonly boldComplexScript?: boolean;
@@ -80,7 +80,7 @@ export type IRunStylePropertiesOptions = {
     readonly specVanish?: boolean;
     readonly scale?: number;
     readonly math?: boolean;
-};
+}
 export type IRunPropertiesOptions = {
     readonly style?: string;
 } & IRunStylePropertiesOptions;

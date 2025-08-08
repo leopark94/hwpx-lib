@@ -1,14 +1,14 @@
 import { ElementWrapper } from "./traverser";
-export type IRenderedParagraphNode = {
+export interface IRenderedParagraphNode {
     readonly text: string;
     readonly runs: readonly IRenderedRunNode[];
     readonly index: number;
     readonly pathToParagraph: readonly number[];
-};
-type StartAndEnd = {
+}
+interface StartAndEnd {
     readonly start: number;
     readonly end: number;
-};
+}
 type IParts = {
     readonly text: string;
     readonly index: number;

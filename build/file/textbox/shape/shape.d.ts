@@ -1,7 +1,7 @@
 import { ParagraphChild } from "@file/paragraph";
 import { XmlComponent } from "@file/xml-components";
 import { LengthUnit } from "../types";
-export type VmlShapeStyle = {
+export interface VmlShapeStyle {
     readonly flip?: "x" | "y" | "xy" | "yx";
     readonly height?: LengthUnit;
     readonly left?: LengthUnit;
@@ -25,12 +25,12 @@ export type VmlShapeStyle = {
     readonly visibility?: "hidden" | "inherit";
     readonly width: LengthUnit;
     readonly zIndex?: "auto" | number;
-};
-type ShapeOptions = {
+}
+interface ShapeOptions {
     readonly id: string;
     readonly children?: readonly ParagraphChild[];
     readonly type?: string;
     readonly style?: VmlShapeStyle;
-};
+}
 export declare const createShape: ({ id, children, type, style }: ShapeOptions) => XmlComponent;
 export {};

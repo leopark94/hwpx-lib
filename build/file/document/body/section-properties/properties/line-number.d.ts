@@ -5,10 +5,10 @@ export declare const LineNumberRestartFormat: {
     readonly NEW_SECTION: "newSection";
     readonly CONTINUOUS: "continuous";
 };
-export type ILineNumberAttributes = {
+export interface ILineNumberAttributes {
     readonly countBy?: number;
     readonly start?: number;
     readonly restart?: (typeof LineNumberRestartFormat)[keyof typeof LineNumberRestartFormat];
     readonly distance?: number | PositiveUniversalMeasure;
-};
+}
 export declare const createLineNumberType: ({ countBy, start, restart, distance }: ILineNumberAttributes) => XmlComponent;

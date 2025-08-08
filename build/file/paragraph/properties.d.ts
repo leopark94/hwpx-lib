@@ -8,7 +8,7 @@ import { ISpacingProperties } from "./formatting/spacing";
 import { HeadingLevel } from "./formatting/style";
 import { TabStopDefinition } from "./formatting/tab-stop";
 import { IFrameOptions } from "./frame/frame-properties";
-export type ILevelParagraphStylePropertiesOptions = {
+export interface ILevelParagraphStylePropertiesOptions {
     readonly alignment?: (typeof AlignmentType)[keyof typeof AlignmentType];
     readonly thematicBreak?: boolean;
     readonly contextualSpacing?: boolean;
@@ -19,7 +19,7 @@ export type ILevelParagraphStylePropertiesOptions = {
     readonly keepNext?: boolean;
     readonly keepLines?: boolean;
     readonly outlineLevel?: number;
-};
+}
 export type IParagraphStylePropertiesOptions = {
     readonly border?: IBordersOptions;
     readonly shading?: IShadingAttributesProperties;

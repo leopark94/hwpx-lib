@@ -1,7 +1,7 @@
 import { IDocumentDefaultsOptions } from "./defaults";
 import { IBaseCharacterStyleOptions, IBaseParagraphStyleOptions } from "./style";
 import { IStylesOptions } from "./styles";
-export type IDefaultStylesOptions = {
+export interface IDefaultStylesOptions {
     readonly document?: IDocumentDefaultsOptions;
     readonly title?: IBaseParagraphStyleOptions;
     readonly heading1?: IBaseParagraphStyleOptions;
@@ -16,7 +16,7 @@ export type IDefaultStylesOptions = {
     readonly footnoteReference?: IBaseCharacterStyleOptions;
     readonly footnoteText?: IBaseParagraphStyleOptions;
     readonly footnoteTextChar?: IBaseCharacterStyleOptions;
-};
+}
 export declare class DefaultStylesFactory {
     newInstance(options?: IDefaultStylesOptions): IStylesOptions;
 }

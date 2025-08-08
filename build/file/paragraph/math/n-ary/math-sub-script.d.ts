@@ -1,7 +1,7 @@
 import { XmlComponent } from "@file/xml-components";
 import { MathComponent } from "../math-component";
-type MathSubScriptElementOptions = {
+interface MathSubScriptElementOptions {
     readonly children: readonly MathComponent[];
-};
+}
 export declare const createMathSubScriptElement: ({ children }: MathSubScriptElementOptions) => XmlComponent;
 export {};

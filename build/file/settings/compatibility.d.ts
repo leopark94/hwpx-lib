@@ -1,5 +1,5 @@
 import { XmlComponent } from "@file/xml-components";
-export type ICompatibilityOptions = {
+export interface ICompatibilityOptions {
     readonly version?: number;
     readonly useSingleBorderforContiguousCells?: boolean;
     readonly wordPerfectJustification?: boolean;
@@ -66,7 +66,7 @@ export type ICompatibilityOptions = {
     readonly ignoreVerticalAlignmentInTextboxes?: boolean;
     readonly useAnsiKerningPairs?: boolean;
     readonly cachedColumnBalance?: boolean;
-};
+}
 export declare class Compatibility extends XmlComponent {
     constructor(options: ICompatibilityOptions);
 }

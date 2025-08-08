@@ -6,10 +6,10 @@ export declare const WidthType: {
     readonly NIL: "nil";
     readonly PERCENTAGE: "pct";
 };
-export type ITableWidthProperties = {
+export interface ITableWidthProperties {
     readonly size: number | Percentage | UniversalMeasure;
     readonly type?: (typeof WidthType)[keyof typeof WidthType];
-};
+}
 export declare class TableWidthElement extends XmlComponent {
     constructor(name: string, { type, size }: ITableWidthProperties);
 }

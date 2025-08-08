@@ -3,7 +3,7 @@ export declare class StyleLevel {
     readonly level: number;
     constructor(styleName: string, level: number);
 }
-export type ITableOfContentsOptions = {
+export interface ITableOfContentsOptions {
     readonly captionLabel?: string;
     readonly entriesFromBookmark?: string;
     readonly captionLabelIncludingNumbers?: string;
@@ -20,4 +20,4 @@ export type ITableOfContentsOptions = {
     readonly preserveTabInEntries?: boolean;
     readonly preserveNewLineInEntries?: boolean;
     readonly hideTabAndPageNumbersInWebView?: boolean;
-};
+}

@@ -7,11 +7,11 @@ export declare const PageNumberSeparator: {
     readonly EM_DASH: "emDash";
     readonly EN_DASH: "endash";
 };
-export type IPageNumberTypeAttributes = {
+export interface IPageNumberTypeAttributes {
     readonly start?: number;
     readonly formatType?: (typeof NumberFormat)[keyof typeof NumberFormat];
     readonly separator?: (typeof PageNumberSeparator)[keyof typeof PageNumberSeparator];
-};
+}
 export declare class PageNumberTypeAttributes extends XmlAttributeComponent<IPageNumberTypeAttributes> {
     protected readonly xmlKeys: {
         start: string;

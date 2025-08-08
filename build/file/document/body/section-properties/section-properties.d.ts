@@ -11,12 +11,12 @@ import { IPageNumberTypeAttributes } from "./properties/page-number";
 import { IPageSizeAttributes } from "./properties/page-size";
 import { PageTextDirectionType } from "./properties/page-text-direction";
 import { SectionType } from "./properties/section-type";
-export type IHeaderFooterGroup<T> = {
+export interface IHeaderFooterGroup<T> {
     readonly default?: T;
     readonly first?: T;
     readonly even?: T;
-};
-export type ISectionPropertiesOptions = {
+}
+export interface ISectionPropertiesOptions {
     readonly page?: {
         readonly size?: Partial<IPageSizeAttributes>;
         readonly margin?: IPageMarginAttributes;
@@ -32,7 +32,7 @@ export type ISectionPropertiesOptions = {
     readonly verticalAlign?: SectionVerticalAlign;
     readonly column?: IColumnsAttributes;
     readonly type?: (typeof SectionType)[keyof typeof SectionType];
-};
+}
 export declare const sectionMarginDefaults: {
     TOP: number;
     RIGHT: number;

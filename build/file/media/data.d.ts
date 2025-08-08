@@ -1,6 +1,6 @@
 /// <reference types="node" />
 /// <reference types="node" />
-export type IMediaDataTransformation = {
+export interface IMediaDataTransformation {
     readonly pixels: {
         readonly x: number;
         readonly y: number;
@@ -14,19 +14,19 @@ export type IMediaDataTransformation = {
         readonly horizontal?: boolean;
     };
     readonly rotation?: number;
-};
-type CoreMediaData = {
+}
+interface CoreMediaData {
     readonly fileName: string;
     readonly transformation: IMediaDataTransformation;
     readonly data: Buffer | Uint8Array | ArrayBuffer;
-};
-type RegularMediaData = {
+}
+interface RegularMediaData {
     readonly type: "jpg" | "png" | "gif" | "bmp";
-};
-type SvgMediaData = {
+}
+interface SvgMediaData {
     readonly type: "svg";
     readonly fallback: RegularMediaData & CoreMediaData;
-};
+}
 export type IMediaData = (RegularMediaData | SvgMediaData) & CoreMediaData;
 export declare const WORKAROUND2 = "";
 export {};

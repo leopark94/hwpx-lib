@@ -1,13 +1,13 @@
 import { IBorderOptions } from "@file/border";
 import { IgnoreIfEmptyXmlComponent, XmlComponent } from "@file/xml-components";
-export type ITableCellBorders = {
+export interface ITableCellBorders {
     readonly top?: IBorderOptions;
     readonly start?: IBorderOptions;
     readonly left?: IBorderOptions;
     readonly bottom?: IBorderOptions;
     readonly end?: IBorderOptions;
     readonly right?: IBorderOptions;
-};
+}
 export declare class TableCellBorders extends IgnoreIfEmptyXmlComponent {
     constructor(options: ITableCellBorders);
 }

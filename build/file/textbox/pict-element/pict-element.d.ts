@@ -1,5 +1,5 @@
 import { XmlComponent } from "@file/xml-components";
-export type IPictElement = {
+export interface IPictElement {
     readonly shape: XmlComponent;
-};
+}
 export declare const createPictElement: ({ shape }: IPictElement) => XmlComponent;

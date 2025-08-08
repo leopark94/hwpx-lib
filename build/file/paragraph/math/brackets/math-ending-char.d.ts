@@ -1,6 +1,6 @@
 import { XmlComponent } from "@file/xml-components";
-type MathEndingCharacterOptions = {
+interface MathEndingCharacterOptions {
     readonly character: string;
-};
+}
 export declare const createMathEndingCharacter: ({ character }: MathEndingCharacterOptions) => XmlComponent;
 export {};

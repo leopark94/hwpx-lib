@@ -29,7 +29,8 @@ export class Packer {
         prettify?: boolean | (typeof PrettifyType)[keyof typeof PrettifyType],
         overrides: readonly IXmlifyedFile[] = [],
     ): Promise<OutputByType[T]> {
-        const zip = await this.compiler.compile(file);
+        const pretty = convertPrettifyType(prettify);
+        const zip = await this.compiler.compile(file, pretty, overrides);
         return zip.generateAsync({
             type,
             mimeType: "application/hwp+zip",
@@ -84,7 +85,8 @@ export class Packer {
     ): Stream {
         const stream = new Stream();
 
-        this.compiler.compile(file).then((zip) => {
+        const pretty = convertPrettifyType(prettify);
+        this.compiler.compile(file, pretty, overrides).then((zip) => {
             zip.generateAsync({
                 type: "nodebuffer",
                 mimeType: "application/hwp+zip",

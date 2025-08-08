@@ -4,10 +4,10 @@ export declare const CellSpacingType: {
     readonly DXA: "dxa";
     readonly NIL: "nil";
 };
-export type ITableCellSpacingProperties = {
+export interface ITableCellSpacingProperties {
     readonly value: number | Percentage | UniversalMeasure;
     readonly type?: (typeof CellSpacingType)[keyof typeof CellSpacingType];
-};
+}
 export declare class TableCellSpacingElement extends XmlComponent {
     constructor({ type, value }: ITableCellSpacingProperties);
 }

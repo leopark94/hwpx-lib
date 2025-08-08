@@ -1,10 +1,10 @@
 import { XmlComponent } from "@file/xml-components";
-export type IBorderOptions = {
+export interface IBorderOptions {
     readonly style: (typeof BorderStyle)[keyof typeof BorderStyle];
     readonly color?: string;
     readonly size?: number;
     readonly space?: number;
-};
+}
 export declare class BorderElement extends XmlComponent {
     constructor(elementName: string, { color, size, space, style }: IBorderOptions);
 }

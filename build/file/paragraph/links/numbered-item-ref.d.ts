@@ -5,10 +5,10 @@ export declare enum NumberedItemReferenceFormat {
     NO_CONTEXT = "no_context",
     FULL_CONTEXT = "full_context"
 }
-export type INumberedItemReferenceOptions = {
+export interface INumberedItemReferenceOptions {
     readonly hyperlink?: boolean;
     readonly referenceFormat?: NumberedItemReferenceFormat;
-};
+}
 export declare class NumberedItemReference extends SimpleField {
     constructor(bookmarkId: string, cachedValue?: string, options?: INumberedItemReferenceOptions);
 }

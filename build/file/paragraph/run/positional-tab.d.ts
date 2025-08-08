@@ -15,11 +15,11 @@ export declare const PositionalTabLeader: {
     readonly UNDERSCORE: "underscore";
     readonly MIDDLE_DOT: "middleDot";
 };
-export type PositionalTabOptions = {
+export interface PositionalTabOptions {
     readonly alignment: (typeof PositionalTabAlignment)[keyof typeof PositionalTabAlignment];
     readonly relativeTo: (typeof PositionalTabRelativeTo)[keyof typeof PositionalTabRelativeTo];
     readonly leader: (typeof PositionalTabLeader)[keyof typeof PositionalTabLeader];
-};
+}
 export declare class PositionalTab extends XmlComponent {
     constructor(options: PositionalTabOptions);
 }

@@ -24,7 +24,7 @@ export declare const OverlapType: {
     readonly NEVER: "never";
     readonly OVERLAP: "overlap";
 };
-export type ITableFloatOptions = {
+export interface ITableFloatOptions {
     readonly horizontalAnchor?: (typeof TableAnchorType)[keyof typeof TableAnchorType];
     readonly absoluteHorizontalPosition?: number | UniversalMeasure;
     readonly relativeHorizontalPosition?: (typeof RelativeHorizontalPosition)[keyof typeof RelativeHorizontalPosition];
@@ -36,7 +36,7 @@ export type ITableFloatOptions = {
     readonly leftFromText?: number | PositiveUniversalMeasure;
     readonly rightFromText?: number | PositiveUniversalMeasure;
     readonly overlap?: (typeof OverlapType)[keyof typeof OverlapType];
-};
+}
 export declare class TableFloatProperties extends XmlComponent {
     constructor({ horizontalAnchor, verticalAnchor, absoluteHorizontalPosition, relativeHorizontalPosition, absoluteVerticalPosition, relativeVerticalPosition, bottomFromText, topFromText, leftFromText, rightFromText, overlap, }: ITableFloatOptions);
 }

@@ -1,6 +1,6 @@
 /// <reference types="node" />
 /// <reference types="node" />
-export type OutputByType = {
+export interface OutputByType {
     readonly base64: string;
     readonly string: string;
     readonly text: string;
@@ -10,5 +10,5 @@ export type OutputByType = {
     readonly arraybuffer: ArrayBuffer;
     readonly blob: Blob;
     readonly nodebuffer: Buffer;
-};
+}
 export type OutputType = keyof OutputByType;

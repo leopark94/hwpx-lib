@@ -1,9 +1,9 @@
 import { XmlComponent } from "@file/xml-components";
-export type IShadingAttributesProperties = {
+export interface IShadingAttributesProperties {
     readonly fill?: string;
     readonly color?: string;
     readonly type?: (typeof ShadingType)[keyof typeof ShadingType];
-};
+}
 export declare class Shading extends XmlComponent {
     constructor({ fill, color, type }: IShadingAttributesProperties);
 }

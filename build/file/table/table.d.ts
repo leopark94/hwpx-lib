@@ -6,7 +6,7 @@ import { ITableCellMarginOptions } from "./table-properties/table-cell-margin";
 import { TableLayoutType } from "./table-properties/table-layout";
 import { TableRow } from "./table-row";
 import { ITableWidthProperties } from "./table-width";
-export type ITableOptions = {
+export interface ITableOptions {
     readonly rows: readonly TableRow[];
     readonly width?: ITableWidthProperties;
     readonly columnWidths?: readonly number[];
@@ -19,7 +19,7 @@ export type ITableOptions = {
     readonly alignment?: (typeof AlignmentType)[keyof typeof AlignmentType];
     readonly visuallyRightToLeft?: boolean;
     readonly cellSpacing?: ITableCellSpacingProperties;
-};
+}
 export declare class Table extends FileChild {
     constructor({ rows, width, columnWidths, margins, indent, float, layout, style, borders, alignment, visuallyRightToLeft, cellSpacing, }: ITableOptions);
 }

@@ -1,12 +1,12 @@
 import { IContext, IXmlableObject, XmlComponent } from "@file/xml-components";
 import { ILevelsOptions } from "./level";
 import { ConcreteNumbering } from "./num";
-export type INumberingOptions = {
+export interface INumberingOptions {
     readonly config: readonly {
         readonly levels: readonly ILevelsOptions[];
         readonly reference: string;
     }[];
-};
+}
 export declare class Numbering extends XmlComponent {
     private readonly abstractNumberingMap;
     private readonly concreteNumberingMap;

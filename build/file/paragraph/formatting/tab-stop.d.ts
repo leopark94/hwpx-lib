@@ -1,9 +1,9 @@
 import { XmlAttributeComponent, XmlComponent } from "@file/xml-components";
-export type TabStopDefinition = {
+export interface TabStopDefinition {
     readonly type: (typeof TabStopType)[keyof typeof TabStopType];
     readonly position: number | (typeof TabStopPosition)[keyof typeof TabStopPosition];
     readonly leader?: (typeof LeaderType)[keyof typeof LeaderType];
-};
+}
 export declare class TabStop extends XmlComponent {
     constructor(tabDefinitions: readonly TabStopDefinition[]);
 }

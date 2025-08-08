@@ -12,12 +12,12 @@ export declare class DocumentBackgroundAttributes extends XmlAttributeComponent<
         themeTint: string;
     };
 }
-export type IDocumentBackgroundOptions = {
+export interface IDocumentBackgroundOptions {
     readonly color?: string;
     readonly themeColor?: string;
     readonly themeShade?: string;
     readonly themeTint?: string;
-};
+}
 export declare class DocumentBackground extends XmlComponent {
     constructor(options: IDocumentBackgroundOptions);
 }

@@ -4,10 +4,10 @@ export declare const HeaderFooterReferenceType: {
     readonly FIRST: "first";
     readonly EVEN: "even";
 };
-export type IHeaderFooterOptions = {
+export interface IHeaderFooterOptions {
     readonly type?: (typeof HeaderFooterReferenceType)[keyof typeof HeaderFooterReferenceType];
     readonly id?: number;
-};
+}
 export declare const HeaderFooterType: {
     readonly HEADER: "hs:headerReference";
     readonly FOOTER: "hs:footerReference";

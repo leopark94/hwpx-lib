@@ -39,7 +39,7 @@ export declare class SettingsAttributes extends XmlAttributeComponent<{
         Ignorable: string;
     };
 }
-export type ISettingsOptions = {
+export interface ISettingsOptions {
     readonly compatibilityModeVersion?: number;
     readonly evenAndOddHeaders?: boolean;
     readonly trackRevisions?: boolean;
@@ -47,13 +47,13 @@ export type ISettingsOptions = {
     readonly compatibility?: ICompatibilityOptions;
     readonly defaultTabStop?: number;
     readonly hyphenation?: IHyphenationOptions;
-};
-export type IHyphenationOptions = {
+}
+export interface IHyphenationOptions {
     readonly autoHyphenation?: boolean;
     readonly hyphenationZone?: number;
     readonly consecutiveHyphenLimit?: number;
     readonly doNotHyphenateCaps?: boolean;
-};
+}
 export declare class Settings extends XmlComponent {
     constructor(options: ISettingsOptions);
 }

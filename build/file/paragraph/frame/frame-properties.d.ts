@@ -19,7 +19,7 @@ export declare const FrameWrap: {
     readonly THROUGH: "through";
     readonly TIGHT: "tight";
 };
-type IBaseFrameOptions = {
+interface IBaseFrameOptions {
     readonly anchorLock?: boolean;
     readonly dropCap?: (typeof DropCapType)[keyof typeof DropCapType];
     readonly width: number;
@@ -35,7 +35,7 @@ type IBaseFrameOptions = {
         readonly vertical: number;
     };
     readonly rule?: (typeof HeightRule)[keyof typeof HeightRule];
-};
+}
 export type IXYFrameOptions = {
     readonly type: "absolute";
     readonly position: {

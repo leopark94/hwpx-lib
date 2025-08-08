@@ -1,5 +1,5 @@
 import { XmlComponent } from "@file/xml-components";
-export type IFontAttributesProperties = {
+export interface IFontAttributesProperties {
     readonly ascii?: string;
     readonly cs?: string;
     readonly eastAsia?: string;
@@ -12,7 +12,7 @@ export type IFontAttributesProperties = {
     readonly other?: string;
     readonly symbol?: string;
     readonly user?: string;
-};
+}
 export declare class RunFonts extends XmlComponent {
     constructor(name: string, hint?: string);
     constructor(attrs: string | IFontAttributesProperties);

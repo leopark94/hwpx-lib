@@ -1,11 +1,11 @@
 import { XmlComponent } from "@file/xml-components";
-export type IStyleAttributes = {
+export interface IStyleAttributes {
     readonly type?: string;
     readonly styleId?: string;
     readonly default?: boolean;
     readonly customStyle?: string;
-};
-export type IStyleOptions = {
+}
+export interface IStyleOptions {
     readonly name?: string;
     readonly basedOn?: string;
     readonly next?: string;
@@ -14,7 +14,7 @@ export type IStyleOptions = {
     readonly semiHidden?: boolean;
     readonly unhideWhenUsed?: boolean;
     readonly quickFormat?: boolean;
-};
+}
 export declare class Style extends XmlComponent {
     constructor(attributes: IStyleAttributes, options: IStyleOptions);
 }

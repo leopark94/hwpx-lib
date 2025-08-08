@@ -10,17 +10,17 @@ export declare const PatchType: {
     readonly DOCUMENT: "file";
     readonly PARAGRAPH: "paragraph";
 };
-type ParagraphPatch = {
+interface ParagraphPatch {
     readonly type: typeof PatchType.PARAGRAPH;
     readonly children: readonly ParagraphChild[];
-};
-type FilePatch = {
+}
+interface FilePatch {
     readonly type: typeof PatchType.DOCUMENT;
     readonly children: readonly FileChild[];
-};
+}
 export type IPatch = ParagraphPatch | FilePatch;
 export type PatchDocumentOutputType = OutputType;
-export type PatchDocumentOptions<T extends PatchDocumentOutputType = PatchDocumentOutputType> = {
+export interface PatchDocumentOptions<T extends PatchDocumentOutputType = PatchDocumentOutputType> {
     readonly outputType: T;
     readonly data: InputDataType;
     readonly patches: Readonly<Record<string, IPatch>>;
@@ -30,6 +30,6 @@ export type PatchDocumentOptions<T extends PatchDocumentOutputType = PatchDocume
         readonly end: string;
     }>;
     readonly recursive?: boolean;
-};
+}
 export declare const patchDocument: <T extends keyof OutputByType = keyof OutputByType>({ outputType, data, patches, keepOriginalStyles, placeholderDelimiters, recursive, }: PatchDocumentOptions<T>) => Promise<OutputByType[T]>;
 export {};

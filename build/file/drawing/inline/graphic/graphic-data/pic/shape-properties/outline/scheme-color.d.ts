@@ -1,7 +1,7 @@
 import { XmlComponent } from "@file/xml-components";
-type SchemeColorOptions = {
+interface SchemeColorOptions {
     readonly value: (typeof SchemeColor)[keyof typeof SchemeColor];
-};
+}
 export declare const SchemeColor: {
     readonly BG1: "bg1";
     readonly TX1: "tx1";

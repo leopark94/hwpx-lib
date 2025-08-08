@@ -13,18 +13,18 @@ export declare const PageBorderZOrder: {
     readonly BACK: "back";
     readonly FRONT: "front";
 };
-export type IPageBorderAttributes = {
+export interface IPageBorderAttributes {
     readonly display?: (typeof PageBorderDisplay)[keyof typeof PageBorderDisplay];
     readonly offsetFrom?: (typeof PageBorderOffsetFrom)[keyof typeof PageBorderOffsetFrom];
     readonly zOrder?: (typeof PageBorderZOrder)[keyof typeof PageBorderZOrder];
-};
-export type IPageBordersOptions = {
+}
+export interface IPageBordersOptions {
     readonly pageBorders?: IPageBorderAttributes;
     readonly pageBorderTop?: IBorderOptions;
     readonly pageBorderRight?: IBorderOptions;
     readonly pageBorderBottom?: IBorderOptions;
     readonly pageBorderLeft?: IBorderOptions;
-};
+}
 export declare class PageBorders extends IgnoreIfEmptyXmlComponent {
     constructor(options?: IPageBordersOptions);
 }

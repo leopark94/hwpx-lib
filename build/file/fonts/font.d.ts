@@ -1,9 +1,9 @@
 import { XmlComponent } from "@file/xml-components";
-export type IFontRelationshipOptions = {
+export interface IFontRelationshipOptions {
     readonly id: string;
     readonly fontKey?: string;
     readonly subsetted?: boolean;
-};
+}
 export declare const CharacterSet: {
     readonly ANSI: "00";
     readonly DEFAULT: "01";
@@ -25,7 +25,7 @@ export declare const CharacterSet: {
     readonly EASTEUROPE: "EE";
     readonly OEM: "FF";
 };
-export type FontOptions = {
+export interface FontOptions {
     readonly name: string;
     readonly altName?: string;
     readonly panose1?: string;
@@ -45,5 +45,5 @@ export type FontOptions = {
     readonly embedBold?: IFontRelationshipOptions;
     readonly embedItalic?: IFontRelationshipOptions;
     readonly embedBoldItalic?: IFontRelationshipOptions;
-};
+}
 export declare const createFont: ({ name, altName, panose1, charset, family, notTrueType, pitch, sig, embedRegular, embedBold, embedItalic, embedBoldItalic, }: FontOptions) => XmlComponent;

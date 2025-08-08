@@ -11,8 +11,8 @@ export declare const TextWrappingSide: {
     readonly RIGHT: "right";
     readonly LARGEST: "largest";
 };
-export type ITextWrapping = {
+export interface ITextWrapping {
     readonly type: (typeof TextWrappingType)[keyof typeof TextWrappingType];
     readonly side?: (typeof TextWrappingSide)[keyof typeof TextWrappingSide];
     readonly margins?: IDistance;
-};
+}

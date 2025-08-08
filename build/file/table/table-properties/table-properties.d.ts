@@ -7,7 +7,7 @@ import { ITableCellMarginOptions } from "./table-cell-margin";
 import { ITableFloatOptions } from "./table-float-properties";
 import { TableLayoutType } from "./table-layout";
 import { ITableCellSpacingProperties } from "../table-cell-spacing";
-export type ITablePropertiesOptions = {
+export interface ITablePropertiesOptions {
     readonly width?: ITableWidthProperties;
     readonly indent?: ITableWidthProperties;
     readonly layout?: (typeof TableLayoutType)[keyof typeof TableLayoutType];
@@ -19,7 +19,7 @@ export type ITablePropertiesOptions = {
     readonly cellMargin?: ITableCellMarginOptions;
     readonly visuallyRightToLeft?: boolean;
     readonly cellSpacing?: ITableCellSpacingProperties;
-};
+}
 export declare class TableProperties extends IgnoreIfEmptyXmlComponent {
     constructor(options: ITablePropertiesOptions);
 }

@@ -1,20 +1,46 @@
-import * as fs from "fs";
 import JSZip from "jszip";
-import * as path from "path";
+import xml from "xml";
 
-import { DocumentWrapper } from "@file/document-wrapper";
 import { File } from "@file/file";
-import { Paragraph } from "@file/paragraph";
-import { TextRun } from "@file/paragraph/run";
-import { Table } from "@file/table";
+import { obfuscate } from "@file/fonts/obfuscate-ttf-to-odttf";
 
-import { IXmlifyedFile } from "./next-compiler";
+import { Formatter } from "../formatter";
+import { ImageReplacer } from "./image-replacer";
+import { NumberingReplacer } from "./numbering-replacer";
 import { PrettifyType } from "./packer";
+
+export type IXmlifyedFile = {
+    readonly data: string;
+    readonly path: string;
+};
+
+export type IXmlifyedFileMapping = {
+    readonly Document: IXmlifyedFile;
+    readonly Styles: IXmlifyedFile;
+    readonly Properties: IXmlifyedFile;
+    readonly Numbering: IXmlifyedFile;
+    readonly Relationships: IXmlifyedFile;
+    readonly FileRelationships: IXmlifyedFile;
+    readonly Headers: readonly IXmlifyedFile[];
+    readonly Footers: readonly IXmlifyedFile[];
+    readonly HeaderRelationships: readonly IXmlifyedFile[];
+    readonly FooterRelationships: readonly IXmlifyedFile[];
+    readonly ContentTypes: IXmlifyedFile;
+    readonly CustomProperties: IXmlifyedFile;
+    readonly AppProperties: IXmlifyedFile;
+    readonly FootNotes: IXmlifyedFile;
+    readonly FootNotesRelationships: IXmlifyedFile;
+    readonly Settings: IXmlifyedFile;
+    readonly Comments?: IXmlifyedFile;
+    readonly CommentsRelationships?: IXmlifyedFile;
+    readonly FontTable?: IXmlifyedFile;
+    readonly FontTableRelationships?: IXmlifyedFile;
+};
 
 /**
  * 템플릿 기반 HWPX 컴파일러
  */
-export class HwpxTemplateCompiler {
+export class HwpxCompiler {
     private readonly nextElementId = 2147483648;
     private readonly nextCharPrId = 0;
     private readonly nextParaPrId = 0;
@@ -37,58 +63,20 @@ export class HwpxTemplateCompiler {
     /**
      * 템플릿 기반 HWPX 컴파일
      */
-    public async compile(
+    public compile(
         file: File,
-        _prettifyXml?: (typeof PrettifyType)[keyof typeof PrettifyType],
-        overrides: readonly IXmlifyedFile[] = [],
-    ): Promise<JSZip> {
-        try {
-            // 템플릿 파일 경로
-            const templatePath = path.join(process.cwd(), "templates/empty_template.hwpx");
-
-            // 템플릿이 없으면 기본 구조로 생성
-            if (!fs.existsSync(templatePath)) {
-                return this.compileFromScratch(file);
-            }
-
-            // 템플릿 로드
-            const templateData = fs.readFileSync(templatePath);
-            const zip = new JSZip();
-            const loadedZip = await zip.loadAsync(templateData);
-
-            // header.xml 업데이트
-            const headerXml = this._generateHeader(file);
-            loadedZip.file("Contents/header.xml", headerXml);
-
-            // section0.xml 업데이트
-            const sectionXml = this._generateSection(file.Document);
-            loadedZip.file("Contents/section0.xml", sectionXml);
-
-            // Preview 텍스트 업데이트
-            const previewText = this._extractPreviewText(file.Document);
-            loadedZip.file("Preview/PrvText.txt", previewText);
-
-            // 이미지 처리
-            for (const imageData of file.Media.Array) {
-                loadedZip.folder("Contents")!.folder("Bindata")!.file(imageData.fileName, imageData.data);
-            }
-
-            // overrides 반영
-            for (const subFile of overrides) {
-                loadedZip.file(subFile.path, subFile.data);
-            }
-
-            return loadedZip;
-        } catch (error) {
-            console.warn("템플릿 로드 실패, 기본 구조로 생성:", error);
-            return this.compileFromScratch(file);
-        }
+        _prettifyType?: (typeof PrettifyType)[keyof typeof PrettifyType],
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        _overrides: readonly IXmlifyedFile[] = [],
+    ): JSZip {
+        // 항상 기본 구조로 생성 (fs 모듈 사용 안 함)
+        return this.compileFromScratch(file);
     }
 
     /**
      * 템플릿 없이 처음부터 생성
      */
-    public compileFromScratch(file: File, overrides: readonly IXmlifyedFile[] = []): JSZip {
+    public compileFromScratch(file: File): JSZip {
         const zip = new JSZip();
 
         // 1. mimetype (압축하지 않음)
@@ -161,11 +149,6 @@ export class HwpxTemplateCompiler {
         // 11. 이미지 처리
         for (const imageData of file.Media.Array) {
             zip.folder("Contents")!.folder("Bindata")!.file(imageData.fileName, imageData.data);
-        }
-
-        // overrides 반영
-        for (const subFile of overrides) {
-            zip.file(subFile.path, subFile.data);
         }
 
         return zip;
@@ -243,7 +226,7 @@ export class HwpxTemplateCompiler {
         });
     }
 
-    private _generateHeader(file: File): string {
+    private _generateHeader(_file: File): string {
         const charPrs = Array.from(this.charPrStyles.values())
             .map((style) => style.xml)
             .join("\n");
@@ -337,14 +320,12 @@ ${paraPrs}
 </hh:head>`;
     }
 
-    private _generateSection(document: DocumentWrapper): string {
-        // 템플릿과 동일한 hml:sec 사용
-        const fullNamespaces = `xmlns:hml="http://www.hancom.co.kr/hwpml/2011/document" ${this.namespaces}`;
-
+    private _generateSection(document: any): string {
+        // hs:sec 네임스페이스 사용 (이미 this.namespaces에 포함됨)
         return `<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<hml:sec ${fullNamespaces} id="0" textDirection="HORIZONTAL" spaceColumns="1" columnGap="4252">
+<hs:sec ${this.namespaces} id="0" textDirection="HORIZONTAL" spaceColumns="1" columnGap="4252">
 ${this._compileBody(document)}
-</hml:sec>`;
+</hs:sec>`;
     }
 
     private _generateFirstParagraph(): string {
@@ -394,60 +375,189 @@ ${this._compileBody(document)}
 </ha:HwpApplicationSetting>`;
     }
 
-    private _compileBody(documentWrapper: DocumentWrapper): string {
+    private _compileBody(documentWrapper: any): string {
         let xml = "";
+        let isFirstParagraph = true;
 
         try {
-            const body = (documentWrapper as any).Document.Body;
+            // DocumentWrapper에서 document 추출
+            const document = documentWrapper.document || documentWrapper;
 
-            // Body의 섹션들 처리
-            for (const section of body.Sections) {
-                for (const child of section.Children) {
-                    if (child instanceof Paragraph) {
-                        xml += this._compileParagraph(child);
-                    } else if (child instanceof Table) {
-                        xml += this._compileTable(child);
+            // document의 root 배열에서 섹션 찾기
+            if (document && document.root && Array.isArray(document.root)) {
+                // hs:sec 섹션 찾기
+                const section = document.root.find((item: any) => item?.rootKey === "hs:sec");
+
+                if (section && section.root && Array.isArray(section.root)) {
+                    // 섹션 내의 문단들 처리
+                    for (const child of section.root) {
+                        if (child?.rootKey === "hp:p") {
+                            if (isFirstParagraph) {
+                                xml += this._compileParagraphWithSection(child);
+                                isFirstParagraph = false;
+                            } else {
+                                xml += this._compileParagraph(child);
+                            }
+                        } else if (child?.rootKey === "hp:tbl") {
+                            xml += this._compileTable(child);
+                        }
                     }
                 }
             }
         } catch (error) {
-            // 에러 시 기본 문단 생성
-            const elementId = this.nextElementId++;
-            xml = `<hp:p id="${elementId}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0"><hp:run charPrIDRef="0"><hp:t>HWPX 변환 테스트</hp:t></hp:run><hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="2400" textheight="2400" baseline="2040" spacing="480" horzpos="0" horzsize="42520" flags="393216"/></hp:linesegarray></hp:p>
-`;
+            console.error("Body compilation error:", error);
+            // 에러 시 섹션 속성이 포함된 기본 문단 생성
+            xml = this._generateFirstParagraph();
+        }
+
+        // 만약 내용이 없으면 섹션 속성이 포함된 기본 문단 추가
+        if (!xml) {
+            xml = this._generateFirstParagraph();
         }
 
         return xml;
     }
 
-    private _compileParagraph(paragraph: Paragraph): string {
-        // 템플릿과 동일하게 ID는 모두 0 사용
-        const elementId = 0;
+    private _compileParagraphWithSection(paragraph: any): string {
+        const elementId = 0; // 첫 번째 문단은 항상 ID 0
 
-        // 정렬에 따른 스타일 ID 결정
-        let paraPrId = 0; // 기본값
-        const properties = (paragraph as any).Properties;
-        if (properties && properties.alignment && properties.alignment.horizontal === "center") {
-            // 가운데 정렬용 스타일이 있다면 사용
-            paraPrId = 0; // 임시
+        let runXml = "";
+
+        // 섹션 속성 run 추가
+        runXml += `<hp:run charPrIDRef="0">
+<hp:secPr id="" textDirection="HORIZONTAL" spaceColumns="1134" tabStop="8000" tabStopVal="4000" tabStopUnit="HWPUNIT" outlineShapeIDRef="1" memoShapeIDRef="0" textVerticalWidthHead="0" masterPageCnt="0">
+<hp:grid lineGrid="0" charGrid="0" wonggojiFormat="0"/>
+<hp:startNum pageStartsOn="BOTH" page="0" pic="0" tbl="0" equation="0"/>
+<hp:visibility hideFirstHeader="0" hideFirstFooter="0" hideFirstMasterPage="0" border="SHOW_ALL" fill="SHOW_ALL" hideFirstPageNum="0" hideFirstEmptyLine="0" showLineNumber="0"/>
+<hp:lineNumberShape restartType="0" countBy="0" distance="0" startNumber="0"/>
+<hp:pagePr landscape="WIDELY" width="59528" height="84186" gutterType="LEFT_ONLY">
+<hp:margin header="4252" footer="4252" gutter="0" left="8504" right="8504" top="5668" bottom="4252"/>
+</hp:pagePr>
+<hp:footNotePr>
+<hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/>
+<hp:noteLine length="-1" type="SOLID" width="0.12 mm" color="#000000"/>
+<hp:noteSpacing betweenNotes="283" belowLine="567" aboveLine="850"/>
+<hp:numbering type="CONTINUOUS" newNum="1"/>
+<hp:placement place="EACH_COLUMN" beneathText="0"/>
+</hp:footNotePr>
+<hp:endNotePr>
+<hp:autoNumFormat type="DIGIT" userChar="" prefixChar="" suffixChar=")" supscript="0"/>
+<hp:noteLine length="14692344" type="SOLID" width="0.12 mm" color="#000000"/>
+<hp:noteSpacing betweenNotes="0" belowLine="567" aboveLine="850"/>
+<hp:numbering type="CONTINUOUS" newNum="1"/>
+<hp:placement place="END_OF_DOCUMENT" beneathText="0"/>
+</hp:endNotePr>
+<hp:pageBorderFill type="BOTH" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+<hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+</hp:pageBorderFill>
+<hp:pageBorderFill type="EVEN" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+<hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+</hp:pageBorderFill>
+<hp:pageBorderFill type="ODD" borderFillIDRef="1" textBorder="PAPER" headerInside="0" footerInside="0" fillArea="PAPER">
+<hp:offset left="1417" right="1417" top="1417" bottom="1417"/>
+</hp:pageBorderFill>
+</hp:secPr>
+<hp:ctrl>
+<hp:colPr id="" type="NEWSPAPER" layout="LEFT" colCount="1" sameSz="1" sameGap="0"/>
+</hp:ctrl>
+</hp:run>`;
+
+        try {
+            // Paragraph의 root 구조에서 TextRun 찾기
+            const paragraphRoot = (paragraph as any).root || [];
+            for (const child of paragraphRoot) {
+                // TextRun 처리 - rootKey가 'hp:run'인 경우
+                if (child?.rootKey === "hp:run") {
+                    const textRunRoot = (child as any).root;
+                    let runContent = "";
+
+                    if (textRunRoot && Array.isArray(textRunRoot)) {
+                        for (const runChild of textRunRoot) {
+                            // Tab 요소 처리 (rootKey가 'hp:tab'인 경우)
+                            if (runChild?.rootKey === "hp:tab") {
+                                runContent += "<hp:tab/>";
+                            }
+                            // Text 요소 찾기 (rootKey가 'hp:t'인 경우)
+                            else if (runChild?.rootKey === "hp:t") {
+                                const textRoot = (runChild as any).root;
+                                if (textRoot && Array.isArray(textRoot)) {
+                                    // root 배열의 문자열 요소 찾기 (보통 두 번째 요소)
+                                    for (const element of textRoot) {
+                                        if (typeof element === "string") {
+                                            const escapedText = this._escapeXmlText(element);
+                                            runContent += `<hp:t>${escapedText}</hp:t>`;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (runContent) {
+                        runXml += `<hp:run charPrIDRef="0">${runContent}</hp:run>`;
+                    }
+                }
+            }
+        } catch (error) {
+            console.error("Paragraph processing error:", error);
         }
+
+        // 빈 내용인 경우 기본 run 생성
+        if (!runXml.includes("<hp:t>")) {
+            runXml += '<hp:run charPrIDRef="0"><hp:t></hp:t></hp:run>';
+        }
+
+        const linesegArray = `<hp:linesegarray><hp:lineseg textpos="0" vertpos="0" vertsize="1200" textheight="1200" baseline="1020" spacing="720" horzpos="0" horzsize="45352" flags="393216"/></hp:linesegarray>`;
+
+        return `<hp:p id="${elementId}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">${runXml}${linesegArray}</hp:p>
+`;
+    }
+
+    private _compileParagraph(paragraph: any): string {
+        const elementId = this.nextElementId++;
+        const paraPrId = 0; // 기본값
 
         let runXml = "";
 
         try {
-            // Paragraph의 children 처리
-            const children = (paragraph as any).Children || [];
-            for (const child of children) {
-                if (child instanceof TextRun) {
-                    // 템플릿의 기존 스타일 ID 사용
-                    const charPrId = 0; // 기본값 (템플릿의 charPr id="0" 사용)
-                    const text = (child as any).text || "";
-                    const escapedText = this._escapeXmlText(text);
-                    runXml += `<hp:run charPrIDRef="${charPrId}"><hp:t>${escapedText}</hp:t></hp:run>`;
+            // Paragraph의 root 배열에서 TextRun 찾기
+            const paragraphRoot = (paragraph as any).root || [];
+
+            for (const child of paragraphRoot) {
+                // TextRun 처리 - rootKey가 'hp:run'인 경우
+                if (child?.rootKey === "hp:run") {
+                    const textRunRoot = (child as any).root;
+                    let runContent = "";
+
+                    if (textRunRoot && Array.isArray(textRunRoot)) {
+                        for (const runChild of textRunRoot) {
+                            // Tab 요소 처리 (rootKey가 'hp:tab'인 경우)
+                            if (runChild?.rootKey === "hp:tab") {
+                                runContent += "<hp:tab/>";
+                            }
+                            // Text 요소 찾기 (rootKey가 'hp:t'인 경우)
+                            else if (runChild?.rootKey === "hp:t") {
+                                const textRoot = (runChild as any).root;
+                                if (textRoot && Array.isArray(textRoot)) {
+                                    // root 배열의 문자열 요소 찾기 (보통 두 번째 요소)
+                                    for (const element of textRoot) {
+                                        if (typeof element === "string") {
+                                            const escapedText = this._escapeXmlText(element);
+                                            runContent += `<hp:t>${escapedText}</hp:t>`;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (runContent) {
+                        runXml += `<hp:run charPrIDRef="0">${runContent}</hp:run>`;
+                    }
                 }
             }
         } catch (error) {
-            // 에러 무시
+            console.error("Paragraph processing error:", error);
         }
 
         // 빈 내용인 경우 기본 run 생성
@@ -530,26 +640,57 @@ ${this._compileBody(document)}
         return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
     }
 
-    private _extractPreviewText(document: DocumentWrapper): string {
+    private _extractPreviewText(documentWrapper: any): string {
         let text = "";
 
         try {
-            const body = (document as any).Document.Body;
+            // DocumentWrapper에서 document 추출
+            const document = documentWrapper.document || documentWrapper;
 
-            // 섹션들에서 텍스트 추출
-            for (const section of body.Sections) {
-                for (const child of section.Children) {
-                    if (child instanceof Paragraph) {
-                        const children = (child as any).Children || [];
-                        for (const run of children) {
-                            if (run instanceof TextRun && (run as any).text) {
-                                text += `${(run as any).text  } `;
+            // document의 root 배열에서 섹션 찾기
+            if (document && document.root && Array.isArray(document.root)) {
+                // hs:sec 섹션 찾기
+                const section = document.root.find((item: any) => item?.rootKey === "hs:sec");
+
+                if (section && section.root && Array.isArray(section.root)) {
+                    // 섹션 내의 문단들 처리
+                    for (const paragraph of section.root) {
+                        if (paragraph?.rootKey === "hp:p") {
+                            const paragraphRoot = paragraph.root || [];
+
+                            for (const child of paragraphRoot) {
+                                // TextRun 처리 - rootKey가 'hp:run'인 경우
+                                if (child?.rootKey === "hp:run") {
+                                    const textRunRoot = child.root;
+
+                                    if (textRunRoot && Array.isArray(textRunRoot)) {
+                                        for (const runChild of textRunRoot) {
+                                            // Tab 요소 처리 (rootKey가 'hp:tab'인 경우)
+                                            if (runChild?.rootKey === "hp:tab") {
+                                                text += "\t";
+                                            }
+                                            // Text 요소 찾기 (rootKey가 'hp:t'인 경우)
+                                            else if (runChild?.rootKey === "hp:t") {
+                                                const textRoot = runChild.root;
+                                                if (textRoot && Array.isArray(textRoot)) {
+                                                    // root 배열의 문자열 요소 찾기
+                                                    for (const element of textRoot) {
+                                                        if (typeof element === "string") {
+                                                            text += `${element  } `;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         } catch (error) {
+            console.error("Preview text extraction error:", error);
             // 에러 시 기본 텍스트
             text = "HWPX 변환 문서";
         }

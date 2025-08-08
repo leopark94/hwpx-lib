@@ -6,10 +6,10 @@ import { Media } from "./media";
 import { Paragraph } from "./paragraph";
 import { Relationships } from "./relationships";
 import { Table } from "./table";
-export type IDocumentHeader = {
+export interface IDocumentHeader {
     readonly header: HeaderWrapper;
     readonly type: (typeof HeaderFooterReferenceType)[keyof typeof HeaderFooterReferenceType];
-};
+}
 export declare class HeaderWrapper implements IViewWrapper {
     private readonly media;
     private readonly header;

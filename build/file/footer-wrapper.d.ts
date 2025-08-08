@@ -6,10 +6,10 @@ import { Media } from "./media";
 import { Paragraph } from "./paragraph";
 import { Relationships } from "./relationships";
 import { Table } from "./table";
-export type IDocumentFooter = {
+export interface IDocumentFooter {
     readonly footer: FooterWrapper;
     readonly type: (typeof HeaderFooterReferenceType)[keyof typeof HeaderFooterReferenceType];
-};
+}
 export declare class FooterWrapper implements IViewWrapper {
     private readonly media;
     private readonly footer;

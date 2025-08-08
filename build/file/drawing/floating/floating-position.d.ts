@@ -20,23 +20,23 @@ export declare const VerticalPositionRelativeFrom: {
     readonly PARAGRAPH: "paragraph";
     readonly TOP_MARGIN: "topMargin";
 };
-export type IHorizontalPositionOptions = {
+export interface IHorizontalPositionOptions {
     readonly relative?: (typeof HorizontalPositionRelativeFrom)[keyof typeof HorizontalPositionRelativeFrom];
     readonly align?: (typeof HorizontalPositionAlign)[keyof typeof HorizontalPositionAlign];
     readonly offset?: number;
-};
-export type IVerticalPositionOptions = {
+}
+export interface IVerticalPositionOptions {
     readonly relative?: (typeof VerticalPositionRelativeFrom)[keyof typeof VerticalPositionRelativeFrom];
     readonly align?: (typeof VerticalPositionAlign)[keyof typeof VerticalPositionAlign];
     readonly offset?: number;
-};
-export type IMargins = {
+}
+export interface IMargins {
     readonly left?: number;
     readonly bottom?: number;
     readonly top?: number;
     readonly right?: number;
-};
-export type IFloating = {
+}
+export interface IFloating {
     readonly horizontalPosition: IHorizontalPositionOptions;
     readonly verticalPosition: IVerticalPositionOptions;
     readonly allowOverlap?: boolean;
@@ -46,4 +46,4 @@ export type IFloating = {
     readonly margins?: IMargins;
     readonly wrap?: ITextWrapping;
     readonly zIndex?: number;
-};
+}

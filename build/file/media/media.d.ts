@@ -1,5 +1,5 @@
 import { IMediaData } from "./data";
-export type IMediaTransformation = {
+export interface IMediaTransformation {
     readonly width: number;
     readonly height: number;
     readonly flip?: {
@@ -7,7 +7,7 @@ export type IMediaTransformation = {
         readonly horizontal?: boolean;
     };
     readonly rotation?: number;
-};
+}
 export declare class Media {
     private readonly map;
     constructor();

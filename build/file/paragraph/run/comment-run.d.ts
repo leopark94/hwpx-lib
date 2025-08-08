@@ -1,16 +1,16 @@
 import { FileChild } from "@file/file-child";
 import { Relationships } from "@file/relationships";
 import { XmlComponent } from "@file/xml-components";
-export type ICommentOptions = {
+export interface ICommentOptions {
     readonly id: number;
     readonly children: readonly FileChild[];
     readonly initials?: string;
     readonly author?: string;
     readonly date?: Date;
-};
-export type ICommentsOptions = {
+}
+export interface ICommentsOptions {
     readonly children: readonly ICommentOptions[];
-};
+}
 export declare class CommentRangeStart extends XmlComponent {
     constructor(id: number);
 }

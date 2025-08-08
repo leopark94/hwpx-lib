@@ -72,7 +72,7 @@ export declare const LevelSuffix: {
     readonly SPACE: "space";
     readonly TAB: "tab";
 };
-export type ILevelsOptions = {
+export interface ILevelsOptions {
     readonly level: number;
     readonly format?: (typeof LevelFormat)[keyof typeof LevelFormat];
     readonly text?: string;
@@ -84,7 +84,7 @@ export type ILevelsOptions = {
         readonly run?: IRunStylePropertiesOptions;
         readonly paragraph?: ILevelParagraphStylePropertiesOptions;
     };
-};
+}
 export declare class LevelBase extends XmlComponent {
     private readonly paragraphProperties;
     private readonly runProperties;

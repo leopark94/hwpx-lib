@@ -1,10 +1,10 @@
 import JSZip from "jszip";
 import { File } from "@file/file";
 import { PrettifyType } from "./packer";
-export type IXmlifyedFile = {
+export interface IXmlifyedFile {
     readonly data: string;
     readonly path: string;
-};
+}
 export declare class Compiler {
     private readonly formatter;
     private readonly imageReplacer;

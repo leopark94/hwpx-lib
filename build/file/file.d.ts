@@ -16,7 +16,7 @@ import { Comments } from "./paragraph/run/comment-run";
 import { Relationships } from "./relationships";
 import { Settings } from "./settings";
 import { Styles } from "./styles";
-export type ISectionOptions = {
+export interface ISectionOptions {
     readonly headers?: {
         readonly default?: Header;
         readonly first?: Header;
@@ -29,7 +29,7 @@ export type ISectionOptions = {
     };
     readonly properties?: ISectionPropertiesOptions;
     readonly children: readonly FileChild[];
-};
+}
 export declare class File {
     private currentRelationshipId;
     private readonly documentWrapper;

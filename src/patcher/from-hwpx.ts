@@ -131,7 +131,7 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
                     document.attributes[`xmlns:${ns}`] = DocumentAttributeNamespaces[ns];
                 }
                 // eslint-disable-next-line functional/immutable-data
-                document.attributes["Ignorable"] = `${document.attributes["Ignorable"] || ""}`.trim();
+                document.attributes.Ignorable = `${document.attributes.Ignorable || ""}`.trim();
             }
         }
 

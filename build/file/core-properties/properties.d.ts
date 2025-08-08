@@ -9,7 +9,7 @@ import { ISectionOptions } from "../file";
 import { INumberingOptions } from "../numbering";
 import { Paragraph } from "../paragraph";
 import { IStylesOptions } from "../styles";
-export type IPropertiesOptions = {
+export interface IPropertiesOptions {
     readonly sections: readonly ISectionOptions[];
     readonly title?: string;
     readonly subject?: string;
@@ -37,7 +37,7 @@ export type IPropertiesOptions = {
     readonly defaultTabStop?: number;
     readonly fonts?: readonly FontOptions[];
     readonly hyphenation?: IHyphenationOptions;
-};
+}
 export declare class CoreProperties extends XmlComponent {
     constructor(options: Omit<IPropertiesOptions, "sections">);
 }

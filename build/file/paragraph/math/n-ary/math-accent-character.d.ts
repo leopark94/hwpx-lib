@@ -1,6 +1,6 @@
 import { XmlComponent } from "@file/xml-components";
-type MathAccentCharacterOptions = {
+interface MathAccentCharacterOptions {
     readonly accent: string;
-};
+}
 export declare const createMathAccentCharacter: ({ accent }: MathAccentCharacterOptions) => XmlComponent;
 export {};
